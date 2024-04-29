@@ -1,0 +1,74 @@
+Package: theme.aagi
+Version: 0.0.1
+Title: Apply AAGI Brand Guidelines to Graphic Output and Create AAGI Themed Documents
+Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
+    colours and font guidelines are applied as useful and reasonable to both
+    base graphics as well as 'ggplot2' figures.  Support for creating MS Word
+    and PowerPoint files using Quarto and RMarkdown templates is also provided.
+Authors@R: c(person(given = "Adam H.", family = "Sparks",
+                     email = "adam.sparks@dpird.wa.gov.au",
+                     role = c("aut", "ccp"),
+                     comment = c(ORCID = "0000-0002-0061-8359")),
+             person(given = "Kenyon",
+                    family = "Ng",
+                    email = "kenyon.ng@dpird.wa.gov.au",
+                    role = "aut",
+                    comment = c(ORCID = "0000-0002-6315-9831")),
+             person(given = "Jimmy",
+                    family = "Ng",
+                    email = "jimmy.ng@dpird.wa.gov.au",
+                    role = "ctb"),
+             person(given = "Tinula",
+                    family = "Kariyawasam",
+                    email = "tinula.kariyawasam@dpird.wa.gov.au",
+                    role = c("cre", "aut")),
+             person(given = "Matt",
+                    family = "Cowgill",
+                    email = "matthew.cowgill@grattaninstitute.edu.au", 
+                    role = "aut",
+                    comment = "Wrote major portions of package for saving charts
+                    for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'
+                    licence."),
+             person(given = "Will",
+                    family = "Mackey",
+                    email = "william.mackey@grattaninstitute.edu.au",
+                    role = "aut",
+                    comment = "Wrote major portions of package for saving charts
+                    for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'
+                    licence."),
+            person(given = "Curtin University of Technology",
+                     role = "cph"))
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    extrafont,
+    ggplot2 (>= 3.3.5),
+    grDevices,
+    grid,
+    magick,
+    scales,
+    showtext,
+    systemfonts,
+    sysfonts,
+    withr
+Suggests:
+    data.dpird,
+    dplyr,
+    gapminder,
+    knitr (>= 1.22),
+    rmarkdown,
+    reshape2,
+    rsvg,
+    sf,
+    tibble,
+    spelling,
+    testthat
+BugReports: https://github.com/CCDM-AAGI/theme.aagi/issues
+URL: https://github.com/CCDM-AAGI/theme.aagi
+VignetteBuilder: knitr
+Language: en-US
+Depends: 
+    R (>= 3.50)
