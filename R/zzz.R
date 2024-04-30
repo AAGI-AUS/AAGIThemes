@@ -1,12 +1,12 @@
 # nocov start
 .onLoad <-
   function(libname, pkgname) {
-    arial_path <- systemfonts::match_font("Arial")
-    sysfonts::font_add("Arial", arial_path$path)
+    arial_path <- systemfonts::match_font("Proxima Nova")
+    sysfonts::font_add("Proxima Nova", arial_path$path)
 
     if (toupper(Sys.info()["sysname"]) == "WINDOWS") {
       grDevices::windowsFonts("Proxima Nova Medium" =
-                                grDevices::windowsFont(family = "Arial"))
+                                grDevices::windowsFont(family = "Proxima Nova"))
     }
   }
 
@@ -39,7 +39,7 @@ setup_font <- function() {
 
 fonts_ready <- function() {
   if (.Platform$OS.type == "windows") {
-    if ("Arial" %in% grDevices::windowsFonts())
+    if ("Proxima Nova" %in% grDevices::windowsFonts())
       return(TRUE)
   } else {
     if ("Proxima Nova Medium" %in% extrafont::fonts())

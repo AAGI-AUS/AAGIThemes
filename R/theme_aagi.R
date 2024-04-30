@@ -78,7 +78,7 @@ theme_aagi <-
 
     theme_aagi <-
       ggplot2::theme_classic(base_size = base_size,
-                             base_family = "Arial") %+replace%
+                             base_family = "Proxima Nova") %+replace%
         ggplot2::theme(
           # match legend key to panel.background
           legend.key = ggplot2::element_blank(),
@@ -92,19 +92,19 @@ theme_aagi <-
           # ),
           strip.text = ggplot2::element_text(
             colour = "#ffffff",
-            family = "Arial",
+            family = "Proxima Nova",
             face = "bold",
             margin = ggplot2::margin(3, 3, 3, 3, "points")
           ),
           plot.margin = ggplot2::margin(25, 25, 10, 25),
-          text = ggplot2::element_text(family = "Arial",
+          text = ggplot2::element_text(family = "Proxima Nova",
                                        size = base_size),
-          axis.text = ggplot2::element_text(family = "Arial",
+          axis.text = ggplot2::element_text(family = "Proxima Nova",
                                             size = base_size),
-          legend.text = ggplot2::element_text(family = "Arial",
+          legend.text = ggplot2::element_text(family = "Proxima Nova",
                                               size = base_size),
           plot.title = ggplot2::element_text(
-            family = "Arial",
+            family = "Proxima Nova",
             face = "bold",
             size = base_size * 1.25,
             hjust = 0,

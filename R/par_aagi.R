@@ -4,7 +4,7 @@
 
 par_aagi <- function() {
   list(
-    family = "Arial",
+    family = "Proxima Nova",
     las = 1,
     mgp = c(2, 0.5, 0),
     cex = 0.9,

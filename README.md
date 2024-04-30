@@ -12,7 +12,7 @@ unified style that follows the AAGI brand guidelines.
 
 The goal of {theme.aagi} is to provide easy to use theming of R graphics
 for AAGI team members. Following AAGI’s brand guidelines, AAGI
-colourways are used where applicable and the font defaults to Arial. The
+colourways are used where applicable and the font defaults to Proxima Nova. The
 resulting graphs, plots and charts feature a x and y axis that meet at 0
 with no gridlines. The resulting maps from `theme_aagi_map()` feature a
 white canvas with the legend on the right.
