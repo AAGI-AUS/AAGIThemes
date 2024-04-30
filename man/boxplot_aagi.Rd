@@ -54,9 +54,9 @@ that uses (hopefully) sensible defaults.
 }
 \examples{
 boxplot_aagi(decrease ~ treatment,
-              data = OrchardSprays,
-              xlab = "treatment",
-              ylab = "decrease")
+             data = OrchardSprays,
+             xlab = "treatment",
+             ylab = "decrease")
 }
 \seealso{
 \code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic boxplot

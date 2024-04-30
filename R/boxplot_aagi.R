@@ -33,9 +33,9 @@
 #' capabilities
 #' @examples
 #' boxplot_aagi(decrease ~ treatment,
-#'               data = OrchardSprays,
-#'               xlab = "treatment",
-#'               ylab = "decrease")
+#'              data = OrchardSprays,
+#'              xlab = "treatment",
+#'              ylab = "decrease")
 #' @export
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
@@ -62,7 +62,7 @@ boxplot_aagi <- function(x,
   graphics::boxplot(
     x,
     col = scales::alpha(col, 0.5),
-    border = "#353535",
+    border = "#414042",
     pars = list(
       boxwex = 0.8,
       staplelty = 0,

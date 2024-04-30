@@ -11,7 +11,7 @@ hist_aagi(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = "#353535",
+  col = "#414042",
   ...
 )
 }

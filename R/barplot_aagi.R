@@ -25,7 +25,7 @@
 #' @export
 #'
 barplot_aagi <- function(height,
-                          col = "#353535",
+                          col = "#414042",
                           ...) {
 
   withr::local_par(.new = par_aagi())

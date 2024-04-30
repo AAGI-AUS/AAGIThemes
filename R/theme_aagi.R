@@ -133,7 +133,7 @@ theme_aagi <-
         ggplot2::theme(panel.border =
                          ggplot2::element_rect(
                            fill = NA,
-                           color = "#353535",
+                           color = "#414042",
                            size = base_rect_size
                          ))
     }

@@ -42,7 +42,7 @@ hist_aagi <- function(x,
                        xlab = "",
                        ylab = "Count",
                        breaks = "pretty",
-                       col = "#353535",
+                       col = "#414042",
                        ...) {
 
   breaks <- tolower(breaks)
