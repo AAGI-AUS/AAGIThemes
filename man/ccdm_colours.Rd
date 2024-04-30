@@ -12,7 +12,7 @@ A \code{vector} with six (6) colours as hexadecimal values:
 \item{CCDM Bluegreen}{#31859C}
 \item{CCDM Yellow}{#FFBC42}
 \item{CCDM Light Grey}{#A6A6A6}
-\item{CCDM Dark Grey}{#414042}
+\item{CCDM Dark Grey}{#353535}
 }
 }
 \usage{
