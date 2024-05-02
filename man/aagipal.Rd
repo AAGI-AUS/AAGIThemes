@@ -2,7 +2,7 @@
 % Please edit documentation in R/aagi_palettes.R
 \name{aagipal}
 \alias{aagipal}
-\title{Interpolate a AAGI Colourway or Palette}
+\title{Interpolate an AAGI Colourway or Palette}
 \usage{
 aagipal(colourway = NULL, reverse = FALSE, ...)
 }
@@ -17,5 +17,5 @@ reversed.  Defaults to \code{FALSE}.}
 \item{...}{Additional arguments to pass to \code{colorRampPalette()}.}
 }
 \description{
-Interpolate a AAGI Colourway or Palette
+Interpolate an AAGI Colourway or Palette
 }

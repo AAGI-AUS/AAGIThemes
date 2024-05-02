@@ -8,7 +8,7 @@ scale_fill_aagi(colourway = "AAGI blue", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{colourway}{\code{Character} name of a \acronym{AAGI} colourway in
-\code{aagicolourways}.  Defaults to \code{NULL} and a random selection is made from
+\code{aagi_colourways}.  Defaults to \code{NULL} and a random selection is made from
 the three colourways, red, blue or green.}
 
 \item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
