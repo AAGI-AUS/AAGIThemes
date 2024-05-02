@@ -82,7 +82,7 @@ theme_aagi <-
         ggplot2::theme(
           # match legend key to panel.background
           legend.key = ggplot2::element_blank(),
-          legend.background = ggplot2::element_rect(color = "#000000",
+          legend.background = ggplot2::element_rect(color = "#414042",
                                                     fill = "#ffffff"),
           # AAGI colour facet strips
           # strip.background = ggplot2::element_rect(
@@ -133,7 +133,7 @@ theme_aagi <-
         ggplot2::theme(panel.border =
                          ggplot2::element_rect(
                            fill = NA,
-                           color = "#414042",
+                           color = "#353535",
                            size = base_rect_size
                          ))
     }
