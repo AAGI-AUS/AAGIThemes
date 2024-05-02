@@ -7,13 +7,13 @@ aagi_cols <- function(...) {
   cols <- c(...)
 
   if (is.null(cols))
-    return(theme.aagi::aagicolours)
+    return(theme.aagi::aagi_colours)
 
-  theme.aagi::aagicolours[cols]
+  theme.aagi::aagi_colours[cols]
 }
 
 
-#' Interpolate a AAGI Colourway or Palette
+#' Interpolate an AAGI Colourway or Palette
 #'
 #' @param colourway `Character` name of a \acronym{AAGI} colourway in
 #'   `aagicolourways()`.  Defaults to `NULL` returning a randomly selected
@@ -24,13 +24,13 @@ aagi_cols <- function(...) {
 #'
 #' @export
 aagipal <- function(colourway = NULL,
-                      reverse = FALSE,
-                      ...) {
+                    reverse = FALSE,
+                    ...) {
   if (is.null(colourway)) {
-    colourway <- names(sample(theme.aagi::aagicolourways, size = 1))
+    colourway <- names(sample(theme.aagi::aagi_colourways, size = 1))
   }
 
-  pal <- theme.aagi::aagicolourways[[colourway]]
+  pal <- theme.aagi::aagi_colourways[[colourway]]
   if (reverse)
     pal <- rev(pal)
   grDevices::colorRampPalette(pal, ...)
@@ -42,7 +42,7 @@ aagipal <- function(colourway = NULL,
 #' Construct AAGI Colour Scales for {ggplot2}
 #'
 #' @param colourway `Character` name of a \acronym{AAGI} colourway in
-#'   `aagicolourways`.  Defaults to `NULL` and a random selection is made from
+#'   `aagi_colourways`.  Defaults to `NULL` and a random selection is made from
 #'   the three colourways, red, blue or green.
 #' @param discrete `Boolean` argument indicating whether colour aesthetic is
 #'  discrete, *e.g.*, a `factor` (`TRUE`) or continuous, *e.g., `numeric`
@@ -61,9 +61,9 @@ scale_colour_aagi <-
            ...) {
     if (is.null(colourway)) {
       colourway <-
-        names(sample(theme.aagi::aagicolourways, size = 1))
+        names(sample(theme.aagi::aagi_colourways, size = 1))
     }
-    pal <- aagipal(colourway = colourway, reverse = reverse)
+    pal <- aagi_pal(colourway = colourway, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale("colour", sprintf("aagi%s", colourway),
@@ -76,7 +76,7 @@ scale_colour_aagi <-
 #' Construct AAGI Colour Fill Scales for ggplot2
 #'
 #' @param colourway `Character` name of a \acronym{AAGI} colourway in
-#'   `aagicolourways`.  Defaults to `NULL` and a random selection is made from
+#'   `aagi_colourways`.  Defaults to `NULL` and a random selection is made from
 #'   the three colourways, red, blue or green.
 #' @param discrete `Boolean` argument indicating whether colour aesthetic is
 #'  discrete, *e.g.*, a `factor` (`TRUE`) or continuous, *e.g., `numeric`
@@ -93,10 +93,10 @@ scale_fill_aagi <-
            reverse = FALSE,
            ...) {
     if (is.null(colourway)) {
-      colourway <- sample(theme.aagi::aagicolourways, size = 1)
+      colourway <- sample(theme.aagi::aagi_colourways, size = 1)
     }
 
-    pal <- aagipal(colourway = colourway, reverse = reverse)
+    pal <- aagi_pal(colourway = colourway, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale("fill", sprintf("aagi%s", colourway),
