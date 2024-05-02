@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 This repository contains the code for the R package {theme.aagi}, which once installed in your R session (local or RStudio Server), provides helper functions for creating and exporting graphics created in R with a unified style that follows the AAGI brand guidelines.
 
 The goal of {theme.aagi} is to provide easy to use theming of R graphics for AAGI team members.
-Following AAGI's brand guidelines, AAGI colourways are used where applicable and the font defaults to Proxima Nova.
+Following AAGI's brand guidelines, AAGI colours are used where applicable and the font defaults to Proxima Nova.
 The resulting graphs, plots and charts feature a x and y axis that meet at 0 with no gridlines.
 The resulting maps from `theme_aagi_map()` feature a white canvas with the legend on the right.
 
@@ -97,6 +97,5 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
 
 ## Using {theme.aagi} Word Templates
 
-{theme.aagi} provides RMarkdown Word document templates for you to quickly and easily create RMarkdown documents that use the AAGI blue, green and red colourways as the template.
-The templates are available through RStudio, `File > New File > R Markdown`, then select "From Template" and then select the template colourway you'd like to use.
-The template's colourway will sync with the {ggplot2} facet background colours automatically.
+{theme.aagi} provides RMarkdown Word document templates for you to quickly and easily create RMarkdown documents that use the AAGI colours in the template.
+The templates are available through RStudio, `File > New File > R Markdown`, then select "From Template" and then select the template you'd like to use.
