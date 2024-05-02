@@ -25,9 +25,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-## How to create DPIRD style graphics
+## How to create AAGI style graphics
 
-At the DPIRD Systems Modelling team, we have developed an R package, {theme.aagi}, and this R cookbook to make the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to DPIRD style guidelines.
+The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to make the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to DPIRD style guidelines.
 
 ### On {ggplot2} plots and graphs
 
@@ -36,7 +36,7 @@ The focus is given to {ggplot2} as it is more verbose and efficient in creating 
 The layered grammar makes developing charts more structural and easy to interpret (after you know how to use {ggplot2} of course).
 One of the greatest strengths of {ggplot2} is the ability to customise it so easily.
 Several themes and colour palettes already exist for {ggplot2} to make the visualisation look professional and engaging for the end users.
-{theme.aagi} leverages the ability to customise the appearance {ggplot2} to create a theme that is clean, easy to use and follows DPIRD's style guidelines including fonts and colours.
+{theme.aagi} leverages the ability to customise the appearance {ggplot2} to create a theme that is clean, easy to use and follows AAGI's style guidelines including fonts and colours.
 
 When using {theme.aagi} for graphs, the legend will be placed at the top by default and the main and sub-titles will be left aligned and captions will be right aligned.
 These choices can all be overridden by using `ggplot2::theme()` arguments as you wish.
@@ -51,12 +51,13 @@ If you do not have the {remotes} package installed, you will have to run the fir
 
 ``` {r eval = FALSE}
 if (!require("remotes"))
-  remotes::install_github("DPIRD_FSI/theme.aagi",
-                       build_vignettes = TRUE)
+  remotes::install_github("CCDM_CBADA/theme.aagi",
+                          build_vignettes = TRUE)
+
 )
 ```
 
-For more info on {theme.aagi} check out the [package's GitHub repository](https://DPIRD-FSI/theme.aagi), but most of the details about how to use the package and its functions are detailed below. 
+For more info on {theme.aagi} check out the [package's GitHub repository](https://github.com/CCDM_CBADA/theme.aagi), but most of the details about how to use the package and its functions are detailed below. 
 
 When you have downloaded the package and successfully installed it you are good to go and create charts.
 
@@ -67,20 +68,22 @@ So that you do not have to load them one by one, you can use the the following c
 
 ```{r libraries, eval=TRUE, message=FALSE}
 x <-
-  c(
-    "dplyr",
+  c("dplyr",
     "gapminder",
     "ggplot2",
     "scales",
     "theme.aagi",
-    "tibble"
-  )
-invisible(lapply(X = x, FUN = library, character.only = TRUE))
+    "tibble")
+invisible(lapply(
+  X = x,
+  FUN = library,
+  character.only = TRUE
+))
 ```
 
 ## Using {theme.aagi} to create plots
 
-{theme.aagi} provides several functions to assist users in creating plots, charts and graphs with a more unified DPIRD style.
+{theme.aagi} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
 Following are examples of four major styles of graphs that are commonly used, bar plots, boxplots, histograms and lines and scatter plots.
 
 ### bar plots
@@ -88,7 +91,7 @@ Following are examples of four major styles of graphs that are commonly used, ba
 #### Using base R to make a bar plot
 
 ```{r bar plot_base}
-barplot_dpird(islands)
+barplot_aagi(islands)
 ```
 
 #### Using {ggplot2} to make a bar plot
@@ -118,10 +121,10 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 #### Using base R to make a boxplot
 
 ```{r boxplot-base}
-boxplot_dpird(decrease ~ treatment,
-              data = OrchardSprays,
-              xlab = "treatment",
-              ylab = "decrease")
+boxplot_aagi(decrease ~ treatment,
+             data = OrchardSprays,
+             xlab = "treatment",
+             ylab = "decrease")
 ```
 
 #### Using {ggplot2} to make a boxplot
@@ -142,7 +145,7 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
 
 ```{r hist-base}
 library("ggplot2") # for diamonds data set
-hist_dpird(diamonds$carat)
+hist_aagi(diamonds$carat)
 ```
 
 #### Using {ggplot2} to make a histogram
@@ -155,20 +158,20 @@ ggplot(data = diamonds, aes(x = carat)) +
 
 ### Line graphs
 
-Using the {gapminder} data, we can make the following figure of life expectancy over time in Malawi with the line in DPIRD's dark blue colour.
+Using the {gapminder} data, we can make the following figure of life expectancy over time in Malawi with the line in AAGI's turquoise colour.
 
 #### Using base R to make a line graph
 
 ```{r line-base}
-#Data for chart from {gapminder} package
-line_df <- gapminder |> 
-  filter(country == "Malawi") |> 
+# Data for chart from {gapminder} package
+line_df <- gapminder |>
+  filter(country == "Malawi") |>
   arrange(year)
 
-plot_dpird(
+plot_aagi(
   x = line_df$year,
   y = line_df$lifeExp,
-  col = dpird_cols("dark blue"),
+  col = aagi_cols("AAGI Turquoise"),
   type = "l",
   main = "Living longer",
   xlab = "Year",
@@ -181,7 +184,7 @@ plot_dpird(
 
 ```{r line-ggplot2}
 ggplot(line_df, aes(x = year, y = lifeExp)) +
-  geom_line(colour = dpird_cols("dark blue")) +
+  geom_line(colour = aagi_cols("AAGI Turquoise")) +
   theme_aagi() +
   ylab("Life expectancy") +
   xlab("Year") +
@@ -203,7 +206,7 @@ data = data.frame(
 
 ```{r scatter-base}
 # Basic scatterplot
-plot_dpird(x = data$x, y = data$y)
+plot_aagi(x = data$x, y = data$y)
 ```
 
 #### Using {ggplot2} to make a scatterplot
@@ -216,24 +219,14 @@ ggplot(data = data, aes(x = x, y = y)) +
 
 ## Colours in {theme.aagi}
 
-### DPIRD colourways
-
-{theme.aagi} has colour palettes that follow the DPIRD Style Guide colourways for blue, red and green.
-Each of these colourways provides three colours as shown below.
-
-```{r dpird-colours, fig.cap="DPIRD colourways, dark red (top left), mid-red (top middle), light red (top right), dark blue (middle left), mid-blue (middle), light blue (middle right), dark green (bottom right), mid-green (bottom middle) and light green (bottom right)."}
-library(scales)
-show_col(dpird_colours)
-```
-
-### Using DPIRD colours
+### Using AAGI colours
 
 We've already seen above in the [line graph](#Linegraphs) example how to use the colours in a graph.
 But for further demonstration, here are a few more examples.
 
-Here we'll again use the {gapminder} data to construct a stacked bar chart and use DPIRD's red colourway for our colours via `scale_fill_dpird()`.
+Here we'll again use the {gapminder} data to construct a stacked bar chart and use AAGI's colours `scale_fill_aagi()`.
 
-```{r dpird-red-example}
+```{r aagi-facet-example}
 #prepare data
 stacked_df <- gapminder |>
   filter(year == 2007) |>
@@ -258,7 +251,6 @@ ggplot(data = stacked_df,
            position = "fill") +
   theme_aagi() +
   scale_y_continuous(labels = scales::percent) +
-  scale_fill_dpird(colourway = "dpird red") +
   geom_hline(yintercept = 0,
              linewidth = 1,
              colour = "#474747") +
@@ -271,9 +263,6 @@ ggplot(data = stacked_df,
 ## Advanced Uses
 
 ### Using {ggplot2} for faceting
-
-When faceting with {theme.aagi}, you can select one of the three colourways for the facet titles to correspond to your DPIRD report template.
-If you do not select one of the three colour options, it will randomly select one for you.
 
 As we'll be using this figure for the next example, we'll generate an object in R called `p` and save it to R's `tempdir()` for use in the next example as well.
 
@@ -307,15 +296,15 @@ p <- ggplot() +
   labs(title = "Asia's rapid growth",
        subtitle = "Population growth by continent, 1952-2007")
 
-ggsave(p, filename = "DPIRD.png", path = tempdir())
+ggsave(p, filename = "AAGI.png", path = tempdir())
 
 print(p)
 ```
 
-### Adding the DPIRD logo to your figures
+### Adding the AAGI logo to your figures
 
-Add the DPIRD logo to the upper left of the previous plot as per the style guide.
-Use the `add_dpird_logo()` function to add the logo automatically to a previously saved image file.
+Add the AAGI logo to the upper left of the previous plot as per the style guide.
+Use the `add_aagi_logo()` function to add the logo automatically to a previously saved image file.
 In this case, the previous example used to show the faceting colours has been saved to R's `tempdir()`.
 You can save using `tempdir()` as illustrated above or save on your Documents folder or elsewhere and access it from there as well.
 The image is resized to be 600x1000 pixels before being displayed here.
@@ -333,7 +322,7 @@ image_read(file.path(tempdir(), "DPIRD_logo.png")) |>
 
 ## Saving {ggplot2} Figures
 
-When saving figures generated with {ggplot2} that use {theme.aagi} as the theme, PDFs will not properly embed the Arial font that is used.
+When saving figures generated with {ggplot2} that use {theme.aagi} as the theme, PDFs will not properly embed the Proxima Nova font that is used.
 In order for you to save your figures and preserve the font, you can either save as a .png file or use the `device` option in `ggsave()`, which is demonstrated as follows.
 
 ```{r save-ggplot, eval=TRUE}
