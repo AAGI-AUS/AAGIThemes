@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 
 ## How to create AAGI style graphics
 
-The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to make the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to AAGI style guidelines.
+The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to Create the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to AAGI style guidelines.
 
 ### On {ggplot2} plots and graphs
 
@@ -35,7 +35,7 @@ Most of the focus of {theme.aagi} is given to supporting {[ggplot2](https://ggpl
 The focus is given to {ggplot2} as it is more verbose and efficient in creating data visualization based on The Grammar of Graphics [@wilkinson2012grammar].
 The layered grammar makes developing charts more structural and easy to interpret (after you know how to use {ggplot2} of course).
 One of the greatest strengths of {ggplot2} is the ability to customise it so easily.
-Several themes and colour palettes already exist for {ggplot2} to make the visualisation look professional and engaging for the end users.
+Several themes and colour palettes already exist for {ggplot2} to Create the visualisation look professional and engaging for the end users.
 {theme.aagi} leverages the ability to customise the appearance {ggplot2} to create a theme that is clean, easy to use and follows AAGI's style guidelines including fonts and colours.
 
 When using {theme.aagi} for graphs, the legend will be placed at the top by default and the main and sub-titles will be left aligned and captions will be right aligned.
@@ -80,30 +80,20 @@ invisible(lapply(
   character.only = TRUE
 ))
 ```
-
-## AAGI Colours
-
-{theme.aagi} includes official AAGI colours for use in plots and also applies them to {ggplot2} facet strips and uses them in the MS Word and PowerPoint templates for colour matching in the outputs.
-
-```{r colours}
-library(scales)
-show_col(aagi_colours)
-```
-
 ## Using {theme.aagi} to create plots
 
 {theme.aagi} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
 Following are examples of four major styles of graphs that are commonly used, bar plots, boxplots, histograms and lines and scatter plots.
 
-### bar plots
+### Bar Plots
 
-#### Using base R to make a bar plot
+#### Using Base R to Create a bar plot
 
 ```{r bar plot_base}
 barplot_aagi(islands)
 ```
 
-#### Using {ggplot2} to make a bar plot
+#### Using {ggplot2} to Creat a Bar Plot
 
 We need to transform a named vector to a `data.frame` for {ggplot2} to be able to use it, so we'll create a {tibble} first, `islands_df` and then plot it.
 
@@ -127,7 +117,7 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 
 ### Boxplots
 
-#### Using base R to make a boxplot
+#### Using Base R to Create a boxplot
 
 ```{r boxplot-base}
 boxplot_aagi(decrease ~ treatment,
@@ -136,7 +126,7 @@ boxplot_aagi(decrease ~ treatment,
              ylab = "decrease")
 ```
 
-#### Using {ggplot2} to make a boxplot
+#### Using {ggplot2} to Create a Boxplot
 
 ```{r boxplot-ggplot2}
 library("theme.aagi")
@@ -150,14 +140,14 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
 
 ### Histograms
 
-#### Using base R to make a histogram
+#### Using Base R to Create a Histogram
 
 ```{r hist-base}
 library("ggplot2") # for diamonds data set
 hist_aagi(diamonds$carat)
 ```
 
-#### Using {ggplot2} to make a histogram
+#### Using {ggplot2} to Create a Histogram
 
 ```{r hist-ggplot2}
 ggplot(data = diamonds, aes(x = carat)) +
@@ -165,11 +155,11 @@ ggplot(data = diamonds, aes(x = carat)) +
   theme_aagi()
 ```
 
-### Line graphs
+### Line Graphs
 
 Using the {gapminder} data, we can make the following figure of life expectancy over time in Malawi with the line in AAGI's turquoise colour.
 
-#### Using base R to make a line graph
+#### Using Base R to Create a Line Graph
 
 ```{r line-base}
 # Data for chart from {gapminder} package
@@ -189,7 +179,7 @@ plot_aagi(
 )
 ```
 
-#### Using {ggplot2} to make a line graph
+#### Using {ggplot2} to Create a Line Graph
 
 ```{r line-ggplot2}
 ggplot(line_df, aes(x = year, y = lifeExp)) +
@@ -211,14 +201,14 @@ data = data.frame(
 )
 ```
 
-#### Using base R to make a scatterplot
+#### Using base R to Create a Scatterplot
 
 ```{r scatter-base}
 # Basic scatterplot
 plot_aagi(x = data$x, y = data$y)
 ```
 
-#### Using {ggplot2} to make a scatterplot
+#### Using {ggplot2} to Create a Scatterplot
 
 ```{r scatter-ggplot2}
 ggplot(data = data, aes(x = x, y = y)) +
@@ -228,7 +218,16 @@ ggplot(data = data, aes(x = x, y = y)) +
 
 ## Colours in {theme.aagi}
 
-### Using AAGI colours
+### AAGI Colours
+
+{theme.aagi} includes official AAGI colours for use in plots and also applies them to {ggplot2} facet strips and uses them in the MS Word and PowerPoint templates for colour matching in the outputs.
+
+```{r colours}
+library(scales)
+show_col(aagi_colours)
+```
+
+### Using AAGI Colours
 
 We've already seen above in the [line graph](#Linegraphs) example how to use the colours in a graph.
 But for further demonstration, here are a few more examples.
@@ -271,7 +270,7 @@ ggplot(data = stacked_df,
 
 ## Advanced Uses
 
-### Using {ggplot2} for faceting
+### Using {ggplot2} Faceting
 
 As we'll be using this figure for the next example, we'll generate an object in R called `p` and save it to R's `tempdir()` for use in the next example as well.
 
@@ -310,7 +309,7 @@ ggsave(p, filename = "AAGI.png", path = tempdir())
 print(p)
 ```
 
-### Adding the AAGI logo to your figures
+### Adding the AAGI Logo to Your Figures
 
 Add the AAGI logo to the upper left of the previous plot as per the style guide.
 Use the `add_aagi_logo()` function to add the logo automatically to a previously saved image file.
@@ -365,4 +364,4 @@ $ brew install xquartz
 ### Cairo Instructions for Windows
 
 You will already have the Cairo graphics library installed when you install R.
-There is no need to do anything else to make it work on this platform.
+There is no need to do anything else to Create it work on this platform.
