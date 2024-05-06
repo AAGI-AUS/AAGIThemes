@@ -59,8 +59,7 @@ p2 <- ggplot(df, aes(X1, X2)) + geom_tile(aes(fill = value)) +
 p2 + theme_aagi()
 
 # Using a larger base size for presentation slides
-p1 + geom_point(aes(size = value)) +
-     theme_aagi(base_size = 24)
+p1 + theme_aagi(base_size = 24)
 
 # Plotting using minor gridlines
 p1 + theme_aagi(minor_gridlines = TRUE)

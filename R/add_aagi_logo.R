@@ -29,7 +29,7 @@
 #'
 #' ggsave(p1, filename = "AAGI.png", path = tempdir())
 #'
-#' add_aagi_logo(file_in = file.path(tempdir(), "AAGI"),
+#' add_aagi_logo(file_in = file.path(tempdir(), "AAGI.png"),
 #'                file_out = file.path(tempdir(), "AAGI_logo.png"))
 #'
 #' x <- magick::image_read(file.path(tempdir(), "AAGI_logo.png"))

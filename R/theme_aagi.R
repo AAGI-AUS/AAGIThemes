@@ -42,8 +42,7 @@
 #' p2 + theme_aagi()
 #'
 #' # Using a larger base size for presentation slides
-#' p1 + geom_point(aes(size = value)) +
-#'      theme_aagi(base_size = 24)
+#' p1 + theme_aagi(base_size = 24)
 #'
 #' # Plotting using minor gridlines
 #' p1 + theme_aagi(minor_gridlines = TRUE)
@@ -70,6 +69,8 @@ theme_aagi <-
            minor_grid = FALSE,
            border = FALSE,
            ...) {
+
+    showtext::showtext_auto()
 
     base_line_size <- base_size / 12
     base_rect_size <- base_size / 12
