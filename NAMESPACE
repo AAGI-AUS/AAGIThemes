@@ -2,7 +2,7 @@
 
 export(aagi_cols)
 export(aagipal)
-export(add_dpird_logo)
+export(add_aagi_logo)
 export(barplot_aagi)
 export(boxplot_aagi)
 export(hist_aagi)

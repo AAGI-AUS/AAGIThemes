@@ -1,4 +1,5 @@
 
+
 #' Insert AAGI's Logo Into Any Graphic File
 #'
 #' Insert the \acronym{AAGI} logo in any graphical image.  Particularly well-
@@ -38,9 +39,7 @@
 #'
 #' @export
 
-add_dpird_logo <- function(file_in,
-                           file_out,
-                           logo_scale = 2.5) {
+add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
   # see: <https://themockup.blog/posts/2019-01-09-add-a-logo-to-your-plot/>
   # see also: <https://www.danielphadley.com/ggplot-logo/>
 
@@ -57,7 +56,7 @@ add_dpird_logo <- function(file_in,
       magick::image_read_svg(
         system.file(
           "logo",
-          "DPIRD_logo_white.svg",
+          "AAGI_logo_colour_CMYK.svg",
           package = "theme.aagi",
           mustWork = TRUE
         )
@@ -67,7 +66,7 @@ add_dpird_logo <- function(file_in,
       magick::image_read(
         system.file(
           "logo",
-          "DPIRD_logo_white.svg",
+          "AAGI_logo_colour_CMYK.svg",
           package = "theme.aagi",
           mustWork = TRUE
         )

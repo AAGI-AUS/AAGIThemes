@@ -20,23 +20,23 @@
 #'   symbols. The full set of S symbols is available with `pch = 0:18`, see the
 #'   examples below. (NB: \R uses circles instead of the octagons used in S.)
 #' @param type What type of plot should be drawn.  Defaults to `p` for
-#'   **p**oints  See Section "Type" for more.
+#'   **p**oints``  See Section "Type" for more.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).  The most commonly used argument would be
 #'   `type` what type of plot should be drawn.
 #"
 #' @section Type:
 #' Possible types are:
-#'    \itemize{
-#'      \item{\dQuote{p}} {for **p**oints},
-#'      \item{\dQuote{l}} for **l**ines,
-#'      \item{\dQuote{b}} for **b**oth,
-#'      \item{\dQuote{c}} for the lines part alone of \dQuote{**b**},
-#'      \item{\dQuote{o}} for both \sQuote{**o**verplotted},
-#'      \item{\dQuote{h}} for \sQuote{**h**istogram} like (or
-#'        \sQuote{**h**igh-density}) vertical lines,
-#'      \item{\dQuote{s}} for stair **s**teps,
-#'      \item{\dQuote{n}} for **n**o plotting.
+#'    \describe{
+#'      \item{\dQuote{p}}{for **p**oints}
+#'      \item{\dQuote{l}}{for **l**ines}
+#'      \item{\dQuote{b}}{for **b**oth}
+#'      \item{\dQuote{c}}{for the lines part alone of \dQuote{**b**}}
+#'      \item{\dQuote{o}}{for both \sQuote{**o**verplotted}}
+#'      \item{\dQuote{h}}{for \sQuote{**h**istogram} like (or
+#'        \sQuote{**h**igh-density}) vertical lines}
+#'      \item{\dQuote{s}}{for stair **s**teps}
+#'      \item{\dQuote{n}}{for **n**o plotting}
 #'    }
 #'
 #' Value `pch = "."` (equivalently `pch = 46`) is handled specially. It is a

@@ -23,5 +23,6 @@ reversed.  Defaults to \code{FALSE}.}
 \code{TRUE} or \code{FALSE}.}
 }
 \description{
-Construct AAGI Colour Scales for {ggplot2}
+Uses AAGI colours to create colour scales suitable for use in
+\CRANpkg{ggplot2} objects.
 }

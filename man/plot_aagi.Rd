@@ -46,7 +46,7 @@ symbols. The full set of S symbols is available with \code{pch = 0:18}, see the
 examples below. (NB: \R uses circles instead of the octagons used in S.)}
 
 \item{type}{What type of plot should be drawn.  Defaults to \code{p} for
-\strong{p}oints  See Section "Type" for more.}
+\strong{p}oints``  See Section "Type" for more.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
@@ -59,16 +59,16 @@ typography guidelines that uses (hopefully) sensible defaults.
 \section{Type}{
 
 Possible types are:
-\itemize{
-\item{\dQuote{p}} {for \strong{p}oints},
-\item{\dQuote{l}} for \strong{l}ines,
-\item{\dQuote{b}} for \strong{b}oth,
-\item{\dQuote{c}} for the lines part alone of \dQuote{\strong{b}},
-\item{\dQuote{o}} for both \sQuote{\strong{o}verplotted},
-\item{\dQuote{h}} for \sQuote{\strong{h}istogram} like (or
-\sQuote{\strong{h}igh-density}) vertical lines,
-\item{\dQuote{s}} for stair \strong{s}teps,
-\item{\dQuote{n}} for \strong{n}o plotting.
+\describe{
+\item{\dQuote{p}}{for \strong{p}oints}
+\item{\dQuote{l}}{for \strong{l}ines}
+\item{\dQuote{b}}{for \strong{b}oth}
+\item{\dQuote{c}}{for the lines part alone of \dQuote{\strong{b}}}
+\item{\dQuote{o}}{for both \sQuote{\strong{o}verplotted}}
+\item{\dQuote{h}}{for \sQuote{\strong{h}istogram} like (or
+\sQuote{\strong{h}igh-density}) vertical lines}
+\item{\dQuote{s}}{for stair \strong{s}teps}
+\item{\dQuote{n}}{for \strong{n}o plotting}
 }
 
 Value \code{pch = "."} (equivalently \code{pch = 46}) is handled specially. It is a

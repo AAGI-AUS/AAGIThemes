@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_aagi.R
 \name{theme_aagi}
 \alias{theme_aagi}
-\title{A {ggplot2} Theme Using a Unified AAGI Style and Typography for Plots}
+\title{A ggplot2 Theme Using a Unified AAGI Style and Typography for Plots}
 \usage{
 theme_aagi(
   base_size = 12,
