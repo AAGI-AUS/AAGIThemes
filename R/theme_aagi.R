@@ -84,12 +84,12 @@ theme_aagi <-
           legend.key = ggplot2::element_blank(),
           legend.background = ggplot2::element_rect(color = "#414042",
                                                     fill = "#ffffff"),
-          # AAGI colour facet strips
-          # strip.background = ggplot2::element_rect(
-          #   fill = dpird_fill,
-          #   colour = dpird_colour,
-          #   linewidth = base_line_size
-          # ),
+          #AAGI colour facet strips
+          strip.background = ggplot2::element_rect(
+           fill = aagi_colours[[3]],
+           colour = aagi_colours[[3]],
+           linewidth = base_line_size
+          ),
           strip.text = ggplot2::element_text(
             colour = "#ffffff",
             family = "Proxima Nova",
