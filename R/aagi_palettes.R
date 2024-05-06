@@ -39,7 +39,8 @@ aagipal <- function(colourway = NULL,
 
 #' Construct AAGI Colour Scales for ggplot2
 #'
-#' Construct AAGI Colour Scales for {ggplot2}
+#' Uses AAGI colours to create colour scales suitable for use in
+#'   \CRANpkg{ggplot2} objects.
 #'
 #' @param colourway `Character` name of a \acronym{AAGI} colourway in
 #'   `aagi_colourways`.  Defaults to `NULL` and a random selection is made from

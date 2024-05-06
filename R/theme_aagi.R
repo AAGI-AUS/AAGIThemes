@@ -1,5 +1,5 @@
 
-#' A {ggplot2} Theme Using a Unified AAGI Style and Typography for Plots
+#' A ggplot2 Theme Using a Unified AAGI Style and Typography for Plots
 #'
 #' This theme follows a standard \acronym{AAGI} style including typography
 #'   guidelines that uses (hopefully) sensible defaults for \CRANpkg{ggplot2}
