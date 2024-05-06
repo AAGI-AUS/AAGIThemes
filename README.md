@@ -44,7 +44,7 @@ vignette("Cookbook", package = "theme.aagi")
 ### Plots and graphs
 
 {theme.aagi} provides several functions to assist users in creating
-plots, charts and graphs with a more unified DPIRD style.
+plots, charts and graphs with a more unified AAGI style.
 
 For creating standalone graphs using R’s base library there are:
 

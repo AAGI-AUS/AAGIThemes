@@ -2,7 +2,7 @@
 % Please edit documentation in R/hist_aagi.R
 \name{hist_aagi}
 \alias{hist_aagi}
-\title{Basic Histograms Using a Unified DPIRD Style and Typography}
+\title{Basic Histograms Using a Unified AAGI Style and Typography}
 \usage{
 hist_aagi(
   x,

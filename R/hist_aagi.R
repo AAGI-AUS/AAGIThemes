@@ -1,5 +1,5 @@
 
-#' @title Basic Histograms Using a Unified DPIRD Style and Typography
+#' @title Basic Histograms Using a Unified AAGI Style and Typography
 #'
 #' @description Basic histograms that follow a standard \acronym{AAGI} style
 #'   including typography guidelines that uses (hopefully) sensible defaults.
