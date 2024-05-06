@@ -37,7 +37,6 @@ Imports:
     systemfonts,
     withr
 Suggests:
-    data.dpird,
     dplyr,
     gapminder,
     knitr (>= 1.22),
