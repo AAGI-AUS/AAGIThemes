@@ -81,6 +81,15 @@ invisible(lapply(
 ))
 ```
 
+## AAGI Colours
+
+{theme.aagi} includes official AAGI colours for use in plots and also applies them to {ggplot2} facet strips and uses them in the MS Word and PowerPoint templates for colour matching in the outputs.
+
+```{r colours}
+library(scales)
+show_col(aagi_colours)
+```
+
 ## Using {theme.aagi} to create plots
 
 {theme.aagi} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
