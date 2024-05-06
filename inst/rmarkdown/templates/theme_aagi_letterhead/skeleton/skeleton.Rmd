@@ -1,11 +1,11 @@
 ---
-title: "DPIRD Red Colourway Word Template for RMarkdown"
-subtitle: "Live the RStudio Lifestyle You've Always Dreamed of in DPIRD Red"
+title: "AAGI Letterhead Word Template for RMarkdown"
+subtitle: "Live the RStudio Lifestyle You've Always Dreamed of in for writing your AAGI letters"
 output: 
   word_document:
      fig_caption: yes
      number_sections: FALSE
-     reference_docx: "DPIRD_Red_Report_Template.docx"
+     reference_docx: "AAGI_Letterhead_Template.docx"
      pandoc_args:
        - '--lua-filter=pagebreak.lua'
 ---
@@ -22,7 +22,6 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(theme.aagi)
-theme_set(theme_aagi(colourway = "dpird red"))
 ```
 
 ## R Markdown
