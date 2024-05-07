@@ -12,10 +12,7 @@ A \code{vector} with three (3) colours as hexadecimal values:
 \item{AAGI Turquoise}{#00808B}
 \item{AAGI Blue}{#648FD2}
 \item{AAGI Green}{#54921E}
-\item{AAGI Bluegreen}{#31859C}
 \item{AAGI Yellow}{#FFBC42}
-\item{AAGI Light Grey}{#A6A6A6}
-\item{AAGI Dark Grey}{#353535}
 }
 }
 \usage{

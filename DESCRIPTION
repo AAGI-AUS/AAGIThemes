@@ -39,13 +39,15 @@ Suggests:
     dplyr,
     gapminder,
     knitr (>= 1.22),
+    RColorBrewer,
     reshape2,
     rmarkdown,
     rsvg,
     sf,
     spelling,
     testthat (>= 3.0.0),
-    tibble
+    tibble,
+    viridis
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3

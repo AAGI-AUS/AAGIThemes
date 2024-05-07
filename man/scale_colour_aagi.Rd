@@ -4,23 +4,35 @@
 \alias{scale_colour_aagi}
 \title{Construct AAGI Colour Scales for ggplot2}
 \usage{
-scale_colour_aagi(colourway = NULL, discrete = TRUE, reverse = FALSE, ...)
+scale_colour_aagi(pal = NULL, discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
-\item{colourway}{\code{Character} name of a \acronym{AAGI} colourway in
-\code{aagi_colourways}.  Defaults to \code{NULL} and a random selection is made from
-the three colourways, red, blue or green.}
+\item{pal}{\code{Character} name of a \acronym{AAGI} palette in \code{\link[=aagi_palettes]{aagi_palettes()}}.
+Defaults to \code{NULL} and a random selection is made from the five palettes,
+\describe{
+\item{Primary}{The three primary \acronym{AAGI} colours}
+\item{Secondar}{The six secondary support colours in the \acronym{AAGI}
+colour palette.}
+\item{Bright}{Four \dQuote{bright} colours including,
+\dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise}, \dQuote{AAGI Blue}
+and \dQuote{AAGI Yellow}}
+\item{Bluegreeen}{Five blue, green or bluegreen \acronym{AAGI} colours
+including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
+\dQuote{AAGI Blue}, \dQuote{AAGI Green} and  \dQuote{AAGI Bluegreen}}
+\item{Monochrome Grey}{Three black or grey shades, \dQuote{AAGI Black},
+\dQuote{AAGI Dark Grey} and \dQuote{AAGI Light Grey}}
+}}
 
 \item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
 discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, *e.g., \code{numeric}
 (\code{FALSE}).}
 
 \item{reverse}{\code{Boolean} argument indicating whether the palette should be
-reversed.  Defaults to \code{FALSE}.}
+reversed, \emph{i.e.}, light to dark.  Defaults to \code{FALSE}.}
 
 \item{...}{Additional arguments passed to \code{discrete_scale()} or
-\code{scale_colour_gradientn()}, used respectively when discrete is
-\code{TRUE} or \code{FALSE}.}
+\code{\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn()}}, used respectively when
+discrete is \code{TRUE}.}
 }
 \description{
 Uses AAGI colours to create colour scales suitable for use in

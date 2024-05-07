@@ -257,6 +257,9 @@ ggplot(data = stacked_df,
            fill = lifeExpGrouped)) +
   geom_bar(stat = "identity",
            position = "fill") +
+  scale_fill_aagi(name = "Life expectancy") +
+  ylab("Continental Population (%)") +
+  xlab("Continent") +
   theme_aagi() +
   scale_y_continuous(labels = scales::percent) +
   geom_hline(yintercept = 0,
