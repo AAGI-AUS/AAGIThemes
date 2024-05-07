@@ -14,8 +14,9 @@ The goal of {theme.aagi} is to provide easy to use theming of R graphics
 for AAGI team members. Following AAGI’s brand guidelines, AAGI colours
 are used where applicable and the font defaults to Proxima Nova. The
 resulting graphs, plots and charts feature a x and y axis that meet at 0
-with no gridlines. The resulting maps from `theme_aagi_map()` feature a
-white canvas with the legend on the right.
+with no gridlines, but these can optionally be set to appear. The
+resulting maps from `theme_aagi_map()` feature a white canvas with the
+legend on the right.
 
 ## Installation instructions
 
@@ -74,7 +75,7 @@ boxplot_aagi(decrease ~ treatment,
 See the respective function’s help files and the {theme.aagi} cookbook
 for more examples and documentation.
 
-#### Using {theme.aagi} with {ggplot2}
+#### Using With {ggplot2}
 
 The function `theme_aagi()` is provided to apply a unified style for
 creating AAGI themed plots, charts and graphs using {ggplot2}. The
