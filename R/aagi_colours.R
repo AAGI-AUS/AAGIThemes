@@ -7,7 +7,13 @@
 #'   \describe{
 #'      \item{AAGI Black}{#414042}
 #'      \item{AAGI Bright Green}{#B6D438}
-#'      \item{AAGI Turquoise}{#00808b}
+#'      \item{AAGI Turquoise}{#00808B}
+#'      \item{AAGI Blue}{#648FD2}
+#'      \item{AAGI Green}{#54921E}
+#'      \item{AAGI Bluegreen}{#31859C}
+#'      \item{AAGI Yellow}{#FFBC42}
+#'      \item{AAGI Light Grey}{#A6A6A6}
+#'      \item{AAGI Dark Grey}{#353535}
 #'      }
 
 "aagi_colours"
