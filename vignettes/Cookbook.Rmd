@@ -277,35 +277,33 @@ ggplot(data = stacked_df,
 
 As we'll be using this figure for the next example, we'll generate an object in R called `p` and save it to R's `tempdir()` for use in the next example as well.
 
-```{r ggplot2-facet, eval=FALSE}
+```{r ggplot2-facet, eval=TRUE}
 #Prepare data
 facet <- gapminder |>
   filter(continent != "Americas") |>
   group_by(continent, year) |>
   summarise(pop = sum(as.numeric(pop)))
 
-col_values = unname(c(
-  dpird_cols("light red"),
-  dpird_cols("mid blue"),
-  dpird_cols("dark red"),
-  dpird_cols("dark green")
+col_values <- unname(c(
+  aagi_cols("AAGI Turquoise"),
+  aagi_cols("AAGI Green"),
+  aagi_cols("AAGI Yellow"),
+  aagi_cols("AAGI Blue")
 ))
 
 #Make plot
 p <- ggplot() +
   geom_area(data = facet, aes(x = year, y = pop, fill = continent)) +
   scale_fill_manual(values = col_values) +
-  facet_wrap( ~ continent, ncol = 5) +
+  facet_wrap(~ continent, ncol = 5) +
   scale_y_continuous(breaks = c(0, 2000000000, 4000000000),
                      labels = c(0, "2bn", "4bn")) +
   theme_aagi() +
   geom_hline(yintercept = 0,
              linewidth = 1,
              colour = "#474747") +
-  theme(legend.position = "none",
-        axis.text.x = element_blank()) +
-  labs(title = "Asia's rapid growth",
-       subtitle = "Population growth by continent, 1952-2007")
+  theme(legend.position = "none", axis.text.x = element_blank()) +
+  labs(title = "Asia's rapid growth", subtitle = "Population growth by continent, 1952-2007")
 
 ggsave(p, filename = "AAGI.png", path = tempdir())
 
@@ -321,9 +319,9 @@ You can save using `tempdir()` as illustrated above or save on your Documents fo
 The image is resized to be 600x1000 pixels before being displayed here.
 Feel free to adjust as necessary.
 
-```{r add-dpird-logo, eval=FALSE, message=FALSE}
+```{r add-dpird-logo, eval=TRUE, message=FALSE}
 library(magick)
-add_dpird_logo(file_in = file.path(tempdir(), "AAGI.png"),
+add_aagi_logo(file_in = file.path(tempdir(), "AAGI.png"),
                file_out = file.path(tempdir(), "AAGI_logo.png"))
 
 image_read(file.path(tempdir(), "AAGI_logo.png")) |> 
@@ -336,7 +334,7 @@ image_read(file.path(tempdir(), "AAGI_logo.png")) |>
 When saving figures generated with {ggplot2} that use {theme.aagi} as the theme, PDFs will not properly embed the Proxima Nova font that is used.
 In order for you to save your figures and preserve the font, you can either save as a .png file or use the `device` option in `ggsave()`, which is demonstrated as follows.
 
-```{r save-ggplot, eval=FALSE}
+```{r save-ggplot, eval=TRUE}
 ggsave(
   filename = "cairo_font.pdf",
   plot = p,
