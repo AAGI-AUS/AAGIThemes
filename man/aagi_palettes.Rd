@@ -7,7 +7,7 @@
 aagi_palettes()
 }
 \value{
-A \code{list} object of \acronym(AAGI) colours grouped by palette
+A \code{list} object of \acronym{AAGI} colours grouped by palette
 combinations
 }
 \description{

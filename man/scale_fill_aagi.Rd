@@ -7,22 +7,21 @@
 scale_fill_aagi(palette = "colourful", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{\code{Character} name of a \acronym{AAGI} palette in
-\code{\link[=aagi_palettes]{aagi_palettes()}}.  Defaults to \code{colourful}.}
-
 \item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
-discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, *e.g., \code{numeric}
+discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.}, \code{numeric}
 (\code{FALSE}).}
 
-\item{reverse}{\code{Boolean} indicating whether the palette should be reversed}
+\item{reverse}{\code{Boolean} argument indicating whether the palette should be
+reversed, \emph{i.e.}, light to dark.  Defaults to \code{FALSE}.}
 
-\item{...}{Additional arguments passed to \code{\link[=discrete_scale]{discrete_scale()}} or
-\code{\link[=scale_fill_gradientn]{scale_fill_gradientn()}}, used respectively when discrete is
-\code{TRUE} or \code{FALSE}}
+\item{...}{Additional arguments passed to \code{discrete_scale()} or
+\code{\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn()}}, used respectively when
+discrete is \code{TRUE}.}
 }
 \description{
-Construct AAGI Colour Fill Scales for ggplot2
+Uses AAGI colours to create fill colour scales suitable for use in
+\CRANpkg{ggplot2} objects.
 }
 \seealso{
-\code{\link[=aagi_palettes]{aagi_palettes()}}
+\code{\link[=aagi_palettes]{aagi_palettes()}} \code{\link[=scale_colour_aagi]{scale_colour_aagi()}}
 }

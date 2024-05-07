@@ -6,8 +6,6 @@
 \alias{theme.aagi-package}
 \title{theme.aagi: Apply AAGI Brand Guidelines to Graphic Output and Create AAGI Themed Documents}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
-
 Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to both base graphics as well as 'ggplot2' figures. Support for creating MS Word and PowerPoint files using Quarto and RMarkdown templates is also provided.
 }
 \seealso{

@@ -8,23 +8,26 @@ scale_colour_aagi(pal = NULL, discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{pal}{\code{Character} name of a \acronym{AAGI} palette in \code{\link[=aagi_palettes]{aagi_palettes()}}.
-Defaults to \code{NULL} and a random selection is made from the five palettes,
+Defaults to \code{colourful}.
+\subsection{Available Palettes}{
+
 \describe{
-\item{Primary}{The three primary \acronym{AAGI} colours}
-\item{Secondar}{The six secondary support colours in the \acronym{AAGI}
-colour palette.}
-\item{Bright}{Four \dQuote{bright} colours including,
-\dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise}, \dQuote{AAGI Blue}
-and \dQuote{AAGI Yellow}}
-\item{Bluegreeen}{Five blue, green or bluegreen \acronym{AAGI} colours
+\item{primary}{The three primary \acronym{AAGI} colours}
+\item{secondary}{The three secondary support colours in the \acronym{AAGI}
+colour palette}
+\item{full}{The full set of all six colours in the \acronym{AAGI}
+palette}
+\item{colourful}{All colours in the palette minus \dQuote{AAGI Black}}
+\item{bright}{Four \dQuote{bright} colours including,
+\dQuote{AAGI Bright Green}, \dQuote{AAGI Blue} and \dQuote{AAGI Yellow}}
+\item{bluegreeen}{Three blue, green or bluegreen \acronym{AAGI} colours
 including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
-\dQuote{AAGI Blue}, \dQuote{AAGI Green} and  \dQuote{AAGI Bluegreen}}
-\item{Monochrome Grey}{Three black or grey shades, \dQuote{AAGI Black},
-\dQuote{AAGI Dark Grey} and \dQuote{AAGI Light Grey}}
+\dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
+}
 }}
 
 \item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
-discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, *e.g., \code{numeric}
+discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.}, \code{numeric}
 (\code{FALSE}).}
 
 \item{reverse}{\code{Boolean} argument indicating whether the palette should be
@@ -37,4 +40,7 @@ discrete is \code{TRUE}.}
 \description{
 Uses AAGI colours to create colour scales suitable for use in
 \CRANpkg{ggplot2} objects.
+}
+\seealso{
+\code{\link[=aagi_palettes]{aagi_palettes()}} \code{\link[=scale_fill_aagi]{scale_fill_aagi()}}
 }

@@ -22,7 +22,7 @@
 #'   aagi_palettes()$colourful
 #'   aagi_palettes()$bluegreen
 #'
-#' @return A `list` object of \acronym(AAGI) colours grouped by palette
+#' @return A `list` object of \acronym{AAGI} colours grouped by palette
 #'   combinations
 #' @export
 aagi_palettes <- function() {
@@ -86,28 +86,34 @@ aagi_pal <- function(palette = NULL,
 #'   \CRANpkg{ggplot2} objects.
 #'
 #' @param pal `Character` name of a \acronym{AAGI} palette in [aagi_palettes()].
-#'   Defaults to `NULL` and a random selection is made from the five palettes,
-#'   \describe{
-#'    \item{Primary}{The three primary \acronym{AAGI} colours}
-#'    \item{Secondar}{The six secondary support colours in the \acronym{AAGI}
-#'        colour palette.}
-#'    \item{Bright}{Four \dQuote{bright} colours including,
-#'      \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise}, \dQuote{AAGI Blue}
-#'      and \dQuote{AAGI Yellow}}
-#'    \item{Bluegreeen}{Five blue, green or bluegreen \acronym{AAGI} colours
+#'  Defaults to `colourful`.
+#'
+#' ## Available Palettes
+#'
+#'  \describe{
+#'    \item{primary}{The three primary \acronym{AAGI} colours}
+#'    \item{secondary}{The three secondary support colours in the \acronym{AAGI}
+#'        colour palette}
+#'    \item{full}{The full set of all six colours in the \acronym{AAGI}
+#'        palette}
+#'    \item{colourful}{All colours in the palette minus \dQuote{AAGI Black}}
+#'    \item{bright}{Four \dQuote{bright} colours including,
+#'      \dQuote{AAGI Bright Green}, \dQuote{AAGI Blue} and \dQuote{AAGI Yellow}}
+#'    \item{bluegreeen}{Three blue, green or bluegreen \acronym{AAGI} colours
 #'      including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
-#'      \dQuote{AAGI Blue}, \dQuote{AAGI Green} and  \dQuote{AAGI Bluegreen}}
-#'    \item{Monochrome Grey}{Three black or grey shades, \dQuote{AAGI Black},
-#'      \dQuote{AAGI Dark Grey} and \dQuote{AAGI Light Grey}}
+#'      \dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
 #'  }
+
 #' @param discrete `Boolean` argument indicating whether colour aesthetic is
-#'  discrete, _e.g._, a `factor` (`TRUE`) or continuous, *e.g., `numeric`
+#'  discrete, _e.g._, a `factor` (`TRUE`) or continuous, _e.g._, `numeric`
 #'  (`FALSE`).
 #' @param reverse `Boolean` argument indicating whether the palette should be
 #'   reversed, _i.e._, light to dark.  Defaults to `FALSE`.
 #' @param ... Additional arguments passed to `discrete_scale()` or
 #'            [ggplot2::scale_colour_gradientn()], used respectively when
 #'            discrete is `TRUE`.
+#'
+#' @seealso [aagi_palettes()] [scale_fill_aagi()]
 #' @export
 #'
 scale_colour_aagi <-
@@ -131,16 +137,11 @@ scale_colour_aagi <-
 
 #' Construct AAGI Colour Fill Scales for ggplot2
 #'
-#' @param palette `Character` name of a \acronym{AAGI} palette in
-#'   [aagi_palettes()].  Defaults to `colourful`.
-#' @param discrete `Boolean` argument indicating whether colour aesthetic is
-#'  discrete, _e.g._, a `factor` (`TRUE`) or continuous, *e.g., `numeric`
-#'  (`FALSE`).
-#' @param reverse `Boolean` indicating whether the palette should be reversed
-#' @param ... Additional arguments passed to [discrete_scale()] or
-#'            [scale_fill_gradientn()], used respectively when discrete is
-#'            `TRUE` or `FALSE`
-#' @seealso [aagi_palettes()]
+#' Uses AAGI colours to create fill colour scales suitable for use in
+#'   \CRANpkg{ggplot2} objects.
+#'
+#' @inherit scale_colour_aagi params
+#' @seealso [aagi_palettes()] [scale_colour_aagi()]
 #' @export
 #'
 #'
