@@ -3,7 +3,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-# {theme.aagi}: Apply AAGI Brand Guidelines to R Graphic Output and Create AAGI Themed Documents <img align="right" src="man/figures/logo.png">
+# {theme.aagi} Apply AAGI Brand Guidelines to R Graphic Output and Create AAGI Themed Documents <img align="right" src="man/figures/logo.png">
 
 This repository contains the code for the R package {theme.aagi}, which
 once installed in your R session (local or RStudio Server), provides
