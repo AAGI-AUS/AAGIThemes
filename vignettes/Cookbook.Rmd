@@ -25,14 +25,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-## How to create AAGI style graphics
+## How to Create AAGI Style Graphics
 
-The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to Create the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to AAGI style guidelines.
+The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to AAGI style guidelines.
 
-### On {ggplot2} plots and graphs
+### On {ggplot2} Plots and Graphs
 
 Most of the focus of {theme.aagi} is given to supporting {[ggplot2](https://ggplot2.tidyverse.org/R)} visualisations, but base {graphics} plots are also supported.
-The focus is given to {ggplot2} as it is more verbose and efficient in creating data visualization based on The Grammar of Graphics [@wilkinson2012grammar].
+The focus is given to {ggplot2} as it is more verbose and efficient in creating data visualization based on "_The Grammar of Graphics_" [@wilkinson2012grammar].
 The layered grammar makes developing charts more structural and easy to interpret (after you know how to use {ggplot2} of course).
 One of the greatest strengths of {ggplot2} is the ability to customise it so easily.
 Several themes and colour palettes already exist for {ggplot2} to Create the visualisation look professional and engaging for the end users.
@@ -61,7 +61,7 @@ For more info on {theme.aagi} check out the [package's GitHub repository](https:
 
 When you have downloaded the package and successfully installed it you are good to go and create charts.
 
-### Load all the libraries you need
+### Load the Libraries We'll Need
 
 A few of the steps in this cookbook - and to create charts in R in general - require certain packages to be installed and loaded.
 So that you do not have to load them one by one, you can use the the following code to load them all at once.
@@ -80,7 +80,7 @@ invisible(lapply(
   character.only = TRUE
 ))
 ```
-## Using {theme.aagi} to create plots
+## Using {theme.aagi} to Create Graphical Outputs
 
 {theme.aagi} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
 Following are examples of four major styles of graphs that are commonly used, bar plots, boxplots, histograms and lines and scatter plots.
@@ -93,7 +93,7 @@ Following are examples of four major styles of graphs that are commonly used, ba
 barplot_aagi(islands)
 ```
 
-#### Using {ggplot2} to Creat a Bar Plot
+#### Using {ggplot2} to Create a Bar Plot
 
 We need to transform a named vector to a `data.frame` for {ggplot2} to be able to use it, so we'll create a {tibble} first, `islands_df` and then plot it.
 
@@ -117,7 +117,7 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 
 ### Boxplots
 
-#### Using Base R to Create a boxplot
+#### Using Base R to Create a Boxplot
 
 ```{r boxplot-base}
 boxplot_aagi(decrease ~ treatment,
