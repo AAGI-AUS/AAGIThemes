@@ -25,7 +25,7 @@
 #' @return A `list` object of \acronym{AAGI} colours grouped by palette
 #'   combinations
 #' @export
-aagi_paletteettes <- function() {
+aagi_palettes <- function() {
   return(
     list(
       "primary" = theme.aagi::aagi_colours[1:3],
