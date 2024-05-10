@@ -31,7 +31,7 @@ The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookboo
 
 ### On {ggplot2} Plots and Graphs
 
-Most of the focus of {theme.aagi} is given to supporting {[ggplot2](https://ggplot2.tidyverse.org/R)} visualisations, but base {graphics} plots are also supported.
+Most of the focus of {theme.aagi} is given to supporting {[ggplot2](https://ggplot2.tidyverse.org/R)} visualisations, but {base} and {graphics} plotting functionality are also supported.
 The focus is given to {ggplot2} as it is more verbose and efficient in creating data visualization based on "_The Grammar of Graphics_" [@wilkinson2012grammar].
 The layered grammar makes developing charts more structural and easy to interpret (after you know how to use {ggplot2} of course).
 One of the greatest strengths of {ggplot2} is the ability to customise it so easily.
