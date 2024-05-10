@@ -4,7 +4,7 @@
 #'   \CRANpkg{ggplot2} objects.
 #'
 #' @param make_aagi_paletteette `Character` name of a \acronym{AAGI} palette in
-#'   [make_aagi_paletteettes()].  Defaults to `colourful`.
+#'   [make_aagi_palettes()].  Defaults to `colourful`.
 #'
 #' ## Available Palettes
 #'
@@ -31,7 +31,7 @@
 #'            [ggplot2::scale_colour_gradientn()], used respectively when
 #'            discrete is `TRUE`.
 #'
-#' @seealso [make_aagi_paletteettes()] [scale_fill_aagi()]
+#' @seealso [make_aagi_palettes()] [scale_fill_aagi()]
 #' @export
 #'
 scale_colour_aagi <-
@@ -56,7 +56,7 @@ scale_colour_aagi <-
 #'   \CRANpkg{ggplot2} objects.
 #'
 #' @inherit scale_colour_aagi params
-#' @seealso [make_aagi_paletteettes()] [scale_colour_aagi()]
+#' @seealso [make_aagi_palettes()] [scale_colour_aagi()]
 #' @export
 #'
 #'

@@ -19,7 +19,7 @@ be reverse}
 details here \code{\link[grDevices]{colorRamp}}}
 
 \item{palette}{(\code{character}; default = \code{graph}) given name of an
-\acronym{AAGI} palette: \code{\link[=make_aagi_paletteettes]{make_aagi_paletteettes()}}}
+\acronym{AAGI} palette: \code{\link[=make_aagi_palettes]{make_aagi_palettes()}}}
 }
 \value{
 A function that takes a single value and makes that many colours.

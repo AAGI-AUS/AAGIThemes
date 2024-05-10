@@ -19,7 +19,7 @@ be reverse}
 see details here \code{\link[grDevices:colorRamp]{grDevices::colorRamp()}}.}
 
 \item{palette}{(\code{character}; default = \code{graph}) given name of an
-\acronym{AAGI} palette: \code{\link[=make_aagi_paletteettes]{make_aagi_paletteettes()}}}
+\acronym{AAGI} palette: \code{\link[=make_aagi_palettes]{make_aagi_palettes()}}}
 }
 \value{
 A function that takes a single value and makes that many colours.
@@ -39,4 +39,7 @@ ggplot(mtcars, aes(x = mpg, y = hp, colour = as.character(wt))) +
   geom_point() +
   scale_colour_manual(values = make_make_aagi_palette()(29))
 
+}
+\seealso{
+aagi_palettes
 }

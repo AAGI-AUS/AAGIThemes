@@ -11,7 +11,7 @@
 #'
 #'
 #' @param palette (`character`; default = `graph`) given name of an
-#'   \acronym{AAGI} palette: [make_aagi_paletteettes()]
+#'   \acronym{AAGI} palette: [make_aagi_palettes()]
 #' @param reverse (`Boolean`; default = `FALSE`) indicating if palette should
 #'   be reverse
 #' @param ... Additional arguments to pass to [grDevices::colorRampPalette()],
@@ -19,7 +19,7 @@
 #'
 #' @returns A function that takes a single value and makes that many colours.
 #'
-#' @seeaalso aagi_palettes
+#' @seealso aagi_palettes
 #'
 #' @examples
 #' library(ggplot2)
