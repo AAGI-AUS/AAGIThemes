@@ -7,10 +7,6 @@ export(barplot_aagi)
 export(boxplot_aagi)
 export(hist_aagi)
 export(make_aagi_palette)
-<<<<<<< HEAD
-=======
-export(make_make_aagi_palette)
->>>>>>> dfa1032 (Fixes broken shit)
 export(plot_aagi)
 export(scale_colour_aagi)
 export(scale_fill_aagi)

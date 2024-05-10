@@ -12,11 +12,7 @@ scale_fill_aagi(
 )
 }
 \arguments{
-<<<<<<< HEAD
 \item{make_aagi_palette}{\code{Character} name of a \acronym{AAGI} palette in
-=======
-\item{make_aagi_paletteette}{\code{Character} name of a \acronym{AAGI} palette in
->>>>>>> dfa1032 (Fixes broken shit)
 \code{\link[=make_aagi_palettes]{make_aagi_palettes()}}.  Defaults to \code{colourful}.
 \subsection{Available Palettes}{
 
