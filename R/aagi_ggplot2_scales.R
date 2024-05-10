@@ -3,8 +3,8 @@
 #' Uses AAGI colours to create colour scales suitable for use in
 #'   \CRANpkg{ggplot2} objects.
 #'
-#' @param pal `Character` name of a \acronym{AAGI} palette in [aagi_palettes()].
-#'  Defaults to `colourful`.
+#' @param make_aagi_paletteette `Character` name of a \acronym{AAGI} palette in
+#'   [make_aagi_paletteettes()].  Defaults to `colourful`.
 #'
 #' ## Available Palettes
 #'
@@ -31,26 +31,22 @@
 #'            [ggplot2::scale_colour_gradientn()], used respectively when
 #'            discrete is `TRUE`.
 #'
-#' @seealso [aagi_palettes()] [scale_fill_aagi()]
+#' @seealso [make_aagi_paletteettes()] [scale_fill_aagi()]
 #' @export
 #'
 scale_colour_aagi <-
-  function(pal = NULL,
+  function(make_aagi_paletteette = "colourful",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    if (is.null(palette)) {
-      selected_palette <-
-        names(sample(theme.aagi::aagi_palettes, size = 1))
-    }
-    selected_pal <- aagi_palettes()[palette]
+    selected_pal <-make_aagi_palette()[palette]
 
     if (discrete) {
       ggplot2::discrete_scale("colour",
                               sprintf("aagi%s", selected_pal),
                               palette = selected_pal, ...)
     } else {
-      ggplot2::scale_colour_gradientn(colours = pal(256), ...)
+      ggplot2::scale_colour_gradientn(colours = make_aagi_palette(n = 256), ...)
     }
   }
 
@@ -60,20 +56,20 @@ scale_colour_aagi <-
 #'   \CRANpkg{ggplot2} objects.
 #'
 #' @inherit scale_colour_aagi params
-#' @seealso [aagi_palettes()] [scale_colour_aagi()]
+#' @seealso [make_aagi_paletteettes()] [scale_colour_aagi()]
 #' @export
 #'
 #'
 scale_fill_aagi <-
-  function(palette = "colourful",
+  function(make_aagi_paletteette = "colourful",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    selected_pal <- aagi_pal(palette = palette, reverse = reverse)
+    selected_pal <- make_aagi_palette(palette = make_aagi_paletteette, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale(aesthetics = "fill", palette = selected_pal, ...)
     } else {
-      ggplot2::scale_fill_gradientn(colours = pal(256), ...)
+      ggplot2::scale_fill_gradientn(colours = make_aagi_palette(n = 256), ...)
     }
   }

@@ -30,6 +30,7 @@ Imports:
     grDevices,
     grid,
     magick,
+    rlang,
     scales,
     showtext,
     sysfonts,

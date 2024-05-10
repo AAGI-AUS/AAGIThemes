@@ -18,18 +18,22 @@
 #'
 #' @examples
 #' # View all five palettes' names and hexadecimal colour codes
-#'   aagi_palettes()
-#'   aagi_palettes()$colourful
-#'   aagi_palettes()$bluegreen
+#'  make_aagi_palette()
+#'  make_aagi_palette()$colourful
+#'  make_aagi_palette()$bluegreen
 #'
 #' @return A `list` object of \acronym{AAGI} colours grouped by palette
 #'   combinations
 #' @export
-aagi_palettes <- function() {
-  return(list("primary" = aagi_colours[1:3],
-              "secondary" = aagi_colours[4:6],
-              "colourful" = aagi_colours[2:6],
-              "full" = aagi_colours,
-              "bright" = aagi_colours[c(2, 4, 6)],
-              "bluegreen" = aagi_colours[3:5]))
+aagi_paletteettes <- function() {
+  return(
+    list(
+      "primary" = theme.aagi::aagi_colours[1:3],
+      "secondary" = theme.aagi::aagi_colours[4:6],
+      "colourful" = theme.aagi::aagi_colours[2:6],
+      "full" = theme.aagi::aagi_colours,
+      "bright" = theme.aagi::aagi_colours[c(2, 4, 6)],
+      "bluegreen" = theme.aagi::aagi_colours[3:5]
+    )
+  )
 }

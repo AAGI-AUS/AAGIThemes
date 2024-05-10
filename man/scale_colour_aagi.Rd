@@ -4,11 +4,16 @@
 \alias{scale_colour_aagi}
 \title{Construct AAGI Colour Scales for ggplot2}
 \usage{
-scale_colour_aagi(pal = NULL, discrete = TRUE, reverse = FALSE, ...)
+scale_colour_aagi(
+  make_aagi_paletteette = "colourful",
+  discrete = TRUE,
+  reverse = FALSE,
+  ...
+)
 }
 \arguments{
-\item{pal}{\code{Character} name of a \acronym{AAGI} palette in \code{\link[=aagi_palettes]{aagi_palettes()}}.
-Defaults to \code{colourful}.
+\item{make_aagi_paletteette}{\code{Character} name of a \acronym{AAGI} palette in
+\code{\link[=make_aagi_paletteettes]{make_aagi_paletteettes()}}.  Defaults to \code{colourful}.
 \subsection{Available Palettes}{
 
 \describe{
@@ -42,5 +47,5 @@ Uses AAGI colours to create colour scales suitable for use in
 \CRANpkg{ggplot2} objects.
 }
 \seealso{
-\code{\link[=aagi_palettes]{aagi_palettes()}} \code{\link[=scale_fill_aagi]{scale_fill_aagi()}}
+\code{\link[=make_aagi_paletteettes]{make_aagi_paletteettes()}} \code{\link[=scale_fill_aagi]{scale_fill_aagi()}}
 }

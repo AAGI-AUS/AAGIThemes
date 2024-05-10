@@ -14,12 +14,12 @@
 #'   \acronym{AAGI} palette: [make_aagi_paletteettes()]
 #' @param reverse (`Boolean`; default = `FALSE`) indicating if palette should
 #'   be reverse
-#' @param ... Additional arguments to pass to \code{colorRampPalette} see
-#'   details here \code{\link[grDevices]{colorRamp}}
+#' @param ... Additional arguments to pass to [grDevices::colorRampPalette()],
+#'   see details here [grDevices::colorRamp()].
 #'
 #' @returns A function that takes a single value and makes that many colours.
 #'
-#' @seealso \code{\link{grattan_palettes}}
+#' @seeaalso aagi_palettes
 #'
 #' @examples
 #' library(ggplot2)
@@ -28,11 +28,11 @@
 #'   scale_colour_manual(values = make_make_aagi_palette()(29))
 #'
 #' @export
-make_make_aagi_palette <- function(make_aagi_paletteette = c("colourful",
-                                           "primary",
-                                           "secondary",
-                                           "sequential",
-                                           "diverging"),
+make_make_aagi_paletteette <- function(make_aagi_paletteette = c("colourful",
+                                               "primary",
+                                               "secondary",
+                                               "sequential",
+                                               "diverging"),
                           reverse = FALSE,
                           ...) {
   rlang::arg_match(make_aagi_paletteette)
