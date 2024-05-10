@@ -5,14 +5,14 @@
 \title{Construct AAGI Colour Fill Scales for ggplot2}
 \usage{
 scale_fill_aagi(
-  make_aagi_paletteette = "colourful",
+  make_aagi_palette = "colourful",
   discrete = TRUE,
   reverse = FALSE,
   ...
 )
 }
 \arguments{
-\item{make_aagi_paletteette}{\code{Character} name of a \acronym{AAGI} palette in
+\item{make_aagi_palette}{\code{Character} name of a \acronym{AAGI} palette in
 \code{\link[=make_aagi_palettes]{make_aagi_palettes()}}.  Defaults to \code{colourful}.
 \subsection{Available Palettes}{
 

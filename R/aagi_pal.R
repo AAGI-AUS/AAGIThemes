@@ -28,16 +28,16 @@
 #'   scale_colour_manual(values = make_make_aagi_palette()(29))
 #'
 #' @export
-make_make_aagi_palette <- function(make_aagi_paletteette = c("colourful",
+make_make_aagi_palette <- function(make_aagi_palette = c("colourful",
                                            "primary",
                                            "secondary",
                                            "sequential",
                                            "diverging"),
                           reverse = FALSE,
                           ...) {
-  rlang::arg_match(make_aagi_paletteette)
+  rlang::arg_match(make_aagi_palette)
 
-  pal <-make_aagi_palette[[make_aagi_paletteette]]
+  pal <-make_aagi_palette[[make_aagi_palette]]
 
   if (reverse)
     pal <- rev(pal)

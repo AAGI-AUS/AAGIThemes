@@ -3,7 +3,7 @@
 #' Uses AAGI colours to create colour scales suitable for use in
 #'   \CRANpkg{ggplot2} objects.
 #'
-#' @param make_aagi_paletteette `Character` name of a \acronym{AAGI} palette in
+#' @param make_aagi_palette `Character` name of a \acronym{AAGI} palette in
 #'   [make_aagi_palettes()].  Defaults to `colourful`.
 #'
 #' ## Available Palettes
@@ -35,7 +35,7 @@
 #' @export
 #'
 scale_colour_aagi <-
-  function(make_aagi_paletteette = "colourful",
+  function(make_aagi_palette = "colourful",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
@@ -61,11 +61,11 @@ scale_colour_aagi <-
 #'
 #'
 scale_fill_aagi <-
-  function(make_aagi_paletteette = "colourful",
+  function(make_aagi_palette = "colourful",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    selected_pal <- make_aagi_palette(palette = make_aagi_paletteette, reverse = reverse)
+    selected_pal <- make_aagi_palette(palette = make_aagi_palette, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale(aesthetics = "fill", palette = selected_pal, ...)
