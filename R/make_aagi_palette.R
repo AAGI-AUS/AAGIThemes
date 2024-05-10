@@ -26,10 +26,10 @@
 #' library(ggplot2)
 #' ggplot(mtcars, aes(x = mpg, y = hp, colour = as.character(wt))) +
 #'   geom_point() +
-#'   scale_colour_manual(values = make_make_aagi_palette()(29))
+#'   scale_colour_manual(values = make_aagi_palette()(29))
 #'
 #' @export
-make_make_aagi_palette <- function(make_aagi_palette = c("colourful",
+make_aagi_palette <- function(make_aagi_palette = c("colourful",
                                                          "primary",
                                                          "secondary",
                                                          "sequential",
