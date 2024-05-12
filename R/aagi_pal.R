@@ -44,3 +44,32 @@ make_aagi_palette <- function(make_aagi_palette = c("colourful",
 
   grDevices::colorRampPalette(pal, ..., interpolate = "spline")
 }
+
+#' @noRd
+.pal_name <- function(palette, type) {
+  if (is.character(palette)) {
+    if (!palette %in% unlist(aagi)) {
+      cli::cli_warn("Unknown palette: {.val {palette}}")
+      palette <- "Greens"
+    }
+    return(palette)
+  }
+
+  .palettes <- list(
+    div = c(
+      "TuYl", "TuGn", "BuYl"
+    ),
+    qual = c(
+      "Accent", "Dark2", "Paired", "Pastel1", "Pastel2", "Set1",
+      "Set2", "Set3"
+    ),
+    seq = c(
+      "Blues", "BuGn", "BuPu", "GnBu", "Greens", "Greys", "Oranges",
+      "OrRd", "PuBu", "PuBuGn", "PuRd", "Purples", "RdPu", "Reds",
+      "YlGn", "YlGnBu", "YlOrBr", "YlOrRd"
+    )
+  )
+
+  type <- match.arg(type, c("div", "qual", "seq"))
+  return(.palettes[[type]][palette])
+}

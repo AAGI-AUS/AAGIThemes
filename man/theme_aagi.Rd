@@ -5,7 +5,7 @@
 \title{A ggplot2 Theme Using a Unified AAGI Style and Typography for Plots}
 \usage{
 theme_aagi(
-  base_size = 12,
+  base_size = 9,
   major_grid = FALSE,
   minor_grid = FALSE,
   border = FALSE,

@@ -28,6 +28,7 @@
 aagi_palettes <- function() {
   return(
     list(
+      "sequential" = theme.aagi::aagi_colours[c(3, 2, 6)],
       "primary" = theme.aagi::aagi_colours[1:3],
       "secondary" = theme.aagi::aagi_colours[4:6],
       "colourful" = theme.aagi::aagi_colours[2:6],
