@@ -10,7 +10,7 @@
 #"  \dQuote{qual} (qualitative)
 #" @param palette	 If a string, will use that named palette. If a number, will
 #"   index into the list of palettes of appropriate type
-#" @param n Number of different colors in the palette, minimum 3, maximum
+#" @param n Number of different colours in the palette, minimum 3, maximum
 #"   depending on palette
 #" @param direction	Sets the order of colours in the scale.  If `1`, the default
 #"   order is used. If `-1`, the order of colours is reversed.
@@ -27,9 +27,21 @@ aagi_pal_d <- function(type = c("seq", "div", "qual"),
                        direction = c(-1, 1)) {
   rlang::arg_match(type)
   rlang::arg_match(palette)
+  if (n < 3 || n > 11) {
+    cli::cli_abort(
+      c(x = "You have entered an invalid value for {.arg n},
+         {.val n}; it should be > 3 and < 11, inclusive.")
+    )
+  }
+  if (direction != -1 || direction != 1) {
+    cli::cli_abort(
+      c(x = "You have entered an invalid value for {.arg direction},
+         {.val direction}; it should be either -1 (reversed) or 1 (normal).")
+    )
+  }
 
   return(switch(
-    name,
+    palette,
     TuYl = switch(
       n - 2,
       # 3
