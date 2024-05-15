@@ -203,6 +203,83 @@ aagi_pal_d <- function(type = c("seq", "div", "qual"),
         "#ffbc42"
       )
     ),
+    BuOr = switch(
+      n - 2,
+      c("#648fd2", "#fcfdfe", "#ec8525"),
+      # 4
+      c("#648fd2", "#b4c4e8", "#fdbb89", "#ec8525"),
+      # 5
+      c("#648fd2", "#b4c4e8", "#fcfdfe", "#fdbb89", "#ec8525"),
+      # 6
+      c(
+        "#648fd2",
+        "#9bb2e1",
+        "#ccd7f0",
+        "#ffcda8",
+        "#f9a969",
+        "#ec8525"
+      ),
+      # 7
+      c(
+        "#648fd2",
+        "#9bb2e1",
+        "#ccd7f0",
+        "#fcfdfe",
+        "#ffcda8",
+        "#f9a969",
+        "#ec8525"
+      ),
+      # 8
+      c(
+        "#648fd2",
+        "#8ea9dd",
+        "#b4c4e8",
+        "#d8e0f3",
+        "#ffd6b8",
+        "#fdbb89",
+        "#f6a059",
+        "#ec8525"
+      ),
+      # 9
+      c(
+        "#648fd2",
+        "#8ea9dd",
+        "#b4c4e8",
+        "#d8e0f3",
+        "#fcfdfe",
+        "#ffd6b8",
+        "#fdbb89",
+        "#f6a059",
+        "#ec8525"
+      ),
+      # 10
+      c(
+        "#648fd2",
+        "#86a4db",
+        "#a5b9e4",
+        "#c3cfed",
+        "#dfe6f5",
+        "#ffdcc2",
+        "#fec69c",
+        "#fab076",
+        "#f49b50",
+        "#ec8525"
+      ),
+      # 11
+      c(
+        "#648fd2",
+        "#86a4db",
+        "#a5b9e4",
+        "#c3cfed",
+        "#dfe6f5",
+        "#fcfdfe",
+        "#ffdcc2",
+        "#fec69c",
+        "#fab076",
+        "#f49b50",
+        "#ec8525"
+      )
+    ),
     GnYl = switch(
       n - 2,
       # 3
