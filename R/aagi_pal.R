@@ -1,5 +1,4 @@
 
-
 #' Interpolate an AAGI Colour Palette
 #'
 #' This function takes a \acronym{AAGI} colour palette and generates more
@@ -10,12 +9,12 @@
 #'   generating many colours.
 #'
 #'
-#' @param palette (`character`; default = `graph`) given name of an
+#' @param palette (character; default = `graph`) given name of an
 #'   \acronym{AAGI} palette: [make_aagi_palettes()]
-#' @param reverse (`Boolean`; default = `FALSE`) indicating if palette should
+#' @param reverse (Boolean; default = `FALSE`) indicating if palette should
 #'   be reverse
 #' @param ... Additional arguments to pass to \code{colorRampPalette} see
-#'   details here \code{\link[grDevices]{colorRamp}}
+#'   details here [grDevices::colorRamp()].
 #'
 #' @returns A function that takes a single value and makes that many colours.
 #'
