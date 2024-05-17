@@ -49,7 +49,8 @@ aagi_pal <- function(n,
                        "aagi_reds",
                        "aagi_teals",
                        "aagi_oranges",
-                       "aagi_yellows"
+                       "aagi_yellows",
+                       "Okabe_and_Ito"
                      ),
                      direction = 1) {
   rlang::arg_match(name)
@@ -1139,6 +1140,19 @@ aagi_pal <- function(n,
         "#ffe7be",
         "#fff1d9",
         "#fffbf3"
+      )
+    ),
+    Okabe_and_Ito = switch(
+      n - 2,
+      c(
+        "#E69F00",
+        "#56B4E9",
+        "#009E73",
+        "#F0E442",
+        "#0072B2",
+        "#D55E00",
+        "#CC79A7",
+        "#000000"
       )
     )
   )

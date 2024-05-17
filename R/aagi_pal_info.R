@@ -35,14 +35,25 @@ aagi_pal_info <- function() {
   )
   names(aagi_seq_list) <- aagi_seq_list
 
+  aagi_qual_list <- c("Okabe_and_Ito")
+  names(aagi_qual_list) <- aagi_qual_list
+
   aagi_div_num <- rep(11, length(aagi_div_list))
   names(aagi_div_num)  <- aagi_div_list
+
   aagi_seq_num <- rep(9, length(aagi_seq_list))
   names(aagi_seq_num) <- aagi_seq_list
-  aagi_name_list <- c(aagi_div_list, aagi_seq_list)
-  max_colors <- c(aagi_div_num, aagi_seq_num)
-  catlist <- rep(c("div", "seq"),
-                 c(length(aagi_div_list), length(aagi_seq_list)))
+
+  aagi_qual_list <- rep(8, length(aagi_qual_list))
+  names(aagi_qual_num) <- aagi_qual_list
+
+  aagi_name_list <- c(aagi_div_list, aagi_seq_list, aagi_qual_list)
+  max_colors <- c(aagi_div_num, aagi_seq_num, aagi_qual_num)
+  catlist <- rep(c("div", "seq", "qual"), c(
+    length(aagi_div_list),
+    length(aagi_seq_list),
+    length(aagi_qual_list)
+  ))
 
   return(
     data.frame(
