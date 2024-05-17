@@ -9,7 +9,7 @@ aagi_pal(
   name = c("aagi_BrYl", "aagi_BuOr", "aagi_BuYl", "aagi_GnYl", "aagi_RdBu", "aagi_RdTl",
     "aagi_RdYl", "aagi_TlGn", "aagi_TlYl", "aagi_TlGnYl", "aagi_blues",
     "aagi_bright_greens", "aagi_greens", "aagi_greys", "aagi_reds", "aagi_teals",
-    "aagi_oranges", "aagi_yellows"),
+    "aagi_oranges", "aagi_yellows", "Okabe_and_Ito"),
   direction = 1
 )
 }
@@ -46,6 +46,10 @@ palettes are colourblind safe.
 }
 
 \examples{
-# example code
-aagi_pal(n = 5, name = "aagi_blues", direction = 1)
+# sequential blues, max of 7
+aagi_pal(n = 7, name = "aagi_blues", direction = 1)
+
+# diverging red teal colours with 11 stops
+aagi_pal(n = 11, name = "aagi_RdTl", direction = 1)
+
 }

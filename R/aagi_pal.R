@@ -25,8 +25,12 @@
 #'   the default order is used. If `-1`, the order of colours is reversed.
 #'
 #' @examples
-#' # example code
-#' aagi_pal(n = 5, name = "aagi_blues", direction = 1)
+#' # sequential blues, max of 7
+#' aagi_pal(n = 7, name = "aagi_blues", direction = 1)
+#'
+#' # diverging red teal colours with 11 stops
+#' aagi_pal(n = 11, name = "aagi_RdTl", direction = 1)
+#'
 #' @return A vector of hexadecimal colour codes
 #' @export
 
