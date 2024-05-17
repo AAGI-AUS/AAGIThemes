@@ -39,7 +39,7 @@ scale_colour_aagi <-
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    selected_pal <-make_aagi_palette()[palette]
+    selected_pal <- make_aagi_palette()[palette]
 
     if (discrete) {
       ggplot2::discrete_scale("colour",
