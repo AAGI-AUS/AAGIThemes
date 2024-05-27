@@ -170,7 +170,7 @@ line_df <- gapminder |>
 plot_aagi(
   x = line_df$year,
   y = line_df$lifeExp,
-  col = aagi_cols("AAGI Turquoise"),
+  col = aagi_cols("AAGI Teal"),
   type = "l",
   main = "Living longer",
   xlab = "Year",
@@ -183,7 +183,7 @@ plot_aagi(
 
 ```{r line-ggplot2}
 ggplot(line_df, aes(x = year, y = lifeExp)) +
-  geom_line(colour = aagi_cols("AAGI Turquoise")) +
+  geom_line(colour = aagi_cols("AAGI Teal")) +
   theme_aagi() +
   ylab("Life expectancy") +
   xlab("Year") +
@@ -285,7 +285,7 @@ facet <- gapminder |>
   summarise(pop = sum(as.numeric(pop)))
 
 col_values <- unname(c(
-  aagi_cols("AAGI Turquoise"),
+  aagi_cols("AAGI Teal"),
   aagi_cols("AAGI Green"),
   aagi_cols("AAGI Yellow"),
   aagi_cols("AAGI Blue")

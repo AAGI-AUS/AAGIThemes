@@ -1,6 +1,4 @@
 
-
-
 #' Interpolate an AAGI Colour Palette
 #'
 #' This function takes a \acronym{AAGI} colour palette and generates more

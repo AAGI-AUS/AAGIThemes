@@ -18,7 +18,7 @@
 #'    \item{bright}{Four \dQuote{bright} colours including,
 #'      \dQuote{AAGI Bright Green}, \dQuote{AAGI Blue} and \dQuote{AAGI Yellow}}
 #'    \item{bluegreeen}{Three blue, green or bluegreen \acronym{AAGI} colours
-#'      including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
+#'      including \dQuote{AAGI Bright Green}, \dQuote{AAGI Teal},
 #'      \dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
 #'  }
 
