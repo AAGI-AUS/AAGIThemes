@@ -2,25 +2,18 @@
 % Please edit documentation in R/aagi_pal.R
 \name{aagi_pal}
 \alias{aagi_pal}
-\title{Sequential, Diverging and Qualitative Colour Palettes for AAGI}
+\title{Sequential, Diverging and Qualitative Colour Palettes for AAGI Publications}
 \usage{
-aagi_pal(
-  n,
-  name = c("aagi_BrYl", "aagi_BuOr", "aagi_BuYl", "aagi_GnYl", "aagi_RdBu", "aagi_RdTl",
-    "aagi_RdYl", "aagi_TlGn", "aagi_TlYl", "aagi_TlGnYl", "aagi_blues",
-    "aagi_bright_greens", "aagi_greens", "aagi_greys", "aagi_reds", "aagi_teals",
-    "aagi_oranges", "aagi_yellows", "Okabe_and_Ito"),
-  direction = 1
-)
+aagi_pal(type = "seq", palette = 1, direction = 1)
 }
 \arguments{
+\item{direction}{\code{Integer} Sets the order of colours in the scale.  If \code{1},
+the default order is used. If \code{-1}, the order of colours is reversed.}
+
 \item{n}{\code{Integer} Number of different colours in the palette, minimum 3,
 maximum 11, depending on palette}
 
 \item{name}{\code{Character} A string value with the name of the desired palette.}
-
-\item{direction}{\code{Integer} Sets the order of colours in the scale.  If \code{1},
-the default order is used. If \code{-1}, the order of colours is reversed.}
 }
 \value{
 A vector of hexadecimal colour codes
