@@ -1,4 +1,5 @@
-#' Sequential, Diverging and Qualitative Colour Palettes for AAGI
+
+#' Sequential, Diverging and Qualitative Colour Palettes for AAGI Publications
 #'
 #' \acronym{AAGI} palettes for use in charts and plots based on official
 #'   \acronym{AAGI} colours and interpolated to provide more colours for use in
@@ -18,9 +19,9 @@
 #'   generated using \url{http://www.vis4.net/palettes/}, ensuring that all
 #'   palettes are colourblind safe.
 #'
-#' @param name `Character` A string value with the name of the desired palette.
 #' @param n `Integer` Number of different colours in the palette, minimum 3,
 #'   maximum 11, depending on palette
+#' @param name `Character` A string value with the name of the desired palette.
 #' @param direction	`Integer` Sets the order of colours in the scale.  If `1`,
 #'   the default order is used. If `-1`, the order of colours is reversed.
 #'
