@@ -1,6 +1,8 @@
 
 #' AAGI Palettes
 #'
+#' A quick and dirty way to show \acronym{AAGI} colours in a plot.
+#'
 #' @param n `Numeric` Number of different colours in the palette, minimum 3,
 #'   maximum depends on the palette. Defaults to `3`
 #' @param name A palette name from the lists below
@@ -52,20 +54,18 @@
 #'  always is 3, but the largest number is different for different palettes.
 #'  It is given together with the palette names in the following table.
 
-#' @return
+#' @return `NULL`. Called for its side-effects, a plot of the given palette.
 #' @export
 #'
 #' @examples
+#' display_aagi_pal(n = 5, name = "aagi_BuOr")
+#'
 display_aagi_pal <- function(n = 3, name) {
   if (n < 3) {
     rlang::warn(
       "The minimal value for {.arg{n}} is 3.
       Displaying requested palette with 3 different levels\n"
     )
-
-    if (missing(name)) {
-
-    }
 
     return(scales::show_col(aagi_pal(
       n = 3,
