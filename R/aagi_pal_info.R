@@ -20,21 +20,20 @@ aagi_pal_info <- function() {
                       "aagi_TlGn")
   names(aagi_div_list) <- aagi_div_list
   aagi_seq_list  <- c(
-    "aagi_BrYl",
-    "aagi_RdYl",
-    "aagi_TlGnYl",
-    "aagi_TlYl",
     "aagi_blues",
     "aagi_bright_greens",
+    "aagi_BrYl",
     "aagi_greens",
     "aagi_greys",
     "aagi_reds",
-    "aagi_teals",
     "aagi_oranges",
+    "aagi_RdYl",
+    "aagi_teals",
+    "aagi_TlGnYl",
+    "aagi_TlYl",
     "aagi_yellows"
   )
   names(aagi_seq_list) <- aagi_seq_list
-
   aagi_qual_list <- c("Okabe_and_Ito")
   names(aagi_qual_list) <- aagi_qual_list
 
@@ -44,7 +43,7 @@ aagi_pal_info <- function() {
   aagi_seq_num <- rep(9, length(aagi_seq_list))
   names(aagi_seq_num) <- aagi_seq_list
 
-  aagi_qual_list <- rep(8, length(aagi_qual_list))
+  aagi_qual_num <- rep(8, length(aagi_qual_list))
   names(aagi_qual_num) <- aagi_qual_list
 
   aagi_name_list <- c(aagi_div_list, aagi_seq_list, aagi_qual_list)
