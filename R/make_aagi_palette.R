@@ -28,12 +28,12 @@
 #'
 #' @export
 make_aagi_palette <- function(make_aagi_palette = c("colourful",
-                                                         "primary",
-                                                         "secondary",
-                                                         "sequential",
-                                                         "diverging"),
-                                   reverse = FALSE,
-                                   ...) {
+                                                    "primary",
+                                                    "secondary",
+                                                    "sequential",
+                                                    "diverging"),
+                            reverse = FALSE,
+                            ...) {
   rlang::arg_match(make_aagi_palette)
 
   pal <- make_aagi_palette[[make_aagi_palette]]

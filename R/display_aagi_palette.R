@@ -1,7 +1,7 @@
 
 #' AAGI Palettes
 #'
-#' A quick and dirty way to show \acronym{AAGI} colours in a plot.
+#' A quick and dirty way to show \acronym{AAGI} colours in a paelette plot.
 #'
 #' @param n `Numeric` Number of different colours in the palette, minimum 3,
 #'   maximum depends on the palette. Defaults to `3`
@@ -60,7 +60,7 @@
 #' @examples
 #' display_aagi_pal(n = 5, name = "aagi_BuOr")
 #'
-display_aagi_pal <- function(n = 3, name) {
+display_aagi_palette <- function(n = 3, name) {
   if (n < 3) {
     rlang::warn(
       "The minimal value for {.arg{n}} is 3.

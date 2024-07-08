@@ -19,7 +19,7 @@ A \code{vector} with three (3) colours as hexadecimal values:
 aagi_colours
 }
 \description{
-A \code{vector} containing three official \acronym{AAGI} colours as hexadecimal
-codes for use in plotting.
+A \code{vector} containing 6 official \acronym{AAGI} colours as hexadecimal
+codes.
 }
 \keyword{datasets}

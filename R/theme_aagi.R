@@ -65,10 +65,10 @@
 
 theme_aagi <-
   function(base_size = 9,
-           major_grid = FALSE,
-           minor_grid = FALSE,
-           border = FALSE,
-           ...) {
+          major_grid = FALSE,
+          minor_grid = FALSE,
+          border = FALSE,
+          ...) {
 
     showtext::showtext_auto()
 
@@ -79,7 +79,7 @@ theme_aagi <-
 
     theme_aagi <-
       ggplot2::theme_classic(base_size = base_size,
-                             base_family = "Proxima Nova") %+replace%
+                            base_family = "Proxima Nova") %+replace%
         ggplot2::theme(
           # match legend key to panel.background
           legend.key = ggplot2::element_blank(),
@@ -87,19 +87,19 @@ theme_aagi <-
                                                     fill = "#ffffff"),
           #AAGI colour facet strips
           strip.background = ggplot2::element_rect(
-           fill = theme.aagi::aagi_colours[[3]],
-           colour = theme.aagi::aagi_colours[[3]],
-           linewidth = base_line_size
+          fill = theme.aagi::aagi_colours[[3]],
+          colour = theme.aagi::aagi_colours[[3]],
+          linewidth = base_line_size
           ),
           strip.text = ggplot2::element_text(
             colour = "#ffffff",
-            family = "Proxima Nova",
+            family = "Proxima Nova Medium",
             face = "bold",
             margin = ggplot2::margin(3, 3, 3, 3, "points")
           ),
           plot.margin = ggplot2::margin(25, 25, 10, 25),
           text = ggplot2::element_text(family = "Proxima Nova",
-                                       size = base_size),
+                                      size = base_size),
           axis.text = ggplot2::element_text(family = "Proxima Nova",
                                             size = base_size),
           legend.text = ggplot2::element_text(family = "Proxima Nova",
@@ -118,25 +118,25 @@ theme_aagi <-
     if (isTRUE(minor_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.grid.minor =
-                         ggplot2::element_line(color = "#e4e4e4",
+                        ggplot2::element_line(color = "#e4e4e4",
                                       linewidth = minor_grid_size))
     }
 
     if (isTRUE(major_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.grid.major =
-                         ggplot2::element_line(color = "#bdbdbd",
+                        ggplot2::element_line(color = "#bdbdbd",
                                       linewidth = major_grid_size))
     }
 
     if (isTRUE(border)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.border =
-                         ggplot2::element_rect(
-                           fill = NA,
-                           color = "#353535",
-                           size = base_rect_size
-                         ))
+                        ggplot2::element_rect(
+                          fill = NA,
+                          color = "#353535",
+                          size = base_rect_size
+                        ))
     }
 
     return(theme_aagi)

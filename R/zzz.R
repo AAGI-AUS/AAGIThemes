@@ -7,7 +7,7 @@
                        bold = proxima_path$path)
 
     if (toupper(Sys.info()["sysname"]) == "WINDOWS") {
-      grDevices::windowsFonts("Proxima Nova Medium" =
+      grDevices::windowsFonts("Proxima Nova" =
                                 grDevices::windowsFont(family = "Proxima Nova"))
     }
   }

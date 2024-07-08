@@ -1,7 +1,7 @@
 #' AAGI Colours
 #'
-#' A `vector` containing three official \acronym{AAGI} colours as hexadecimal
-#'   codes for use in plotting.
+#' A `vector` containing 6 official \acronym{AAGI} colours as hexadecimal
+#'   codes.
 #'
 #' @format A `vector` with three (3) colours as hexadecimal values:
 #'   \describe{

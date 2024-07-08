@@ -1,5 +1,4 @@
 
-
 #' Insert AAGI's Logo Into Any Graphic File
 #'
 #' Insert the \acronym{AAGI} logo in any graphical image.  Particularly well-
@@ -90,8 +89,8 @@ add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
 
   # trim plot down, removes bottom border added earlier to make room for logo
   plot_out <- magick::image_crop(plot_out,
-                                 geometry = paste0("0x", plot_height + 300),
-                                 gravity = "north")
+                                geometry = paste0("0x", plot_height + 300),
+                                gravity = "north")
 
   magick::image_write(plot_out, file_out)
 }

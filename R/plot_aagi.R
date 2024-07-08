@@ -63,17 +63,17 @@
 #' @export
 #'
 plot_aagi <- function(x,
-                       y = NULL,
-                       main = "",
-                       sub = "",
-                       xlab = "",
-                       ylab = "",
-                       xlim = NULL,
-                       ylim = NULL,
-                       col = "#414042",
-                       pch = 16,
-                       type = "p",
-                       ...) {
+                      y = NULL,
+                      main = "",
+                      sub = "",
+                      xlab = "",
+                      ylab = "",
+                      xlim = NULL,
+                      ylim = NULL,
+                      col = "#414042",
+                      pch = 16,
+                      type = "p",
+                      ...) {
 
   if (!missing(xlab)) {
     xlab = ""
@@ -93,19 +93,19 @@ plot_aagi <- function(x,
   graphics::plot.new()
   showtext::showtext_begin()
   graphics::plot(NULL,
-                 xlab = xlab,
-                 ylab = ylab,
-                 xlim = xlimit,
-                 ylim = ylimit,
-                 pch = "",
-                 main = main,
-                 sub = sub)
+                xlab = xlab,
+                ylab = ylab,
+                xlim = xlimit,
+                ylim = ylimit,
+                pch = "",
+                main = main,
+                sub = sub)
   graphics::points(xy$x, xy$y, col = col, pch = pch, type = type)
   graphics::axis(col = "#414042",
-                 lty = "solid",
-                 side = 1)
+                lty = "solid",
+                side = 1)
   graphics::axis(col = "#414042",
-                 lty = "solid",
-                 side = 2)
+                lty = "solid",
+                side = 2)
   showtext::showtext_end()
 }
