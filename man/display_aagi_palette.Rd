@@ -70,6 +70,6 @@ It is given together with the palette names in the following table.}
 A quick and dirty way to show \acronym{AAGI} colours in a paelette plot.
 }
 \examples{
-display_aagi_pal(n = 5, name = "aagi_BuOr")
+display_aagi_palette(n = 5, name = "aagi_BuOr")
 
 }

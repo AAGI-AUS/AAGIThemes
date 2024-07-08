@@ -58,7 +58,7 @@
 #' @export
 #'
 #' @examples
-#' display_aagi_pal(n = 5, name = "aagi_BuOr")
+#' display_aagi_palette(n = 5, name = "aagi_BuOr")
 #'
 display_aagi_palette <- function(n = 3, name) {
   if (n < 3) {

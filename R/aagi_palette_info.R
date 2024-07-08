@@ -5,13 +5,13 @@
 #'   colour steps available.
 #'
 #' @examples
-#' aagi_pal_info()
+#' aagi_palette_info()
 #'
 #' @return a `data.frame` with two columns, \dQuote{category} and
 #'  \dQuote{max_colours} with palette names as row names.
 #'
 #' @export
-aagi_pal_info <- function() {
+aagi_palette_info <- function() {
   aagi_div_list  <- c("aagi_BuOr",
                       "aagi_BuYl",
                       "aagi_GnYl",

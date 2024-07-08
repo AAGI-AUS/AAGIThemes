@@ -36,9 +36,9 @@
 #'
 scale_colour_aagi <-
   function(make_aagi_palette = "colourful",
-           discrete = TRUE,
-           reverse = FALSE,
-           ...) {
+          discrete = TRUE,
+          reverse = FALSE,
+          ...) {
     selected_pal <- make_aagi_palette()[palette]
 
     if (discrete) {
@@ -62,9 +62,9 @@ scale_colour_aagi <-
 #'
 scale_fill_aagi <-
   function(make_aagi_palette = "colourful",
-           discrete = TRUE,
-           reverse = FALSE,
-           ...) {
+          discrete = TRUE,
+          reverse = FALSE,
+          ...) {
     selected_pal <- make_aagi_palette(palette = make_aagi_palette, reverse = reverse)
 
     if (discrete) {

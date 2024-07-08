@@ -36,34 +36,34 @@
 #' @export
 
 aagi_pal <- function(n,
-                     name = c(
-                       "aagi_BrYl",
-                       "aagi_BuOr",
-                       "aagi_BuYl",
-                       "aagi_GnYl",
-                       "aagi_RdBu",
-                       "aagi_RdTl",
-                       "aagi_RdYl",
-                       "aagi_TlGn",
-                       "aagi_TlYl",
-                       "aagi_TlGnYl",
-                       "aagi_blues",
-                       "aagi_bright_greens",
-                       "aagi_greens",
-                       "aagi_greys",
-                       "aagi_reds",
-                       "aagi_teals",
-                       "aagi_oranges",
-                       "aagi_yellows",
-                       "Okabe_and_Ito"
-                     ),
-                     direction = 1) {
+                    name = c(
+                      "aagi_BrYl",
+                      "aagi_BuOr",
+                      "aagi_BuYl",
+                      "aagi_GnYl",
+                      "aagi_RdBu",
+                      "aagi_RdTl",
+                      "aagi_RdYl",
+                      "aagi_TlGn",
+                      "aagi_TlYl",
+                      "aagi_TlGnYl",
+                      "aagi_blues",
+                      "aagi_bright_greens",
+                      "aagi_greens",
+                      "aagi_greys",
+                      "aagi_reds",
+                      "aagi_teals",
+                      "aagi_oranges",
+                      "aagi_yellows",
+                      "Okabe_and_Ito"
+                    ,
+                    direction = 1) {
   rlang::arg_match(name)
   if (n < 3 || n > 11) {
     cli::cli_abort(
       c(
         x = "You have entered an invalid value for {.arg n},
-         {.val n}; it should be > 3 and < 11, inclusive depending on the
+        {.val n}; it should be > 3 and < 11, inclusive depending on the
         palette, some do not have 11 values."
       )
     )
@@ -72,7 +72,7 @@ aagi_pal <- function(n,
     cli::cli_abort(
       c(
         x = "You have entered an invalid value for {.arg direction},
-         {.val direction}; it should be either -1 (reversed) or 1 (normal)."
+        {.val direction}; it should be either -1 (reversed) or 1 (normal)."
       )
     )
   }
