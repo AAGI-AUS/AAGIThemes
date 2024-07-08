@@ -93,7 +93,7 @@ theme_aagi <-
           ),
           strip.text = ggplot2::element_text(
             colour = "#ffffff",
-            family = "Proxima Nova Medium",
+            family = "Proxima Nova",
             face = "bold",
             margin = ggplot2::margin(3, 3, 3, 3, "points")
           ),

@@ -27,15 +27,15 @@
 #'
 #' @examples
 #' # sequential blues, max of 7
-#' aagi_pal(n = 7, name = "aagi_blues", direction = 1)
+#' aagi_palette(n = 7, name = "aagi_blues", direction = 1)
 #'
 #' # diverging red teal colours with 11 stops
-#' aagi_pal(n = 11, name = "aagi_RdTl", direction = 1)
+#' aagi_palette(n = 11, name = "aagi_RdTl", direction = 1)
 #'
 #' @return A vector of hexadecimal colour codes
 #' @export
 
-aagi_pal <- function(n,
+aagi_palette <- function(n,
                     name = c(
                       "aagi_BrYl",
                       "aagi_BuOr",

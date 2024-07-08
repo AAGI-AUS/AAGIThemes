@@ -27,19 +27,22 @@
 #'   scale_colour_manual(values = make_aagi_palette()(29))
 #'
 #' @export
-make_aagi_palette <- function(make_aagi_palette = c("colourful",
-                                                    "primary",
-                                                    "secondary",
-                                                    "sequential",
-                                                    "diverging"),
-                            reverse = FALSE,
-                            ...) {
-  rlang::arg_match(make_aagi_palette)
+make_aagi_palette <- function(palette = c(
+                                "colourful",
+                                "primary",
+                                "secondary",
+                                "sequential",
+                                "diverging"
+                              ),
+                              reverse = FALSE,
+                              ...) {
+  rlang::arg_match(palette)
 
-  pal <- make_aagi_palette[[make_aagi_palette]]
+  pal <- aagi_palette[[palette]]
 
-  if (reverse)
+  if (reverse) {
     pal <- rev(pal)
+  }
 
   grDevices::colorRampPalette(pal, ..., interpolate = "spline")
 }
