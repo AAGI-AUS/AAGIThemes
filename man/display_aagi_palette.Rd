@@ -67,7 +67,7 @@ It is given together with the palette names in the following table.}
 \code{NULL}. Called for its side-effects, a plot of the given palette.
 }
 \description{
-A quick and dirty way to show \acronym{AAGI} colours in a paelette plot.
+A quick and dirty way to show \acronym{AAGI} colours in a palette plot.
 }
 \examples{
 display_aagi_palette(n = 5, name = "aagi_BuOr")

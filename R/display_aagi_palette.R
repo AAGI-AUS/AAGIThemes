@@ -1,7 +1,7 @@
 
 #' AAGI Palettes
 #'
-#' A quick and dirty way to show \acronym{AAGI} colours in a paelette plot.
+#' A quick and dirty way to show \acronym{AAGI} colours in a palette plot.
 #'
 #' @param n `Numeric` Number of different colours in the palette, minimum 3,
 #'   maximum depends on the palette. Defaults to `3`

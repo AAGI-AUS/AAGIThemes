@@ -55,8 +55,7 @@ aagi_pal <- function(n,
                       "aagi_teals",
                       "aagi_oranges",
                       "aagi_yellows",
-                      "Okabe_and_Ito"
-                    ,
+                      "Okabe_and_Ito"),
                     direction = 1) {
   rlang::arg_match(name)
   if (n < 3 || n > 11) {
