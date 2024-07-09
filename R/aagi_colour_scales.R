@@ -35,11 +35,11 @@
 #' @export
 #'
 scale_colour_aagi <-
-  function(make_aagi_palette = "colourful",
+  function(aagi_palette = "colourful",
           discrete = TRUE,
           reverse = FALSE,
           ...) {
-    selected_pal <- make_aagi_palette()[palette]
+    selected_pal <- aagi_palette()[palette]
 
     if (discrete) {
       ggplot2::discrete_scale("colour",
@@ -61,11 +61,11 @@ scale_colour_aagi <-
 #'
 #'
 scale_fill_aagi <-
-  function(make_aagi_palette = "colourful",
+  function(aagi_palette = "colourful",
           discrete = TRUE,
           reverse = FALSE,
           ...) {
-    selected_pal <- make_aagi_palette(palette = make_aagi_palette, reverse = reverse)
+    selected_pal <- make_aagi_palette(palette = aagi_palette, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale(aesthetics = "fill", palette = selected_pal, ...)
