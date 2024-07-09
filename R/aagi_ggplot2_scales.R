@@ -31,15 +31,15 @@
 #'            [ggplot2::scale_colour_gradientn()], used respectively when
 #'            discrete is `TRUE`.
 #'
-#' @seealso [make_aagi_palettes()] [scale_fill_aagi()]
+#' @seealso [aagi_palettes()] [scale_fill_aagi()]
 #' @export
 #'
 scale_colour_aagi <-
-  function(make_aagi_palette = "colourful",
+  function(palette = "colourful",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    selected_pal <-make_aagi_palette()[palette]
+    selected_pal <- make_aagi_palette()[palette]
 
     if (discrete) {
       ggplot2::discrete_scale("colour",
@@ -56,16 +56,16 @@ scale_colour_aagi <-
 #'   \CRANpkg{ggplot2} objects.
 #'
 #' @inherit scale_colour_aagi params
-#' @seealso [make_aagi_palettes()] [scale_colour_aagi()]
+#' @seealso [aagi_palettes()] [scale_colour_aagi()]
 #' @export
 #'
 #'
 scale_fill_aagi <-
-  function(make_aagi_palette = "colourful",
+  function(palette = "colourful",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    selected_pal <- make_aagi_palette(palette = make_aagi_palette, reverse = reverse)
+    selected_pal <- make_aagi_palette(palette = palette, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale(aesthetics = "fill", palette = selected_pal, ...)

@@ -1,0 +1,53 @@
+---
+title: "XXXXXX-XXX Report"
+format:
+  docx:
+    reference-doc: AAGI_Word_Style_Template.docx
+    toc: true
+    colorlinks: true
+    fig-width: 7
+    fig-height: 7
+execute: 
+  echo: false
+knitr:
+  opts_chunk:
+    fig.path: figures/
+  uni: CU
+bibliography: references.bib
+date: "2024-07-05"
+---
+
+```{r}
+#| include: false
+if (params$uni == "CU") {
+  Project_Lead = "Curtin University -- Prof Mark Gibberd, Dr Julia Easton, Prof Adam Sparks"
+} else if (params$uni == "UA") {
+  Project_Lead = "University of Adelaide -- Dr Julian Taylor, Dr Olena Kravchuck"
+} else {
+  Project_Lead = "University of Queensland -- Prof Scott Chapman, Emeritus Prof Kaye Basford"
+}
+```
+
+---
+author: 
+  - "Author: Dr Bunsen Honeydew"
+  - "Project Leads: `r Project_Lead`" 
+---
+
+```{r}
+#| include: false
+#| set ggplot2 theme
+#'
+library(ggplot2)
+library(theme.aagi)
+
+set_theme(theme_aagi)
+```
+
+\newpage
+
+
+# References
+
+::: {#refs}
+:::

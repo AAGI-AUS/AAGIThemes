@@ -47,5 +47,5 @@ Uses AAGI colours to create colour scales suitable for use in
 \CRANpkg{ggplot2} objects.
 }
 \seealso{
-\code{\link[=make_aagi_palettes]{make_aagi_palettes()}} \code{\link[=scale_fill_aagi]{scale_fill_aagi()}}
+\code{\link[=aagi_palettes]{aagi_palettes()}} \code{\link[=scale_fill_aagi]{scale_fill_aagi()}}
 }

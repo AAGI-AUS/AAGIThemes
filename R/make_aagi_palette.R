@@ -1,4 +1,5 @@
 
+
 #' Interpolate an AAGI Colour Palette
 #'
 #' This function takes a \acronym{AAGI} colour palette and generates more
@@ -26,16 +27,16 @@
 #'
 #' @export
 #'
-make_aagi_palette <- function(aagi_palette = c("colourful",
-                                               "primary",
-                                               "secondary",
-                                               "sequential",
-                                               "diverging"),
+make_aagi_palette <- function(palette = c("colourful",
+                                          "primary",
+                                          "secondary",
+                                          "sequential",
+                                          "diverging"),
                               reverse = FALSE,
                               ...) {
-  rlang::arg_match(aagi_palette)
+  rlang::arg_match(palette)
 
-  pal <- aagi_palettes()[[aagi_palette]]
+  pal <- aagi_palettes()[[palette]]
 
   if (reverse)
     pal <- rev(pal)

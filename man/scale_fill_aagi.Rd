@@ -5,32 +5,13 @@
 \title{Construct AAGI Colour Fill Scales for ggplot2}
 \usage{
 scale_fill_aagi(
-  make_aagi_palette = "colourful",
+  aagi_palette = "colourful",
   discrete = TRUE,
   reverse = FALSE,
   ...
 )
 }
 \arguments{
-\item{make_aagi_palette}{\code{Character} name of a \acronym{AAGI} palette in
-\code{\link[=make_aagi_palettes]{make_aagi_palettes()}}.  Defaults to \code{colourful}.
-\subsection{Available Palettes}{
-
-\describe{
-\item{primary}{The three primary \acronym{AAGI} colours}
-\item{secondary}{The three secondary support colours in the \acronym{AAGI}
-colour palette}
-\item{full}{The full set of all six colours in the \acronym{AAGI}
-palette}
-\item{colourful}{All colours in the palette minus \dQuote{AAGI Black}}
-\item{bright}{Four \dQuote{bright} colours including,
-\dQuote{AAGI Bright Green}, \dQuote{AAGI Blue} and \dQuote{AAGI Yellow}}
-\item{bluegreeen}{Three blue, green or bluegreen \acronym{AAGI} colours
-including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
-\dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
-}
-}}
-
 \item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
 discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.}, \code{numeric}
 (\code{FALSE}).}
@@ -47,5 +28,5 @@ Uses AAGI colours to create fill colour scales suitable for use in
 \CRANpkg{ggplot2} objects.
 }
 \seealso{
-\code{\link[=make_aagi_palettes]{make_aagi_palettes()}} \code{\link[=scale_colour_aagi]{scale_colour_aagi()}}
+\code{\link[=aagi_palettes]{aagi_palettes()}} \code{\link[=scale_colour_aagi]{scale_colour_aagi()}}
 }

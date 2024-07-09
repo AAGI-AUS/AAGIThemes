@@ -5,20 +5,20 @@
 \title{Interpolate an AAGI Colour Palette}
 \usage{
 make_aagi_palette(
-  aagi_palette = c("colourful", "primary", "secondary", "sequential", "diverging"),
+  palette = c("colourful", "primary", "secondary", "sequential", "diverging"),
   reverse = FALSE,
   ...
 )
 }
 \arguments{
+\item{palette}{(\code{character}; default = \code{colourful}) given name of an
+\acronym{AAGI} palette: \code{\link[=aagi_palettes]{aagi_palettes()}}}
+
 \item{reverse}{(\code{Boolean}; default = \code{FALSE}) indicating if palette should
 be reversed.}
 
 \item{...}{Additional arguments to pass to \code{\link[grDevices:colorRamp]{grDevices::colorRampPalette()}},
 see details here \code{\link[grDevices:colorRamp]{grDevices::colorRamp()}}.}
-
-\item{palette}{(\code{character}; default = \code{colourful}) given name of an
-\acronym{AAGI} palette: \code{\link[=aagi_palettes]{aagi_palettes()}}}
 }
 \value{
 A function that takes a single value and makes that many colours.
