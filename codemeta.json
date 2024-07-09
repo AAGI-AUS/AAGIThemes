@@ -346,6 +346,8 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "4818.549KB",
+  "applicationCategory": "Tools",
+  "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
+  "fileSize": "4865.73KB",
   "releaseNotes": "https://github.com/CCDM-AAGI/theme.aagi/blob/master/NEWS.md"
 }

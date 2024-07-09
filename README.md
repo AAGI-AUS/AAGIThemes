@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 # {theme.aagi} Apply AAGI Brand Guidelines to R Graphic Output and Create AAGI Themed Documents <img align="right" src="man/figures/logo.png">
@@ -41,6 +43,31 @@ what the package offers using:
 ``` r
 vignette("Cookbook", package = "theme.aagi")
 ```
+
+### Create Tabular Outputs
+
+{theme.aagi} provides a {flextable} them suited for the AAGI style that
+works in HTML and Word document outputs. You can use it like so.
+
+``` r
+library(theme.aagi)
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+library(flextable)
+ft <- flextable(head(airquality) |>
+ mutate(`Month Name` = "May"))
+ft <- theme_ft_aagi(ft)
+ft
+```
+
+<img src="man/figures/README-tabular-1.png" width="100%" />
 
 ### Plots and graphs
 
