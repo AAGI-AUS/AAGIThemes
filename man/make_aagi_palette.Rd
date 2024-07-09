@@ -34,7 +34,7 @@ generating many colours.
 library(ggplot2)
 ggplot(mtcars, aes(x = mpg, y = hp, colour = as.character(wt))) +
   geom_point() +
-  scale_colour_manual(values = make_aagi_palette())
+  scale_colour_manual(values = make_aagi_palette("colourful"))
 
 }
 \seealso{

@@ -3,8 +3,8 @@
 #' Uses AAGI colours to create colour scales suitable for use in
 #'   \CRANpkg{ggplot2} objects.
 #'
-#' @param make_aagi_palette `Character` name of a \acronym{AAGI} palette in
-#'   [make_aagi_palettes()].  Defaults to `colourful`.
+#' @param palette `Character` name of a \acronym{AAGI} palette from
+#'  [aagi_palettes()].  Defaults to `colourful`.
 #'
 #' ## Available Palettes
 #'
@@ -21,7 +21,13 @@
 #'      including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
 #'      \dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
 #'  }
-
+#' @param palette `Character` string, one of:
+#'  * "primary",
+#'  * "secondary",
+#'  * "colourful" (default),
+#'  * "full",
+#'  * "bright", or
+#'  * "bluegreen".
 #' @param discrete `Boolean` argument indicating whether colour aesthetic is
 #'  discrete, _e.g._, a `factor` (`TRUE`) or continuous, _e.g._, `numeric`
 #'  (`FALSE`).

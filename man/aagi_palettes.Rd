@@ -28,8 +28,8 @@ including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
 }
 \examples{
 # View all five palettes' names and hexadecimal colour codes
- make_aagi_palette()
- make_aagi_palette()$colourful
- make_aagi_palette()$bluegreen
+ aagi_palettes()
+ aagi_palettes()$colourful
+ aagi_palettes()$bluegreen
 
 }

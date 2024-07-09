@@ -7,6 +7,16 @@
 scale_fill_aagi(palette = "colourful", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
+\item{palette}{\code{Character} string, one of:
+\itemize{
+\item "primary",
+\item "secondary",
+\item "colourful" (default),
+\item "full",
+\item "bright", or
+\item "bluegreen".
+}}
+
 \item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
 discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.}, \code{numeric}
 (\code{FALSE}).}
