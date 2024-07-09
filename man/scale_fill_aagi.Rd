@@ -4,12 +4,7 @@
 \alias{scale_fill_aagi}
 \title{Construct AAGI Colour Fill Scales for ggplot2}
 \usage{
-scale_fill_aagi(
-  aagi_palette = "colourful",
-  discrete = TRUE,
-  reverse = FALSE,
-  ...
-)
+scale_fill_aagi(palette = "colourful", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is

@@ -4,14 +4,20 @@
 \alias{scale_colour_aagi}
 \title{Construct AAGI Colour Scales for ggplot2}
 \usage{
-scale_colour_aagi(
-  make_aagi_palette = "colourful",
-  discrete = TRUE,
-  reverse = FALSE,
-  ...
-)
+scale_colour_aagi(palette = "colourful", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
+\item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
+discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.}, \code{numeric}
+(\code{FALSE}).}
+
+\item{reverse}{\code{Boolean} argument indicating whether the palette should be
+reversed, \emph{i.e.}, light to dark.  Defaults to \code{FALSE}.}
+
+\item{...}{Additional arguments passed to \code{discrete_scale()} or
+\code{\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn()}}, used respectively when
+discrete is \code{TRUE}.}
+
 \item{make_aagi_palette}{\code{Character} name of a \acronym{AAGI} palette in
 \code{\link[=make_aagi_palettes]{make_aagi_palettes()}}.  Defaults to \code{colourful}.
 \subsection{Available Palettes}{
@@ -30,17 +36,6 @@ including \dQuote{AAGI Bright Green}, \dQuote{AAGI Turquoise},
 \dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
 }
 }}
-
-\item{discrete}{\code{Boolean} argument indicating whether colour aesthetic is
-discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.}, \code{numeric}
-(\code{FALSE}).}
-
-\item{reverse}{\code{Boolean} argument indicating whether the palette should be
-reversed, \emph{i.e.}, light to dark.  Defaults to \code{FALSE}.}
-
-\item{...}{Additional arguments passed to \code{discrete_scale()} or
-\code{\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn()}}, used respectively when
-discrete is \code{TRUE}.}
 }
 \description{
 Uses AAGI colours to create colour scales suitable for use in
