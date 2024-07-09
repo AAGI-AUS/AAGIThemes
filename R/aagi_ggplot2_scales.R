@@ -45,14 +45,14 @@ scale_colour_aagi <-
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    selected_pal <- make_aagi_palette()[palette]
+    selected_pal <- interpolate_aagi_palette()[palette]
 
     if (discrete) {
       ggplot2::discrete_scale("colour",
                               sprintf("aagi%s", selected_pal),
                               palette = selected_pal, ...)
     } else {
-      ggplot2::scale_colour_gradientn(colours = make_aagi_palette(n = 256), ...)
+      ggplot2::scale_colour_gradientn(colours = interpolate_aagi_palette(n = 256), ...)
     }
   }
 
@@ -71,11 +71,11 @@ scale_fill_aagi <-
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    selected_pal <- make_aagi_palette(palette = palette, reverse = reverse)
+    selected_pal <- interpolate_aagi_palette(palette = palette, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale(aesthetics = "fill", palette = selected_pal, ...)
     } else {
-      ggplot2::scale_fill_gradientn(colours = make_aagi_palette(n = 256), ...)
+      ggplot2::scale_fill_gradientn(colours = interpolate_aagi_palette(n = 256), ...)
     }
   }
