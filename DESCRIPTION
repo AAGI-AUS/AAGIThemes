@@ -26,6 +26,7 @@ BugReports: https://github.com/CCDM-AAGI/theme.aagi/issues
 Depends: 
     R (>= 4.0.0)
 Imports:
+    flextable,
     ggplot2 (>= 3.3.5),
     grDevices,
     grid,
@@ -56,4 +57,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
