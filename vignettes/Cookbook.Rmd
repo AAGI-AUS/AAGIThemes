@@ -286,6 +286,22 @@ ggplot(data = stacked_df,
 
 ## Advanced Uses
 
+### Setting the AAGI Table Theme Globally
+
+You can set your R session to use `theme_ft_aagi()` for {flextable} and {ggplot2} objects in your RMarkdown or Quarto documents to apply this theme to all tables using the following code chunk in your document at the top when setting up the options.
+
+```{r eval=FALSE}
+library(theme.aagi)
+
+# set {ggplot2} theme
+theme_set(theme_aagi())
+
+# set {flextable} theme
+set_flextable_defaults(
+  theme_fun = theme_ft_aagi
+)
+```
+
 ### Using {ggplot2} Faceting
 
 As we'll be using this figure for the next example, we'll generate an object in R called `p` and save it to R's `tempdir()` for use in the next example as well.
