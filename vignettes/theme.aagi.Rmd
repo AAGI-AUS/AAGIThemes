@@ -8,6 +8,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
   %\VignetteDepends{dplyr}
+  %\VignetteDepends{flextable}
   %\VignetteDepends{ggplot2}
   %\VignetteDepends{magick}
   %\VignetteDepends{gapminder}
@@ -25,9 +26,21 @@ knitr::opts_chunk$set(
 )
 ```
 
-## How to Create AAGI Style Graphics
+## How to Create AAGI Style Graphics and Tables
 
-The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to AAGI style guidelines.
+The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using R's {graphics}, {ggplot2} and {flextable} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics and tables that adhere to AAGI style guidelines.
+
+## Creating Tables
+
+Creating AAGI themed tables requires using {flextable}.
+Using the `airquality` data set, and adding a text column to illustrate how text columns are handled, here's how to apply an AAGI theme to a table.
+
+```{r flextable}
+ft <- flextable(head(airquality) |> 
+                  mutate(`Month Name` = "May"))
+ft <- theme_ft_aagi(ft)
+ft
+```
 
 ### On {ggplot2} Plots and Graphs
 
