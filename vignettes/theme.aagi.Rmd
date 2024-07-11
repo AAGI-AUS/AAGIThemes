@@ -56,6 +56,7 @@ Creating AAGI themed tables requires using {flextable}.
 Using the `airquality` data set, and adding a text column to illustrate how text columns are handled, here's how to apply an AAGI theme to a table.
 
 ```{r flextable}
+library("flextable")
 ft <- flextable(head(airquality) |> 
                   mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
