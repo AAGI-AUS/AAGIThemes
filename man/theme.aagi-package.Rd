@@ -8,12 +8,13 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to both base graphics as well as 'ggplot2' figures. Support for creating MS Word and PowerPoint files using Quarto and RMarkdown templates is also provided.
+Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to both base graphics as well as 'ggplot2' figures and 'flextable' objects.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/AAGI-Org-AU-Public/theme.aagi}
+  \item \url{https://aagi-org-au-public.github.io/theme.aagi/}
   \item Report bugs at \url{https://github.com/AAGI-Org-AU-Public/theme.aagi/issues}
 }
 

@@ -17,9 +17,7 @@ Authors@R: c(
   )
 Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
     colours and font guidelines are applied as useful and reasonable to
-    both base graphics as well as 'ggplot2' figures.  Support for creating
-    MS Word and PowerPoint files using Quarto and RMarkdown templates is
-    also provided.
+    both base graphics as well as 'ggplot2' figures and 'flextable' objects.
 License: GPL (>= 3)
 URL: https://github.com/AAGI-Org-AU-Public/theme.aagi, https://aagi-org-au-public.github.io/theme.aagi/
 BugReports: https://github.com/AAGI-Org-AU-Public/theme.aagi/issues

@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "theme.aagi",
-  "description": "Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to both base graphics as well as 'ggplot2' figures. Support for creating MS Word and PowerPoint files using Quarto and RMarkdown templates is also provided.",
+  "description": "Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to both base graphics as well as 'ggplot2' figures and 'flextable' objects.",
   "name": "theme.aagi: Apply AAGI Brand Guidelines to Graphic Output and Create AAGI\n    Themed Documents",
   "relatedLink": "https://aagi-org-au-public.github.io/theme.aagi/",
   "codeRepository": "https://github.com/AAGI-Org-AU-Public/theme.aagi",
@@ -373,7 +373,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
-  "fileSize": "4867.215KB",
+  "fileSize": "4710.709KB",
   "releaseNotes": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/main/README.md",
   "developmentStatus": "https://www.repostatus.org/#active"
