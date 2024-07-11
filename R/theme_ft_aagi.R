@@ -43,7 +43,7 @@ theme_ft_aagi <- function(x) {
     ))
   }
 
-  x <- flextable::font(x, part = "all", fontname = "Proxima Nova")
+  x <- flextable::font(x, part = "all", fontname = set_aagi_font())
 
   # header
   x <- flextable::bold(x = x, bold = TRUE, part = "header")
