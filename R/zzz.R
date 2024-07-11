@@ -1,8 +1,8 @@
 # nocov start
 .onLoad <-
   function(libname, pkgname) {
-    if ("Proxima Nova" %in% systemfonts::system_fonts()[, "name"]) {
-      proxima_path <- systemfonts::match_font("Proxima Nova")
+    if (any(agrepl("Proxima Nova", systemfonts::system_fonts()[, "name"]))) {
+      proxima_path <- systemfonts::match_fonts("Proxima Nova")
       sysfonts::font_add("Proxima Nova",
         regular = proxima_path$path
       )
@@ -13,10 +13,8 @@
             grDevices::windowsFont(family = "Proxima Nova")
         )
       }
-      return(aagi_font <- "Proxima Nova")
-
-    } else if ("Arial" %in% systemfonts::system_fonts()[, "name"]) {
-      proxima_path <- systemfonts::match_font("Arial")
+    } else if (any(agrepl("Arial", systemfonts::system_fonts()[, "name"]))) {
+      proxima_path <- systemfonts::match_fonts("Arial")
       sysfonts::font_add("Arial",
         regular = arial$path
       )
@@ -27,8 +25,6 @@
             grDevices::windowsFont(family = "Arial")
         )
       }
-      return(aagi_font <- "Arial")
-
     } else {
       stop("You need to install Proxima Nova or Arial TTF fonts to use {theme.aagi}.")
     }
