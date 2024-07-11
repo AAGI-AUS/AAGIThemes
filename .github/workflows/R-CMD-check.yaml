@@ -31,6 +31,12 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
+      - if: runner.os == 'Linux'
+        run: |
+          sudo apt update
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+          sudo apt-get install ttf-mscorefonts-installer
+
       - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-pandoc@v2
