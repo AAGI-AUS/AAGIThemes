@@ -20,12 +20,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Tinula Kariyawasam \email{tinula.kariyawasam@dpird.wa.gov.au}
+\strong{Maintainer}: Adam H. Sparks \email{adam.sparks@dpird.wa.gov.au} (\href{https://orcid.org/0000-0002-0061-8359}{ORCID})
 
 Authors:
 \itemize{
-  \item Adam H. Sparks \email{adam.sparks@dpird.wa.gov.au} (\href{https://orcid.org/0000-0002-0061-8359}{ORCID}) [conceptor]
   \item Kenyon Ng \email{kenyon.ng@dpird.wa.gov.au} (\href{https://orcid.org/0000-0002-6315-9831}{ORCID})
+  \item Tinula Kariyawasam \email{tinula.kariyawasam@dpird.wa.gov.au}
   \item Matt Cowgill \email{matthew.cowgill@grattaninstitute.edu.au} (Wrote major portions of package for saving charts
  for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'
  licence.)

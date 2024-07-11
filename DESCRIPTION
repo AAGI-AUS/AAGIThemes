@@ -3,12 +3,12 @@ Title: Apply AAGI Brand Guidelines to Graphic Output and Create AAGI
     Themed Documents
 Version: 0.0.1
 Authors@R: c(
-    person("Adam H.", "Sparks", , "adam.sparks@dpird.wa.gov.au", role = c("aut", "ccp"),
+    person("Adam H.", "Sparks", , "adam.sparks@dpird.wa.gov.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0061-8359")),
     person("Kenyon", "Ng", , "kenyon.ng@dpird.wa.gov.au", role = "aut",
            comment = c(ORCID = "0000-0002-6315-9831")),
     person("Jimmy", "Ng", , "jimmy.ng@dpird.wa.gov.au", role = "ctb"),
-    person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = c("cre", "aut")),
+    person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = c("aut")),
     person("Matt", "Cowgill", , "matthew.cowgill@grattaninstitute.edu.au", role = "aut",
            comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'\n                    licence."),
     person("Will", "Mackey", , "william.mackey@grattaninstitute.edu.au", role = "aut",
