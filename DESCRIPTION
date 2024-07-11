@@ -21,8 +21,8 @@ Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
     MS Word and PowerPoint files using Quarto and RMarkdown templates is
     also provided.
 License: GPL (>= 3)
-URL: https://github.com/CCDM-AAGI/theme.aagi
-BugReports: https://github.com/CCDM-AAGI/theme.aagi/issues
+URL: https://github.com/AAGI-Org-AU-Public/theme.aagi
+BugReports: https://github.com/AAGI-Org-AU-Public/theme.aagi/issues
 Depends: 
     R (>= 4.0.0)
 Imports:

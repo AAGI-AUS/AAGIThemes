@@ -13,8 +13,8 @@ Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font gu
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/CCDM-AAGI/theme.aagi}
-  \item Report bugs at \url{https://github.com/CCDM-AAGI/theme.aagi/issues}
+  \item \url{https://github.com/AAGI-Org-AU-Public/theme.aagi}
+  \item Report bugs at \url{https://github.com/AAGI-Org-AU-Public/theme.aagi/issues}
 }
 
 }
