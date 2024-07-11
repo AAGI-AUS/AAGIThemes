@@ -66,9 +66,10 @@
   "maintainer": [
     {
       "@type": "Person",
-      "givenName": "Tinula",
-      "familyName": "Kariyawasam",
-      "email": "tinula.kariyawasam@dpird.wa.gov.au"
+      "givenName": "Adam H.",
+      "familyName": "Sparks",
+      "email": "adam.sparks@dpird.wa.gov.au",
+      "@id": "https://orcid.org/0000-0002-0061-8359"
     }
   ],
   "softwareSuggestions": [
@@ -373,7 +374,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
-  "fileSize": "4710.709KB",
+  "fileSize": "4710.69KB",
   "releaseNotes": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/main/README.md",
   "developmentStatus": "https://www.repostatus.org/#active"
