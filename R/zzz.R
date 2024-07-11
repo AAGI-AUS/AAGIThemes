@@ -15,7 +15,7 @@
     } else if (any(agrepl("Arial", systemfonts::system_fonts()[, "name"]))) {
       arial_path <- systemfonts::match_fonts("Arial")
       sysfonts::font_add("Arial",
-        regular = arial$path
+        regular = arial_path$path
       )
 
       if (toupper(Sys.info()["sysname"]) == "WINDOWS") {
