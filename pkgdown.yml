@@ -2,8 +2,8 @@ pandoc: 3.1.11
 pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
-  Cookbook: Cookbook.html
-last_built: 2024-07-11T12:10Z
+  theme.aagi: theme.aagi.html
+last_built: 2024-07-11T12:16Z
 urls:
   reference: https://aagi-org-au-public.github.io/theme.aagi/reference
   article: https://aagi-org-au-public.github.io/theme.aagi/articles
