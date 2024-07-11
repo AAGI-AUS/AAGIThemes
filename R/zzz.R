@@ -9,29 +9,23 @@
 
       if (toupper(Sys.info()["sysname"]) == "WINDOWS") {
         grDevices::windowsFonts(
-          "Proxima Nova" =
-            grDevices::windowsFont(family = "Proxima Nova")
+          "Proxima Nova" = grDevices::windowsFont(family = "Proxima Nova")
         )
       }
     } else if (any(agrepl("Arial", systemfonts::system_fonts()[, "name"]))) {
-      proxima_path <- systemfonts::match_fonts("Arial")
+      arial_path <- systemfonts::match_fonts("Arial")
       sysfonts::font_add("Arial",
         regular = arial$path
       )
 
       if (toupper(Sys.info()["sysname"]) == "WINDOWS") {
         grDevices::windowsFonts(
-          "Arial" =
-            grDevices::windowsFont(family = "Arial")
+          "Arial" = grDevices::windowsFont(family = "Arial")
         )
       }
     } else {
-      cli::cli_abort(
-        c(x = "You need to install {cli::symbol$dquote_left}Proxima
-        Nova{cli::symbol$dquote_right} or 
-        {cli::symbol$dquote_left}Arial{cli::symbol$dquote_right} TTF fonts to
-        use {.pkg theme.aagi}.")
-      )
+      cli::cli_alert_warning(
+        "You need to install {cli::symbol$dquote_left}Proxima Nova{cli::symbol$dquote_right} or {cli::symbol$dquote_left}Arial{cli::symbol$dquote_right} TTF fonts to use {.pkg theme.aagi} properly.")
     }
   }
 # nocov end
