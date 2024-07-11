@@ -57,6 +57,8 @@ Using the `airquality` data set, and adding a text column to illustrate how text
 
 ```{r flextable}
 library("flextable")
+library("dplyr")
+
 ft <- flextable(head(airquality) |> 
                   mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
