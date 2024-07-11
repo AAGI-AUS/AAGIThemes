@@ -34,10 +34,10 @@
 #' @param reverse `Boolean` argument indicating whether the palette should be
 #'   reversed, _i.e._, light to dark.  Defaults to `FALSE`.
 #' @param ... Additional arguments passed to `discrete_scale()` or
-#'            [ggplot2::scale_colour_gradientn()], used respectively when
+#'            [ggplot2::scale_colour_gradientn], used respectively when
 #'            discrete is `TRUE`.
 #'
-#' @seealso [aagi_palettes()] [scale_fill_aagi()]
+#' @seealso [aagi_palettes] [scale_fill_aagi]
 #' @export
 #'
 scale_colour_aagi <-

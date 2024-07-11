@@ -13,9 +13,9 @@ theme_ft_aagi(x)
 a formatted \CRANpkg{flextable} object
 }
 \description{
-Apply theme AAGI to a \CRANpkg{flextable}.  An AAGI formatted table body is
-grey with a teal header and white header font.  Header text is bold,
-text columns are left aligned, other columns are right aligned.
+Apply theme AAGI to a \CRANpkg{flextable}.  An \acronym{AAGI} formatted table
+body is grey with a teal header and white header font.  Header text is
+bold, text columns are left aligned, other columns are right aligned.
 }
 \section{Behaviour}{
 Theme functions are not like \CRANpkg{ggplot2} themes. They are applied to
@@ -26,18 +26,19 @@ only to existing elements when the function is called.
 That is why theme functions should be applied after all elements of the table
 have been added (mainly additional header or footer rows).
 
-If you want to automatically apply a theme function to each flextable,
-you can use the \code{theme_fun} argument of
-\code{\link[flextable:set_flextable_defaults]{flextable::set_flextable_defaults()}}; be aware that this theme function is
-applied as the last instruction when calling \code{flextable()} - so if you add
-headers or footers to the array, they will not be formatted with the theme.
+If you want to automatically apply a theme function to each
+\CRANpkg{flextable} object, you can use the \code{theme_fun} argument of
+\link[flextable:set_flextable_defaults]{flextable::set_flextable_defaults}; be aware that this theme function is
+applied as the last instruction when calling \link[flextable:flextable]{flextable::flextable} - so if
+you add headers or footers to the array, they will not be formatted with
+the theme.
 
 You can also use the \code{post_process_html} argument of
-\code{\link[flextable:set_flextable_defaults]{flextable::set_flextable_defaults()}} (or \code{post_process_pdf},
+\link[flextable:set_flextable_defaults]{flextable::set_flextable_defaults} (or \code{post_process_pdf},
 \code{post_process_docx}, \code{post_process_pptx}) to specify a theme to be applied
-systematically before the \code{flextable()} is printed; in this case, don't
-forget to take care that the theme doesn't override any formatting done
-before the print statement.
+systematically before the \link[flextable:flextable]{flextable::flextable} is printed; in this case,
+don't forget to take care that the theme doesn't override any formatting
+done before the print statement.
 }
 
 \examples{

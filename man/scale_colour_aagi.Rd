@@ -25,7 +25,7 @@ discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.},
 reversed, \emph{i.e.}, light to dark.  Defaults to \code{FALSE}.}
 
 \item{...}{Additional arguments passed to \code{discrete_scale()} or
-\code{\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn()}}, used respectively when
+\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn}, used respectively when
 discrete is \code{TRUE}.}
 }
 \description{
@@ -33,5 +33,5 @@ Uses AAGI colours to create colour scales suitable for use in
 \CRANpkg{ggplot2} objects.
 }
 \seealso{
-\code{\link[=aagi_palettes]{aagi_palettes()}} \code{\link[=scale_fill_aagi]{scale_fill_aagi()}}
+\link{aagi_palettes} \link{scale_fill_aagi}
 }

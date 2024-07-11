@@ -1,9 +1,9 @@
 
 #' Apply AAGI Theme to a flextable Object
 #'
-#' Apply theme AAGI to a \CRANpkg{flextable}.  An AAGI formatted table body is
-#'   grey with a teal header and white header font.  Header text is bold,
-#'   text columns are left aligned, other columns are right aligned.
+#' Apply theme AAGI to a \CRANpkg{flextable}.  An \acronym{AAGI} formatted table
+#'   body is grey with a teal header and white header font.  Header text is
+#'   bold, text columns are left aligned, other columns are right aligned.
 #'
 #' # Behaviour
 #'
@@ -15,18 +15,19 @@
 #' That is why theme functions should be applied after all elements of the table
 #'   have been added (mainly additional header or footer rows).
 #'
-#' If you want to automatically apply a theme function to each flextable,
-#'   you can use the `theme_fun` argument of
-#'  [flextable::set_flextable_defaults()]; be aware that this theme function is
-#'  applied as the last instruction when calling `flextable()` - so if you add
-#'  headers or footers to the array, they will not be formatted with the theme.
+#' If you want to automatically apply a theme function to each
+#'   \CRANpkg{flextable} object, you can use the `theme_fun` argument of
+#'   [flextable::set_flextable_defaults]; be aware that this theme function is
+#'   applied as the last instruction when calling [flextable::flextable] - so if
+#'   you add headers or footers to the array, they will not be formatted with
+#'   the theme.
 #'
 #' You can also use the `post_process_html` argument of
-#'   [flextable::set_flextable_defaults()] (or `post_process_pdf`,
+#'   [flextable::set_flextable_defaults] (or `post_process_pdf`,
 #'   `post_process_docx`, `post_process_pptx`) to specify a theme to be applied
-#'   systematically before the `flextable()` is printed; in this case, don't
-#'   forget to take care that the theme doesn't override any formatting done
-#'   before the print statement.
+#'   systematically before the [flextable::flextable] is printed; in this case,
+#'   don't forget to take care that the theme doesn't override any formatting
+#'   done before the print statement.
 #'
 #' @param x a \CRANpkg{flextable} object
 #' @return a formatted \CRANpkg{flextable} object

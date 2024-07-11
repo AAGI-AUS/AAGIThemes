@@ -29,7 +29,7 @@ sides, \emph{i.e.}, x-axis, y-axis, top and right sides all will have a black
 border not just x-axis and y-axis.  Defaults to \code{FALSE} with only the
 x-axis and y-axis being outlined in dark grey.}
 
-\item{...}{Other arguments as passed along to \code{ggplot2::theme()}.}
+\item{...}{Other arguments as passed along to \link[ggplot2:theme]{ggplot2::theme}.}
 }
 \description{
 This theme follows a standard \acronym{AAGI} style including typography
