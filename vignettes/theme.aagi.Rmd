@@ -30,6 +30,26 @@ knitr::opts_chunk$set(
 
 The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using R's {graphics}, {ggplot2} and {flextable} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics and tables that adhere to AAGI style guidelines.
 
+## Getting started
+
+### Install the {theme.aagi} package
+
+{theme.aagi} is not on CRAN, so you will have to install it directly from our GitHub repository using {remotes}.
+
+If you do not have the {remotes} package installed, you will have to run the first line in the code below as well. 
+
+``` {r eval = FALSE}
+if (!require("remotes"))
+  remotes::install_github("CCDM_CBADA/theme.aagi",
+                          build_vignettes = TRUE)
+
+)
+```
+
+For more info on {theme.aagi} check out the [package's GitHub repository](https://github.com/CCDM_CBADA/theme.aagi), but most of the details about how to use the package and its functions are detailed below. 
+
+When you have downloaded the package and successfully installed it you are good to go and create plots and tables.
+
 ## Creating Tables
 
 Creating AAGI themed tables requires using {flextable}.
@@ -53,26 +73,6 @@ Several themes and colour palettes already exist for {ggplot2} to Create the vis
 
 When using {theme.aagi} for graphs, the legend will be placed at the top by default and the main and sub-titles will be left aligned and captions will be right aligned.
 These choices can all be overridden by using `ggplot2::theme()` arguments as you wish.
-
-## Getting started
-
-### Install the {theme.aagi} package
-
-{theme.aagi} is not on CRAN, so you will have to install it directly from our GitHub repository using {remotes}.
-
-If you do not have the {remotes} package installed, you will have to run the first line in the code below as well. 
-
-``` {r eval = FALSE}
-if (!require("remotes"))
-  remotes::install_github("CCDM_CBADA/theme.aagi",
-                          build_vignettes = TRUE)
-
-)
-```
-
-For more info on {theme.aagi} check out the [package's GitHub repository](https://github.com/CCDM_CBADA/theme.aagi), but most of the details about how to use the package and its functions are detailed below. 
-
-When you have downloaded the package and successfully installed it you are good to go and create charts.
 
 ### Load the Libraries We'll Need
 
