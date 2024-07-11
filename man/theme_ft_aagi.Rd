@@ -42,6 +42,7 @@ done before the print statement.
 }
 
 \examples{
+library(flextable)
 library(dplyr)
 ft <- flextable(head(airquality) |> mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
