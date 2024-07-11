@@ -27,16 +27,17 @@ That is why theme functions should be applied after all elements of the table
 have been added (mainly additional header or footer rows).
 
 If you want to automatically apply a theme function to each flextable,
-you can use the \code{theme_fun} argument of \code{\link[=set_flextable_defaults]{set_flextable_defaults()}}; be
-aware that this theme function is applied as the last instruction when
-calling \code{flextable()} - so if you add headers or footers to the array,
-they will not be formatted with the theme.
+you can use the \code{theme_fun} argument of
+\code{\link[flextable:set_flextable_defaults]{flextable::set_flextable_defaults()}}; be aware that this theme function is
+applied as the last instruction when calling \code{flextable()} - so if you add
+headers or footers to the array, they will not be formatted with the theme.
 
 You can also use the \code{post_process_html} argument of
-\code{\link[=set_flextable_defaults]{set_flextable_defaults()}} (or \code{post_process_pdf}, \code{post_process_docx},
-\code{post_process_pptx}) to specify a theme to be applied systematically before
-the \code{flextable()} is printed; in this case, don't forget to take care that
-the theme doesn't override any formatting done before the print statement.
+\code{\link[flextable:set_flextable_defaults]{flextable::set_flextable_defaults()}} (or \code{post_process_pdf},
+\code{post_process_docx}, \code{post_process_pptx}) to specify a theme to be applied
+systematically before the \code{flextable()} is printed; in this case, don't
+forget to take care that the theme doesn't override any formatting done
+before the print statement.
 }
 
 \examples{
