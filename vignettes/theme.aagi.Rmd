@@ -1,10 +1,10 @@
 ---
-title: "Cookbook"
+title: "theme.aagi"
 author: "Adam H. Sparks"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Cookbook}
+  %\VignetteIndexEntry{theme.aagi}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
   %\VignetteDepends{dplyr}
@@ -53,6 +53,7 @@ If you do not have the {remotes} package installed, you will have to run the fir
 if (!require("remotes"))
   remotes::install_github("CCDM_CBADA/theme.aagi",
                           build_vignettes = TRUE)
+
 )
 ```
 
@@ -68,7 +69,6 @@ So that you do not have to load them one by one, you can use the the following c
 ```{r libraries, eval=TRUE, message=FALSE}
 x <-
   c("dplyr",
-    "flextable",
     "gapminder",
     "ggplot2",
     "scales",
@@ -80,19 +80,6 @@ invisible(lapply(
   character.only = TRUE
 ))
 ```
-
-## Using {theme.aagi} to Create Tabular Outputs
-
-{theme.aagi} provides a {flextable} them suited for the AAGI style.
-You can use it like so.
-
-```{r tabular}
-ft <- flextable(head(airquality) |>
- mutate(`Month Name` = "May"))
-ft <- theme_ft_aagi(ft)
-ft
-```
-
 ## Using {theme.aagi} to Create Graphical Outputs
 
 {theme.aagi} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
@@ -285,22 +272,6 @@ ggplot(data = stacked_df,
 
 
 ## Advanced Uses
-
-### Setting the AAGI Table Theme Globally
-
-You can set your R session to use `theme_ft_aagi()` for {flextable} and {ggplot2} objects in your RMarkdown or Quarto documents to apply this theme to all tables using the following code chunk in your document at the top when setting up the options.
-
-```{r eval=FALSE}
-library(theme.aagi)
-
-# set {ggplot2} theme
-theme_set(theme_aagi())
-
-# set {flextable} theme
-set_flextable_defaults(
-  theme_fun = theme_ft_aagi
-)
-```
 
 ### Using {ggplot2} Faceting
 
