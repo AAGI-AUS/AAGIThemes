@@ -16,6 +16,7 @@ permissions: read-all
 jobs:
   pkgdown:
     runs-on: ubuntu-latest
+    jobs:
     # Only restrict concurrency for non-PR jobs
     concurrency:
       group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
@@ -24,6 +25,11 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Install fonts
+        run: |
+          sudo apt update
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+          sudo apt-get install ttf-mscorefonts-installer
       - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-pandoc@v2
