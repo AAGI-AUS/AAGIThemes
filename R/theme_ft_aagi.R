@@ -37,10 +37,9 @@
 #' @export
 theme_ft_aagi <- function(x) {
   if (!inherits(x, "flextable")) {
-    stop(sprintf(
-      "Function `%s` supports only {flextable} objects.",
-      "theme_ft_aagi()"
-    ))
+    cli::cli_abort(
+      "Function {.fn theme_ft_aagi} only supports {.pkg flextable} objects."
+    )
   }
 
   x <- flextable::font(x, part = "all", fontname = set_aagi_font())

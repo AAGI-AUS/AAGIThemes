@@ -26,8 +26,12 @@
         )
       }
     } else {
-      stop("You need to install Proxima Nova or Arial TTF fonts to use {theme.aagi}.")
+      cli::cli_abort(
+        c(x = "You need to install {cli::symbol$dquote_left}Proxima
+        Nova{cli::symbol$dquote_right} or 
+        {cli::symbol$dquote_left}Arial{cli::symbol$dquote_right} TTF fonts to
+        use {.pkg theme.aagi}.")
+      )
     }
   }
-
 # nocov end
