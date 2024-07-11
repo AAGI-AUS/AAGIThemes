@@ -24,8 +24,11 @@
         )
       }
     } else {
-      cli::cli_alert_warning(
-        "You need to install {cli::symbol$dquote_left}Proxima Nova{cli::symbol$dquote_right} or {cli::symbol$dquote_left}Arial{cli::symbol$dquote_right} TTF fonts to use {.pkg theme.aagi} properly.")
+      cli::cli_warn(
+        "You need to install {cli::symbol$dquote_left}Proxima
+        Nova{cli::symbol$dquote_right} or
+        {cli::symbol$dquote_left}Arial{cli::symbol$dquote_right} TTF fonts to
+        properly use {.pkg theme.aagi} properly.")
     }
   }
 # nocov end
