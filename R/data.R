@@ -1,4 +1,6 @@
-#' A Vector of AAGI Colour Hex Codes
+#' A Vector of the official AAGI Colour Hex Codes.  Other colour palettes are
+#'   provided in \pkg{theme.aagi} for plotting purposes but are not considered
+#'   to be "official" \acronym{AAGI} colours.
 #'
 #' @format A `vector` with three (6) colours as hexadecimal values:
 #'   \describe{

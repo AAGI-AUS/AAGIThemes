@@ -112,18 +112,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "RColorBrewer",
-      "name": "RColorBrewer",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=RColorBrewer"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "reshape2",
       "name": "reshape2",
       "provider": {
@@ -206,18 +194,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=tibble"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "viridis",
-      "name": "viridis",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=viridis"
     }
   ],
   "softwareRequirements": {
@@ -374,7 +350,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
-  "fileSize": "4327.744KB",
+  "fileSize": "4369.321KB",
   "releaseNotes": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/theme.aagi/actions/workflows/R-CMD-check.yaml",

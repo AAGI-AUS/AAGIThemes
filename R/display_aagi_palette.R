@@ -62,7 +62,7 @@
 #'
 display_aagi_palette <- function(n = 3, name) {
   if (n < 3) {
-    rlang::warn(
+    cli::cli_warn(
       "The minimal value for {.arg{n}} is 3.
       Displaying requested palette with 3 different levels\n"
     )

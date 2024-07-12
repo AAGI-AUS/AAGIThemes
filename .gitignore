@@ -1,7 +1,4 @@
 .Rproj.user
 inst/doc
-
-.Rhistory
-
 *.Rhistory
 docs
