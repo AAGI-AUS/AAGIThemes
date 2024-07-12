@@ -49,7 +49,7 @@ examples below. (NB: \R uses circles instead of the octagons used in S.)}
 \strong{p}oints``  See Section "Type" for more.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
+(see \link[graphics:par]{graphics::par}).  The most commonly used argument would be
 \code{type} what type of plot should be drawn.}
 }
 \description{

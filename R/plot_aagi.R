@@ -22,7 +22,7 @@
 #' @param type What type of plot should be drawn.  Defaults to `p` for
 #'   **p**oints``  See Section "Type" for more.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par()]).  The most commonly used argument would be
+#'   (see [graphics::par]).  The most commonly used argument would be
 #'   `type` what type of plot should be drawn.
 #"
 #' @section Type:

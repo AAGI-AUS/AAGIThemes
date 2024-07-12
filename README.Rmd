@@ -15,7 +15,8 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
-[![Codecov test coverage](https://codecov.io/gh/CCDM-CBADA/theme.aagi/branch/main/graph/badge.svg)](https://app.codecov.io/gh/CCDM-CBADA/theme.aagi?branch=main)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![R-CMD-check](https://github.com/AAGI-Org-AU-Public/theme.aagi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-Org-AU-Public/theme.aagi/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # {theme.aagi} Apply AAGI Brand Guidelines to R Graphic Output and Create AAGI Themed Documents <img align="right" src="man/figures/logo.png">
@@ -35,7 +36,7 @@ You can install {theme.aagi} like so:
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
-remotes::install_github("CCDM-AAGI/theme.aagi",
+remotes::install_github("AAGI-Org-AU-Public/theme.aagi",
                         build_vignettes = TRUE,
                         dependencies = TRUE
 )
@@ -48,6 +49,21 @@ However, you may wish to browse the vignette for a more detailed look at what th
 
 ```r
 vignette("Cookbook", package = "theme.aagi")
+```
+
+### Create Tabular Outputs
+
+{theme.aagi} provides a {flextable} them suited for the AAGI style that works in HTML and Word document outputs.
+You can use it like so.
+
+```{r tabular}
+library(theme.aagi)
+library(dplyr)
+library(flextable)
+ft <- flextable(head(airquality) |>
+ mutate(`Month Name` = "May"))
+ft <- theme_ft_aagi(ft)
+ft
 ```
 
 ### Plots and graphs

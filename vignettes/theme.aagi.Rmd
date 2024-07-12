@@ -1,13 +1,14 @@
 ---
-title: "Cookbook"
+title: "theme.aagi"
 author: "Adam H. Sparks"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Cookbook}
+  %\VignetteIndexEntry{theme.aagi}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
   %\VignetteDepends{dplyr}
+  %\VignetteDepends{flextable}
   %\VignetteDepends{ggplot2}
   %\VignetteDepends{magick}
   %\VignetteDepends{gapminder}
@@ -25,9 +26,45 @@ knitr::opts_chunk$set(
 )
 ```
 
-## How to Create AAGI Style Graphics
+## How to Create AAGI Style Graphics and Tables
 
-The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using both R's {graphics} and {ggplot2} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics that adhere to AAGI style guidelines.
+The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using R's {graphics}, {ggplot2} and {flextable} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics and tables that adhere to AAGI style guidelines.
+
+## Getting started
+
+### Install the {theme.aagi} package
+
+{theme.aagi} is not on CRAN, so you will have to install it directly from our GitHub repository using {remotes}.
+
+If you do not have the {remotes} package installed, you will have to run the first line in the code below as well. 
+
+``` {r eval = FALSE}
+if (!require("remotes"))
+  remotes::install_github("AAGI-Org-AU-Public/theme.aagi",
+                          build_vignettes = TRUE)
+
+)
+```
+
+For more info on {theme.aagi} check out the [package's GitHub repository](https://github.com/AAGI-Org-AU-Public/theme.aagi), but most of the details about how to use the package and its functions are detailed below. 
+
+When you have downloaded the package and successfully installed it you are good to go and create plots and tables.
+
+## Creating Tables
+
+Creating AAGI themed tables requires using {flextable}.
+Using the `airquality` data set, and adding a text column to illustrate how text columns are handled, here's how to apply an AAGI theme to a table.
+
+```{r flextable}
+library("theme.aagi")
+library("flextable")
+library("dplyr")
+
+ft <- flextable(head(airquality) |> 
+                  mutate(`Month Name` = "May"))
+ft <- theme_ft_aagi(ft)
+ft
+```
 
 ### On {ggplot2} Plots and Graphs
 
@@ -40,26 +77,6 @@ Several themes and colour palettes already exist for {ggplot2} to Create the vis
 
 When using {theme.aagi} for graphs, the legend will be placed at the top by default and the main and sub-titles will be left aligned and captions will be right aligned.
 These choices can all be overridden by using `ggplot2::theme()` arguments as you wish.
-
-## Getting started
-
-### Install the {theme.aagi} package
-
-{theme.aagi} is not on CRAN, so you will have to install it directly from our GitHub repository using {remotes}.
-
-If you do not have the {remotes} package installed, you will have to run the first line in the code below as well. 
-
-``` {r eval = FALSE}
-if (!require("remotes"))
-  remotes::install_github("CCDM_CBADA/theme.aagi",
-                          build_vignettes = TRUE)
-
-)
-```
-
-For more info on {theme.aagi} check out the [package's GitHub repository](https://github.com/CCDM_CBADA/theme.aagi), but most of the details about how to use the package and its functions are detailed below. 
-
-When you have downloaded the package and successfully installed it you are good to go and create charts.
 
 ### Load the Libraries We'll Need
 
@@ -121,9 +138,9 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 
 ```{r boxplot-base}
 boxplot_aagi(decrease ~ treatment,
-             data = OrchardSprays,
-             xlab = "treatment",
-             ylab = "decrease")
+            data = OrchardSprays,
+            xlab = "treatment",
+            ylab = "decrease")
 ```
 
 #### Using {ggplot2} to Create a Boxplot
@@ -188,7 +205,7 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
   ylab("Life expectancy") +
   xlab("Year") +
   labs(title = "Living longer",
-       subtitle = "Life expectancy in Malawi 1952-2007")
+      subtitle = "Life expectancy in Malawi 1952-2007")
 ```
 
 ### Scatterplots
@@ -248,25 +265,25 @@ stacked_df <- gapminder |>
 
 #set order of stacks by changing factor levels
 stacked_df$lifeExpGrouped = factor(stacked_df$lifeExpGrouped,
-                                   levels = rev(levels(stacked_df$lifeExpGrouped)))
+                                  levels = rev(levels(stacked_df$lifeExpGrouped)))
 
 #create plot
 ggplot(data = stacked_df,
-       aes(x = continent,
-           y = continentPop,
-           fill = lifeExpGrouped)) +
+      aes(x = continent,
+          y = continentPop,
+          fill = lifeExpGrouped)) +
   geom_bar(stat = "identity",
-           position = "fill") +
+          position = "fill") +
   scale_fill_aagi(name = "Life expectancy") +
   ylab("Continental Population (%)") +
   xlab("Continent") +
   theme_aagi() +
   scale_y_continuous(labels = scales::percent) +
   geom_hline(yintercept = 0,
-             linewidth = 1,
-             colour = "#474747") +
+            linewidth = 1,
+            colour = "#474747") +
   labs(title = "How life expectancy varies",
-       subtitle = "% of population by life expectancy band, 2007") +
+      subtitle = "% of population by life expectancy band, 2007") +
   guides(fill = guide_legend(reverse = TRUE))
 ```
 
@@ -297,11 +314,11 @@ p <- ggplot() +
   scale_fill_manual(values = col_values) +
   facet_wrap(~ continent, ncol = 5) +
   scale_y_continuous(breaks = c(0, 2000000000, 4000000000),
-                     labels = c(0, "2bn", "4bn")) +
+                    labels = c(0, "2bn", "4bn")) +
   theme_aagi() +
   geom_hline(yintercept = 0,
-             linewidth = 1,
-             colour = "#474747") +
+            linewidth = 1,
+            colour = "#474747") +
   theme(legend.position = "none", axis.text.x = element_blank()) +
   labs(title = "Asia's rapid growth", subtitle = "Population growth by continent, 1952-2007")
 
@@ -322,7 +339,7 @@ Feel free to adjust as necessary.
 ```{r add-dpird-logo, eval=TRUE, message=FALSE}
 library(magick)
 add_aagi_logo(file_in = file.path(tempdir(), "AAGI.png"),
-               file_out = file.path(tempdir(), "AAGI_logo.png"))
+              file_out = file.path(tempdir(), "AAGI_logo.png"))
 
 image_read(file.path(tempdir(), "AAGI_logo.png")) |> 
   image_resize("600x1000") |> 

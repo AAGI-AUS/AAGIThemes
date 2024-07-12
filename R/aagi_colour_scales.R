@@ -21,7 +21,13 @@
 #'      including \dQuote{AAGI Bright Green}, \dQuote{AAGI Teal},
 #'      \dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
 #'  }
-
+#' @param palette `Character` string, one of:
+#'  * "primary",
+#'  * "secondary",
+#'  * "colourful" (default),
+#'  * "full",
+#'  * "bright", or
+#'  * "bluegreen".
 #' @param discrete `Boolean` argument indicating whether colour aesthetic is
 #'  discrete, _e.g._, a `factor` (`TRUE`) or continuous, _e.g._, `numeric`
 #'  (`FALSE`).
@@ -31,22 +37,22 @@
 #'            [ggplot2::scale_colour_gradientn], used respectively when
 #'            discrete is `TRUE`.
 #'
-#' @seealso [make_aagi_palettes()] [scale_fill_aagi()]
+#' @seealso [aagi_palettes] [scale_fill_aagi]
 #' @export
 #'
 scale_colour_aagi <-
-  function(aagi_palette = "colourful",
-          discrete = TRUE,
-          reverse = FALSE,
-          ...) {
-    selected_pal <- aagi_palette()[palette]
+  function(palette = "colourful",
+           discrete = TRUE,
+           reverse = FALSE,
+           ...) {
+    selected_pal <- interpolate_aagi_palette()[palette]
 
     if (discrete) {
       ggplot2::discrete_scale("colour",
                               sprintf("aagi%s", selected_pal),
                               palette = selected_pal, ...)
     } else {
-      ggplot2::scale_colour_gradientn(colours = make_aagi_palette(n = 256), ...)
+      ggplot2::scale_colour_gradientn(colours = interpolate_aagi_palette(n = 256), ...)
     }
   }
 
@@ -56,20 +62,20 @@ scale_colour_aagi <-
 #'   \CRANpkg{ggplot2} objects.
 #'
 #' @inherit scale_colour_aagi params
-#' @seealso [make_aagi_palettes()] [scale_colour_aagi()]
+#' @seealso [aagi_palettes()] [scale_colour_aagi()]
 #' @export
 #'
 #'
 scale_fill_aagi <-
-  function(aagi_palette = "colourful",
-          discrete = TRUE,
-          reverse = FALSE,
-          ...) {
-    selected_pal <- make_aagi_palette(palette = aagi_palette, reverse = reverse)
+  function(palette = "colourful",
+           discrete = TRUE,
+           reverse = FALSE,
+           ...) {
+    selected_pal <- interpolate_aagi_palette(palette = palette, reverse = reverse)
 
     if (discrete) {
       ggplot2::discrete_scale(aesthetics = "fill", palette = selected_pal, ...)
     } else {
-      ggplot2::scale_fill_gradientn(colours = make_aagi_palette(n = 256), ...)
+      ggplot2::scale_fill_gradientn(colours = interpolate_aagi_palette(n = 256), ...)
     }
   }

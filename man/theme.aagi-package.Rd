@@ -8,23 +8,24 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to both base graphics as well as 'ggplot2' figures. Support for creating MS Word and PowerPoint files using Quarto and RMarkdown templates is also provided.
+Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to both base graphics as well as 'ggplot2' figures and 'flextable' objects.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/CCDM-AAGI/theme.aagi}
-  \item Report bugs at \url{https://github.com/CCDM-AAGI/theme.aagi/issues}
+  \item \url{https://github.com/AAGI-Org-AU-Public/theme.aagi}
+  \item \url{https://aagi-org-au-public.github.io/theme.aagi/}
+  \item Report bugs at \url{https://github.com/AAGI-Org-AU-Public/theme.aagi/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Tinula Kariyawasam \email{tinula.kariyawasam@dpird.wa.gov.au}
+\strong{Maintainer}: Adam H. Sparks \email{adam.sparks@dpird.wa.gov.au} (\href{https://orcid.org/0000-0002-0061-8359}{ORCID})
 
 Authors:
 \itemize{
-  \item Adam H. Sparks \email{adam.sparks@dpird.wa.gov.au} (\href{https://orcid.org/0000-0002-0061-8359}{ORCID}) [conceptor]
   \item Kenyon Ng \email{kenyon.ng@dpird.wa.gov.au} (\href{https://orcid.org/0000-0002-6315-9831}{ORCID})
+  \item Tinula Kariyawasam \email{tinula.kariyawasam@dpird.wa.gov.au}
   \item Matt Cowgill \email{matthew.cowgill@grattaninstitute.edu.au} (Wrote major portions of package for saving charts
  for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'
  licence.)

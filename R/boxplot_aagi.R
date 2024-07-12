@@ -27,10 +27,10 @@
 #'   the device, often specified by an argument `pointsize`. For `pch` in 0:25
 #'   the default size is about 75% of the character height (see `par("cin")`).
 #' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par()]).
+#'   (see [graphics::par]).
 #'
-#' @seealso [graphics::boxplot()] for full documentation of the basic boxplot
-#' capabilities
+#' @seealso [graphics::boxplot] for full documentation of the basic boxplot
+#'    capabilities
 #' @examples
 #' boxplot_aagi(decrease ~ treatment,
 #'              data = OrchardSprays,

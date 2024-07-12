@@ -3,4 +3,8 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 ^data-raw$
-^codecov\.yml$
+^codemeta\.json$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

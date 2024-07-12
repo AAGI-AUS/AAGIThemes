@@ -17,7 +17,7 @@
 #'   sides, *i.e.*, x-axis, y-axis, top and right sides all will have a black
 #'   border not just x-axis and y-axis.  Defaults to `FALSE` with only the
 #'   x-axis and y-axis being outlined in dark grey.
-#' @param ... Other arguments as passed along to `ggplot2::theme()`.
+#' @param ... Other arguments as passed along to [ggplot2::theme].
 #'
 #' @examples
 #'
@@ -70,6 +70,9 @@ theme_aagi <-
           border = FALSE,
           ...) {
 
+    # check if Proxima Nova is installed, if not, falls back to Arial
+    aagi_font <- set_aagi_font()
+
     showtext::showtext_auto()
 
     base_line_size <- base_size / 12
@@ -79,7 +82,7 @@ theme_aagi <-
 
     theme_aagi <-
       ggplot2::theme_classic(base_size = base_size,
-                            base_family = "Proxima Nova") %+replace%
+                             base_family = aagi_font) %+replace%
         ggplot2::theme(
           # match legend key to panel.background
           legend.key = ggplot2::element_blank(),
@@ -93,19 +96,19 @@ theme_aagi <-
           ),
           strip.text = ggplot2::element_text(
             colour = "#ffffff",
-            family = "Proxima Nova",
+            family = aagi_font,
             face = "bold",
             margin = ggplot2::margin(3, 3, 3, 3, "points")
           ),
           plot.margin = ggplot2::margin(25, 25, 10, 25),
-          text = ggplot2::element_text(family = "Proxima Nova",
-                                      size = base_size),
-          axis.text = ggplot2::element_text(family = "Proxima Nova",
+          text = ggplot2::element_text(family = aagi_font,
+                                       size = base_size),
+          axis.text = ggplot2::element_text(family = aagi_font,
                                             size = base_size),
-          legend.text = ggplot2::element_text(family = "Proxima Nova",
+          legend.text = ggplot2::element_text(family = aagi_font,
                                               size = base_size),
           plot.title = ggplot2::element_text(
-            family = "Proxima Nova",
+            family = aagi_font,
             face = "bold",
             size = base_size * 1.25,
             hjust = 0,

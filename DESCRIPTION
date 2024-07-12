@@ -3,12 +3,12 @@ Title: Apply AAGI Brand Guidelines to Graphic Output and Create AAGI
     Themed Documents
 Version: 0.0.1
 Authors@R: c(
-    person("Adam H.", "Sparks", , "adam.sparks@dpird.wa.gov.au", role = c("aut", "ccp"),
+    person("Adam H.", "Sparks", , "adam.sparks@dpird.wa.gov.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0061-8359")),
     person("Kenyon", "Ng", , "kenyon.ng@dpird.wa.gov.au", role = "aut",
            comment = c(ORCID = "0000-0002-6315-9831")),
     person("Jimmy", "Ng", , "jimmy.ng@dpird.wa.gov.au", role = "ctb"),
-    person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = c("cre", "aut")),
+    person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = c("aut")),
     person("Matt", "Cowgill", , "matthew.cowgill@grattaninstitute.edu.au", role = "aut",
            comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'\n                    licence."),
     person("Will", "Mackey", , "william.mackey@grattaninstitute.edu.au", role = "aut",
@@ -17,19 +17,20 @@ Authors@R: c(
   )
 Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
     colours and font guidelines are applied as useful and reasonable to
-    both base graphics as well as 'ggplot2' figures.  Support for creating
-    MS Word and PowerPoint files using Quarto and RMarkdown templates is
-    also provided.
+    both base graphics as well as 'ggplot2' figures and 'flextable' objects.
 License: GPL (>= 3)
-URL: https://github.com/CCDM-AAGI/theme.aagi
-BugReports: https://github.com/CCDM-AAGI/theme.aagi/issues
+URL: https://github.com/AAGI-Org-AU-Public/theme.aagi, https://aagi-org-au-public.github.io/theme.aagi/
+BugReports: https://github.com/AAGI-Org-AU-Public/theme.aagi/issues
 Depends: 
     R (>= 4.0.0)
 Imports:
+    cli,
+    flextable,
     ggplot2 (>= 3.3.5),
     grDevices,
     grid,
     magick,
+    officer,
     rlang,
     scales,
     showtext,
@@ -51,7 +52,9 @@ VignetteBuilder:
     knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
-Language: en-US
+Language: en-AU
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+X-schema.org-applicationCategory: Tools
+X-schema.org-isPartOf: https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi
