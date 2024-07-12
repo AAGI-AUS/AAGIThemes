@@ -138,9 +138,9 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 
 ```{r boxplot-base}
 boxplot_aagi(decrease ~ treatment,
-             data = OrchardSprays,
-             xlab = "treatment",
-             ylab = "decrease")
+            data = OrchardSprays,
+            xlab = "treatment",
+            ylab = "decrease")
 ```
 
 #### Using {ggplot2} to Create a Boxplot
@@ -205,7 +205,7 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
   ylab("Life expectancy") +
   xlab("Year") +
   labs(title = "Living longer",
-       subtitle = "Life expectancy in Malawi 1952-2007")
+      subtitle = "Life expectancy in Malawi 1952-2007")
 ```
 
 ### Scatterplots
@@ -265,25 +265,25 @@ stacked_df <- gapminder |>
 
 #set order of stacks by changing factor levels
 stacked_df$lifeExpGrouped = factor(stacked_df$lifeExpGrouped,
-                                   levels = rev(levels(stacked_df$lifeExpGrouped)))
+                                  levels = rev(levels(stacked_df$lifeExpGrouped)))
 
 #create plot
 ggplot(data = stacked_df,
-       aes(x = continent,
-           y = continentPop,
-           fill = lifeExpGrouped)) +
+      aes(x = continent,
+          y = continentPop,
+          fill = lifeExpGrouped)) +
   geom_bar(stat = "identity",
-           position = "fill") +
+          position = "fill") +
   scale_fill_aagi(name = "Life expectancy") +
   ylab("Continental Population (%)") +
   xlab("Continent") +
   theme_aagi() +
   scale_y_continuous(labels = scales::percent) +
   geom_hline(yintercept = 0,
-             linewidth = 1,
-             colour = "#474747") +
+            linewidth = 1,
+            colour = "#474747") +
   labs(title = "How life expectancy varies",
-       subtitle = "% of population by life expectancy band, 2007") +
+      subtitle = "% of population by life expectancy band, 2007") +
   guides(fill = guide_legend(reverse = TRUE))
 ```
 
@@ -314,11 +314,11 @@ p <- ggplot() +
   scale_fill_manual(values = col_values) +
   facet_wrap(~ continent, ncol = 5) +
   scale_y_continuous(breaks = c(0, 2000000000, 4000000000),
-                     labels = c(0, "2bn", "4bn")) +
+                    labels = c(0, "2bn", "4bn")) +
   theme_aagi() +
   geom_hline(yintercept = 0,
-             linewidth = 1,
-             colour = "#474747") +
+            linewidth = 1,
+            colour = "#474747") +
   theme(legend.position = "none", axis.text.x = element_blank()) +
   labs(title = "Asia's rapid growth", subtitle = "Population growth by continent, 1952-2007")
 
@@ -339,7 +339,7 @@ Feel free to adjust as necessary.
 ```{r add-dpird-logo, eval=TRUE, message=FALSE}
 library(magick)
 add_aagi_logo(file_in = file.path(tempdir(), "AAGI.png"),
-               file_out = file.path(tempdir(), "AAGI_logo.png"))
+              file_out = file.path(tempdir(), "AAGI_logo.png"))
 
 image_read(file.path(tempdir(), "AAGI_logo.png")) |> 
   image_resize("600x1000") |> 
