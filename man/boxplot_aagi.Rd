@@ -46,7 +46,7 @@ the device, often specified by an argument \code{pointsize}. For \code{pch} in 0
 the default size is about 75\% of the character height (see \code{par("cin")}).}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \link[graphics:par]{graphics::par}).}
+(see \code{\link[graphics:par]{graphics::par()}}).}
 }
 \description{
 Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
@@ -59,7 +59,7 @@ boxplot_aagi(decrease ~ treatment,
              ylab = "decrease")
 }
 \seealso{
-\link[graphics:boxplot]{graphics::boxplot} for full documentation of the basic boxplot
+\code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic boxplot
 capabilities
 }
 \author{

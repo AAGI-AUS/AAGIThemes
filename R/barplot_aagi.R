@@ -14,7 +14,7 @@
 #'   stacked.
 #' @param col Colour to use as fill for bars  Defaults to a very dark grey.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par]).
+#'   (see [graphics::par()]).
 #'
 #' @examples
 #'

@@ -25,7 +25,7 @@ discrete, \emph{e.g.}, a \code{factor} (\code{TRUE}) or continuous, \emph{e.g.},
 reversed, \emph{i.e.}, light to dark.  Defaults to \code{FALSE}.}
 
 \item{...}{Additional arguments passed to \code{discrete_scale()} or
-\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn}, used respectively when
+\code{\link[ggplot2:scale_gradient]{ggplot2::scale_colour_gradientn()}}, used respectively when
 discrete is \code{TRUE}.}
 }
 \description{

@@ -2,7 +2,9 @@
 #'
 #' Provides information on \acronym{AAGI} palettes including whether they are
 #'   diverging, \dQuote{div} or sequential, \dQuote{seq} and the max number of
-#'   colour steps available.
+#'   colour steps available.  \acronym{AAGI} palettes are palettes that are
+#'   useful for creating plots that incorporate come official  \acronym{AAGI}
+#'   colours but they may not all be official \acronym{AAGI} colours.
 #'
 #' @examples
 #' aagi_palette_info()

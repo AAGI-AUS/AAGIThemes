@@ -11,8 +11,8 @@
 #'   \acronym{AAGI} palette: [aagi_palettes()]
 #' @param reverse (`Boolean`; default = `FALSE`) indicating if palette should
 #'   be reversed.
-#' @param ... Additional arguments to pass to [grDevices::colorRampPalette],
-#'   see details here [grDevices::colorRamp].
+#' @param ... Additional arguments to pass to [grDevices::colorRampPalette()],
+#'   see details here [grDevices::colorRamp()].
 #'
 #' @returns A function that takes a single value and makes that many colours.
 #'

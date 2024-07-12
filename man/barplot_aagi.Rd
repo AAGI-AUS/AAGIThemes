@@ -19,7 +19,7 @@ stacked.}
 \item{col}{Colour to use as fill for bars  Defaults to a very dark grey.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \link[graphics:par]{graphics::par}).}
+(see \code{\link[graphics:par]{graphics::par()}}).}
 }
 \description{
 Basic barplots that follow a standard \acronym{AAGI} style

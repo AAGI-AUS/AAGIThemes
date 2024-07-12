@@ -13,8 +13,8 @@ interpolate_aagi_palette(palette = "colourful", reverse = FALSE, ...)
 \item{reverse}{(\code{Boolean}; default = \code{FALSE}) indicating if palette should
 be reversed.}
 
-\item{...}{Additional arguments to pass to \link[grDevices:colorRamp]{grDevices::colorRampPalette},
-see details here \link[grDevices:colorRamp]{grDevices::colorRamp}.}
+\item{...}{Additional arguments to pass to \code{\link[grDevices:colorRamp]{grDevices::colorRampPalette()}},
+see details here \code{\link[grDevices:colorRamp]{grDevices::colorRamp()}}.}
 }
 \value{
 A function that takes a single value and makes that many colours.
