@@ -4,7 +4,7 @@
 #'   \CRANpkg{ggplot2} objects.
 #'
 #' @param make_aagi_palette `Character` name of a \acronym{AAGI} palette in
-#'   [make_aagi_palettes()].  Defaults to `colourful`.
+#'   [make_aagi_palettes].  Defaults to `colourful`.
 #'
 #' ## Available Palettes
 #'
@@ -28,7 +28,7 @@
 #' @param reverse `Boolean` argument indicating whether the palette should be
 #'   reversed, _i.e._, light to dark.  Defaults to `FALSE`.
 #' @param ... Additional arguments passed to `discrete_scale()` or
-#'            [ggplot2::scale_colour_gradientn()], used respectively when
+#'            [ggplot2::scale_colour_gradientn], used respectively when
 #'            discrete is `TRUE`.
 #'
 #' @seealso [make_aagi_palettes()] [scale_fill_aagi()]
