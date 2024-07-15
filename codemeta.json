@@ -374,7 +374,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
-  "fileSize": "4327.744KB",
+  "fileSize": "4328.03KB",
   "releaseNotes": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/theme.aagi/actions/workflows/R-CMD-check.yaml",
