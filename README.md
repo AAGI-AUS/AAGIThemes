@@ -129,11 +129,3 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
 ```
 
 <img src="man/figures/README-theme_aagi-1.png" width="100%" />
-
-## Using {theme.aagi} Word Templates
-
-{theme.aagi} provides RMarkdown Word document templates for you to
-quickly and easily create RMarkdown documents that use the AAGI colours
-in the template. The templates are available through RStudio,
-`File > New File > R Markdown`, then select “From Template” and then
-select the template you’d like to use.
