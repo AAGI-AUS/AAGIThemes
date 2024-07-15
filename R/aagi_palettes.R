@@ -1,4 +1,3 @@
-
 #' Sequential, Diverging and Qualitative Colour Palettes for AAGI Publications
 #'
 #' \acronym{AAGI} palettes for use in charts and plots based on official
@@ -39,27 +38,28 @@
 #' @export
 
 aagi_palette <- function(n,
-                    name = c(
-                      "aagi_BrYl",
-                      "aagi_BuOr",
-                      "aagi_BuYl",
-                      "aagi_GnYl",
-                      "aagi_RdBu",
-                      "aagi_RdTl",
-                      "aagi_RdYl",
-                      "aagi_TlGn",
-                      "aagi_TlYl",
-                      "aagi_TlGnYl",
-                      "aagi_blues",
-                      "aagi_bright_greens",
-                      "aagi_greens",
-                      "aagi_greys",
-                      "aagi_reds",
-                      "aagi_teals",
-                      "aagi_oranges",
-                      "aagi_yellows",
-                      "Okabe_and_Ito"),
-                    direction = 1) {
+                         name = c(
+                           "aagi_BrYl",
+                           "aagi_BuOr",
+                           "aagi_BuYl",
+                           "aagi_GnYl",
+                           "aagi_RdBu",
+                           "aagi_RdTl",
+                           "aagi_RdYl",
+                           "aagi_TlGn",
+                           "aagi_TlYl",
+                           "aagi_TlGnYl",
+                           "aagi_blues",
+                           "aagi_bright_greens",
+                           "aagi_greens",
+                           "aagi_greys",
+                           "aagi_reds",
+                           "aagi_teals",
+                           "aagi_oranges",
+                           "aagi_yellows",
+                           "Okabe_and_Ito"
+                         ),
+                         direction = 1) {
   rlang::arg_match(name)
   if (n < 3 || n > 11) {
     cli::cli_abort(
@@ -79,10 +79,8 @@ aagi_palette <- function(n,
     )
   }
 
-  p <- switch(
-    name,
-    aagi_BrYl = switch(
-      n - 2,
+  p <- switch(name,
+    aagi_BrYl = switch(n - 2,
       # 3
       c("#380100", "#965a24", "#ffbc42"),
       # 4
@@ -159,8 +157,7 @@ aagi_palette <- function(n,
         "#ffbc42"
       )
     ),
-    aagi_BuOr = switch(
-      n - 2,
+    aagi_BuOr = switch(n - 2,
       c("#648fd2", "#fcfdfe", "#ec8525"),
       # 4
       c("#648fd2", "#b4c4e8", "#fdbb89", "#ec8525"),
@@ -236,8 +233,7 @@ aagi_palette <- function(n,
         "#ec8525"
       )
     ),
-    aagi_BuYl = switch(
-      n - 2,
+    aagi_BuYl = switch(n - 2,
       # 3
       c("#648fd2", "#edf2fa", "#ffbc42"),
       # 4
@@ -314,8 +310,7 @@ aagi_palette <- function(n,
         "#ffbc42"
       )
     ),
-    aagi_GnYl = switch(
-      n - 2,
+    aagi_GnYl = switch(n - 2,
       # 3
       c("#54921e", "#f4fcee", "#ffbc42"),
       # 4
@@ -392,8 +387,7 @@ aagi_palette <- function(n,
         "#ffbc42"
       )
     ),
-    aagi_RdBu = switch(
-      n - 2,
+    aagi_RdBu = switch(n - 2,
       # 3
       c("#8b0b00", "#ffeeed", "#648fd2"),
       # 4
@@ -470,8 +464,7 @@ aagi_palette <- function(n,
         "#648fd2"
       )
     ),
-    aagi_RdTl = switch(
-      n - 2,
+    aagi_RdTl = switch(n - 2,
       # 3
       c("#8b0b00", "#ffeeed", "#00808b"),
       # 4
@@ -548,8 +541,7 @@ aagi_palette <- function(n,
         "#00808b"
       )
     ),
-    aagi_RdYl = switch(
-      n - 2,
+    aagi_RdYl = switch(n - 2,
       # 3
       c("#8b0b00", "#c66b1e", "#ffbc42"),
       # 4
@@ -576,8 +568,7 @@ aagi_palette <- function(n,
         "#ffbc42"
       )
     ),
-    aagi_TlGn = switch(
-      n - 2,
+    aagi_TlGn = switch(n - 2,
       # 3
       c("#00808b", "#edfeff", "#b6d438"),
       # 4
@@ -654,8 +645,7 @@ aagi_palette <- function(n,
         "#b6d438"
       )
     ),
-    aagi_TlGnYl = switch(
-      n - 2,
+    aagi_TlGnYl = switch(n - 2,
       # 3
       c("#00808b", "#82a76b", "#ffbc42"),
       # 4
@@ -732,8 +722,7 @@ aagi_palette <- function(n,
         "#ffbc42"
       )
     ),
-    aagi_TlYl = switch(
-      n - 2,
+    aagi_TlYl = switch(n - 2,
       # 3
       c("#00808b", "#edfeff", "#ffbc42"),
       # 4
@@ -810,8 +799,7 @@ aagi_palette <- function(n,
         "#ffbc42"
       )
     ),
-    aagi_blues = switch(
-      n - 2,
+    aagi_blues = switch(n - 2,
       # 3
       c("#648fd2", "#b4c4e8", "#fcfdfe"),
       # 4
@@ -838,8 +826,7 @@ aagi_palette <- function(n,
         "#fcfdfe"
       )
     ),
-    aagi_bright_greens = switch(
-      n - 2,
+    aagi_bright_greens = switch(n - 2,
       # 3
       c("#b6d438", "#dee99e", "#fdfefa"),
       # 4
@@ -866,8 +853,7 @@ aagi_palette <- function(n,
         "#fdfefa"
       )
     ),
-    aagi_greens = switch(
-      n - 2,
+    aagi_greens = switch(n - 2,
       # 3
       c("#54921e", "#a6c687", "#f4fcee"),
       # 4
@@ -917,8 +903,7 @@ aagi_palette <- function(n,
         "#f4fcee"
       )
     ),
-    aagi_greys = switch(
-      n - 2,
+    aagi_greys = switch(n - 2,
       # 3
       c("#414042", "#999899", "#fbfbfb"),
       # 4
@@ -968,59 +953,57 @@ aagi_palette <- function(n,
         "#fbfbfb"
       )
     ),
-    aagi_reds = switch(
-      n - 2,
+    aagi_reds = switch(n - 2,
       # 3
-      c('#8b0b00', '#cf8875', '#fdfaf9'),
+      c("#8b0b00", "#cf8875", "#fdfaf9"),
       # 4
-      c('#8b0b00', '#bb634e', '#e1ad9f', '#fdfaf9'),
+      c("#8b0b00", "#bb634e", "#e1ad9f", "#fdfaf9"),
       # 5
-      c('#8b0b00', '#b0513a', '#cf8875', '#e9c0b5', '#fdfaf9'),
+      c("#8b0b00", "#b0513a", "#cf8875", "#e9c0b5", "#fdfaf9"),
       # 6
       c(
-        '#8b0b00',
-        '#a9452f',
-        '#c3725d',
-        '#da9f8e',
-        '#eeccc2',
-        '#fdfaf9'
+        "#8b0b00",
+        "#a9452f",
+        "#c3725d",
+        "#da9f8e",
+        "#eeccc2",
+        "#fdfaf9"
       ),
       # 7
       c(
-        '#8b0b00',
-        '#a43e28',
-        '#bb634e',
-        '#cf8875',
-        '#e1ad9f',
-        '#f0d3cb',
-        '#fdfaf9'
+        "#8b0b00",
+        "#a43e28",
+        "#bb634e",
+        "#cf8875",
+        "#e1ad9f",
+        "#f0d3cb",
+        "#fdfaf9"
       ),
       # 8
       c(
-        '#8b0b00',
-        '#a13822',
-        '#b55942',
-        '#c77964',
-        '#d79887',
-        '#e6b8ac',
-        '#f2d9d2',
-        '#fdfaf9'
+        "#8b0b00",
+        "#a13822",
+        "#b55942",
+        "#c77964",
+        "#d79887",
+        "#e6b8ac",
+        "#f2d9d2",
+        "#fdfaf9"
       ),
       # 9
       c(
-        '#8b0b00',
-        '#9e331e',
-        '#b0513a',
-        '#c06d57',
-        '#cf8875',
-        '#dda495',
-        '#e9c0b5',
-        '#f4ddd7',
-        '#fdfaf9'
+        "#8b0b00",
+        "#9e331e",
+        "#b0513a",
+        "#c06d57",
+        "#cf8875",
+        "#dda495",
+        "#e9c0b5",
+        "#f4ddd7",
+        "#fdfaf9"
       )
     ),
-    aagi_teals = switch(
-      n - 2,
+    aagi_teals = switch(n - 2,
       # 3
       c("#00808b", "#8abec3", "#edfeff"),
       # 4
@@ -1070,8 +1053,7 @@ aagi_palette <- function(n,
         "#edfeff"
       )
     ),
-    aagi_oranges = switch(
-      n - 2,
+    aagi_oranges = switch(n - 2,
       # 3
       c("#ec8525", "#fdbb89", "#fdf2e9"),
       # 4
@@ -1121,8 +1103,7 @@ aagi_palette <- function(n,
         "#fdf2e9"
       )
     ),
-    aagi_yellows = switch(
-      n - 2,
+    aagi_yellows = switch(n - 2,
       # 3
       c("#ffbc42", "#ffdda2", "#fffbf3"),
       # 4
@@ -1149,8 +1130,7 @@ aagi_palette <- function(n,
         "#fffbf3"
       )
     ),
-    Okabe_and_Ito = switch(
-      n - 2,
+    Okabe_and_Ito = switch(n - 2,
       c(
         "#E69F00",
         "#56B4E9",
