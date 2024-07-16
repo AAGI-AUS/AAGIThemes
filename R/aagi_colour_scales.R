@@ -9,12 +9,12 @@
 #' ## Available Palettes
 #'
 #'  \describe{
+#'    \item{colourful}{All colours in the palette minus \dQuote{AAGI Black}}
 #'    \item{primary}{The three primary \acronym{AAGI} colours}
 #'    \item{secondary}{The three secondary support colours in the \acronym{AAGI}
 #'        colour palette}
 #'    \item{full}{The full set of all six colours in the \acronym{AAGI}
 #'        palette}
-#'    \item{colourful}{All colours in the palette minus \dQuote{AAGI Black}}
 #'    \item{bright}{Four \dQuote{bright} colours including,
 #'      \dQuote{AAGI Bright Green}, \dQuote{AAGI Blue} and \dQuote{AAGI Yellow}}
 #'    \item{bluegreeen}{Three blue, green or bluegreen \acronym{AAGI} colours
@@ -22,8 +22,6 @@
 #'      \dQuote{AAGI Blue}, \dQuote{AAGI Green} and \dQuote{AAGI Bluegreen}}
 #'  }
 #' @param palette `Character` string, one of:
-#'  * "primary",
-#'  * "secondary",
 #'  * "colourful" (default),
 #'  * "full",
 #'  * "bright", or
