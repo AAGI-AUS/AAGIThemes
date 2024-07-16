@@ -45,7 +45,7 @@ ggplot(dsamp, aes(carat, price)) +
 txsamp <- subset(txhousing, city \%in\%
   c("Houston", "Fort Worth", "San Antonio", "Dallas", "Austin"))
 (d <- ggplot(data = txsamp, aes(x = sales, y = median)) +
-   geom_point(aes(colour = city)))
+  geom_point(aes(colour = city)))
 d + scale_colour_aagi_d()
 
 # Change scale label

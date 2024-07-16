@@ -27,7 +27,7 @@
 #' txsamp <- subset(txhousing, city %in%
 #'   c("Houston", "Fort Worth", "San Antonio", "Dallas", "Austin"))
 #' (d <- ggplot(data = txsamp, aes(x = sales, y = median)) +
-#'    geom_point(aes(colour = city)))
+#'   geom_point(aes(colour = city)))
 #' d + scale_colour_aagi_d()
 #'
 #' # Change scale label
@@ -55,15 +55,16 @@
 #' v + scale_fill_aagi_b()
 #'
 scale_colour_aagi_d <- function(name = waiver(),
-                                  ...,
-                                  alpha = 1,
-                                  begin = 0,
-                                  end = 1,
-                                  direction = 1,
-                                  option = "D",
-                                  aesthetics = "colour") {
+                                ...,
+                                alpha = 1,
+                                begin = 0,
+                                end = 1,
+                                direction = 1,
+                                option = "D",
+                                aesthetics = "colour") {
   discrete_scale(
-    aesthetics, name = name,
+    aesthetics,
+    name = name,
     palette = pal_aagi(alpha, begin, end, direction, option),
     ...
   )
@@ -72,10 +73,11 @@ scale_colour_aagi_d <- function(name = waiver(),
 #' @export
 #' @rdname scale_aagi
 scale_fill_aagi_d <- function(name = waiver(), ..., alpha = 1, begin = 0,
-                                 end = 1, direction = 1, option = "D",
-                                 aesthetics = "fill") {
+                              end = 1, direction = 1, option = "D",
+                              aesthetics = "fill") {
   discrete_scale(
-    aesthetics, name = name,
+    aesthetics,
+    name = name,
     palette = pal_aagi(alpha, begin, end, direction, option),
     ...
   )
@@ -84,12 +86,13 @@ scale_fill_aagi_d <- function(name = waiver(), ..., alpha = 1, begin = 0,
 #' @export
 #' @rdname scale_aagi
 scale_colour_aagi_c <- function(name = waiver(), ..., alpha = 1, begin = 0,
-                                   end = 1, direction = 1, option = "D",
-                                   values = NULL, space = "Lab",
-                                   na.value = "grey50", guide = "colourbar",
-                                   aesthetics = "colour") {
+                                end = 1, direction = 1, option = "D",
+                                values = NULL, space = "Lab",
+                                na.value = "grey50", guide = "colourbar",
+                                aesthetics = "colour") {
   continuous_scale(
-    aesthetics, name = name,
+    aesthetics,
+    name = name,
     palette = pal_gradient_n(
       pal_aagi(alpha, begin, end, direction, option)(6),
       values,
@@ -104,12 +107,13 @@ scale_colour_aagi_c <- function(name = waiver(), ..., alpha = 1, begin = 0,
 #' @export
 #' @rdname scale_aagi
 scale_fill_aagi_c <- function(name = waiver(), ..., alpha = 1, begin = 0,
-                                 end = 1, direction = 1, option = "D",
-                                 values = NULL, space = "Lab",
-                                 na.value = "grey50", guide = "colourbar",
-                                 aesthetics = "fill") {
+                              end = 1, direction = 1, option = "D",
+                              values = NULL, space = "Lab",
+                              na.value = "grey50", guide = "colourbar",
+                              aesthetics = "fill") {
   continuous_scale(
-    aesthetics, name = name,
+    aesthetics,
+    name = name,
     palette = pal_gradient_n(
       pal_aagi(alpha, begin, end, direction, option)(6),
       values,
@@ -124,16 +128,17 @@ scale_fill_aagi_c <- function(name = waiver(), ..., alpha = 1, begin = 0,
 #' @export
 #' @rdname scale_aagi
 scale_colour_aagi_b <- function(name = waiver(), ..., alpha = 1, begin = 0,
-                                   end = 1, direction = 1, option = "D",
-                                   values = NULL, space = "Lab",
-                                   na.value = "grey50", guide = "coloursteps",
-                                   aesthetics = "colour") {
-  pal <-  pal_binned(
+                                end = 1, direction = 1, option = "D",
+                                values = NULL, space = "Lab",
+                                na.value = "grey50", guide = "coloursteps",
+                                aesthetics = "colour") {
+  pal <- pal_binned(
     pal_aagi(alpha, begin, end, direction, option)
   )
 
   binned_scale(
-    aesthetics, name = name,
+    aesthetics,
+    name = name,
     palette = pal,
     na.value = na.value,
     guide = guide,
@@ -144,16 +149,17 @@ scale_colour_aagi_b <- function(name = waiver(), ..., alpha = 1, begin = 0,
 #' @export
 #' @rdname scale_aagi
 scale_fill_aagi_b <- function(name = waiver(), ..., alpha = 1, begin = 0,
-                                 end = 1, direction = 1, option = "D",
-                                 values = NULL, space = "Lab",
-                                 na.value = "grey50", guide = "coloursteps",
-                                 aesthetics = "fill") {
-  pal <-  pal_binned(
+                              end = 1, direction = 1, option = "D",
+                              values = NULL, space = "Lab",
+                              na.value = "grey50", guide = "coloursteps",
+                              aesthetics = "fill") {
+  pal <- pal_binned(
     pal_aagi(alpha, begin, end, direction, option)
   )
 
   binned_scale(
-    aesthetics, name = name,
+    aesthetics,
+    name = name,
     palette = pal,
     na.value = na.value,
     guide = guide,

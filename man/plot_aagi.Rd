@@ -13,7 +13,7 @@ plot_aagi(
   ylab = "",
   xlim = NULL,
   ylim = NULL,
-  col = AAGIPallets::aagi_colours["AAGI Black"],
+  col = AAGIPalettes::aagi_colours["AAGI Black"],
   pch = 16,
   type = "p",
   ...

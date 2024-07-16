@@ -50,17 +50,17 @@ theme_ft_aagi <- function(x) {
   x <- flextable::bold(x = x, bold = TRUE, part = "header")
   x <- flextable::color(x = x, color = "#ffffff", part = "header")
   x <- flextable::bg(
-    x = x, bg = AAGIPallets::aagi_colours["AAGI Teal"],
+    x = x, bg = AAGIPalettes::aagi_colours["AAGI Teal"],
     part = "header"
   )
 
   # body
   x <- flextable::color(
-    x = x, color = AAGIPallets::aagi_colours["AAGI Black"],
+    x = x, color = AAGIPalettes::aagi_colours["AAGI Black"],
     part = "body"
   )
   x <- flextable::bg(
-    x = x, bg = AAGIPallets::aagi_colours["AAGI Grey"],
+    x = x, bg = AAGIPalettes::aagi_colours["AAGI Grey"],
     part = "body"
   )
 

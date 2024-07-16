@@ -112,6 +112,18 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "RColorBrewer",
+      "name": "RColorBrewer",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=RColorBrewer"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "reshape2",
       "name": "reshape2",
       "provider": {
@@ -194,6 +206,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=tibble"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "viridis",
+      "name": "viridis",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=viridis"
     }
   ],
   "softwareRequirements": {
@@ -205,6 +229,12 @@
     },
     "2": {
       "@type": "SoftwareApplication",
+      "identifier": "AAGIPalettes",
+      "name": "AAGIPalettes",
+      "sameAs": "https://github.com/https://github.com/AAGIPalettes"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
       "identifier": "cli",
       "name": "cli",
       "provider": {
@@ -215,7 +245,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=cli"
     },
-    "3": {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "flextable",
       "name": "flextable",
@@ -227,7 +257,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=flextable"
     },
-    "4": {
+    "5": {
       "@type": "SoftwareApplication",
       "identifier": "ggplot2",
       "name": "ggplot2",
@@ -240,17 +270,17 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=ggplot2"
     },
-    "5": {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "grDevices",
       "name": "grDevices"
     },
-    "6": {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "grid",
       "name": "grid"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "magick",
       "name": "magick",
@@ -262,7 +292,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magick"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "officer",
       "name": "officer",
@@ -274,7 +304,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=officer"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "rlang",
       "name": "rlang",
@@ -286,7 +316,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rlang"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "scales",
       "name": "scales",
@@ -298,7 +328,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=scales"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "showtext",
       "name": "showtext",
@@ -310,7 +340,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=showtext"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "sysfonts",
       "name": "sysfonts",
@@ -322,7 +352,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sysfonts"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "systemfonts",
       "name": "systemfonts",
@@ -334,7 +364,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=systemfonts"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -349,8 +379,8 @@
     "SystemRequirements": null
   },
   "applicationCategory": "Tools",
-  "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
-  "fileSize": "4369.321KB",
+  "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\\",
+  "fileSize": "4319.712KB",
   "releaseNotes": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-Org-AU-Public/theme.aagi/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/theme.aagi/actions/workflows/R-CMD-check.yaml",

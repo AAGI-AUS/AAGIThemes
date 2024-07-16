@@ -62,7 +62,7 @@ boxplot_aagi <- function(x,
   graphics::boxplot(
     x,
     col = scales::alpha(col, 0.5),
-    border = AAGIPallets::aagi_colours["AAGI Black"],
+    border = AAGIPalettes::aagi_colours["AAGI Black"],
     pars = list(
       boxwex = 0.8,
       staplelty = 0,
