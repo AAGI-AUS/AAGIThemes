@@ -8,7 +8,7 @@ Authors@R: c(
     person("Kenyon", "Ng", , "kenyon.ng@dpird.wa.gov.au", role = "aut",
            comment = c(ORCID = "0000-0002-6315-9831")),
     person("Jimmy", "Ng", , "jimmy.ng@dpird.wa.gov.au", role = "ctb"),
-    person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = c("aut")),
+    person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = "aut"),
     person("Matt", "Cowgill", , "matthew.cowgill@grattaninstitute.edu.au", role = "aut",
            comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'\n                    licence."),
     person("Will", "Mackey", , "william.mackey@grattaninstitute.edu.au", role = "aut",
@@ -17,13 +17,16 @@ Authors@R: c(
   )
 Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
     colours and font guidelines are applied as useful and reasonable to
-    both base graphics as well as 'ggplot2' figures and 'flextable' objects.
+    both base graphics as well as 'ggplot2' figures and 'flextable'
+    objects.
 License: GPL (>= 3)
-URL: https://github.com/AAGI-Org-AU-Public/theme.aagi, https://aagi-org-au-public.github.io/theme.aagi/
+URL: https://github.com/AAGI-Org-AU-Public/theme.aagi,
+    https://aagi-org-au-public.github.io/theme.aagi/
 BugReports: https://github.com/AAGI-Org-AU-Public/theme.aagi/issues
 Depends: 
     R (>= 4.0.0)
 Imports:
+    AAGIPalettes,
     cli,
     flextable,
     ggplot2 (>= 3.3.5),
@@ -52,6 +55,8 @@ Suggests:
     viridis
 VignetteBuilder: 
     knitr
+Remotes: 
+    https://github.com/AAGIPallets
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-AU
@@ -59,4 +64,5 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 X-schema.org-applicationCategory: Tools
-X-schema.org-isPartOf: https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi
+X-schema.org-isPartOf: 
+    https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\

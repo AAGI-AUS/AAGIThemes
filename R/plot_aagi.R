@@ -14,7 +14,8 @@
 #'   label if one is available.
 #' @param xlim Numeric value for x-axis limits.  Optional.
 #' @param ylim Numeric value for y-axis limits.  Optional.
-#' @param col Colour to use for points.  Defaults to a very dark grey.
+#' @param col Colour to use for points.  Defaults to "AAGI Black", a very dark
+#'    grey.
 #' @param pch plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 #'   be a single character or an integer code for one of a set of graphics
 #'   symbols. The full set of S symbols is available with `pch = 0:18`, see the
@@ -70,7 +71,7 @@ plot_aagi <- function(x,
                       ylab = "",
                       xlim = NULL,
                       ylim = NULL,
-                      col = "#414042",
+                      col = AAGIPallets::aagi_colours["AAGI Black"],
                       pch = 16,
                       type = "p",
                       ...) {

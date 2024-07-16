@@ -121,7 +121,7 @@ theme_aagi <-
     if (isTRUE(minor_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.grid.minor =
-                        ggplot2::element_line(color = "#e4e4e4",
+                        ggplot2::element_line(color = AAGIPallets::aagi_colours["AAGI Grey"],
                                       linewidth = minor_grid_size))
     }
 
@@ -137,7 +137,7 @@ theme_aagi <-
         ggplot2::theme(panel.border =
                         ggplot2::element_rect(
                           fill = NA,
-                          color = "#353535",
+                          color = AAGIPallets::aagi_colours["AAGI Black"],
                           size = base_rect_size
                         ))
     }

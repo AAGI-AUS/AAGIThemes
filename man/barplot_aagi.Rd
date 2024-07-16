@@ -4,7 +4,7 @@
 \alias{barplot_aagi}
 \title{Basic Barplots Using a Unified AAGI Style and Typography}
 \usage{
-barplot_aagi(height, col = "#414042", ...)
+barplot_aagi(height, col = AAGIPallets::aagi_colours["AAGI Black"], ...)
 }
 \arguments{
 \item{height}{Either a vector or matrix of values describing the bars which

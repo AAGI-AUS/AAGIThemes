@@ -13,7 +13,7 @@ plot_aagi(
   ylab = "",
   xlim = NULL,
   ylim = NULL,
-  col = "#414042",
+  col = AAGIPallets::aagi_colours["AAGI Black"],
   pch = 16,
   type = "p",
   ...
@@ -38,7 +38,8 @@ label if one is available.}
 
 \item{ylim}{Numeric value for y-axis limits.  Optional.}
 
-\item{col}{Colour to use for points.  Defaults to a very dark grey.}
+\item{col}{Colour to use for points.  Defaults to "AAGI Black", a very dark
+grey.}
 
 \item{pch}{plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 be a single character or an integer code for one of a set of graphics

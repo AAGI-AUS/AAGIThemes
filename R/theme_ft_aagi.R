@@ -1,4 +1,3 @@
-
 #' Apply AAGI Theme to a flextable Object
 #'
 #' Apply theme AAGI to a \CRANpkg{flextable}.  An \acronym{AAGI} formatted table
@@ -18,7 +17,7 @@
 #' If you want to automatically apply a theme function to each
 #'   \CRANpkg{flextable} object, you can use the `theme_fun` argument of
 #'   [flextable::set_flextable_defaults()]; be aware that this theme function is
-#'   applied as the last instruction when calling [flextable::flextable()] - so
+#'   applied as the last instruction when calling [flextable::flextable()] -- so
 #'   if you add headers or footers to the array, they will not be formatted with
 #'   the theme.
 #'
@@ -50,11 +49,20 @@ theme_ft_aagi <- function(x) {
   # header
   x <- flextable::bold(x = x, bold = TRUE, part = "header")
   x <- flextable::color(x = x, color = "#ffffff", part = "header")
-  x <- flextable::bg(x = x, bg = "#00808C", part = "header")
+  x <- flextable::bg(
+    x = x, bg = AAGIPallets::aagi_colours["AAGI Teal"],
+    part = "header"
+  )
 
   # body
-  x <- flextable::color(x = x, color = "#414042", part = "body")
-  x <- flextable::bg(x = x, bg = "#F2F2F2", part = "body")
+  x <- flextable::color(
+    x = x, color = AAGIPallets::aagi_colours["AAGI Black"],
+    part = "body"
+  )
+  x <- flextable::bg(
+    x = x, bg = AAGIPallets::aagi_colours["AAGI Grey"],
+    part = "body"
+  )
 
   x <- flextable::border(
     x = x, border = officer::fp_border(

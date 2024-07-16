@@ -42,7 +42,7 @@ hist_aagi <- function(x,
                        xlab = "",
                        ylab = "Count",
                        breaks = "pretty",
-                       col = "#414042",
+                       col = AAGIPallets::aagi_colours["AAGI Black"],
                        ...) {
 
   breaks <- tolower(breaks)

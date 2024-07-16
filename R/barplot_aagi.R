@@ -25,7 +25,7 @@
 #' @export
 #'
 barplot_aagi <- function(height,
-                          col = "#414042",
+                          col = AAGIPallets::aagi_colours["AAGI Black"],
                           ...) {
 
   withr::local_par(.new = par_aagi())

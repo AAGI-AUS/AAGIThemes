@@ -11,7 +11,7 @@ hist_aagi(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = "#414042",
+  col = AAGIPallets::aagi_colours["AAGI Black"],
   ...
 )
 }
