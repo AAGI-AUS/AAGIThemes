@@ -7,6 +7,7 @@ vignette: >
   %\VignetteIndexEntry{AAGIThemes}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteDepends{AAGIPalettes}
   %\VignetteDepends{dplyr}
   %\VignetteDepends{flextable}
   %\VignetteDepends{ggplot2}
@@ -41,9 +42,7 @@ If you do not have the {remotes} package installed, you will have to run the fir
 ``` {r eval = FALSE}
 if (!require("remotes"))
   remotes::install_github("AAGI-Org-AU-Public/AAGIThemes",
-                          build_vignettes = TRUE)
-
-)
+                          build_vignettes = TRUE))
 ```
 
 For more info on {AAGIThemes} check out the [package's GitHub repository](https://github.com/AAGI-Org-AU-Public/AAGIThemes), but most of the details about how to use the package and its functions are detailed below. 
@@ -88,7 +87,7 @@ x <-
   c("dplyr",
     "gapminder",
     "ggplot2",
-    "scales",
+    "AAGIPalettes",
     "AAGIThemes",
     "tibble")
 invisible(lapply(
@@ -187,7 +186,7 @@ line_df <- gapminder |>
 plot_aagi(
   x = line_df$year,
   y = line_df$lifeExp,
-  col = aagi_cols("AAGI Teal"),
+  col = AAGIPalettes::colour_as_hex("AAGI Teal"),
   type = "l",
   main = "Living longer",
   xlab = "Year",
@@ -200,7 +199,7 @@ plot_aagi(
 
 ```{r line-ggplot2}
 ggplot(line_df, aes(x = year, y = lifeExp)) +
-  geom_line(colour = aagi_cols("AAGI Teal")) +
+  geom_line(colour = AAGIPalettes::colour_as_hex("AAGI Teal")) +
   theme_aagi() +
   ylab("Life expectancy") +
   xlab("Year") +
@@ -237,11 +236,11 @@ ggplot(data = data, aes(x = x, y = y)) +
 
 ### AAGI Colours
 
-{AAGIThemes} includes official AAGI colours for use in plots and also applies them to {ggplot2} facet strips and uses them in the MS Word and PowerPoint templates for colour matching in the outputs.
+{AAGIThemes} imports official AAGI colours for use in plots and also applies them to {ggplot2} facet strips and uses them in the MS Word and PowerPoint templates for colour matching in the outputs from {AAGIPalettes}.
 
 ```{r colours}
-library(scales)
-show_col(aagi_colours)
+library(AAGIPalettes)
+display_aagi_cols("aagi_colours")
 ```
 
 ### Using AAGI Colours
@@ -249,7 +248,7 @@ show_col(aagi_colours)
 We've already seen above in the [line graph](#Linegraphs) example how to use the colours in a graph.
 But for further demonstration, here are a few more examples.
 
-Here we'll again use the {gapminder} data to construct a stacked bar chart and use AAGI's colours `scale_fill_aagi()`.
+Here we'll again use the {gapminder} data to construct a stacked bar chart and use AAGI's colours in `scale_fill_manual()`.
 
 ```{r aagi-facet-example}
 #prepare data
@@ -274,7 +273,8 @@ ggplot(data = stacked_df,
           fill = lifeExpGrouped)) +
   geom_bar(stat = "identity",
           position = "fill") +
-  scale_fill_aagi(name = "Life expectancy") +
+  scale_fill_manual(name = "Life expectancy",
+                    values = aagi_palettes(n = 4, name = "aagi_greens")) +
   ylab("Continental Population (%)") +
   xlab("Continent") +
   theme_aagi() +
@@ -301,12 +301,12 @@ facet <- gapminder |>
   group_by(continent, year) |>
   summarise(pop = sum(as.numeric(pop)))
 
-col_values <- unname(c(
-  aagi_cols("AAGI Teal"),
-  aagi_cols("AAGI Green"),
-  aagi_cols("AAGI Yellow"),
-  aagi_cols("AAGI Blue")
-))
+col_values <- c(
+  AAGIPalettes::colour_as_hex("AAGI Teal"),
+  AAGIPalettes::colour_as_hex("AAGI Green"),
+  AAGIPalettes::colour_as_hex("AAGI Yellow"),
+  AAGIPalettes::colour_as_hex("AAGI Blue")
+)
 
 #Make plot
 p <- ggplot() +
