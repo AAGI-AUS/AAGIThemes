@@ -1,2 +1,2 @@
-# theme.aagi 0.0.1
+# AAGIThemes 0.0.1
 

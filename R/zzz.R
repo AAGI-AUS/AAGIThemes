@@ -28,7 +28,7 @@
         c("You need to install {cli::symbol$dquote_left}Proxima
         Nova{cli::symbol$dquote_right} or
         {cli::symbol$dquote_left}Arial{cli::symbol$dquote_right} TTF fonts to
-        properly use {.pkg theme.aagi} properly."))
+        properly use {.pkg AAGIThemes} properly."))
     }
   }
 # nocov end

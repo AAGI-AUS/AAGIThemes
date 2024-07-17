@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(theme.aagi)
+library(AAGIThemes)
 
-test_check("theme.aagi")
+test_check("AAGIThemes")

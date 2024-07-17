@@ -1,6 +1,5 @@
-Package: theme.aagi
-Title: Apply AAGI Brand Guidelines to Graphic Output and Create AAGI
-    Themed Documents
+Package: AAGIThemes
+Title: Apply AAGI Brand Guidelines to Graphic Outputs
 Version: 0.0.1
 Authors@R: c(
     person("Adam H.", "Sparks", , "adam.sparks@dpird.wa.gov.au", role = c("aut", "cre"),
@@ -10,19 +9,18 @@ Authors@R: c(
     person("Jimmy", "Ng", , "jimmy.ng@dpird.wa.gov.au", role = "ctb"),
     person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = "aut"),
     person("Matt", "Cowgill", , "matthew.cowgill@grattaninstitute.edu.au", role = "aut",
-           comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'\n                    licence."),
+           comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
     person("Will", "Mackey", , "william.mackey@grattaninstitute.edu.au", role = "aut",
-           comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'theme.aagi' under 'MIT'\n                    licence."),
+           comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
     person("Curtin University of Technology", role = "cph")
   )
 Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
     colours and font guidelines are applied as useful and reasonable to
-    both base graphics as well as 'ggplot2' figures and 'flextable'
-    objects.
+    base graphics, 'ggplot2' figures and 'flextable' objects.
 License: GPL (>= 3)
-URL: https://github.com/AAGI-Org-AU-Public/theme.aagi,
-    https://aagi-org-au-public.github.io/theme.aagi/
-BugReports: https://github.com/AAGI-Org-AU-Public/theme.aagi/issues
+URL: https://github.com/AAGI-Org-AU-Public/AAGIThemes,
+    https://aagi-org-au-public.github.io/AAGIThemes/
+BugReports: https://github.com/AAGI-Org-AU-Public/AAGIThemes/issues
 Depends: 
     R (>= 4.0.0)
 Imports:

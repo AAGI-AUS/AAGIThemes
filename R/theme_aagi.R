@@ -90,8 +90,8 @@ theme_aagi <-
                                                     fill = "#ffffff"),
           #AAGI colour facet strips
           strip.background = ggplot2::element_rect(
-          fill = theme.aagi::aagi_colours[[3]],
-          colour = theme.aagi::aagi_colours[[3]],
+          fill = AAGIThemes::aagi_colours[[3]],
+          colour = AAGIThemes::aagi_colours[[3]],
           linewidth = base_line_size
           ),
           strip.text = ggplot2::element_text(
