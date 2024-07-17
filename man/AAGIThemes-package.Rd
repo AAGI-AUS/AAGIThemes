@@ -4,7 +4,7 @@
 \name{AAGIThemes-package}
 \alias{AAGIThemes}
 \alias{AAGIThemes-package}
-\title{AAGIThemes: Apply AAGI Brand Guidelines to Graphic Outputs and Tables}
+\title{AAGIThemes: AAGI Branding for Graphical and Tabular Outputs}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
