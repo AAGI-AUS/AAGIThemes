@@ -8,7 +8,7 @@
 #' @keywords Internal
 #' 
 set_aagi_font <- function() {
-  if ("Proxima Nova" %in% systemfonts::system_fonts()[, "name"]) {
+  if (any(systemfonts::system_fonts()[, "family"] == "Proxima Nova")) {
     aagi_font <- "Proxima Nova"
   } else {
     aagi_font <- "Arial"
@@ -25,12 +25,11 @@ set_aagi_font <- function() {
 #' 
 
 par_aagi <- function() {
-  aagi_font <- set_aagi_font()
-  list(
-    family = aagi_font,
+  return(list(
+    family = set_aagi_font(),
     las = 1,
     mgp = c(2, 0.5, 0),
     cex = 0.9,
     bty = "L"
-  )
+  ))
 }
