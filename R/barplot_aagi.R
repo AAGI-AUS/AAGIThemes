@@ -12,8 +12,8 @@
 #'   beside is `TRUE`, then the values in each column are juxtaposed rather than
 #'   stacked.
 #' @param col Colour to use as fill for bars  Defaults to "AAGI Black", a very
-#'   dark grey.  Can be supplied as a named AAGI colour; **e.g.**, "AAGI Black";
-#'   a named colour, "black"; or a hexadecimal code, #414042.
+#'   dark grey.  Can be supplied as a named AAGI colour; *e.g.*, "AAGI Black";
+#'   a named colour, "black"; or a hexadecimal code, "#414042".
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).
 #'

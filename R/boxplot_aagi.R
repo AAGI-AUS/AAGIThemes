@@ -13,8 +13,8 @@
 #' @param xlab X-axis label.  Optional.
 #' @param ylab Y-axis label.  Optional.
 #' @param col Colour to use as fill for boxes  Defaults to white.  Can be
-#'   supplied as a named AAGI colour, **e.g.**, "AAGI Orange"; named colour,
-#'   "Orange"; or or a hexadecimal code, #ec8525.
+#'   supplied as a named AAGI colour, *e.g.*, "AAGI Orange"; named colour,
+#'   "Orange"; or or a hexadecimal code, "#ec8525".
 #' @param pch plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 #'   be a single character or an integer code for one of a set of graphics
 #'   symbols. The full set of S symbols is available with `pch = 0:18`, see the

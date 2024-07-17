@@ -14,8 +14,8 @@
 #' @param xlim Numeric value for x-axis limits.  Optional.
 #' @param ylim Numeric value for y-axis limits.  Optional.
 #' @param col Colour to use for points  Defaults to "AAGI Black", a very dark
-#'   grey.  Can be supplied as a named AAGI colour; **e.g.**, "AAGI Black";
-#'   a named colour, "black"; or a hexadecimal code, #414042.
+#'   grey.  Can be supplied as a named AAGI colour; *e.g.*, "AAGI Black";
+#'   a named colour, "black"; or a hexadecimal code, "#414042".
 #' @param pch plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 #'   be a single character or an integer code for one of a set of graphics
 #'   symbols. The full set of S symbols is available with `pch = 0:18`, see the
