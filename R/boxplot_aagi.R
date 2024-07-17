@@ -51,13 +51,7 @@ boxplot_aagi <- function(x,
                          ...) {
   # set new pars
   withr::local_par(.new = par_aagi())
-
   graphics::plot.new()
-  graphics::grid(
-    nx = NA,
-    ny = NULL,
-    col = NA
-  )
   showtext::showtext_begin()
   graphics::boxplot(
     x,

@@ -128,7 +128,7 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
   theme_aagi()
 ```
 
-<img src="man/figures/README-theme_aagi-1.png" width="100%" />
+<img src="man/figures/README-theme_aagi_ggboxplot-1.png" width="100%" />
 
 ## Using {AAGIThemes} Word Templates
 

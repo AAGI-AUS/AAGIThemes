@@ -102,7 +102,7 @@ No adjustments are made by the type of graph being produced, so you may wish to 
 
 Example of how `theme_aagi()` is used in a standard {ggplot2} workflow:
 
-```{r theme_aagi}
+```{r theme_aagi_ggboxplot}
 library(AAGIThemes)
 library(ggplot2)
 
