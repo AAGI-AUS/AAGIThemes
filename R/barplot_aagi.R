@@ -34,7 +34,6 @@ barplot_aagi <- function(height,
     col <- AAGIPalettes::colour_as_hex(col)
   }
   withr::local_par(.new = par_aagi())
-  graphics::plot.new()
   showtext::showtext_begin()
   graphics::barplot(
     height = height,
