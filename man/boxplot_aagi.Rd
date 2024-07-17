@@ -30,7 +30,9 @@ be blank.}
 
 \item{ylab}{Y-axis label.  Optional.}
 
-\item{col}{Colour to use as fill and outline for boxes.  Defaults to white.}
+\item{col}{Colour to use as fill for boxes  Defaults to white.  Can be
+supplied as a named AAGI colour, \strong{e.g.}, "AAGI Orange"; named colour,
+"Orange"; or or a hexadecimal code, #ec8525.}
 
 \item{pch}{plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 be a single character or an integer code for one of a set of graphics
@@ -54,9 +56,10 @@ that uses (hopefully) sensible defaults.
 }
 \examples{
 boxplot_aagi(decrease ~ treatment,
-             data = OrchardSprays,
-             xlab = "treatment",
-             ylab = "decrease")
+  data = OrchardSprays,
+  xlab = "treatment",
+  ylab = "decrease"
+)
 }
 \seealso{
 \code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic boxplot
