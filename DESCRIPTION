@@ -32,7 +32,6 @@ Imports:
     grid,
     magick,
     officer,
-    rlang,
     scales,
     showtext,
     sysfonts,
