@@ -2,8 +2,8 @@ pandoc: 3.1.11
 pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
-  theme.aagi: theme.aagi.html
-last_built: 2024-07-16T07:47Z
+  AAGIThemes: AAGIThemes.html
+last_built: 2024-07-17T05:36Z
 urls:
-  reference: https://aagi-org-au-public.github.io/theme.aagi/reference
-  article: https://aagi-org-au-public.github.io/theme.aagi/articles
+  reference: https://aagi-org-au-public.github.io/AAGIThemes/reference
+  article: https://aagi-org-au-public.github.io/AAGIThemes/articles
