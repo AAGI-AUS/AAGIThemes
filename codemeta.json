@@ -231,7 +231,7 @@
       "@type": "SoftwareApplication",
       "identifier": "AAGIPalettes",
       "name": "AAGIPalettes",
-      "sameAs": "https://github.com/https://github.com/AAGIPalettes"
+      "sameAs": "https://github.com/AAGI-Org-AU-Public/AAGIPalettes"
     },
     "3": {
       "@type": "SoftwareApplication",
@@ -380,8 +380,9 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\\",
-  "fileSize": "4319.61KB",
+  "fileSize": "4328.512KB",
   "releaseNotes": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/blob/master/NEWS.md",
+  "readme": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",
   "developmentStatus": "https://www.repostatus.org/#active"
 }
