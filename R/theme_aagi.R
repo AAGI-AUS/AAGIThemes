@@ -17,7 +17,7 @@
 #'   sides, *i.e.*, x-axis, y-axis, top and right sides all will have a black
 #'   border not just x-axis and y-axis.  Defaults to `FALSE` with only the
 #'   x-axis and y-axis being outlined in dark grey.
-#' @param ... Other arguments as passed along to [ggplot2::theme].
+#' @param ... Other arguments as passed along to [ggplot2::theme()].
 #'
 #' @examples
 #'
@@ -64,14 +64,17 @@
 #' @export
 
 theme_aagi <-
-  function(base_size = 12,
-           major_grid = FALSE,
-           minor_grid = FALSE,
-           border = FALSE,
-           ...) {
+  function(base_size = 9,
+          major_grid = FALSE,
+          minor_grid = FALSE,
+          border = FALSE,
+          ...) {
 
     # check if Proxima Nova is installed, if not, falls back to Arial
     aagi_font <- set_aagi_font()
+    aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
+    aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
+    aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
 
     showtext::showtext_auto()
 
@@ -86,11 +89,13 @@ theme_aagi <-
         ggplot2::theme(
           # match legend key to panel.background
           legend.key = ggplot2::element_blank(),
+          legend.background = ggplot2::element_rect(color = aagi_black,
+                                                    fill = "#ffffff"),
           #AAGI colour facet strips
           strip.background = ggplot2::element_rect(
-           fill = theme.aagi::aagi_colours[[3]],
-           colour = theme.aagi::aagi_colours[[3]],
-           linewidth = base_line_size
+          fill = aagi_teal,
+          colour = aagi_teal,
+          linewidth = base_line_size
           ),
           strip.text = ggplot2::element_text(
             colour = "#ffffff",
@@ -119,25 +124,25 @@ theme_aagi <-
     if (isTRUE(minor_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.grid.minor =
-                         ggplot2::element_line(color = "#e4e4e4",
+                        ggplot2::element_line(color = aagi_grey,
                                       linewidth = minor_grid_size))
     }
 
     if (isTRUE(major_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.grid.major =
-                         ggplot2::element_line(color = "#bdbdbd",
+                        ggplot2::element_line(color = "#bdbdbd",
                                       linewidth = major_grid_size))
     }
 
     if (isTRUE(border)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.border =
-                         ggplot2::element_rect(
-                           fill = NA,
-                           color = "#353535",
-                           size = base_rect_size
-                         ))
+                        ggplot2::element_rect(
+                          fill = NA,
+                          color = aagi_black,
+                          size = base_rect_size
+                        ))
     }
 
     return(theme_aagi)

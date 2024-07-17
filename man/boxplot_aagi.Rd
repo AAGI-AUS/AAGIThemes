@@ -30,7 +30,9 @@ be blank.}
 
 \item{ylab}{Y-axis label.  Optional.}
 
-\item{col}{Colour to use as fill and outline for boxes.  Defaults to white.}
+\item{col}{Colour to use as fill for boxes  Defaults to white.  Can be
+supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
+"Orange"; or or a hexadecimal code, "#ec8525".}
 
 \item{pch}{plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 be a single character or an integer code for one of a set of graphics
@@ -46,7 +48,7 @@ the device, often specified by an argument \code{pointsize}. For \code{pch} in 0
 the default size is about 75\% of the character height (see \code{par("cin")}).}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \link[graphics:par]{graphics::par}).}
+(see \code{\link[graphics:par]{graphics::par()}}).}
 }
 \description{
 Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
@@ -54,12 +56,13 @@ that uses (hopefully) sensible defaults.
 }
 \examples{
 boxplot_aagi(decrease ~ treatment,
-             data = OrchardSprays,
-             xlab = "treatment",
-             ylab = "decrease")
+  data = OrchardSprays,
+  xlab = "treatment",
+  ylab = "decrease"
+)
 }
 \seealso{
-\link[graphics:boxplot]{graphics::boxplot} for full documentation of the basic boxplot
+\code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic boxplot
 capabilities
 }
 \author{

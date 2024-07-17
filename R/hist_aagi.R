@@ -15,9 +15,9 @@
 #'   individually with a bar.
 #' @param col Colour to use as fill for bars  Defaults to a very dark grey.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par]).
+#'   (see [graphics::par()]).
 #'
-#' @seealso [graphics::hist] for full documentation of the basic histogram
+#' @seealso [graphics::hist()] for full documentation of the basic histogram
 #'  capabilities
 #'
 #' @references
@@ -42,7 +42,7 @@ hist_aagi <- function(x,
                        xlab = "",
                        ylab = "Count",
                        breaks = "pretty",
-                       col = "#414042",
+                       col = AAGIPalettes::aagi_colours["AAGI Black"],
                        ...) {
 
   breaks <- tolower(breaks)

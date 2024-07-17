@@ -19,7 +19,7 @@ guidelines and the size remains at least 4.6 cm.}
 }
 \description{
 Insert the \acronym{AAGI} logo in any graphical image.  Particularly well-
-suited for use with files created with \pkg{theme.aagi}.  The logo will be
+suited for use with files created with \pkg{AAGIThemes}.  The logo will be
 inserted in the upper-left of the image with a size of at least 4.6 cm as
 per \acronym{AAGI} brand guidelines.
 }

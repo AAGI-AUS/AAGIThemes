@@ -1,4 +1,3 @@
-
 #' Apply AAGI Theme to a flextable Object
 #'
 #' Apply theme AAGI to a \CRANpkg{flextable}.  An \acronym{AAGI} formatted table
@@ -17,17 +16,17 @@
 #'
 #' If you want to automatically apply a theme function to each
 #'   \CRANpkg{flextable} object, you can use the `theme_fun` argument of
-#'   [flextable::set_flextable_defaults]; be aware that this theme function is
-#'   applied as the last instruction when calling [flextable::flextable] - so if
-#'   you add headers or footers to the array, they will not be formatted with
+#'   [flextable::set_flextable_defaults()]; be aware that this theme function is
+#'   applied as the last instruction when calling [flextable::flextable()] -- so
+#'   if you add headers or footers to the array, they will not be formatted with
 #'   the theme.
 #'
 #' You can also use the `post_process_html` argument of
-#'   [flextable::set_flextable_defaults] (or `post_process_pdf`,
+#'   [flextable::set_flextable_defaults()] (or `post_process_pdf`,
 #'   `post_process_docx`, `post_process_pptx`) to specify a theme to be applied
-#'   systematically before the [flextable::flextable] is printed; in this case,
-#'   don't forget to take care that the theme doesn't override any formatting
-#'   done before the print statement.
+#'   systematically before the [flextable::flextable()] is printed; in this
+#'   case, don't forget to take care that the theme doesn't override any
+#'   formatting done before the print statement.
 #'
 #' @param x a \CRANpkg{flextable} object
 #' @return a formatted \CRANpkg{flextable} object
@@ -50,11 +49,20 @@ theme_ft_aagi <- function(x) {
   # header
   x <- flextable::bold(x = x, bold = TRUE, part = "header")
   x <- flextable::color(x = x, color = "#ffffff", part = "header")
-  x <- flextable::bg(x = x, bg = "#00808C", part = "header")
+  x <- flextable::bg(
+    x = x, bg = AAGIPalettes::aagi_colours["AAGI Teal"],
+    part = "header"
+  )
 
   # body
-  x <- flextable::color(x = x, color = "#414042", part = "body")
-  x <- flextable::bg(x = x, bg = "#F2F2F2", part = "body")
+  x <- flextable::color(
+    x = x, color = AAGIPalettes::aagi_colours["AAGI Black"],
+    part = "body"
+  )
+  x <- flextable::bg(
+    x = x, bg = AAGIPalettes::aagi_colours["AAGI Grey"],
+    part = "body"
+  )
 
   x <- flextable::border(
     x = x, border = officer::fp_border(

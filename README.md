@@ -6,17 +6,17 @@
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![R-CMD-check](https://github.com/AAGI-Org-AU-Public/theme.aagi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-Org-AU-Public/theme.aagi/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-# {theme.aagi} Apply AAGI Brand Guidelines to R Graphic Output and Create AAGI Themed Documents <img align="right" src="man/figures/logo.png">
+# {AAGIThemes} Apply AAGI Brand Guidelines to R Graphic Output and Tables <img align="right" src="man/figures/logo.png">
 
-This repository contains the code for the R package {theme.aagi}, which
+This repository contains the code for the R package {AAGIThemes}, which
 once installed in your R session (local or RStudio Server), provides
 helper functions for creating and exporting graphics created in R with a
 unified style that follows the AAGI brand guidelines.
 
-The goal of {theme.aagi} is to provide easy to use theming of R graphics
+The goal of {AAGIThemes} is to provide easy to use theming of R graphics
 for AAGI team members. Following AAGI’s brand guidelines, AAGI colours
 are used where applicable and the font defaults to Proxima Nova. The
 resulting graphs, plots and charts feature a x and y axis that meet at 0
@@ -26,13 +26,13 @@ legend on the right.
 
 ## Installation instructions
 
-You can install {theme.aagi} like so:
+You can install {AAGIThemes} like so:
 
 ``` r
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
-remotes::install_github("AAGI-Org-AU-Public/theme.aagi",
+remotes::install_github("AAGI-Org-AU-Public/AAGIThemes",
                         build_vignettes = TRUE,
                         dependencies = TRUE
 )
@@ -40,21 +40,21 @@ remotes::install_github("AAGI-Org-AU-Public/theme.aagi",
 
 ## Quick start
 
-Following are some quick examples of {theme.aagi} functionality.
+Following are some quick examples of {AAGIThemes} functionality.
 However, you may wish to browse the vignette for a more detailed look at
 what the package offers using:
 
 ``` r
-vignette("Cookbook", package = "theme.aagi")
+vignette("Cookbook", package = "AAGIThemes")
 ```
 
 ### Create Tabular Outputs
 
-{theme.aagi} provides a {flextable} them suited for the AAGI style that
+{AAGIThemes} provides a {flextable} them suited for the AAGI style that
 works in HTML and Word document outputs. You can use it like so.
 
 ``` r
-library(theme.aagi)
+library(AAGIThemes)
 library(dplyr)
 #> 
 #> Attaching package: 'dplyr'
@@ -75,7 +75,7 @@ ft
 
 ### Plots and graphs
 
-{theme.aagi} provides several functions to assist users in creating
+{AAGIThemes} provides several functions to assist users in creating
 plots, charts and graphs with a more unified AAGI style.
 
 For creating standalone graphs using R’s base library there are:
@@ -94,7 +94,7 @@ Example of how the base graphics functionality with AAGI style
 pre-applied is used:
 
 ``` r
-library(theme.aagi)
+library(AAGIThemes)
 boxplot_aagi(decrease ~ treatment,
               data = OrchardSprays,
               xlab = "treatment",
@@ -103,7 +103,7 @@ boxplot_aagi(decrease ~ treatment,
 
 <img src="man/figures/README-boxplot_aagi-1.png" width="100%" />
 
-See the respective function’s help files and the {theme.aagi} cookbook
+See the respective function’s help files and the {AAGIThemes} cookbook
 for more examples and documentation.
 
 #### Using With {ggplot2}
@@ -119,7 +119,7 @@ to alter point or line colours in your graph.
 Example of how `theme_aagi()` is used in a standard {ggplot2} workflow:
 
 ``` r
-library(theme.aagi)
+library(AAGIThemes)
 library(ggplot2)
 
 ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
@@ -128,4 +128,4 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
   theme_aagi()
 ```
 
-<img src="man/figures/README-theme_aagi-1.png" width="100%" />
+<img src="man/figures/README-theme_aagi_ggboxplot-1.png" width="100%" />

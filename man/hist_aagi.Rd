@@ -11,7 +11,7 @@ hist_aagi(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = "#414042",
+  col = AAGIPalettes::aagi_colours["AAGI Black"],
   ...
 )
 }
@@ -34,7 +34,7 @@ individually with a bar.}
 \item{col}{Colour to use as fill for bars  Defaults to a very dark grey.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \link[graphics:par]{graphics::par}).}
+(see \code{\link[graphics:par]{graphics::par()}}).}
 }
 \description{
 Basic histograms that follow a standard \acronym{AAGI} style
@@ -54,7 +54,7 @@ Hyndman, R.J., The Problem with Sturges' Rule for Constructing Histograms,
 \url{https://www.robjhyndman.com/papers/sturges.pdf}.
 }
 \seealso{
-\link[graphics:hist]{graphics::hist} for full documentation of the basic histogram
+\code{\link[graphics:hist]{graphics::hist()}} for full documentation of the basic histogram
 capabilities
 }
 \author{

@@ -1,9 +1,8 @@
 
-
 #' Insert AAGI's Logo Into Any Graphic File
 #'
 #' Insert the \acronym{AAGI} logo in any graphical image.  Particularly well-
-#'   suited for use with files created with \pkg{theme.aagi}.  The logo will be
+#'   suited for use with files created with \pkg{AAGIThemes}.  The logo will be
 #'   inserted in the upper-left of the image with a size of at least 4.6 cm as
 #'   per \acronym{AAGI} brand guidelines.
 #'
@@ -57,7 +56,7 @@ add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
         system.file(
           "logo",
           "AAGI_logo_colour_CMYK.svg",
-          package = "theme.aagi",
+          package = "AAGIThemes",
           mustWork = TRUE
         )
       )
@@ -67,7 +66,7 @@ add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
         system.file(
           "logo",
           "AAGI_logo_colour_CMYK.svg",
-          package = "theme.aagi",
+          package = "AAGIThemes",
           mustWork = TRUE
         )
       )
@@ -90,8 +89,8 @@ add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
 
   # trim plot down, removes bottom border added earlier to make room for logo
   plot_out <- magick::image_crop(plot_out,
-                                 geometry = paste0("0x", plot_height + 300),
-                                 gravity = "north")
+                                geometry = paste0("0x", plot_height + 300),
+                                gravity = "north")
 
   magick::image_write(plot_out, file_out)
 }

@@ -1,12 +1,13 @@
 ---
-title: "theme.aagi"
+title: "AAGIThemes"
 author: "Adam H. Sparks"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{theme.aagi}
+  %\VignetteIndexEntry{AAGIThemes}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteDepends{AAGIPalettes}
   %\VignetteDepends{dplyr}
   %\VignetteDepends{flextable}
   %\VignetteDepends{ggplot2}
@@ -28,25 +29,23 @@ knitr::opts_chunk$set(
 
 ## How to Create AAGI Style Graphics and Tables
 
-The CCDM CBADA team has developed an R package, {theme.aagi}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using R's {graphics}, {ggplot2} and {flextable} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics and tables that adhere to AAGI style guidelines.
+The CCDM CBADA team has developed an R package, {AAGIThemes}, and this R cookbook to help ease the process of creating publication-ready graphics in our in-house style using R's {graphics}, {ggplot2} and {flextable} libraries a more reproducible process, as well as making it easier for people new to R to create beautiful graphics and tables that adhere to AAGI style guidelines.
 
 ## Getting started
 
-### Install the {theme.aagi} package
+### Install the {AAGIThemes} package
 
-{theme.aagi} is not on CRAN, so you will have to install it directly from our GitHub repository using {remotes}.
+{AAGIThemes} is not on CRAN, so you will have to install it directly from our GitHub repository using {remotes}.
 
 If you do not have the {remotes} package installed, you will have to run the first line in the code below as well. 
 
 ``` {r eval = FALSE}
 if (!require("remotes"))
-  remotes::install_github("AAGI-Org-AU-Public/theme.aagi",
-                          build_vignettes = TRUE)
-
-)
+  remotes::install_github("AAGI-Org-AU-Public/AAGIThemes",
+                          build_vignettes = TRUE))
 ```
 
-For more info on {theme.aagi} check out the [package's GitHub repository](https://github.com/AAGI-Org-AU-Public/theme.aagi), but most of the details about how to use the package and its functions are detailed below. 
+For more info on {AAGIThemes} check out the [package's GitHub repository](https://github.com/AAGI-Org-AU-Public/AAGIThemes), but most of the details about how to use the package and its functions are detailed below. 
 
 When you have downloaded the package and successfully installed it you are good to go and create plots and tables.
 
@@ -56,7 +55,7 @@ Creating AAGI themed tables requires using {flextable}.
 Using the `airquality` data set, and adding a text column to illustrate how text columns are handled, here's how to apply an AAGI theme to a table.
 
 ```{r flextable}
-library("theme.aagi")
+library("AAGIThemes")
 library("flextable")
 library("dplyr")
 
@@ -68,14 +67,14 @@ ft
 
 ### On {ggplot2} Plots and Graphs
 
-Most of the focus of {theme.aagi} is given to supporting {[ggplot2](https://ggplot2.tidyverse.org/R)} visualisations, but {base} and {graphics} plotting functionality are also supported.
+Most of the focus of {AAGIThemes} is given to supporting {[ggplot2](https://ggplot2.tidyverse.org/R)} visualisations, but {base} and {graphics} plotting functionality are also supported.
 The focus is given to {ggplot2} as it is more verbose and efficient in creating data visualization based on "_The Grammar of Graphics_" [@wilkinson2012grammar].
 The layered grammar makes developing charts more structural and easy to interpret (after you know how to use {ggplot2} of course).
 One of the greatest strengths of {ggplot2} is the ability to customise it so easily.
 Several themes and colour palettes already exist for {ggplot2} to Create the visualisation look professional and engaging for the end users.
-{theme.aagi} leverages the ability to customise the appearance {ggplot2} to create a theme that is clean, easy to use and follows AAGI's style guidelines including fonts and colours.
+{AAGIThemes} leverages the ability to customise the appearance {ggplot2} to create a theme that is clean, easy to use and follows AAGI's style guidelines including fonts and colours.
 
-When using {theme.aagi} for graphs, the legend will be placed at the top by default and the main and sub-titles will be left aligned and captions will be right aligned.
+When using {AAGIThemes} for graphs, the legend will be placed at the top by default and the main and sub-titles will be left aligned and captions will be right aligned.
 These choices can all be overridden by using `ggplot2::theme()` arguments as you wish.
 
 ### Load the Libraries We'll Need
@@ -88,8 +87,8 @@ x <-
   c("dplyr",
     "gapminder",
     "ggplot2",
-    "scales",
-    "theme.aagi",
+    "AAGIPalettes",
+    "AAGIThemes",
     "tibble")
 invisible(lapply(
   X = x,
@@ -97,9 +96,9 @@ invisible(lapply(
   character.only = TRUE
 ))
 ```
-## Using {theme.aagi} to Create Graphical Outputs
+## Using {AAGIThemes} to Create Graphical Outputs
 
-{theme.aagi} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
+{AAGIThemes} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
 Following are examples of four major styles of graphs that are commonly used, bar plots, boxplots, histograms and lines and scatter plots.
 
 ### Bar Plots
@@ -146,7 +145,7 @@ boxplot_aagi(decrease ~ treatment,
 #### Using {ggplot2} to Create a Boxplot
 
 ```{r boxplot-ggplot2}
-library("theme.aagi")
+library("AAGIThemes")
 library("ggplot2")
 
 ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
@@ -187,7 +186,7 @@ line_df <- gapminder |>
 plot_aagi(
   x = line_df$year,
   y = line_df$lifeExp,
-  col = aagi_cols("AAGI Turquoise"),
+  col = AAGIPalettes::colour_as_hex("AAGI Teal"),
   type = "l",
   main = "Living longer",
   xlab = "Year",
@@ -200,7 +199,7 @@ plot_aagi(
 
 ```{r line-ggplot2}
 ggplot(line_df, aes(x = year, y = lifeExp)) +
-  geom_line(colour = aagi_cols("AAGI Turquoise")) +
+  geom_line(colour = AAGIPalettes::colour_as_hex("AAGI Teal")) +
   theme_aagi() +
   ylab("Life expectancy") +
   xlab("Year") +
@@ -233,15 +232,15 @@ ggplot(data = data, aes(x = x, y = y)) +
   theme_aagi()
 ```
 
-## Colours in {theme.aagi}
+## Colours in {AAGIThemes}
 
 ### AAGI Colours
 
-{theme.aagi} includes official AAGI colours for use in plots and also applies them to {ggplot2} facet strips and uses them in the MS Word and PowerPoint templates for colour matching in the outputs.
+{AAGIThemes} imports official AAGI colours for use in plots and also applies them to {ggplot2} facet strips and uses them in the MS Word and PowerPoint templates for colour matching in the outputs from {AAGIPalettes}.
 
 ```{r colours}
-library(scales)
-show_col(aagi_colours)
+library(AAGIPalettes)
+display_aagi_cols("aagi_colours")
 ```
 
 ### Using AAGI Colours
@@ -249,7 +248,7 @@ show_col(aagi_colours)
 We've already seen above in the [line graph](#Linegraphs) example how to use the colours in a graph.
 But for further demonstration, here are a few more examples.
 
-Here we'll again use the {gapminder} data to construct a stacked bar chart and use AAGI's colours `scale_fill_aagi()`.
+Here we'll again use the {gapminder} data to construct a stacked bar chart and use AAGI's colours in `scale_fill_manual()`.
 
 ```{r aagi-facet-example}
 #prepare data
@@ -274,7 +273,8 @@ ggplot(data = stacked_df,
           fill = lifeExpGrouped)) +
   geom_bar(stat = "identity",
           position = "fill") +
-  scale_fill_aagi(name = "Life expectancy") +
+  scale_fill_manual(name = "Life expectancy",
+                    values = aagi_palettes(n = 4, name = "aagi_greens")) +
   ylab("Continental Population (%)") +
   xlab("Continent") +
   theme_aagi() +
@@ -301,12 +301,12 @@ facet <- gapminder |>
   group_by(continent, year) |>
   summarise(pop = sum(as.numeric(pop)))
 
-col_values <- unname(c(
-  aagi_cols("AAGI Turquoise"),
-  aagi_cols("AAGI Green"),
-  aagi_cols("AAGI Yellow"),
-  aagi_cols("AAGI Blue")
-))
+col_values <- c(
+  AAGIPalettes::colour_as_hex("AAGI Teal"),
+  AAGIPalettes::colour_as_hex("AAGI Green"),
+  AAGIPalettes::colour_as_hex("AAGI Yellow"),
+  AAGIPalettes::colour_as_hex("AAGI Blue")
+)
 
 #Make plot
 p <- ggplot() +
@@ -348,7 +348,7 @@ image_read(file.path(tempdir(), "AAGI_logo.png")) |>
 
 ## Saving {ggplot2} Figures
 
-When saving figures generated with {ggplot2} that use {theme.aagi} as the theme, PDFs will not properly embed the Proxima Nova font that is used.
+When saving figures generated with {ggplot2} that use {AAGIThemes} as the theme, PDFs will not properly embed the Proxima Nova font that is used.
 In order for you to save your figures and preserve the font, you can either save as a .png file or use the `device` option in `ggsave()`, which is demonstrated as follows.
 
 ```{r save-ggplot, eval=TRUE}
