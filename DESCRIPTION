@@ -1,5 +1,5 @@
 Package: AAGIThemes
-Title: Apply AAGI Brand Guidelines to Graphic Outputs
+Title: Apply AAGI Brand Guidelines to Graphic Outputs and Tables
 Version: 0.0.1
 Authors@R: c(
     person("Adam H.", "Sparks", , "adam.sparks@dpird.wa.gov.au", role = c("aut", "cre"),
