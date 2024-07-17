@@ -1,4 +1,3 @@
-
 #' Basic Boxplots Using a Unified AAGI Style and Typography
 #'
 #' Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
@@ -13,7 +12,9 @@
 #'   be blank.
 #' @param xlab X-axis label.  Optional.
 #' @param ylab Y-axis label.  Optional.
-#' @param col Colour to use as fill and outline for boxes.  Defaults to white.
+#' @param col Colour to use as fill for boxes  Defaults to white.  Can be
+#'   supplied as a named AAGI colour, **e.g.**, "AAGI Orange"; named colour,
+#'   "Orange"; or or a hexadecimal code, #ec8525.
 #' @param pch plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 #'   be a single character or an integer code for one of a set of graphics
 #'   symbols. The full set of S symbols is available with `pch = 0:18`, see the
@@ -33,21 +34,21 @@
 #'    capabilities
 #' @examples
 #' boxplot_aagi(decrease ~ treatment,
-#'              data = OrchardSprays,
-#'              xlab = "treatment",
-#'              ylab = "decrease")
+#'   data = OrchardSprays,
+#'   xlab = "treatment",
+#'   ylab = "decrease"
+#' )
 #' @export
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
 boxplot_aagi <- function(x,
-                          main = "",
-                          sub = "",
-                          xlab = "",
-                          ylab = "",
-                          col = "white",
-                          pch = 16,
-                          ...) {
-
+                         main = "",
+                         sub = "",
+                         xlab = "",
+                         ylab = "",
+                         col = "white",
+                         pch = 16,
+                         ...) {
   # set new pars
   withr::local_par(.new = par_aagi())
 
@@ -57,19 +58,16 @@ boxplot_aagi <- function(x,
     ny = NULL,
     col = NA
   )
-  withr::local_par(new = TRUE)
   showtext::showtext_begin()
   graphics::boxplot(
     x,
     col = scales::alpha(col, 0.5),
-    border = AAGIPalettes::aagi_colours["AAGI Black"],
-    pars = list(
-      boxwex = 0.8,
-      staplelty = 0,
-      outwex = 0.5,
-      cex = 1,
-      whisklty = "solid"
-    ),
+    border = AAGIPalettes::colour_as_hex("AAGI Black"),
+    boxwex = 0.8,
+    staplelty = 0,
+    outwex = 0.5,
+    cex = 1,
+    whisklty = "solid",
     title = list(line = 2),
     main = main,
     sub = sub,

@@ -1,4 +1,3 @@
-
 #' Basic X-Y Plotting Using a Unified AAGI Style and Typography
 #'
 #' @description Basic X-Y plotting that follows \acronym{AAGI} colour and
@@ -14,8 +13,9 @@
 #'   label if one is available.
 #' @param xlim Numeric value for x-axis limits.  Optional.
 #' @param ylim Numeric value for y-axis limits.  Optional.
-#' @param col Colour to use for points.  Defaults to "AAGI Black", a very dark
-#'    grey.
+#' @param col Colour to use for points  Defaults to "AAGI Black", a very dark
+#'   grey.  Can be supplied as a named AAGI colour; **e.g.**, "AAGI Black";
+#'   a named colour, "black"; or a hexadecimal code, #414042.
 #' @param pch plotting ‘character’, \emph{i.e.}, symbol to use. This can either
 #'   be a single character or an integer code for one of a set of graphics
 #'   symbols. The full set of S symbols is available with `pch = 0:18`, see the
@@ -25,7 +25,7 @@
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).  The most commonly used argument would be
 #'   `type` what type of plot should be drawn.
-#"
+# "
 #' @section Type:
 #' Possible types are:
 #'    \describe{
@@ -56,8 +56,9 @@
 #' library(datasets)
 #'
 #' plot_aagi(airquality$Ozone,
-#'           main = "Air Quality",
-#'           xlab = "Ozone")
+#'   main = "Air Quality",
+#'   xlab = "Ozone"
+#' )
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 #'
@@ -71,42 +72,53 @@ plot_aagi <- function(x,
                       ylab = "",
                       xlim = NULL,
                       ylim = NULL,
-                      col = AAGIPalettes::aagi_colours["AAGI Black"],
+                      col = "AAGI Black",
                       pch = 16,
                       type = "p",
                       ...) {
-
+  # only validate if the colour is an official AAGI colour and convert to hex
+  if (substr(col, 1, 5) == "AAGI ") {
+    # validation/matching is done in {AAGIPalettes} so not needed here
+    col <- AAGIPalettes::colour_as_hex(col)
+  }
   if (!missing(xlab)) {
-    xlab = ""
+    xlab <- ""
   }
   if (!missing(ylab)) {
-    ylab = ""
+    ylab <- ""
   }
 
   # set new pars
   withr::local_par(.new = par_aagi())
 
   xy <- grDevices::xy.coords(x, y)
-  if (is.null(xlim))
+  if (is.null(xlim)) {
     xlimit <- range(xy$x[is.finite(xy$x)])
-  if (is.null(ylim))
+  }
+  if (is.null(ylim)) {
     ylimit <- range(xy$y[is.finite(xy$y)])
+  }
   graphics::plot.new()
   showtext::showtext_begin()
   graphics::plot(NULL,
-                xlab = xlab,
-                ylab = ylab,
-                xlim = xlimit,
-                ylim = ylimit,
-                pch = "",
-                main = main,
-                sub = sub)
+    xlab = xlab,
+    ylab = ylab,
+    xlim = xlimit,
+    ylim = ylimit,
+    pch = "",
+    main = main,
+    sub = sub
+  )
   graphics::points(xy$x, xy$y, col = col, pch = pch, type = type)
-  graphics::axis(col = "#414042",
-                lty = "solid",
-                side = 1)
-  graphics::axis(col = "#414042",
-                lty = "solid",
-                side = 2)
+  graphics::axis(
+    col = "#414042",
+    lty = "solid",
+    side = 1
+  )
+  graphics::axis(
+    col = "#414042",
+    lty = "solid",
+    side = 2
+  )
   showtext::showtext_end()
 }

@@ -1,4 +1,3 @@
-
 #' Basic Barplots Using a Unified AAGI Style and Typography
 #'
 #' @description Basic barplots that follow a standard \acronym{AAGI} style
@@ -12,7 +11,9 @@
 #'   heights of stacked sub-bars making up the bar.  If height is a matrix and
 #'   beside is `TRUE`, then the values in each column are juxtaposed rather than
 #'   stacked.
-#' @param col Colour to use as fill for bars  Defaults to a very dark grey.
+#' @param col Colour to use as fill for bars  Defaults to "AAGI Black", a very
+#'   dark grey.  Can be supplied as a named AAGI colour; **e.g.**, "AAGI Black";
+#'   a named colour, "black"; or a hexadecimal code, #414042.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).
 #'
@@ -25,18 +26,22 @@
 #' @export
 #'
 barplot_aagi <- function(height,
-                          col = AAGIPalettes::aagi_colours["AAGI Black"],
-                          ...) {
-
+                         col = "AAGI Black",
+                         ...) {
+  # only validate if the colour is an official AAGI colour and convert to hex
+  if (substr(col, 1, 5) == "AAGI ") {
+    # validation/matching is done in {AAGIPalettes} so not needed here
+    col <- AAGIPalettes::colour_as_hex(col)
+  }
   withr::local_par(.new = par_aagi())
-
   graphics::plot.new()
-  withr::local_par(new = TRUE)
   showtext::showtext_begin()
-  graphics::barplot(height = height,
-                    col = col,
-                    border = col,
-                    xaxs = "i",
-                    ...)
+  graphics::barplot(
+    height = height,
+    col = col,
+    border = col,
+    xaxs = "i",
+    ...
+  )
   showtext::showtext_end()
 }
