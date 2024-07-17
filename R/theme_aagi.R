@@ -72,6 +72,9 @@ theme_aagi <-
 
     # check if Proxima Nova is installed, if not, falls back to Arial
     aagi_font <- set_aagi_font()
+    aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
+    aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
+    aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
 
     showtext::showtext_auto()
 
@@ -86,12 +89,12 @@ theme_aagi <-
         ggplot2::theme(
           # match legend key to panel.background
           legend.key = ggplot2::element_blank(),
-          legend.background = ggplot2::element_rect(color = aagi_colours[[1]],
+          legend.background = ggplot2::element_rect(color = aagi_black,
                                                     fill = "#ffffff"),
           #AAGI colour facet strips
           strip.background = ggplot2::element_rect(
-          fill = AAGIThemes::aagi_colours[[3]],
-          colour = AAGIThemes::aagi_colours[[3]],
+          fill = aagi_teal,
+          colour = aagi_teal,
           linewidth = base_line_size
           ),
           strip.text = ggplot2::element_text(
@@ -121,7 +124,7 @@ theme_aagi <-
     if (isTRUE(minor_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(panel.grid.minor =
-                        ggplot2::element_line(color = AAGIPalettes::aagi_colours["AAGI Grey"],
+                        ggplot2::element_line(color = aagi_grey,
                                       linewidth = minor_grid_size))
     }
 
@@ -137,7 +140,7 @@ theme_aagi <-
         ggplot2::theme(panel.border =
                         ggplot2::element_rect(
                           fill = NA,
-                          color = AAGIPalettes::aagi_colours["AAGI Black"],
+                          color = aagi_black,
                           size = base_rect_size
                         ))
     }
