@@ -75,7 +75,6 @@ plot_aagi <- function(x,
                       sub = NULL,
                       xlab = NULL,
                       ylab = NULL,
-                      
                       col = "AAGI Black",
                       pch = 16,
                       ...) {
@@ -84,15 +83,17 @@ plot_aagi <- function(x,
     # validation/matching is done in {AAGIPalettes} so not needed here
     col <- AAGIPalettes::colour_as_hex(col)
   }
-  if (missing(xlab)) {
-    xlab <- ""
-  }
-  if (missing(ylab)) {
-    ylab <- ""
-  }
 
   # set new pars
   withr::local_par(.new = par_aagi())
+
+  if (is.null(xlab)) {
+    xlab <- names(x[1])
+  }
+
+  if (is.null(ylab)) {
+    ylab <- names(x[2])
+  }
 
   xy <- grDevices::xy.coords(x, y)
   if (is.null(xlim)) {
