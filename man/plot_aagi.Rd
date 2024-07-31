@@ -7,15 +7,15 @@
 plot_aagi(
   x,
   y = NULL,
-  main = "",
-  sub = "",
-  xlab = "",
-  ylab = "",
+  type = "p",
   xlim = NULL,
   ylim = NULL,
+  main = NULL,
+  sub = NULL,
+  xlab = NULL,
+  ylab = NULL,
   col = "AAGI Black",
   pch = 16,
-  type = "p",
   ...
 )
 }
@@ -23,6 +23,13 @@ plot_aagi(
 \item{x}{Values to be plotted on x-axis.}
 
 \item{y}{Values to be used on y-axis.  Optional.}
+
+\item{type}{What type of plot should be drawn.  Defaults to \code{p} for
+\strong{p}oints``  See Section "Type" for more.}
+
+\item{xlim}{Numeric value for x-axis limits.  Optional.}
+
+\item{ylim}{Numeric value for y-axis limits.  Optional.}
 
 \item{main}{Main title text.}
 
@@ -34,10 +41,6 @@ label.}
 \item{ylab}{Y-axis label.  Optional, if blank will default to data supplied
 label if one is available.}
 
-\item{xlim}{Numeric value for x-axis limits.  Optional.}
-
-\item{ylim}{Numeric value for y-axis limits.  Optional.}
-
 \item{col}{Colour to use for points  Defaults to "AAGI Black", a very dark
 grey.  Can be supplied as a named AAGI colour; \emph{e.g.}, "AAGI Black";
 a named colour, "black"; or a hexadecimal code, "#414042".}
@@ -46,9 +49,6 @@ a named colour, "black"; or a hexadecimal code, "#414042".}
 be a single character or an integer code for one of a set of graphics
 symbols. The full set of S symbols is available with \code{pch = 0:18}, see the
 examples below. (NB: \R uses circles instead of the octagons used in S.)}
-
-\item{type}{What type of plot should be drawn.  Defaults to \code{p} for
-\strong{p}oints``  See Section "Type" for more.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
@@ -91,6 +91,8 @@ plot_aagi(airquality$Ozone,
   main = "Air Quality",
   xlab = "Ozone"
 )
+
+plot_aagi(pressure)
 
 }
 \seealso{
