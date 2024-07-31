@@ -45,15 +45,15 @@ typography guidelines that uses (hopefully) sensible defaults.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_aagi</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
 <span>  y <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  main <span class="op">=</span> <span class="st">""</span>,</span>
-<span>  sub <span class="op">=</span> <span class="st">""</span>,</span>
-<span>  xlab <span class="op">=</span> <span class="st">""</span>,</span>
-<span>  ylab <span class="op">=</span> <span class="st">""</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"p"</span>,</span>
 <span>  xlim <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  ylim <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  main <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  sub <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  xlab <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  ylab <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  col <span class="op">=</span> <span class="st">"AAGI Black"</span>,</span>
 <span>  pch <span class="op">=</span> <span class="fl">16</span>,</span>
-<span>  type <span class="op">=</span> <span class="st">"p"</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -68,6 +68,19 @@ typography guidelines that uses (hopefully) sensible defaults.</p>
 
 <dt id="arg-y">y<a class="anchor" aria-label="anchor" href="#arg-y"></a></dt>
 <dd><p>Values to be used on y-axis.  Optional.</p></dd>
+
+
+<dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
+<dd><p>What type of plot should be drawn.  Defaults to <code>p</code> for
+<strong>p</strong>oints“  See Section "Type" for more.</p></dd>
+
+
+<dt id="arg-xlim">xlim<a class="anchor" aria-label="anchor" href="#arg-xlim"></a></dt>
+<dd><p>Numeric value for x-axis limits.  Optional.</p></dd>
+
+
+<dt id="arg-ylim">ylim<a class="anchor" aria-label="anchor" href="#arg-ylim"></a></dt>
+<dd><p>Numeric value for y-axis limits.  Optional.</p></dd>
 
 
 <dt id="arg-main">main<a class="anchor" aria-label="anchor" href="#arg-main"></a></dt>
@@ -88,14 +101,6 @@ label.</p></dd>
 label if one is available.</p></dd>
 
 
-<dt id="arg-xlim">xlim<a class="anchor" aria-label="anchor" href="#arg-xlim"></a></dt>
-<dd><p>Numeric value for x-axis limits.  Optional.</p></dd>
-
-
-<dt id="arg-ylim">ylim<a class="anchor" aria-label="anchor" href="#arg-ylim"></a></dt>
-<dd><p>Numeric value for y-axis limits.  Optional.</p></dd>
-
-
 <dt id="arg-col">col<a class="anchor" aria-label="anchor" href="#arg-col"></a></dt>
 <dd><p>Colour to use for points  Defaults to "AAGI Black", a very dark
 grey.  Can be supplied as a named AAGI colour; <em>e.g.</em>, "AAGI Black";
@@ -107,11 +112,6 @@ a named colour, "black"; or a hexadecimal code, "#414042".</p></dd>
 be a single character or an integer code for one of a set of graphics
 symbols. The full set of S symbols is available with <code>pch = 0:18</code>, see the
 examples below. (NB: <span style="R">R</span> uses circles instead of the octagons used in S.)</p></dd>
-
-
-<dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
-<dd><p>What type of plot should be drawn.  Defaults to <code>p</code> for
-<strong>p</strong>oints“  See Section "Type" for more.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
@@ -177,6 +177,9 @@ default size is about 75% of the character height (see <code>par("cin")</code>).
 <span class="r-in"><span>  xlab <span class="op">=</span> <span class="st">"Ozone"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot_aagi-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">plot_aagi</span><span class="op">(</span><span class="va">pressure</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="plot_aagi-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
