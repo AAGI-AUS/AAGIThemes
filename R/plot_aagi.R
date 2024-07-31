@@ -59,6 +59,8 @@
 #'   main = "Air Quality",
 #'   xlab = "Ozone"
 #' )
+#' 
+#' plot_aagi(pressure)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 #'
@@ -66,25 +68,26 @@
 #'
 plot_aagi <- function(x,
                       y = NULL,
-                      main = "",
-                      sub = "",
-                      xlab = "",
-                      ylab = "",
+                      type = "p",
                       xlim = NULL,
                       ylim = NULL,
+                      main = NULL,
+                      sub = NULL,
+                      xlab = NULL,
+                      ylab = NULL,
+                      
                       col = "AAGI Black",
                       pch = 16,
-                      type = "p",
                       ...) {
   # only validate if the colour is an official AAGI colour and convert to hex
   if (substr(col, 1, 5) == "AAGI ") {
     # validation/matching is done in {AAGIPalettes} so not needed here
     col <- AAGIPalettes::colour_as_hex(col)
   }
-  if (!missing(xlab)) {
+  if (missing(xlab)) {
     xlab <- ""
   }
-  if (!missing(ylab)) {
+  if (missing(ylab)) {
     ylab <- ""
   }
 
