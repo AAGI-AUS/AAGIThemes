@@ -59,7 +59,7 @@
 #'   main = "Air Quality",
 #'   xlab = "Ozone"
 #' )
-#' 
+#'
 #' plot_aagi(pressure)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
@@ -87,12 +87,22 @@ plot_aagi <- function(x,
   # set new pars
   withr::local_par(.new = par_aagi())
 
-  if (is.null(xlab)) {
-    xlab <- names(x[1])
-  }
+  # set up x/ylabs if `NULL`
+  if (is.null(y) && length(x) == 2) {
+    if (is.null(xlab)) {
+      xlab <- names(x[[1]])
+    }
 
-  if (is.null(ylab)) {
-    ylab <- names(x[2])
+    if (is.null(ylab)) {
+      ylab <- names(x[[2]])
+    }
+  } else {
+    if (is.null(xlab)) {
+      xlab <- names(x)
+    }
+    if (is.null(ylab)) {
+      ylab <- names(y)
+    }
   }
 
   xy <- grDevices::xy.coords(x, y)
