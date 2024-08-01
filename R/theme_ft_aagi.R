@@ -45,23 +45,30 @@ theme_ft_aagi <- function(x) {
     )
   }
 
-  x <- flextable::font(x, part = "all", fontname = set_aagi_font())
+    # check if Proxima Nova is installed, if not, falls back to Arial
+    aagi_font <- set_aagi_font()
+  
+    aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
+    aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
+    aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
+
+  x <- flextable::font(x, part = "all", fontname = aagi_font)
 
   # header
   x <- flextable::bold(x = x, bold = TRUE, part = "header")
   x <- flextable::color(x = x, color = "#ffffff", part = "header")
   x <- flextable::bg(
-    x = x, bg = AAGIPalettes::aagi_colours["AAGI Teal"],
+    x = x, bg = aagi_teal,
     part = "header"
   )
 
   # body
   x <- flextable::color(
-    x = x, color = AAGIPalettes::aagi_colours["AAGI Black"],
+    x = x, color = aagi_black,
     part = "body"
   )
   x <- flextable::bg(
-    x = x, bg = AAGIPalettes::aagi_colours["AAGI Grey"],
+    x = x, bg = aagi_grey,
     part = "body"
   )
 
