@@ -67,72 +67,18 @@
 #' @export
 #'
 plot_aagi <- function(x,
-                      y = NULL,
-                      type = "p",
-                      xlim = NULL,
-                      ylim = NULL,
-                      main = NULL,
-                      sub = NULL,
-                      xlab = NULL,
-                      ylab = NULL,
-                      col = "AAGI Black",
-                      pch = 16,
+                      col = NULL,
                       ...) {
-  # only validate if the colour is an official AAGI colour and convert to hex
-  if (substr(col, 1, 5) == "AAGI ") {
+
+  if (is.null(col)) {
     # validation/matching is done in {AAGIPalettes} so not needed here
-    col <- AAGIPalettes::colour_as_hex(col)
-  }
-
-  # set new pars
-  withr::local_par(.new = par_aagi())
-
-  # set up x/ylabs if `NULL`
-  if (is.null(y) && length(x) == 2) {
-    if (is.null(xlab)) {
-      xlab <- names(x[[1]])
-    }
-
-    if (is.null(ylab)) {
-      ylab <- names(x[[2]])
-    }
+    col2 <- AAGIPalettes::colour_as_hex("AAGI Black")
   } else {
-    if (is.null(xlab)) {
-      xlab <- names(x)
-    }
-    if (is.null(ylab)) {
-      ylab <- names(y)
-    }
+    col2 <- col
   }
 
-  xy <- grDevices::xy.coords(x, y)
-  if (is.null(xlim)) {
-    xlimit <- range(xy$x[is.finite(xy$x)])
-  }
-  if (is.null(ylim)) {
-    ylimit <- range(xy$y[is.finite(xy$y)])
-  }
-  graphics::plot.new()
+  withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
-  graphics::plot(NULL,
-    xlab = xlab,
-    ylab = ylab,
-    xlim = xlimit,
-    ylim = ylimit,
-    pch = "",
-    main = main,
-    sub = sub
-  )
-  graphics::points(xy$x, xy$y, col = col, pch = pch, type = type)
-  graphics::axis(
-    col = "#414042",
-    lty = "solid",
-    side = 1
-  )
-  graphics::axis(
-    col = "#414042",
-    lty = "solid",
-    side = 2
-  )
+  graphics::plot(x, col = col2, ...)
   showtext::showtext_end()
 }

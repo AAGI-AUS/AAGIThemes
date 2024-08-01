@@ -29,6 +29,7 @@ par_aagi <- function() {
     las = 1,
     mgp = c(2, 0.5, 0),
     cex = 0.9,
-    bty = "L"
+    bty = "L",
+    col = AAGIPalettes::colour_as_hex("AAGI Black")
   ))
 }
