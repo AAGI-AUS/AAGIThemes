@@ -32,10 +32,12 @@ theme_gt_aagi <- function(x) {
       )
     ) |>
     gt::tab_style(
-      style = gt::cell_borders(sides = "all",
-                              color = "#ffffff",
-                              weight = px(2)),
-      locations = cells_body()
+      style = gt::cell_borders(
+        sides = "all",
+        color = "#ffffff",
+        weight = gt::px(2)
+      ),
+      locations = list(cells_body(), cells_column_labels())
     ) |>
     gt::tab_options(
       column_labels.background.color = aagi_teal,
