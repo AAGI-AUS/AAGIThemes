@@ -4,9 +4,16 @@
 \alias{plot_aagi}
 \title{Basic X-Y Plotting Using a Unified AAGI Style and Typography}
 \usage{
-plot_aagi(x, col = NULL, pch = 16, ...)
+plot_aagi(x, y, ...)
 }
 \arguments{
+\item{x}{the coordinates of points in the plot. Alternatively, a single
+plotting structure, function or any \R \emph{object with a plot method} can be
+provided.}
+
+\item{y}{coordinates of points in the plot, optional if `x`` is an
+appropriate structure.}
+
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
 \code{type} what type of plot should be drawn.}
@@ -15,32 +22,6 @@ plot_aagi(x, col = NULL, pch = 16, ...)
 Basic X-Y plotting that follows \acronym{AAGI} colour and
 typography guidelines that uses (hopefully) sensible defaults.
 }
-\section{Type}{
-
-Possible types are:
-\describe{
-\item{\dQuote{p}}{for \strong{p}oints}
-\item{\dQuote{l}}{for \strong{l}ines}
-\item{\dQuote{b}}{for \strong{b}oth}
-\item{\dQuote{c}}{for the lines part alone of \dQuote{\strong{b}}}
-\item{\dQuote{o}}{for both \sQuote{\strong{o}verplotted}}
-\item{\dQuote{h}}{for \sQuote{\strong{h}istogram} like (or
-\sQuote{\strong{h}igh-density}) vertical lines}
-\item{\dQuote{s}}{for stair \strong{s}teps}
-\item{\dQuote{n}}{for \strong{n}o plotting}
-}
-
-Value \code{pch = "."} (equivalently \code{pch = 46}) is handled specially. It is a
-rectangle of side 0.01 inch (scaled by \code{cex}). In addition, if \code{cex = 1}
-(the default), each side is at least one pixel (1/72 inch on the
-\code{\link[grDevices:pdf]{grDevices::pdf()}}, \code{\link[grDevices:postscript]{grDevices::postscript()}} and \code{\link[grDevices:xfig]{grDevices::xfig()}}
-devices).
-
-For other text symbols, \code{cex = 1} corresponds to the default fontsize of the
-device, often specified by an argument \code{pointsize}. For \code{pch} in 0:25 the
-default size is about 75\% of the character height (see \code{par("cin")}).
-}
-
 \examples{
 library(datasets)
 
@@ -53,7 +34,8 @@ plot_aagi(pressure)
 
 }
 \seealso{
-\code{\link[graphics:plot.default]{graphics::plot()}} for full documentation of the basic plotting capabilities.
+\code{\link[graphics:plot.default]{graphics::plot()}} for full documentation of the basic plotting
+capabilities.
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
