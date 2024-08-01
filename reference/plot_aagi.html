@@ -42,79 +42,14 @@ typography guidelines that uses (hopefully) sensible defaults.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_aagi</span><span class="op">(</span></span>
-<span>  <span class="va">x</span>,</span>
-<span>  y <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  type <span class="op">=</span> <span class="st">"p"</span>,</span>
-<span>  xlim <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  ylim <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  main <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  sub <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  xlab <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  ylab <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  col <span class="op">=</span> <span class="st">"AAGI Black"</span>,</span>
-<span>  pch <span class="op">=</span> <span class="fl">16</span>,</span>
-<span>  <span class="va">...</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_aagi</span><span class="op">(</span><span class="va">x</span>, col <span class="op">=</span> <span class="cn">NULL</span>, pch <span class="op">=</span> <span class="fl">16</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
-<dd><p>Values to be plotted on x-axis.</p></dd>
-
-
-<dt id="arg-y">y<a class="anchor" aria-label="anchor" href="#arg-y"></a></dt>
-<dd><p>Values to be used on y-axis.  Optional.</p></dd>
-
-
-<dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
-<dd><p>What type of plot should be drawn.  Defaults to <code>p</code> for
-<strong>p</strong>oints“  See Section "Type" for more.</p></dd>
-
-
-<dt id="arg-xlim">xlim<a class="anchor" aria-label="anchor" href="#arg-xlim"></a></dt>
-<dd><p>Numeric value for x-axis limits.  Optional.</p></dd>
-
-
-<dt id="arg-ylim">ylim<a class="anchor" aria-label="anchor" href="#arg-ylim"></a></dt>
-<dd><p>Numeric value for y-axis limits.  Optional.</p></dd>
-
-
-<dt id="arg-main">main<a class="anchor" aria-label="anchor" href="#arg-main"></a></dt>
-<dd><p>Main title text.</p></dd>
-
-
-<dt id="arg-sub">sub<a class="anchor" aria-label="anchor" href="#arg-sub"></a></dt>
-<dd><p>Subtitle text below x-axis label.</p></dd>
-
-
-<dt id="arg-xlab">xlab<a class="anchor" aria-label="anchor" href="#arg-xlab"></a></dt>
-<dd><p>X-axis label.  Optional, if blank will default to data supplied
-label.</p></dd>
-
-
-<dt id="arg-ylab">ylab<a class="anchor" aria-label="anchor" href="#arg-ylab"></a></dt>
-<dd><p>Y-axis label.  Optional, if blank will default to data supplied
-label if one is available.</p></dd>
-
-
-<dt id="arg-col">col<a class="anchor" aria-label="anchor" href="#arg-col"></a></dt>
-<dd><p>Colour to use for points  Defaults to "AAGI Black", a very dark
-grey.  Can be supplied as a named AAGI colour; <em>e.g.</em>, "AAGI Black";
-a named colour, "black"; or a hexadecimal code, "#414042".</p></dd>
-
-
-<dt id="arg-pch">pch<a class="anchor" aria-label="anchor" href="#arg-pch"></a></dt>
-<dd><p>plotting ‘character’, <em>i.e.</em>, symbol to use. This can either
-be a single character or an integer code for one of a set of graphics
-symbols. The full set of S symbols is available with <code>pch = 0:18</code>, see the
-examples below. (NB: <span style="R">R</span> uses circles instead of the octagons used in S.)</p></dd>
-
-
-<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dl><dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Arguments to be passed to methods, such as graphical parameters
 (see <code><a href="https://rdrr.io/r/graphics/par.html" class="external-link">graphics::par()</a></code>).  The most commonly used argument would be
 <code>type</code> what type of plot should be drawn.</p></dd>
