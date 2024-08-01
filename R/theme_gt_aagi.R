@@ -20,7 +20,7 @@
 theme_gt_aagi <- function(x) {
   # check if Proxima Nova is installed, if not, falls back to Arial
   aagi_font <- set_aagi_font()
-  
+
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
@@ -30,6 +30,12 @@ theme_gt_aagi <- function(x) {
       font = list(
         aagi_font, default_fonts()
       )
+    ) |>
+    gt::tab_style(
+      style = gt::cell_borders(sides = "all",
+                              color = "#ffffff",
+                              weight = px(2)),
+      locations = cells_body()
     ) |>
     gt::tab_options(
       column_labels.background.color = aagi_teal,
