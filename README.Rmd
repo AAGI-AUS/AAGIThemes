@@ -69,7 +69,18 @@ ft
 {AAGIThemes} provides a {gt} theme suited for the AAGI style that works best in HTML outputs.
 You can use it like so.
 
-```{r gtabular}
+```{r gtabular-execute, include=FALSE}
+library(AAGIThemes)
+library(dplyr)
+library(gt)
+gt <- head(airquality) |>
+ mutate(`Month Name` = "May") |>
+ gt() |>
+ theme_gt_aagi() |>
+ gtsave(filename = "inst/readme_gt.png")
+```
+
+```{r gtabular, eval=FALSE}
 library(AAGIThemes)
 library(dplyr)
 library(gt)
@@ -79,6 +90,8 @@ gt <- head(airquality) |>
 gt <- theme_gt_aagi(gt)
 gt
 ```
+
+[![A gt table with the AAGI Theme](inst/readme_gt.png)
 
 ### Plots and graphs
 
