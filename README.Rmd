@@ -91,7 +91,7 @@ gt <- theme_gt_aagi(gt)
 gt
 ```
 
-[![A gt table with the AAGI Theme](inst/readme_gt.png)
+![A gt table with the AAGI Theme](inst/readme_gt.png)
 
 ### Plots and graphs
 
