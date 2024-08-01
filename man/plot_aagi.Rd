@@ -4,7 +4,7 @@
 \alias{plot_aagi}
 \title{Basic X-Y Plotting Using a Unified AAGI Style and Typography}
 \usage{
-plot_aagi(x, y, ...)
+plot_aagi(x, y = NULL, ...)
 }
 \arguments{
 \item{x}{the coordinates of points in the plot. Alternatively, a single

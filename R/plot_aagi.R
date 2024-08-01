@@ -29,7 +29,7 @@
 #' @export
 #'
 plot_aagi <- function(x,
-                      y,
+                      y = NULL,
                       ...) {
 
   if (is.null(col)) {
