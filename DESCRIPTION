@@ -30,6 +30,7 @@ Imports:
     ggplot2 (>= 3.3.5),
     grDevices,
     grid,
+    gt,
     magick,
     officer,
     scales,

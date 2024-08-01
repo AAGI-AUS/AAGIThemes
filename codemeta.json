@@ -282,6 +282,18 @@
     },
     "8": {
       "@type": "SoftwareApplication",
+      "identifier": "gt",
+      "name": "gt",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=gt"
+    },
+    "9": {
+      "@type": "SoftwareApplication",
       "identifier": "magick",
       "name": "magick",
       "provider": {
@@ -292,7 +304,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magick"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "officer",
       "name": "officer",
@@ -304,7 +316,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=officer"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "scales",
       "name": "scales",
@@ -316,7 +328,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=scales"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "showtext",
       "name": "showtext",
@@ -328,7 +340,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=showtext"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "sysfonts",
       "name": "sysfonts",
@@ -340,7 +352,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sysfonts"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "systemfonts",
       "name": "systemfonts",
@@ -352,7 +364,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=systemfonts"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -368,7 +380,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\\",
-  "fileSize": "4725.536KB",
+  "fileSize": "4305.397KB",
   "releaseNotes": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",
