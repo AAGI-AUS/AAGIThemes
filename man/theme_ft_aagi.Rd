@@ -48,3 +48,8 @@ ft <- flextable(head(airquality) |> mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
 ft
 }
+\seealso{
+Other tables: 
+\code{\link{theme_gt_aagi}()}
+}
+\concept{tables}

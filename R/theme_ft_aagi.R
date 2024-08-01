@@ -36,6 +36,7 @@
 #' ft <- flextable(head(airquality) |> mutate(`Month Name` = "May"))
 #' ft <- theme_ft_aagi(ft)
 #' ft
+#' @family tables
 #' @export
 theme_ft_aagi <- function(x) {
   if (!inherits(x, "flextable")) {
