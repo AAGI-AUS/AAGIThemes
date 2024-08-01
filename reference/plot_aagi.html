@@ -42,61 +42,34 @@ typography guidelines that uses (hopefully) sensible defaults.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_aagi</span><span class="op">(</span><span class="va">x</span>, col <span class="op">=</span> <span class="cn">NULL</span>, pch <span class="op">=</span> <span class="fl">16</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_aagi</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
+<dd><p>the coordinates of points in the plot. Alternatively, a single
+plotting structure, function or any <span style="R">R</span> <em>object with a plot method</em> can be
+provided.</p></dd>
+
+
+<dt id="arg-y">y<a class="anchor" aria-label="anchor" href="#arg-y"></a></dt>
+<dd><p>coordinates of points in the plot, optional if `x“ is an
+appropriate structure.</p></dd>
+
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Arguments to be passed to methods, such as graphical parameters
 (see <code><a href="https://rdrr.io/r/graphics/par.html" class="external-link">graphics::par()</a></code>).  The most commonly used argument would be
 <code>type</code> what type of plot should be drawn.</p></dd>
 
 </dl></div>
     <div class="section level2">
-    <h2 id="type">Type<a class="anchor" aria-label="anchor" href="#type"></a></h2>
-
-
-<p>Possible types are:</p><dl><dt>“p”</dt>
-<dd><p>for <strong>p</strong>oints</p></dd>
-
-<dt>“l”</dt>
-<dd><p>for <strong>l</strong>ines</p></dd>
-
-<dt>“b”</dt>
-<dd><p>for <strong>b</strong>oth</p></dd>
-
-<dt>“c”</dt>
-<dd><p>for the lines part alone of “<strong>b</strong>”</p></dd>
-
-<dt>“o”</dt>
-<dd><p>for both ‘<strong>o</strong>verplotted’</p></dd>
-
-<dt>“h”</dt>
-<dd><p>for ‘<strong>h</strong>istogram’ like (or
-‘<strong>h</strong>igh-density’) vertical lines</p></dd>
-
-<dt>“s”</dt>
-<dd><p>for stair <strong>s</strong>teps</p></dd>
-
-<dt>“n”</dt>
-<dd><p>for <strong>n</strong>o plotting</p></dd>
-
-
-</dl><p>Value <code>pch = "."</code> (equivalently <code>pch = 46</code>) is handled specially. It is a
-rectangle of side 0.01 inch (scaled by <code>cex</code>). In addition, if <code>cex = 1</code>
-(the default), each side is at least one pixel (1/72 inch on the
-<code><a href="https://rdrr.io/r/grDevices/pdf.html" class="external-link">grDevices::pdf()</a></code>, <code><a href="https://rdrr.io/r/grDevices/postscript.html" class="external-link">grDevices::postscript()</a></code> and <code><a href="https://rdrr.io/r/grDevices/xfig.html" class="external-link">grDevices::xfig()</a></code>
-devices).</p>
-<p>For other text symbols, <code>cex = 1</code> corresponds to the default fontsize of the
-device, often specified by an argument <code>pointsize</code>. For <code>pch</code> in 0:25 the
-default size is about 75% of the character height (see <code>par("cin")</code>).</p>
-    </div>
-    <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">graphics::plot()</a></code> for full documentation of the basic plotting capabilities.</p></div>
+    <div class="dont-index"><p><code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">graphics::plot()</a></code> for full documentation of the basic plotting
+capabilities.</p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -111,10 +84,10 @@ default size is about 75% of the character height (see <code>par("cin")</code>).
 <span class="r-in"><span>  main <span class="op">=</span> <span class="st">"Air Quality"</span>,</span></span>
 <span class="r-in"><span>  xlab <span class="op">=</span> <span class="st">"Ozone"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="plot_aagi-1.png" alt="" width="700" height="433"></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in plot_aagi(airquality$Ozone, main = "Air Quality", xlab = "Ozone"):</span> argument "y" is missing, with no default</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">plot_aagi</span><span class="op">(</span><span class="va">pressure</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="plot_aagi-2.png" alt="" width="700" height="433"></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in plot_aagi(pressure):</span> argument "y" is missing, with no default</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
