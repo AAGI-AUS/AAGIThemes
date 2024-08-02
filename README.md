@@ -7,6 +7,8 @@
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/AAGI-AUS/AAGIThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-AUS/AAGIThemes/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/AAGI-AUS/AAGIThemes/graph/badge.svg)](https://app.codecov.io/gh/AAGI-AUS/AAGIThemes)
 <!-- badges: end -->
 
 # {AAGIThemes} AAGI Branding for R Graphical and Tabular Outputs <img align="right" src="man/figures/logo.png">
@@ -87,7 +89,11 @@ gt <- theme_gt_aagi(gt)
 gt
 ```
 
-![A gt table with the AAGI Theme](inst/readme_gt.png)
+<figure>
+<img src="inst/readme_gt.png" alt="A gt table with the AAGI Theme" />
+<figcaption aria-hidden="true">A gt table with the AAGI
+Theme</figcaption>
+</figure>
 
 ### Plots and graphs
 
