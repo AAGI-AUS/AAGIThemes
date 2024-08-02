@@ -6,8 +6,6 @@
 #' @param x the coordinates of points in the plot. Alternatively, a single
 #'  plotting structure, function or any \R _object with a plot method_ can be
 #'  provided.
-#' @param y coordinates of points in the plot, optional if `x`` is an
-#'  appropriate structure.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).  The most commonly used argument would be
 #'   `type` what type of plot should be drawn.
@@ -29,7 +27,6 @@
 #' @export
 #'
 plot_aagi <- function(x,
-                      y = NULL,
                       ...) {
 
   if (is.null(col)) {
@@ -41,6 +38,6 @@ plot_aagi <- function(x,
 
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
-  graphics::plot(x, y, ...)
+  graphics::plot(x, ...)
   showtext::showtext_end()
 }
