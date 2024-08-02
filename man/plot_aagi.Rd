@@ -13,7 +13,8 @@ provided.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
-\code{type} what type of plot should be drawn.}
+\code{y} for the factor to use for the y-axis or \code{type} describing what type of
+plot should be drawn.}
 }
 \description{
 Basic X-Y plotting that follows \acronym{AAGI} colour and

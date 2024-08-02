@@ -8,7 +8,8 @@
 #'  provided.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).  The most commonly used argument would be
-#'   `type` what type of plot should be drawn.
+#'   `y` for the factor to use for the y-axis or `type` describing what type of
+#'   plot should be drawn.
 #'
 #' @seealso [graphics::plot()] for full documentation of the basic plotting
 #'  capabilities.
