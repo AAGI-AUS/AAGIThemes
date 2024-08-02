@@ -41,11 +41,11 @@ If you do not have the {remotes} package installed, you will have to run the fir
 
 ``` {r eval = FALSE}
 if (!require("remotes"))
-  remotes::install_github("AAGI-Org-AU-Public/AAGIThemes",
+  remotes::install_github("AAGI-AUS/AAGIThemes",
                           build_vignettes = TRUE))
 ```
 
-For more info on {AAGIThemes} check out the [package's GitHub repository](https://github.com/AAGI-Org-AU-Public/AAGIThemes), but most of the details about how to use the package and its functions are detailed below. 
+For more info on {AAGIThemes} check out the [package's GitHub repository](https://github.com/AAGI-AUS/AAGIThemes), but most of the details about how to use the package and its functions are detailed below. 
 
 When you have downloaded the package and successfully installed it you are good to go and create plots and tables.
 

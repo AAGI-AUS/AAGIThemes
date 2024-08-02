@@ -13,9 +13,9 @@ Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font gu
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/AAGI-Org-AU-Public/AAGIThemes}
-  \item \url{https://aagi-org-au-public.github.io/AAGIThemes/}
-  \item Report bugs at \url{https://github.com/AAGI-Org-AU-Public/AAGIThemes/issues}
+  \item \url{https://github.com/AAGI-AUS/AAGIThemes}
+  \item \url{https://AAGI-AUS.github.io/AAGIThemes/}
+  \item Report bugs at \url{https://github.com/AAGI-AUS/AAGIThemes/issues}
 }
 
 }

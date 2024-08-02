@@ -6,7 +6,7 @@
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![R-CMD-check](https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/AAGI-AUS/AAGIThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-AUS/AAGIThemes/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # {AAGIThemes} AAGI Branding for R Graphical and Tabular Outputs <img align="right" src="man/figures/logo.png">
@@ -32,7 +32,7 @@ You can install {AAGIThemes} like so:
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
-remotes::install_github("AAGI-Org-AU-Public/AAGIThemes",
+remotes::install_github("AAGI-AUS/AAGIThemes",
                         build_vignettes = TRUE,
                         dependencies = TRUE
 )
