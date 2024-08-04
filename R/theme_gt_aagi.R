@@ -19,8 +19,7 @@
 #' @export
 theme_gt_aagi <- function(x) {
   # check if Proxima Nova is installed, if not, falls back to Arial
-  aagi_font <- set_aagi_font()
-
+  aagi_font <- c("Proxima Nova", "Arial")
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
