@@ -16,8 +16,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![R-CMD-check](https://github.com/AAGI-AUS/AAGIThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-AUS/AAGIThemes/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/AAGI-AUS/AAGIThemes/graph/badge.svg)](https://app.codecov.io/gh/AAGI-AUS/AAGIThemes)
+[![R-CMD-check](https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # {AAGIThemes} AAGI Branding for R Graphical and Tabular Outputs <img align="right" src="man/figures/logo.png">
@@ -37,7 +36,7 @@ You can install {AAGIThemes} like so:
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
-remotes::install_github("AAGI-AUS/AAGIThemes",
+remotes::install_github("AAGI-Org-AU-Public/AAGIThemes",
                         build_vignettes = TRUE,
                         dependencies = TRUE
 )
@@ -54,10 +53,10 @@ vignette("Cookbook", package = "AAGIThemes")
 
 ### Create Tabular Outputs
 
-{AAGIThemes} provides a {flextable} theme suited for the AAGI style that works in HTML and Word document outputs.
-You can use it like so.
+{AAGIThemes} provides [{flextable}](https://davidgohel.github.io/flextable/) and [{gt}](https://gt.rstudio.com) themes suited for the AAGI style that works in HTML and Word document outputs.
+You can use it like so with {flextable}.
 
-```{r ftabular}
+```{r tabular}
 library(AAGIThemes)
 library(dplyr)
 library(flextable)
@@ -66,33 +65,6 @@ ft <- flextable(head(airquality) |>
 ft <- theme_ft_aagi(ft)
 ft
 ```
-
-{AAGIThemes} provides a {gt} theme suited for the AAGI style that works best in HTML outputs.
-You can use it like so.
-
-```{r gtabular-execute, include=FALSE}
-library(AAGIThemes)
-library(dplyr)
-library(gt)
-gt <- head(airquality) |>
- mutate(`Month Name` = "May") |>
- gt() |>
- theme_gt_aagi() |>
- gtsave(filename = "inst/readme_gt.png")
-```
-
-```{r gtabular, eval=FALSE}
-library(AAGIThemes)
-library(dplyr)
-library(gt)
-gt <- head(airquality) |>
- mutate(`Month Name` = "May") |>
- gt()
-gt <- theme_gt_aagi(gt)
-gt
-```
-
-![A gt table with the AAGI Theme](inst/readme_gt.png)
 
 ### Plots and graphs
 
@@ -126,7 +98,7 @@ See the respective function's help files and the {AAGIThemes} cookbook for more 
 
 The function `theme_aagi()` is provided to apply a unified style for creating AAGI themed plots, charts and graphs using {ggplot2}.
 The function is very basic and provides only one parameter, `base_size`, which is used to set the font size (in points) used in the resulting figure.
-No adjustments are made by the type of graph being produced, so you may wish to add gridlines or change the colour palette that is used to alter point or line colours in your graph.
+No adjustments are made by the type of graph being produced, so you may wish to add grid lines or change the colour palette that is used to alter point or line colours in your graph.
 
 Example of how `theme_aagi()` is used in a standard {ggplot2} workflow:
 
