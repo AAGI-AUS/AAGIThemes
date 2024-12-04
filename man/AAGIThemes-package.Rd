@@ -37,7 +37,8 @@ Authors:
 Other contributors:
 \itemize{
   \item Jimmy Ng \email{jimmy.ng@dpird.wa.gov.au} [contributor]
-  \item Curtin University of Technology [copyright holder]
+  \item Curtin University of Technology (Provided support through Adam Sparks's time.) [copyright holder]
+  \item Grains Research and Development Corporation (GRDC Project CUR2210-005OPX (AAGI-CU)) [funder, copyright holder]
 }
 
 }

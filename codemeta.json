@@ -61,6 +61,16 @@
     {
       "@type": "Organization",
       "name": "Curtin University of Technology"
+    },
+    {
+      "@type": "Organization",
+      "name": "Grains Research and Development Corporation"
+    }
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": "Grains Research and Development Corporation"
     }
   ],
   "maintainer": [
@@ -380,7 +390,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\\",
-  "fileSize": "4401.122KB",
+  "fileSize": "4401.336KB",
   "releaseNotes": "https://github.com/AAGI-AUS/AAGIThemes/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",

@@ -12,7 +12,10 @@ Authors@R: c(
            comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
     person("Will", "Mackey", , "william.mackey@grattaninstitute.edu.au", role = "aut",
            comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
-    person("Curtin University of Technology", role = "cph")
+    person("Curtin University of Technology", role = "cph",
+           comment = "Provided support through Adam Sparks's time."),
+    person("Grains Research and Development Corporation", role = c("fnd", "cph"),
+           comment = "GRDC Project CUR2210-005OPX (AAGI-CU)")
   )
 Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
     colours and font guidelines are applied as useful and reasonable to
