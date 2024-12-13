@@ -19,7 +19,7 @@ Authors@R: c(
   )
 Description: Applies 'AAGI' external brand guidelines to graphics. 'AAGI'
     colours and font guidelines are applied as useful and reasonable to
-    base graphics, 'ggplot2' figures and 'flextable' objects.
+    base graphics, 'ggplot2' figures, 'flextable' and 'gt' objects.
 License: GPL (>= 3)
 URL: https://github.com/AAGI-AUS/AAGIThemes,
     https://AAGI-AUS.github.io/AAGIThemes/
