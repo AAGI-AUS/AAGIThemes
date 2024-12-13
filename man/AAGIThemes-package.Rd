@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to base graphics, 'ggplot2' figures and 'flextable' objects.
+Applies 'AAGI' external brand guidelines to graphics. 'AAGI' colours and font guidelines are applied as useful and reasonable to base graphics, 'ggplot2' figures, 'flextable' and 'gt' objects.
 }
 \seealso{
 Useful links:
