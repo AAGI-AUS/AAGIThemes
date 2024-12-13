@@ -54,9 +54,12 @@ vignette("Cookbook", package = "AAGIThemes")
 ### Create Tabular Outputs
 
 {AAGIThemes} provides [{flextable}](https://davidgohel.github.io/flextable/) and [{gt}](https://gt.rstudio.com) themes suited for the AAGI style that works in HTML and Word document outputs.
+
+#### Creating Themed {flextable} Outputs
+
 You can use it like so with {flextable}.
 
-```{r tabular}
+```{r ft-tabular}
 library(AAGIThemes)
 library(dplyr)
 library(flextable)
@@ -64,6 +67,20 @@ ft <- flextable(head(airquality) |>
   mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
 ft
+```
+
+#### Creating Themed {gt} Outputs
+
+You can use it like so with {gt}.
+
+```{r gt-tabular}
+library(gt)
+library(dplyr)
+gt <- head(airquality) |>
+  mutate(`Month Name` = "May") |>
+  gt()
+gt <- theme_gt_aagi(gt)
+gt
 ```
 
 ### Plots and graphs
