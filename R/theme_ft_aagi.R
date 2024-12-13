@@ -37,7 +37,6 @@
 #' ft <- theme_ft_aagi(ft)
 #' ft
 #' @family tables
-#' @autoglobal
 #' @export
 theme_ft_aagi <- function(x) {
   if (!inherits(x, "flextable")) {
