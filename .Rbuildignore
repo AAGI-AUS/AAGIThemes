@@ -9,3 +9,7 @@
 ^pkgdown$
 ^\.github$
 ^codecov\.yml$
+
+
+# flint files
+^flint$
