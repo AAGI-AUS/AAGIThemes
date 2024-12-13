@@ -15,6 +15,7 @@
 #'   gt()
 #' gt <- theme_gt_aagi(gt)
 #' gt
+#' @autoglobal
 #' @family tables
 #' @export
 theme_gt_aagi <- function(x) {
@@ -27,7 +28,7 @@ theme_gt_aagi <- function(x) {
   x |>
     gt::opt_table_font(
       font = list(
-        aagi_font, default_fonts()
+        aagi_font, gt::default_fonts()
       )
     ) |>
     gt::tab_style(
@@ -36,7 +37,7 @@ theme_gt_aagi <- function(x) {
         color = "#ffffff",
         weight = gt::px(2)
       ),
-      locations = list(cells_body(), cells_column_labels())
+      locations = list(gt::cells_body(), gt::cells_column_labels())
     ) |>
     gt::tab_options(
       column_labels.background.color = aagi_teal,
