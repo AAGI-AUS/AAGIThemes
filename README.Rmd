@@ -69,21 +69,6 @@ ft <- theme_ft_aagi(ft)
 ft
 ```
 
-#### Creating Themed {gt} Outputs
-
-You can use it like so with {gt}.
-
-```{r gt-tabular}
-library(AAGIThemes)
-library(dplyr)
-library(gt)
-gt <- head(airquality) |>
-  mutate(`Month Name` = "May") |>
-  gt()
-gt <- theme_gt_aagi(gt)
-gt
-```
-
 ### Plots and graphs
 
 {AAGIThemes} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
