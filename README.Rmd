@@ -74,8 +74,9 @@ ft
 You can use it like so with {gt}.
 
 ```{r gt-tabular}
-library(gt)
+library(AAGIThemes)
 library(dplyr)
+library(gt)
 gt <- head(airquality) |>
   mutate(`Month Name` = "May") |>
   gt()

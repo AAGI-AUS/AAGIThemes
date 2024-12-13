@@ -84,8 +84,9 @@ ft
 You can use it like so with {gt}.
 
 ``` r
-library(gt)
+library(AAGIThemes)
 library(dplyr)
+library(gt)
 gt <- head(airquality) |>
   mutate(`Month Name` = "May") |>
   gt()
@@ -93,20 +94,20 @@ gt <- theme_gt_aagi(gt)
 gt
 ```
 
-<div id="ochwbbpymn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ochwbbpymn table {
+<div id="ipcadzodvx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ipcadzodvx table {
   font-family: 'Proxima Nova', Arial, system-ui, 'Segoe UI', Roboto, Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#ochwbbpymn thead, #ochwbbpymn tbody, #ochwbbpymn tfoot, #ochwbbpymn tr, #ochwbbpymn td, #ochwbbpymn th {
+&#10;#ipcadzodvx thead, #ipcadzodvx tbody, #ipcadzodvx tfoot, #ipcadzodvx tr, #ipcadzodvx td, #ipcadzodvx th {
   border-style: none;
 }
-&#10;#ochwbbpymn p {
+&#10;#ipcadzodvx p {
   margin: 0;
   padding: 0;
 }
-&#10;#ochwbbpymn .gt_table {
+&#10;#ipcadzodvx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -131,11 +132,11 @@ gt
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_caption {
+&#10;#ipcadzodvx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#ochwbbpymn .gt_title {
+&#10;#ipcadzodvx .gt_title {
   color: #414042;
   font-size: 125%;
   font-weight: initial;
@@ -146,7 +147,7 @@ gt
   border-bottom-color: #F2F2F2;
   border-bottom-width: 0;
 }
-&#10;#ochwbbpymn .gt_subtitle {
+&#10;#ipcadzodvx .gt_subtitle {
   color: #414042;
   font-size: 85%;
   font-weight: initial;
@@ -157,7 +158,7 @@ gt
   border-top-color: #F2F2F2;
   border-top-width: 0;
 }
-&#10;#ochwbbpymn .gt_heading {
+&#10;#ipcadzodvx .gt_heading {
   background-color: #F2F2F2;
   text-align: center;
   border-bottom-color: #F2F2F2;
@@ -168,12 +169,12 @@ gt
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_bottom_border {
+&#10;#ipcadzodvx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_col_headings {
+&#10;#ipcadzodvx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -187,7 +188,7 @@ gt
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_col_heading {
+&#10;#ipcadzodvx .gt_col_heading {
   color: #FFFFFF;
   background-color: #00808B;
   font-size: 100%;
@@ -206,7 +207,7 @@ gt
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#ochwbbpymn .gt_column_spanner_outer {
+&#10;#ipcadzodvx .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #00808B;
   font-size: 100%;
@@ -217,13 +218,13 @@ gt
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#ochwbbpymn .gt_column_spanner_outer:first-child {
+&#10;#ipcadzodvx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#ochwbbpymn .gt_column_spanner_outer:last-child {
+&#10;#ipcadzodvx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#ochwbbpymn .gt_column_spanner {
+&#10;#ipcadzodvx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -234,10 +235,10 @@ gt
   display: inline-block;
   width: 100%;
 }
-&#10;#ochwbbpymn .gt_spanner_row {
+&#10;#ipcadzodvx .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#ochwbbpymn .gt_group_heading {
+&#10;#ipcadzodvx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -262,7 +263,7 @@ gt
   vertical-align: middle;
   text-align: left;
 }
-&#10;#ochwbbpymn .gt_empty_group_heading {
+&#10;#ipcadzodvx .gt_empty_group_heading {
   padding: 0.5px;
   color: #414042;
   background-color: #F2F2F2;
@@ -276,13 +277,13 @@ gt
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#ochwbbpymn .gt_from_md > :first-child {
+&#10;#ipcadzodvx .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#ochwbbpymn .gt_from_md > :last-child {
+&#10;#ipcadzodvx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#ochwbbpymn .gt_row {
+&#10;#ipcadzodvx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -300,7 +301,7 @@ gt
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#ochwbbpymn .gt_stub {
+&#10;#ipcadzodvx .gt_stub {
   color: #414042;
   background-color: #F2F2F2;
   font-size: 100%;
@@ -312,7 +313,7 @@ gt
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ochwbbpymn .gt_stub_row_group {
+&#10;#ipcadzodvx .gt_stub_row_group {
   color: #414042;
   background-color: #F2F2F2;
   font-size: 100%;
@@ -325,13 +326,13 @@ gt
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#ochwbbpymn .gt_row_group_first td {
+&#10;#ipcadzodvx .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#ochwbbpymn .gt_row_group_first th {
+&#10;#ipcadzodvx .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#ochwbbpymn .gt_summary_row {
+&#10;#ipcadzodvx .gt_summary_row {
   color: #414042;
   background-color: #F2F2F2;
   text-transform: inherit;
@@ -340,14 +341,14 @@ gt
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ochwbbpymn .gt_first_summary_row {
+&#10;#ipcadzodvx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_first_summary_row.thick {
+&#10;#ipcadzodvx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#ochwbbpymn .gt_last_summary_row {
+&#10;#ipcadzodvx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -356,7 +357,7 @@ gt
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_grand_summary_row {
+&#10;#ipcadzodvx .gt_grand_summary_row {
   color: #414042;
   background-color: #F2F2F2;
   text-transform: inherit;
@@ -365,7 +366,7 @@ gt
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ochwbbpymn .gt_first_grand_summary_row {
+&#10;#ipcadzodvx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,7 +375,7 @@ gt
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_last_grand_summary_row_top {
+&#10;#ipcadzodvx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -383,10 +384,10 @@ gt
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_striped {
+&#10;#ipcadzodvx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#ochwbbpymn .gt_table_body {
+&#10;#ipcadzodvx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -394,7 +395,7 @@ gt
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_footnotes {
+&#10;#ipcadzodvx .gt_footnotes {
   color: #414042;
   background-color: #F2F2F2;
   border-bottom-style: none;
@@ -407,7 +408,7 @@ gt
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_footnote {
+&#10;#ipcadzodvx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -415,7 +416,7 @@ gt
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ochwbbpymn .gt_sourcenotes {
+&#10;#ipcadzodvx .gt_sourcenotes {
   color: #414042;
   background-color: #F2F2F2;
   border-bottom-style: none;
@@ -428,64 +429,64 @@ gt
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#ochwbbpymn .gt_sourcenote {
+&#10;#ipcadzodvx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#ochwbbpymn .gt_left {
+&#10;#ipcadzodvx .gt_left {
   text-align: left;
 }
-&#10;#ochwbbpymn .gt_center {
+&#10;#ipcadzodvx .gt_center {
   text-align: center;
 }
-&#10;#ochwbbpymn .gt_right {
+&#10;#ipcadzodvx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#ochwbbpymn .gt_font_normal {
+&#10;#ipcadzodvx .gt_font_normal {
   font-weight: normal;
 }
-&#10;#ochwbbpymn .gt_font_bold {
+&#10;#ipcadzodvx .gt_font_bold {
   font-weight: bold;
 }
-&#10;#ochwbbpymn .gt_font_italic {
+&#10;#ipcadzodvx .gt_font_italic {
   font-style: italic;
 }
-&#10;#ochwbbpymn .gt_super {
+&#10;#ipcadzodvx .gt_super {
   font-size: 65%;
 }
-&#10;#ochwbbpymn .gt_footnote_marks {
+&#10;#ipcadzodvx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#ochwbbpymn .gt_asterisk {
+&#10;#ipcadzodvx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#ochwbbpymn .gt_indent_1 {
+&#10;#ipcadzodvx .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#ochwbbpymn .gt_indent_2 {
+&#10;#ipcadzodvx .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#ochwbbpymn .gt_indent_3 {
+&#10;#ipcadzodvx .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#ochwbbpymn .gt_indent_4 {
+&#10;#ipcadzodvx .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#ochwbbpymn .gt_indent_5 {
+&#10;#ipcadzodvx .gt_indent_5 {
   text-indent: 25px;
 }
-&#10;#ochwbbpymn .katex-display {
+&#10;#ipcadzodvx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-&#10;#ochwbbpymn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+&#10;#ipcadzodvx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
