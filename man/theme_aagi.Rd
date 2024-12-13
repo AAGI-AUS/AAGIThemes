@@ -46,15 +46,16 @@ p1 <- ggplot(mtcars) +
     x = wt,
     y = mpg,
     colour = factor(gear)
-   )) +
-  facet_wrap(~ am)
+  )) +
+  facet_wrap(~am)
 
 p1 + theme_aagi()
 
 # Plotting continuous values
 df <- reshape2::melt(outer(1:4, 1:4), varnames = c("X1", "X2"))
 
-p2 <- ggplot(df, aes(X1, X2)) + geom_tile(aes(fill = value)) +
+p2 <- ggplot(df, aes(X1, X2)) +
+  geom_tile(aes(fill = value)) +
   geom_point(aes(size = value))
 p2 + theme_aagi()
 
@@ -70,9 +71,11 @@ p1 + theme_aagi(major_gridlines = TRUE)
 p1 + theme_aagi(border = TRUE)
 
 # Plotting with both gridlines and border
-p1 + theme_aagi(minor_gridlines = TRUE,
-                       major_gridlines = TRUE,
-                       border = TRUE)
+p1 + theme_aagi(
+  minor_gridlines = TRUE,
+  major_gridlines = TRUE,
+  border = TRUE
+)
 
 }
 \seealso{

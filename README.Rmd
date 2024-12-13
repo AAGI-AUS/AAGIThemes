@@ -61,7 +61,7 @@ library(AAGIThemes)
 library(dplyr)
 library(flextable)
 ft <- flextable(head(airquality) |>
- mutate(`Month Name` = "May"))
+  mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
 ft
 ```
@@ -87,9 +87,10 @@ Example of how the base graphics functionality with AAGI style pre-applied is us
 ```{r boxplot_aagi}
 library(AAGIThemes)
 boxplot_aagi(decrease ~ treatment,
-              data = OrchardSprays,
-              xlab = "treatment",
-              ylab = "decrease")
+  data = OrchardSprays,
+  xlab = "treatment",
+  ylab = "decrease"
+)
 ```
 
 See the respective function's help files and the {AAGIThemes} cookbook for more examples and documentation.

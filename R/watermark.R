@@ -12,12 +12,13 @@
 #'
 #' library(ggplot2)
 #' # First, start with a plot:
-#' p <- ggplot(mtcars, aes(x = wt, y = mpg)) + geom_point() + theme_aagi()
+#' p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+#'   geom_point() +
+#'   theme_aagi()
 #'
 #' # Then add a watermark:
 #'
 #' p + watermark("DRAFT")
-
 watermark <- function(watermark,
                       fontsize = 120,
                       colour = "grey90",

@@ -40,9 +40,11 @@ The CCDM CBADA team has developed an R package, {AAGIThemes}, and this R cookboo
 If you do not have the {remotes} package installed, you will have to run the first line in the code below as well. 
 
 ``` {r eval = FALSE}
-if (!require("remotes"))
+if (!require("remotes")) {
   remotes::install_github("AAGI-AUS/AAGIThemes",
-                          build_vignettes = TRUE))
+    build_vignettes = TRUE
+  )
+}
 ```
 
 For more info on {AAGIThemes} check out the [package's GitHub repository](https://github.com/AAGI-AUS/AAGIThemes), but most of the details about how to use the package and its functions are detailed below. 
@@ -59,8 +61,8 @@ library("AAGIThemes")
 library("flextable")
 library("dplyr")
 
-ft <- flextable(head(airquality) |> 
-                  mutate(`Month Name` = "May"))
+ft <- flextable(head(airquality) |>
+  mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
 ft
 ```
@@ -84,12 +86,14 @@ So that you do not have to load them one by one, you can use the the following c
 
 ```{r libraries, eval=TRUE, message=FALSE}
 x <-
-  c("dplyr",
+  c(
+    "dplyr",
     "gapminder",
     "ggplot2",
     "AAGIPalettes",
     "AAGIThemes",
-    "tibble")
+    "tibble"
+  )
 invisible(lapply(
   X = x,
   FUN = library,
@@ -137,9 +141,10 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 
 ```{r boxplot-base}
 boxplot_aagi(decrease ~ treatment,
-            data = OrchardSprays,
-            xlab = "treatment",
-            ylab = "decrease")
+  data = OrchardSprays,
+  xlab = "treatment",
+  ylab = "decrease"
+)
 ```
 
 #### Using {ggplot2} to Create a Boxplot
@@ -203,17 +208,19 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
   theme_aagi() +
   ylab("Life expectancy") +
   xlab("Year") +
-  labs(title = "Living longer",
-      subtitle = "Life expectancy in Malawi 1952-2007")
+  labs(
+    title = "Living longer",
+    subtitle = "Life expectancy in Malawi 1952-2007"
+  )
 ```
 
 ### Scatterplots
 
 ```{r scatter-base-data}
 # Create data
-data = data.frame(
-  x = seq(1:100) + 0.1 * seq(1:100) * sample(c(1:10), 100 , replace = TRUE),
-  y = seq(1:100) + 0.2 * seq(1:100) * sample(c(1:10), 100 , replace = TRUE)
+data <- data.frame(
+  x = seq(1:100) + 0.1 * seq(1:100) * sample(c(1:10), 100, replace = TRUE),
+  y = seq(1:100) + 0.2 * seq(1:100) * sample(c(1:10), 100, replace = TRUE)
 )
 ```
 
@@ -251,7 +258,7 @@ But for further demonstration, here are a few more examples.
 Here we'll again use the {gapminder} data to construct a stacked bar chart and use AAGI's colours in `scale_fill_manual()`.
 
 ```{r aagi-facet-example}
-#prepare data
+# prepare data
 stacked_df <- gapminder |>
   filter(year == 2007) |>
   mutate(lifeExpGrouped = cut(
@@ -262,28 +269,41 @@ stacked_df <- gapminder |>
   group_by(continent, lifeExpGrouped) |>
   summarise(continentPop = sum(as.numeric(pop)))
 
-#set order of stacks by changing factor levels
-stacked_df$lifeExpGrouped = factor(stacked_df$lifeExpGrouped,
-                                  levels = rev(levels(stacked_df$lifeExpGrouped)))
+# set order of stacks by changing factor levels
+stacked_df$lifeExpGrouped <- factor(stacked_df$lifeExpGrouped,
+  levels = rev(levels(stacked_df$lifeExpGrouped))
+)
 
-#create plot
-ggplot(data = stacked_df,
-      aes(x = continent,
-          y = continentPop,
-          fill = lifeExpGrouped)) +
-  geom_bar(stat = "identity",
-          position = "fill") +
-  scale_fill_manual(name = "Life expectancy",
-                    values = aagi_palettes(n = 4, name = "aagi_greens")) +
+# create plot
+ggplot(
+  data = stacked_df,
+  aes(
+    x = continent,
+    y = continentPop,
+    fill = lifeExpGrouped
+  )
+) +
+  geom_bar(
+    stat = "identity",
+    position = "fill"
+  ) +
+  scale_fill_manual(
+    name = "Life expectancy",
+    values = aagi_palettes(n = 4, name = "aagi_greens")
+  ) +
   ylab("Continental Population (%)") +
   xlab("Continent") +
   theme_aagi() +
   scale_y_continuous(labels = scales::percent) +
-  geom_hline(yintercept = 0,
-            linewidth = 1,
-            colour = "#474747") +
-  labs(title = "How life expectancy varies",
-      subtitle = "% of population by life expectancy band, 2007") +
+  geom_hline(
+    yintercept = 0,
+    linewidth = 1,
+    colour = "#474747"
+  ) +
+  labs(
+    title = "How life expectancy varies",
+    subtitle = "% of population by life expectancy band, 2007"
+  ) +
   guides(fill = guide_legend(reverse = TRUE))
 ```
 
@@ -295,7 +315,7 @@ ggplot(data = stacked_df,
 As we'll be using this figure for the next example, we'll generate an object in R called `p` and save it to R's `tempdir()` for use in the next example as well.
 
 ```{r ggplot2-facet, eval=TRUE}
-#Prepare data
+# Prepare data
 facet <- gapminder |>
   filter(continent != "Americas") |>
   group_by(continent, year) |>
@@ -308,17 +328,21 @@ col_values <- c(
   AAGIPalettes::colour_as_hex("AAGI Blue")
 )
 
-#Make plot
+# Make plot
 p <- ggplot() +
   geom_area(data = facet, aes(x = year, y = pop, fill = continent)) +
   scale_fill_manual(values = col_values) +
-  facet_wrap(~ continent, ncol = 5) +
-  scale_y_continuous(breaks = c(0, 2000000000, 4000000000),
-                    labels = c(0, "2bn", "4bn")) +
+  facet_wrap(~continent, ncol = 5) +
+  scale_y_continuous(
+    breaks = c(0, 2000000000, 4000000000),
+    labels = c(0, "2bn", "4bn")
+  ) +
   theme_aagi() +
-  geom_hline(yintercept = 0,
-            linewidth = 1,
-            colour = "#474747") +
+  geom_hline(
+    yintercept = 0,
+    linewidth = 1,
+    colour = "#474747"
+  ) +
   theme(legend.position = "none", axis.text.x = element_blank()) +
   labs(title = "Asia's rapid growth", subtitle = "Population growth by continent, 1952-2007")
 
@@ -338,11 +362,13 @@ Feel free to adjust as necessary.
 
 ```{r add-dpird-logo, eval=TRUE, message=FALSE}
 library(magick)
-add_aagi_logo(file_in = file.path(tempdir(), "AAGI.png"),
-              file_out = file.path(tempdir(), "AAGI_logo.png"))
+add_aagi_logo(
+  file_in = file.path(tempdir(), "AAGI.png"),
+  file_out = file.path(tempdir(), "AAGI_logo.png")
+)
 
-image_read(file.path(tempdir(), "AAGI_logo.png")) |> 
-  image_resize("600x1000") |> 
+image_read(file.path(tempdir(), "AAGI_logo.png")) |>
+  image_resize("600x1000") |>
   print()
 ```
 

@@ -29,7 +29,6 @@
 #'
 plot_aagi <- function(x,
                       ...) {
-
   if (is.null(col)) {
     # validation/matching is done in {AAGIPalettes} so not needed here
     col2 <- AAGIPalettes::colour_as_hex("AAGI Black")

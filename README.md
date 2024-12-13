@@ -69,7 +69,7 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(flextable)
 ft <- flextable(head(airquality) |>
- mutate(`Month Name` = "May"))
+  mutate(`Month Name` = "May"))
 ft <- theme_ft_aagi(ft)
 ft
 ```
@@ -99,9 +99,10 @@ pre-applied is used:
 ``` r
 library(AAGIThemes)
 boxplot_aagi(decrease ~ treatment,
-              data = OrchardSprays,
-              xlab = "treatment",
-              ylab = "decrease")
+  data = OrchardSprays,
+  xlab = "treatment",
+  ylab = "decrease"
+)
 ```
 
 <img src="man/figures/README-boxplot_aagi-1.png" width="100%" />

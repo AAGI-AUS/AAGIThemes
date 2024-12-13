@@ -31,14 +31,16 @@ p1 <- ggplot(mtcars) +
     x = wt,
     y = mpg,
     colour = factor(gear)
-   )) +
-  facet_wrap(~ am) +
+  )) +
+  facet_wrap(~am) +
   theme_aagi()
 
 ggsave(p1, filename = "AAGI.png", path = tempdir())
 
-add_aagi_logo(file_in = file.path(tempdir(), "AAGI.png"),
-               file_out = file.path(tempdir(), "AAGI_logo.png"))
+add_aagi_logo(
+  file_in = file.path(tempdir(), "AAGI.png"),
+  file_out = file.path(tempdir(), "AAGI_logo.png")
+)
 
 x <- magick::image_read(file.path(tempdir(), "AAGI_logo.png"))
 print(x)

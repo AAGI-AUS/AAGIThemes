@@ -1,4 +1,3 @@
-
 #' A ggplot2 Theme Using a Unified AAGI Style and Typography for Plots
 #'
 #' This theme follows a standard \acronym{AAGI} style including typography
@@ -29,15 +28,16 @@
 #'     x = wt,
 #'     y = mpg,
 #'     colour = factor(gear)
-#'    )) +
-#'   facet_wrap(~ am)
+#'   )) +
+#'   facet_wrap(~am)
 #'
 #' p1 + theme_aagi()
 #'
 #' # Plotting continuous values
 #' df <- reshape2::melt(outer(1:4, 1:4), varnames = c("X1", "X2"))
 #'
-#' p2 <- ggplot(df, aes(X1, X2)) + geom_tile(aes(fill = value)) +
+#' p2 <- ggplot(df, aes(X1, X2)) +
+#'   geom_tile(aes(fill = value)) +
 #'   geom_point(aes(size = value))
 #' p2 + theme_aagi()
 #'
@@ -53,9 +53,11 @@
 #' p1 + theme_aagi(border = TRUE)
 #'
 #' # Plotting with both gridlines and border
-#' p1 + theme_aagi(minor_gridlines = TRUE,
-#'                        major_gridlines = TRUE,
-#'                        border = TRUE)
+#' p1 + theme_aagi(
+#'   minor_gridlines = TRUE,
+#'   major_gridlines = TRUE,
+#'   border = TRUE
+#' )
 #'
 #' @seealso theme_aagi_map
 #' @rdname theme_aagi
@@ -65,11 +67,10 @@
 
 theme_aagi <-
   function(base_size = 9,
-          major_grid = FALSE,
-          minor_grid = FALSE,
-          border = FALSE,
-          ...) {
-
+           major_grid = FALSE,
+           minor_grid = FALSE,
+           border = FALSE,
+           ...) {
     # check if Proxima Nova is installed, if not, falls back to Arial
     aagi_font <- set_aagi_font()
     aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
@@ -84,67 +85,86 @@ theme_aagi <-
     minor_grid_size <- base_size / 96
 
     theme_aagi <-
-      ggplot2::theme_classic(base_size = base_size,
-                             base_family = aagi_font) %+replace%
-        ggplot2::theme(
-          # match legend key to panel.background
-          legend.key = ggplot2::element_blank(),
-          legend.background = ggplot2::element_rect(color = aagi_black,
-                                                    fill = "#ffffff"),
-          #AAGI colour facet strips
-          strip.background = ggplot2::element_rect(
+      ggplot2::theme_classic(
+        base_size = base_size,
+        base_family = aagi_font
+      ) %+replace%
+      ggplot2::theme(
+        # match legend key to panel.background
+        legend.key = ggplot2::element_blank(),
+        legend.background = ggplot2::element_rect(
+          color = aagi_black,
+          fill = "#ffffff"
+        ),
+        # AAGI colour facet strips
+        strip.background = ggplot2::element_rect(
           fill = aagi_teal,
           colour = aagi_teal,
           linewidth = base_line_size
-          ),
-          strip.text = ggplot2::element_text(
-            colour = "#ffffff",
-            family = aagi_font,
-            face = "bold",
-            margin = ggplot2::margin(3, 3, 3, 3, "points")
-          ),
-          plot.margin = ggplot2::margin(25, 25, 10, 25),
-          text = ggplot2::element_text(family = aagi_font,
-                                       size = base_size),
-          axis.text = ggplot2::element_text(family = aagi_font,
-                                            size = base_size),
-          legend.text = ggplot2::element_text(family = aagi_font,
-                                              size = base_size),
-          plot.title = ggplot2::element_text(
-            family = aagi_font,
-            face = "bold",
-            size = base_size * 1.25,
-            hjust = 0,
-            margin = ggplot2::margin(0, 0, 10, 0)
-          ),
-          plot.title.position = "plot",
-          complete = TRUE
-        )
+        ),
+        strip.text = ggplot2::element_text(
+          colour = "#ffffff",
+          family = aagi_font,
+          face = "bold",
+          margin = ggplot2::margin(3, 3, 3, 3, "points")
+        ),
+        plot.margin = ggplot2::margin(25, 25, 10, 25),
+        text = ggplot2::element_text(
+          family = aagi_font,
+          size = base_size
+        ),
+        axis.text = ggplot2::element_text(
+          family = aagi_font,
+          size = base_size
+        ),
+        legend.text = ggplot2::element_text(
+          family = aagi_font,
+          size = base_size
+        ),
+        plot.title = ggplot2::element_text(
+          family = aagi_font,
+          face = "bold",
+          size = base_size * 1.25,
+          hjust = 0,
+          margin = ggplot2::margin(0, 0, 10, 0)
+        ),
+        plot.title.position = "plot",
+        complete = TRUE
+      )
 
     if (isTRUE(minor_grid)) {
       theme_aagi <- theme_aagi +
-        ggplot2::theme(panel.grid.minor =
-                        ggplot2::element_line(color = aagi_grey,
-                                      linewidth = minor_grid_size))
+        ggplot2::theme(
+          panel.grid.minor =
+            ggplot2::element_line(
+              color = aagi_grey,
+              linewidth = minor_grid_size
+            )
+        )
     }
 
     if (isTRUE(major_grid)) {
       theme_aagi <- theme_aagi +
-        ggplot2::theme(panel.grid.major =
-                        ggplot2::element_line(color = "#bdbdbd",
-                                      linewidth = major_grid_size))
+        ggplot2::theme(
+          panel.grid.major =
+            ggplot2::element_line(
+              color = "#bdbdbd",
+              linewidth = major_grid_size
+            )
+        )
     }
 
     if (isTRUE(border)) {
       theme_aagi <- theme_aagi +
-        ggplot2::theme(panel.border =
-                        ggplot2::element_rect(
-                          fill = NA,
-                          color = aagi_black,
-                          size = base_rect_size
-                        ))
+        ggplot2::theme(
+          panel.border =
+            ggplot2::element_rect(
+              fill = NA,
+              color = aagi_black,
+              size = base_rect_size
+            )
+        )
     }
 
     return(theme_aagi)
-
   }

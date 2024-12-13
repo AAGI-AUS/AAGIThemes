@@ -1,4 +1,3 @@
-
 #' @title Basic Histograms Using a Unified AAGI Style and Typography
 #'
 #' @description Basic histograms that follow a standard \acronym{AAGI} style
@@ -37,14 +36,13 @@
 #' @export
 #'
 hist_aagi <- function(x,
-                       main = "",
-                       sub = "",
-                       xlab = "",
-                       ylab = "Count",
-                       breaks = "pretty",
-                       col = AAGIPalettes::aagi_colours["AAGI Black"],
-                       ...) {
-
+                      main = "",
+                      sub = "",
+                      xlab = "",
+                      ylab = "Count",
+                      breaks = "pretty",
+                      col = AAGIPalettes::aagi_colours["AAGI Black"],
+                      ...) {
   breaks <- tolower(breaks)
 
   if (breaks == "pretty") {
@@ -53,8 +51,9 @@ hist_aagi <- function(x,
     # cleanup NAs in `x`
     x <- stats::na.omit(x)
     breaks <- seq(min(x), max(x),
-                  by = ((max(x) - min(x)) /
-                          (length(x) - 1)))
+      by = ((max(x) - min(x)) /
+        (length(x) - 1))
+    )
   } else {
     breaks <- "scott"
     message("You've selected an invalid value for `breaks`, using `pretty`.\n")

@@ -1,4 +1,3 @@
-
 #' Insert AAGI's Logo Into Any Graphic File
 #'
 #' Insert the \acronym{AAGI} logo in any graphical image.  Particularly well-
@@ -22,14 +21,16 @@
 #'     x = wt,
 #'     y = mpg,
 #'     colour = factor(gear)
-#'    )) +
-#'   facet_wrap(~ am) +
+#'   )) +
+#'   facet_wrap(~am) +
 #'   theme_aagi()
 #'
 #' ggsave(p1, filename = "AAGI.png", path = tempdir())
 #'
-#' add_aagi_logo(file_in = file.path(tempdir(), "AAGI.png"),
-#'                file_out = file.path(tempdir(), "AAGI_logo.png"))
+#' add_aagi_logo(
+#'   file_in = file.path(tempdir(), "AAGI.png"),
+#'   file_out = file.path(tempdir(), "AAGI_logo.png")
+#' )
 #'
 #' x <- magick::image_read(file.path(tempdir(), "AAGI_logo.png"))
 #' print(x)
@@ -78,19 +79,21 @@ add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
   logo_width <- magick::image_info(logo)$width
   logo_height <- magick::image_info(logo)$height
 
-  x_pos = 0.01 * plot_width
-  y_pos = 0.01 * plot_height
+  x_pos <- 0.01 * plot_width
+  y_pos <- 0.01 * plot_height
 
   # Compose the actual overlay
   plot_out <-
     magick::image_composite(plot_in,
-                            logo,
-                            offset = paste0("+", x_pos, "+", y_pos))
+      logo,
+      offset = paste0("+", x_pos, "+", y_pos)
+    )
 
   # trim plot down, removes bottom border added earlier to make room for logo
   plot_out <- magick::image_crop(plot_out,
-                                geometry = paste0("0x", plot_height + 300),
-                                gravity = "north")
+    geometry = paste0("0x", plot_height + 300),
+    gravity = "north"
+  )
 
   magick::image_write(plot_out, file_out)
 }

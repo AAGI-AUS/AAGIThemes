@@ -33,7 +33,9 @@ Add a Watermark Annotation Layer to a ggplot2 Object
 
 library(ggplot2)
 # First, start with a plot:
-p <- ggplot(mtcars, aes(x = wt, y = mpg)) + geom_point() + theme_aagi()
+p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  theme_aagi()
 
 # Then add a watermark:
 
