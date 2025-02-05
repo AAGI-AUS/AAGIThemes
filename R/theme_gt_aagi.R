@@ -15,7 +15,6 @@
 #'   gt()
 #' gt <- theme_gt_aagi(gt)
 #' gt
-#' @autoglobal
 #' @family tables
 #' @export
 theme_gt_aagi <- function(x) {
