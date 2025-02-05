@@ -50,6 +50,10 @@ the default size is about 75\% of the character height (see \code{par("cin")}).}
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).}
 }
+\value{
+Called for its side effect of creating a boxplot with the
+\acronym{AAGI} style.
+}
 \description{
 Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
 that uses (hopefully) sensible defaults.

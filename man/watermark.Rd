@@ -26,6 +26,10 @@ watermark(
 
 \item{angle}{Angle of the watermark}
 }
+\value{
+Called for its side effect of adding a watermark to the plot that's
+called.
+}
 \description{
 Add a Watermark Annotation Layer to a ggplot2 Object
 }
@@ -40,6 +44,7 @@ p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
 # Then add a watermark:
 
 p + watermark("DRAFT")
+
 }
 \author{
 Matt Cowgill and Will Mackey

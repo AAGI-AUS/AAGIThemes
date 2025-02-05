@@ -23,6 +23,10 @@ a named colour, "black"; or a hexadecimal code, "#414042".}
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).}
 }
+\value{
+Called for its side effect of creating a barplot with the
+\acronym{AAGI} style.
+}
 \description{
 Basic barplots that follow a standard \acronym{AAGI} style
 including typography guidelines that uses (hopefully) sensible defaults.

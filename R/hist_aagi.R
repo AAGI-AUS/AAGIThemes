@@ -32,7 +32,8 @@
 #' hist_aagi(islands)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#'
+#' @returns Called for its side effect of creating a histogram with the
+#' \acr{AAGI} style.
 #' @export
 #'
 hist_aagi <- function(x,

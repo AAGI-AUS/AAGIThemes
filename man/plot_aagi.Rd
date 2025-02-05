@@ -16,6 +16,10 @@ provided.}
 \code{y} for the factor to use for the y-axis or \code{type} describing what type of
 plot should be drawn.}
 }
+\value{
+Called for its side effect of creating a plot with the
+\acronym{AAGI} style.
+}
 \description{
 Basic X-Y plotting that follows \acronym{AAGI} colour and
 typography guidelines that uses (hopefully) sensible defaults.

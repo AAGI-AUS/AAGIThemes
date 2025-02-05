@@ -12,10 +12,10 @@ add_aagi_logo(file_in, file_out, logo_scale = 2.5)
 
 \item{file_out}{File name to create on disk as a .png format image.}
 
-\item{logo_scale}{Scaling for the logo.  Defaults to 2.5, larger sizes may be
-beneficial for larger graphical images than normal reporting and sharing.
-Care should be taken that the logo follows the \acronym{AAGI} branding
-guidelines and the size remains at least 4.6 cm.}
+\item{logo_scale}{Scaling for the logo.  Defaults to 2.5, larger sizes may
+be beneficial for larger graphical images than normal reporting and
+sharing. Care should be taken that the logo follows the \acronym{AAGI}
+branding guidelines and the size remains at least 4.6 cm.}
 }
 \description{
 Insert the \acronym{AAGI} logo in any graphical image.  Particularly well-

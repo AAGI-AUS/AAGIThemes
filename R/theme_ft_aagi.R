@@ -29,7 +29,7 @@
 #'   formatting done before the print statement.
 #'
 #' @param x a \CRANpkg{flextable} object
-#' @return a formatted \CRANpkg{flextable} object
+#' @returns a formatted \CRANpkg{flextable} object
 #' @examples
 #' library(flextable)
 #' library(dplyr)

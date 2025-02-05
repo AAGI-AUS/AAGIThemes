@@ -6,7 +6,7 @@
 #'   aligned.
 #'
 #' @param x a \CRANpkg{gt} object
-#' @return a formatted \CRANpkg{gt} object
+#' @returns a formatted \CRANpkg{gt} object
 #' @examples
 #' library(gt)
 #' library(dplyr)

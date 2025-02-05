@@ -23,6 +23,9 @@
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 #'
+#' @returns Called for its side effect of creating a barplot with the
+#' \acronym{AAGI} style.
+#'
 #' @export
 #'
 barplot_aagi <- function(height,

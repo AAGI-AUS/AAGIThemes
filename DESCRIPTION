@@ -61,8 +61,9 @@ Remotes:
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
-Roxygen: list(markdown = TRUE)
+Roxygen: list(markdown = TRUE, roclets = c("collate", "rd", "namespace", "devtag::dev_roclet"))
 RoxygenNote: 7.3.2
 X-schema.org-applicationCategory: Tools
 X-schema.org-isPartOf: 
     https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\
+Config/Needs/build: moodymudskipper/devtag

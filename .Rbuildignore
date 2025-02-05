@@ -13,3 +13,5 @@
 ^COPYRIGHT$
 # flint files
 ^flint$
+^man/set_aagi_font\.Rd$
+^man/par_aagi\.Rd$

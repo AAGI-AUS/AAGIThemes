@@ -8,10 +8,10 @@
 #' @param file_in Path to the graphical file to import and add the
 #'   \acronym{AAGI} logo to apply the logo to.
 #' @param file_out File name to create on disk as a .png format image.
-#' @param logo_scale Scaling for the logo.  Defaults to 2.5, larger sizes may be
-#'   beneficial for larger graphical images than normal reporting and sharing.
-#'   Care should be taken that the logo follows the \acronym{AAGI} branding
-#'   guidelines and the size remains at least 4.6 cm.
+#' @param logo_scale Scaling for the logo.  Defaults to 2.5, larger sizes may
+#'   be beneficial for larger graphical images than normal reporting and
+#'   sharing. Care should be taken that the logo follows the \acronym{AAGI}
+#'   branding guidelines and the size remains at least 4.6 cm.
 #'
 #' @examples
 #' library("ggplot2")
@@ -36,6 +36,8 @@
 #' print(x)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
+#' @retuns Called for its side effect of adding the \acronym{AAGI} logo to the
+#' plot that's called.
 #'
 #' @export
 

@@ -19,6 +19,9 @@
 #' # Then add a watermark:
 #'
 #' p + watermark("DRAFT")
+#'
+#' @returns Called for its side effect of adding a watermark to the plot that's
+#' called.
 watermark <- function(watermark,
                       fontsize = 120,
                       colour = "grey90",

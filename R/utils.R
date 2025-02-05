@@ -3,10 +3,9 @@
 #' Sets the AAGI font to Proxima Nova first, if it's not available, falls back
 #'   to Arial as per the \acronym{AAGI} comms guide.
 #'
-#' @return A character string with a font family name
-#' @noRd
-#' @keywords Internal
-#'
+#' @returns A character string with a font family name
+#' @dev
+
 set_aagi_font <- function() {
   if (any(agrepl("Proxima Nova", systemfonts::system_fonts()[, "family"]))) {
     aagi_font <- "Proxima Nova"
@@ -18,10 +17,8 @@ set_aagi_font <- function() {
 
 #' Set Graphical Parameters That Satisfy AAGI's Style Requirements
 #'
-#' @return A list object of graphical parameters
-#' @noRd
-#' @keywords Internal
-#'
+#' @returns A list object of graphical parameters
+#' @dev
 
 par_aagi <- function() {
   return(list(

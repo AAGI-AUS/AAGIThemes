@@ -24,7 +24,8 @@
 #' plot_aagi(pressure)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#'
+#' @returns Called for its side effect of creating a plot with the
+#' \acronym{AAGI} style.
 #' @export
 #'
 plot_aagi <- function(x,

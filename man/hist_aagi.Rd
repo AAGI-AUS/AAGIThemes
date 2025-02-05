@@ -36,6 +36,10 @@ individually with a bar.}
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).}
 }
+\value{
+Called for its side effect of creating a histogram with the
+\acr{AAGI} style.
+}
 \description{
 Basic histograms that follow a standard \acronym{AAGI} style
 including typography guidelines that uses (hopefully) sensible defaults.
