@@ -17,6 +17,10 @@ be beneficial for larger graphical images than normal reporting and
 sharing. Care should be taken that the logo follows the \acronym{AAGI}
 branding guidelines and the size remains at least 4.6 cm.}
 }
+\value{
+Called for its side effect of adding the \acronym{AAGI} logo to the
+plot that's called.
+}
 \description{
 Insert the \acronym{AAGI} logo in any graphical image.  Particularly well-
 suited for use with files created with \pkg{AAGIThemes}.  The logo will be

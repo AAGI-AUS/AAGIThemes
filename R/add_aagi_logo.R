@@ -36,7 +36,7 @@
 #' print(x)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#' @retuns Called for its side effect of adding the \acronym{AAGI} logo to the
+#' @returns Called for its side effect of adding the \acronym{AAGI} logo to the
 #' plot that's called.
 #'
 #' @export
