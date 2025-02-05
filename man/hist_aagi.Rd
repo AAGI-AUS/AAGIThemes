@@ -38,7 +38,7 @@ individually with a bar.}
 }
 \value{
 Called for its side effect of creating a histogram with the
-\acr{AAGI} style.
+\acronym{AAGI} style.
 }
 \description{
 Basic histograms that follow a standard \acronym{AAGI} style
