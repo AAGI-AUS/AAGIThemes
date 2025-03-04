@@ -66,11 +66,13 @@
 #' @export
 
 theme_aagi <-
-  function(base_size = 9,
-           major_grid = FALSE,
-           minor_grid = FALSE,
-           border = FALSE,
-           ...) {
+  function(
+    base_size = 9,
+    major_grid = FALSE,
+    minor_grid = FALSE,
+    border = FALSE,
+    ...
+  ) {
     # check if Proxima Nova is installed, if not, falls back to Arial
     aagi_font <- set_aagi_font()
     aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
@@ -135,34 +137,31 @@ theme_aagi <-
     if (isTRUE(minor_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(
-          panel.grid.minor =
-            ggplot2::element_line(
-              color = aagi_grey,
-              linewidth = minor_grid_size
-            )
+          panel.grid.minor = ggplot2::element_line(
+            color = aagi_grey,
+            linewidth = minor_grid_size
+          )
         )
     }
 
     if (isTRUE(major_grid)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(
-          panel.grid.major =
-            ggplot2::element_line(
-              color = "#bdbdbd",
-              linewidth = major_grid_size
-            )
+          panel.grid.major = ggplot2::element_line(
+            color = "#bdbdbd",
+            linewidth = major_grid_size
+          )
         )
     }
 
     if (isTRUE(border)) {
       theme_aagi <- theme_aagi +
         ggplot2::theme(
-          panel.border =
-            ggplot2::element_rect(
-              fill = NA,
-              color = aagi_black,
-              size = base_rect_size
-            )
+          panel.border = ggplot2::element_rect(
+            fill = NA,
+            color = aagi_black,
+            size = base_rect_size
+          )
         )
     }
 

@@ -43,14 +43,16 @@
 #' @export
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
-boxplot_aagi <- function(x,
-                         main = "",
-                         sub = "",
-                         xlab = "",
-                         ylab = "",
-                         col = "white",
-                         pch = 16,
-                         ...) {
+boxplot_aagi <- function(
+  x,
+  main = "",
+  sub = "",
+  xlab = "",
+  ylab = "",
+  col = "white",
+  pch = 16,
+  ...
+) {
   # set new pars
   withr::local_par(.new = par_aagi())
   graphics::plot.new()

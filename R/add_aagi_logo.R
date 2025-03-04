@@ -86,13 +86,15 @@ add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
 
   # Compose the actual overlay
   plot_out <-
-    magick::image_composite(plot_in,
+    magick::image_composite(
+      plot_in,
       logo,
       offset = paste0("+", x_pos, "+", y_pos)
     )
 
   # trim plot down, removes bottom border added earlier to make room for logo
-  plot_out <- magick::image_crop(plot_out,
+  plot_out <- magick::image_crop(
+    plot_out,
     geometry = paste0("0x", plot_height + 300),
     gravity = "north"
   )

@@ -36,14 +36,16 @@
 #' \acronym{AAGI} style.
 #' @export
 #'
-hist_aagi <- function(x,
-                      main = "",
-                      sub = "",
-                      xlab = "",
-                      ylab = "Count",
-                      breaks = "pretty",
-                      col = AAGIPalettes::aagi_colours["AAGI Black"],
-                      ...) {
+hist_aagi <- function(
+  x,
+  main = "",
+  sub = "",
+  xlab = "",
+  ylab = "Count",
+  breaks = "pretty",
+  col = AAGIPalettes::aagi_colours["AAGI Black"],
+  ...
+) {
   breaks <- tolower(breaks)
 
   if (breaks == "pretty") {
@@ -51,7 +53,9 @@ hist_aagi <- function(x,
   } else if (breaks == "exact") {
     # cleanup NAs in `x`
     x <- stats::na.omit(x)
-    breaks <- seq(min(x), max(x),
+    breaks <- seq(
+      min(x),
+      max(x),
       by = ((max(x) - min(x)) /
         (length(x) - 1))
     )

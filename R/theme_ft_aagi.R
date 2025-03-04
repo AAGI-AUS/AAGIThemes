@@ -58,22 +58,26 @@ theme_ft_aagi <- function(x) {
   x <- flextable::bold(x = x, bold = TRUE, part = "header")
   x <- flextable::color(x = x, color = "#ffffff", part = "header")
   x <- flextable::bg(
-    x = x, bg = aagi_teal,
+    x = x,
+    bg = aagi_teal,
     part = "header"
   )
 
   # body
   x <- flextable::color(
-    x = x, color = aagi_black,
+    x = x,
+    color = aagi_black,
     part = "body"
   )
   x <- flextable::bg(
-    x = x, bg = aagi_grey,
+    x = x,
+    bg = aagi_grey,
     part = "body"
   )
 
   x <- flextable::border(
-    x = x, border = officer::fp_border(
+    x = x,
+    border = officer::fp_border(
       width = 0.75,
       color = "#ffffff"
     ),

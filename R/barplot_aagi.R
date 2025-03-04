@@ -28,9 +28,7 @@
 #'
 #' @export
 #'
-barplot_aagi <- function(height,
-                         col = "AAGI Black",
-                         ...) {
+barplot_aagi <- function(height, col = "AAGI Black", ...) {
   # only validate if the colour is an official AAGI colour and convert to hex
   if (substr(col, 1, 5) == "AAGI ") {
     # validation/matching is done in {AAGIPalettes} so not needed here

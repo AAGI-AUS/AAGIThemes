@@ -27,7 +27,8 @@ theme_gt_aagi <- function(x) {
   x |>
     gt::opt_table_font(
       font = list(
-        aagi_font, gt::default_fonts()
+        aagi_font,
+        gt::default_fonts()
       )
     ) |>
     gt::tab_style(
