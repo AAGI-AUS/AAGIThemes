@@ -61,13 +61,8 @@
 </h2>
 <p>You can install {AAGIThemes} like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"remotes"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"AAGI-Org-AU-Public/AAGIThemes"</span>,</span>
-<span>                        build_vignettes <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>                        dependencies <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"AAGI-Org-AU-Public/AAGIThemes"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
@@ -99,7 +94,313 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>`Month Name` <span class="op">=</span> <span class="st">"May"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">ft</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/theme_ft_aagi.html">theme_ft_aagi</a></span><span class="op">(</span><span class="va">ft</span><span class="op">)</span></span>
 <span><span class="va">ft</span></span></code></pre></div>
-<p><img src="reference/figures/README-ft-tabular-1.png" width="100%"></p>
+<div class="tabwid">
+<style>.cl-064f998c{}.cl-064c0ef2{font-family:'Proxima Nova';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-064c0efc{font-family:'Proxima Nova';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(65, 64, 66, 1.00);background-color:transparent;}.cl-064d637e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-064d637f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-064e020c{width:0.75in;background-color:rgba(0, 128, 139, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-064e020d{width:0.75in;background-color:rgba(0, 128, 139, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-064e020e{width:0.75in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-064e020f{width:0.75in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.tabwid {
+  font-size: initial;
+  padding-bottom: 1em;
+}
+
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  border-color: transparent;
+  caption-side: top;
+}
+.tabwid-caption-bottom table{
+  caption-side: bottom;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td, .tabwid th {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+.katex-display {
+    margin: 0 0 !important;
+}</style>
+<table data-quarto-disable-processing="true" class="table cl-064f998c">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-064e020c">
+<p class="cl-064d637e">
+<span class="cl-064c0ef2">Ozone</span>
+</p>
+</th>
+<th class="cl-064e020c">
+<p class="cl-064d637e">
+<span class="cl-064c0ef2">Solar.R</span>
+</p>
+</th>
+<th class="cl-064e020c">
+<p class="cl-064d637e">
+<span class="cl-064c0ef2">Wind</span>
+</p>
+</th>
+<th class="cl-064e020c">
+<p class="cl-064d637e">
+<span class="cl-064c0ef2">Temp</span>
+</p>
+</th>
+<th class="cl-064e020c">
+<p class="cl-064d637e">
+<span class="cl-064c0ef2">Month</span>
+</p>
+</th>
+<th class="cl-064e020c">
+<p class="cl-064d637e">
+<span class="cl-064c0ef2">Day</span>
+</p>
+</th>
+<th class="cl-064e020d">
+<p class="cl-064d637f">
+<span class="cl-064c0ef2">Month Name</span>
+</p>
+</th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">41</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">190</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">7.4</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">67</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">5</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">1</span>
+</p>
+</td>
+<td class="cl-064e020f">
+<p class="cl-064d637f">
+<span class="cl-064c0efc">May</span>
+</p>
+</td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">36</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">118</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">8.0</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">72</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">5</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">2</span>
+</p>
+</td>
+<td class="cl-064e020f">
+<p class="cl-064d637f">
+<span class="cl-064c0efc">May</span>
+</p>
+</td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">12</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">149</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">12.6</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">74</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">5</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">3</span>
+</p>
+</td>
+<td class="cl-064e020f">
+<p class="cl-064d637f">
+<span class="cl-064c0efc">May</span>
+</p>
+</td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">18</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">313</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">11.5</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">62</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">5</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">4</span>
+</p>
+</td>
+<td class="cl-064e020f">
+<p class="cl-064d637f">
+<span class="cl-064c0efc">May</span>
+</p>
+</td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc"></span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc"></span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">14.3</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">56</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">5</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">5</span>
+</p>
+</td>
+<td class="cl-064e020f">
+<p class="cl-064d637f">
+<span class="cl-064c0efc">May</span>
+</p>
+</td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">28</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc"></span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">14.9</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">66</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">5</span>
+</p>
+</td>
+<td class="cl-064e020e">
+<p class="cl-064d637e">
+<span class="cl-064c0efc">6</span>
+</p>
+</td>
+<td class="cl-064e020f">
+<p class="cl-064d637f">
+<span class="cl-064c0efc">May</span>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="section level3">
@@ -124,7 +425,11 @@
 <span>  xlab <span class="op">=</span> <span class="st">"treatment"</span>,</span>
 <span>  ylab <span class="op">=</span> <span class="st">"decrease"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-boxplot_aagi-1.png" width="100%"></p>
+<div class="figure">
+<img src="reference/figures/README-boxplot_aagi-1.png" alt="plot of chunk boxplot_aagi" width="100%"><p class="caption">
+plot of chunk boxplot_aagi
+</p>
+</div>
 <p>See the respective function’s help files and the {AAGIThemes} cookbook for more examples and documentation.</p>
 </div>
 <div class="section level4">
@@ -140,7 +445,11 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">120</span>, by <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/theme_aagi.html">theme_aagi</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-theme_aagi_ggboxplot-1.png" width="100%"></p>
+<div class="figure">
+<img src="reference/figures/README-theme_aagi_ggboxplot-1.png" alt="plot of chunk theme_aagi_ggboxplot" width="100%"><p class="caption">
+plot of chunk theme_aagi_ggboxplot
+</p>
+</div>
 </div>
 </div>
 </div>
