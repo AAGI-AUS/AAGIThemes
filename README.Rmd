@@ -33,13 +33,8 @@ The resulting maps from `theme_aagi_map()` feature a white canvas with the legen
 You can install {AAGIThemes} like so:
 
 ```r
-if (!requireNamespace("remotes", quietly = TRUE)) {
-  install.packages("remotes")
-}
-remotes::install_github("AAGI-Org-AU-Public/AAGIThemes",
-                        build_vignettes = TRUE,
-                        dependencies = TRUE
-)
+# install.packages("pak")
+pak::pak("AAGI-Org-AU-Public/AAGIThemes")
 ```
 
 ## Quick start
