@@ -67,11 +67,12 @@
 
 theme_aagi <-
   function(
-      base_size = 9,
-      major_grid = FALSE,
-      minor_grid = FALSE,
-      border = FALSE,
-      ...) {
+    base_size = 9,
+    major_grid = FALSE,
+    minor_grid = FALSE,
+    border = FALSE,
+    ...
+  ) {
     # check if Proxima Nova is installed, if not, falls back to Arial
     aagi_font <- set_aagi_font()
     aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")

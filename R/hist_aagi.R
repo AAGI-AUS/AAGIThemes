@@ -37,14 +37,15 @@
 #' @export
 #'
 hist_aagi <- function(
-    x,
-    main = "",
-    sub = "",
-    xlab = "",
-    ylab = "Count",
-    breaks = "pretty",
-    col = AAGIPalettes::aagi_colours["AAGI Black"],
-    ...) {
+  x,
+  main = "",
+  sub = "",
+  xlab = "",
+  ylab = "Count",
+  breaks = "pretty",
+  col = AAGIPalettes::aagi_colours["AAGI Black"],
+  ...
+) {
   breaks <- tolower(breaks)
 
   if (breaks == "pretty") {
