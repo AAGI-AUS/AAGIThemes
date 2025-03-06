@@ -16,15 +16,15 @@
 #'
 #' If you want to automatically apply a theme function to each
 #'   \CRANpkg{flextable} object, you can use the `theme_fun` argument of
-#'   [flextable::set_flextable_defaults()]; be aware that this theme function is
-#'   applied as the last instruction when calling [flextable::flextable()] -- so
+#'   [flextable::set_flextable_defaults]; be aware that this theme function is
+#'   applied as the last instruction when calling [flextable::flextable] -- so
 #'   if you add headers or footers to the array, they will not be formatted with
 #'   the theme.
 #'
 #' You can also use the `post_process_html` argument of
-#'   [flextable::set_flextable_defaults()] (or `post_process_pdf`,
+#'   [flextable::set_flextable_defaults] (or `post_process_pdf`,
 #'   `post_process_docx`, `post_process_pptx`) to specify a theme to be applied
-#'   systematically before the [flextable::flextable()] is printed; in this
+#'   systematically before the [flextable::flextable] is printed; in this
 #'   case, don't forget to take care that the theme doesn't override any
 #'   formatting done before the print statement.
 #'
@@ -45,14 +45,11 @@ theme_ft_aagi <- function(x) {
     )
   }
 
-  # check if Proxima Nova is installed, if not, falls back to Arial
-  aagi_font <- set_aagi_font()
+  flextable::set_flextable_defaults(font.family = set_aagi_font())
 
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
-
-  x <- flextable::font(x, part = "all", fontname = aagi_font)
 
   # header
   x <- flextable::bold(x = x, bold = TRUE, part = "header")
@@ -86,6 +83,4 @@ theme_ft_aagi <- function(x) {
 
   x <- flextable::align_text_col(x, align = "left", header = TRUE)
   x <- flextable::align_nottext_col(x, align = "right", header = FALSE)
-
-  return(x)
 }

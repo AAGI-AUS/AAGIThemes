@@ -12,7 +12,6 @@ set_aagi_font <- function() {
   } else {
     aagi_font <- "Arial"
   }
-  return(aagi_font)
 }
 
 #' Set Graphical Parameters That Satisfy AAGI's Style Requirements
@@ -21,12 +20,12 @@ set_aagi_font <- function() {
 #' @dev
 
 par_aagi <- function() {
-  return(list(
+  list(
     family = set_aagi_font(),
     las = 1,
     mgp = c(2, 0.5, 0),
     cex = 0.9,
     bty = "L",
     col = AAGIPalettes::colour_as_hex("AAGI Black")
-  ))
+  )
 }

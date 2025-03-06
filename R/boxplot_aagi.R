@@ -22,15 +22,15 @@
 #'   Value `pch = "."` (equivalently `pch = 46`) is handled specially. It is a
 #'   rectangle of side 0.01 inch (scaled by `cex`). In addition, if `cex = 1`
 #'   (the default), each side is at least one pixel (1/72 inch on the
-#'   [grDevices::pdf()], [grDevices::postscript()] and [grDevices::xfig()]
+#'   [grDevices::pdf], [grDevices::postscript] and [grDevices::xfig]
 #'   devices).
 #'   For other text symbols, `cex = 1` corresponds to the default font size of
 #'   the device, often specified by an argument `pointsize`. For `pch` in 0:25
 #'   the default size is about 75% of the character height (see `par("cin")`).
 #' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par()]).
+#'   (see [graphics::par]).
 #'
-#' @seealso [graphics::boxplot()] for full documentation of the basic boxplot
+#' @seealso [graphics::boxplot] for full documentation of the basic boxplot
 #'    capabilities
 #' @examples
 #' boxplot_aagi(decrease ~ treatment,
@@ -44,15 +44,14 @@
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
 boxplot_aagi <- function(
-  x,
-  main = "",
-  sub = "",
-  xlab = "",
-  ylab = "",
-  col = "white",
-  pch = 16,
-  ...
-) {
+    x,
+    main = "",
+    sub = "",
+    xlab = "",
+    ylab = "",
+    col = "white",
+    pch = 16,
+    ...) {
   # set new pars
   withr::local_par(.new = par_aagi())
   graphics::plot.new()

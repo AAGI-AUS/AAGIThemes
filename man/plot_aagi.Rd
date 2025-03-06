@@ -12,7 +12,7 @@ plotting structure, function or any \R \emph{object with a plot method} can be
 provided.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
+(see \link[graphics:par]{graphics::par}).  The most commonly used argument would be
 \code{y} for the factor to use for the y-axis or \code{type} describing what type of
 plot should be drawn.}
 }
@@ -36,7 +36,7 @@ plot_aagi(pressure)
 
 }
 \seealso{
-\code{\link[graphics:plot.default]{graphics::plot()}} for full documentation of the basic plotting
+\link[graphics:plot.default]{graphics::plot} for full documentation of the basic plotting
 capabilities.
 }
 \author{

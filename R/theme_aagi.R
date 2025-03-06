@@ -16,7 +16,7 @@
 #'   sides, *i.e.*, x-axis, y-axis, top and right sides all will have a black
 #'   border not just x-axis and y-axis.  Defaults to `FALSE` with only the
 #'   x-axis and y-axis being outlined in dark grey.
-#' @param ... Other arguments as passed along to [ggplot2::theme()].
+#' @param ... Other arguments as passed along to [ggplot2::theme].
 #'
 #' @examples
 #'
@@ -67,12 +67,11 @@
 
 theme_aagi <-
   function(
-    base_size = 9,
-    major_grid = FALSE,
-    minor_grid = FALSE,
-    border = FALSE,
-    ...
-  ) {
+      base_size = 9,
+      major_grid = FALSE,
+      minor_grid = FALSE,
+      border = FALSE,
+      ...) {
     # check if Proxima Nova is installed, if not, falls back to Arial
     aagi_font <- set_aagi_font()
     aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")

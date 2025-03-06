@@ -41,14 +41,14 @@ examples below. (NB: \R uses circles instead of the octagons used in S.)
 Value \code{pch = "."} (equivalently \code{pch = 46}) is handled specially. It is a
 rectangle of side 0.01 inch (scaled by \code{cex}). In addition, if \code{cex = 1}
 (the default), each side is at least one pixel (1/72 inch on the
-\code{\link[grDevices:pdf]{grDevices::pdf()}}, \code{\link[grDevices:postscript]{grDevices::postscript()}} and \code{\link[grDevices:xfig]{grDevices::xfig()}}
+\link[grDevices:pdf]{grDevices::pdf}, \link[grDevices:postscript]{grDevices::postscript} and \link[grDevices:xfig]{grDevices::xfig}
 devices).
 For other text symbols, \code{cex = 1} corresponds to the default font size of
 the device, often specified by an argument \code{pointsize}. For \code{pch} in 0:25
 the default size is about 75\% of the character height (see \code{par("cin")}).}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).}
+(see \link[graphics:par]{graphics::par}).}
 }
 \value{
 Called for its side effect of creating a boxplot with the
@@ -66,7 +66,7 @@ boxplot_aagi(decrease ~ treatment,
 )
 }
 \seealso{
-\code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic boxplot
+\link[graphics:boxplot]{graphics::boxplot} for full documentation of the basic boxplot
 capabilities
 }
 \author{
