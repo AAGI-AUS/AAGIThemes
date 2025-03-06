@@ -15,3 +15,4 @@
 ^flint$
 ^man/set_aagi_font\.Rd$
 ^man/par_aagi\.Rd$
+^air\.toml$
