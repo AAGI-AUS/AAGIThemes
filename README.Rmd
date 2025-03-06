@@ -54,14 +54,14 @@ vignette("Cookbook", package = "AAGIThemes")
 
 You can use it like so with {flextable}.
 
-```{r ft-tabular}
+```{r ft-tabular, eval=FALSE}
 library(AAGIThemes)
 library(dplyr)
 library(flextable)
-ft <- flextable(head(airquality) |>
-  mutate(`Month Name` = "May"))
-ft <- theme_ft_aagi(ft)
-ft
+
+flextable(head(airquality) |>
+  mutate(`Month Name` = "May")) |>
+  theme_ft_aagi()
 ```
 
 ### Plots and graphs
@@ -110,7 +110,6 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
   scale_y_continuous(breaks = seq(0, 120, by = 20)) +
   theme_aagi()
 ```
-
 
 ## Logo Rights
 
