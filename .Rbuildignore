@@ -13,6 +13,6 @@
 ^COPYRIGHT$
 # flint files
 ^flint$
+^air\.toml$
 ^man/set_aagi_font\.Rd$
 ^man/par_aagi\.Rd$
-^air\.toml$
