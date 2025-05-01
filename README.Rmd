@@ -33,8 +33,15 @@ The resulting maps from `theme_aagi_map()` feature a white canvas with the legen
 You can install {AAGIThemes} like so:
 
 ```r
-# install.packages("pak")
+o <- options() # store default options
+
+options(pkg.build_vignettes = TRUE)
+if (!require("pak"))
+  install.packages("pak")
+
 pak::pak("AAGI-Org-AU-Public/AAGIThemes")
+
+options(o) # restore default options
 ```
 
 ## Quick start
@@ -59,8 +66,8 @@ library(AAGIThemes)
 library(dplyr)
 library(flextable)
 
-flextable(head(airquality) |>
-  mutate(`Month Name` = "May")) |>
+flextable(head(airquality)) |>
+  mutate(`Month Name` = "May") |>
   theme_ft_aagi()
 ```
 
