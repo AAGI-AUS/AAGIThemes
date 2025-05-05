@@ -23,6 +23,18 @@ The resulting maps from `theme_aagi_map()` feature a white canvas with the legen
 
 ## Installation instructions
 
+### Note for Linux Users
+
+If you are using Linux, you will likely need to install several system-level libraries, {pak} will do it's best to install most of them but some may not be installable this way.
+For NECTAR with a fresh Ubuntu image, you will need at least the following system libraries to install {pak} and then {AAGIThemes}:
+
+```bash
+sudo apt update
+sudo apt install libxml2 libmagick++-dev libcurl4-openssl-dev libcairo2-dev gsfonts pandoc libcairo2-dev libfontconfig1-dev libfreetype6-dev pandoc libmagick++-dev gsfonts libtiff-dev librsvg2-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libsqlite3-dev libfribidi-dev libharfbuzz-dev libudunits2-dev libxml2-dev ttf-mscorefonts-installer
+```
+
+
+
 You can install {AAGIThemes} like so:
 
 ```r
@@ -32,7 +44,7 @@ options(pkg.build_vignettes = TRUE)
 if (!require("pak"))
   install.packages("pak")
 
-pak::pak("AAGI-Org-AU-Public/AAGIThemes")
+pak::pak("AAGI-Org-AU-Public/AAGIThemes", dependencies = TRUE)
 
 options(o) # restore default options
 ```
