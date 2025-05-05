@@ -142,8 +142,8 @@ sf_oz <- ozmap_data("states")
 ggplot(sf_oz, aes(fill = NAME)) +
   geom_sf() +
   coord_sf(crs = "+proj=lcc +lon_0=135 +lat_0=-30 +lat_1=-10 +lat_2=-45 +datum=WGS84") +
-  scale_fill_manual(values = unname(aagi_colours)) +
-  theme_aag()
+  scale_fill_manual(values = unname(palette.colors(palette = "Okabe-Ito"))) +
+  theme_aagi()
 ```
 
 ## Logo Rights

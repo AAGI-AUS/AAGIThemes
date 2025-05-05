@@ -19,7 +19,6 @@ This repository contains the code for the R package {AAGIThemes}, which once ins
 The goal of {AAGIThemes} is to provide easy to use theming of R graphics for AAGI team members.
 Following AAGI's brand guidelines, AAGI colours are used where applicable and the font defaults to Proxima Nova.
 The resulting graphs, plots and charts feature a x and y axis that meet at 0 with no gridlines, but these can optionally be set to appear.
-The resulting maps from `theme_aagi_map()` feature a white canvas with the legend on the right.
 
 ## Installation instructions
 
@@ -104,8 +103,8 @@ boxplot_aagi(decrease ~ treatment,
 ```
 
 <div class="figure">
-<img src="man/figures/README-boxplot_aagi-1.png" alt="plot of chunk boxplot_aagi" width="100%" />
-<p class="caption">plot of chunk boxplot_aagi</p>
+<img src="man/figures/README-boxplot_aagi-1.png" alt="An example plot illustrating the use of AAGIThemes with R's base plot capabilities." width="100%" />
+<p class="caption">An example plot illustrating the use of AAGIThemes with R's base plot capabilities.</p>
 </div>
 
 See the respective function's help files and the {AAGIThemes} cookbook for more examples and documentation.
@@ -130,8 +129,33 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
 ```
 
 <div class="figure">
-<img src="man/figures/README-theme_aagi_ggboxplot-1.png" alt="plot of chunk theme_aagi_ggboxplot" width="100%" />
-<p class="caption">plot of chunk theme_aagi_ggboxplot</p>
+<img src="man/figures/README-theme_aagi_ggboxplot-1.png" alt="An example plot illustrating the use of AAGIThemes with ggplot2." width="100%" />
+<p class="caption">An example plot illustrating the use of AAGIThemes with ggplot2.</p>
+</div>
+
+### Maps
+
+Example of a map made with {ggplot2} and {AAGIThemes}.
+
+
+``` r
+library(AAGIThemes)
+library(AAGIPalettes)
+library(ggplot2)
+library(ozmaps)
+
+sf_oz <- ozmap_data("states")
+
+ggplot(sf_oz, aes(fill = NAME)) +
+  geom_sf() +
+  coord_sf(crs = "+proj=lcc +lon_0=135 +lat_0=-30 +lat_1=-10 +lat_2=-45 +datum=WGS84") +
+  scale_fill_manual(values = unname(palette.colors(palette = "Okabe-Ito"))) +
+  theme_aagi()
+```
+
+<div class="figure">
+<img src="man/figures/README-theme_aagi_map-1.png" alt="An example map illustrating the use of AAGIThemes with ggplot2." width="100%" />
+<p class="caption">An example map illustrating the use of AAGIThemes with ggplot2.</p>
 </div>
 
 ## Logo Rights
