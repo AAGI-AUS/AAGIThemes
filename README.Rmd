@@ -37,8 +37,7 @@ For NECTAR with a fresh Ubuntu image, you can use the following command to insta
 In your Linux terminal (not your R console, the "terminal" tab in RStudio should do here in most cases) type:
 
 ```bash
-sudo apt update
-sudo apt install libxml2 libmagick++-dev libcurl4-openssl-dev libcairo2-dev gsfonts pandoc libcairo2-dev libfontconfig1-dev libfreetype6-dev pandoc libmagick++-dev gsfonts libtiff-dev librsvg2-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libsqlite3-dev libfribidi-dev libharfbuzz-dev libudunits2-dev libxml2-dev ttf-mscorefonts-installer
+sudo apt update && sudo apt install libxml2 libmagick++-dev libcurl4-openssl-dev libcairo2-dev gsfonts pandoc libcairo2-dev libfontconfig1-dev libfreetype6-dev pandoc libmagick++-dev gsfonts libtiff-dev librsvg2-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libsqlite3-dev libfribidi-dev libharfbuzz-dev libudunits2-dev libxml2-dev ttf-mscorefonts-installer
 ```
 
 You can install {AAGIThemes} like so in your R session:
