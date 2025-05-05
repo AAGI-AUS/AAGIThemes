@@ -21,12 +21,12 @@
       }
     } else {
       cli::cli_warn(
-        c(
-          "You need to install {cli::symbol$dquote_left}Proxima
+        "You need to install {cli::symbol$dquote_left}Proxima
         Nova{cli::symbol$dquote_right} or
         {cli::symbol$dquote_left}Arial{cli::symbol$dquote_right} TTF fonts to
         properly use {.pkg AAGIThemes} properly."
-        )
+        "If you are using Ubuntu or Debian Linux, you can install the fonts
+        using the {.code sudo apt update && sudo apt install ttf-mscorefonts-installer} command."
       )
     }
   }
