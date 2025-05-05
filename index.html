@@ -55,7 +55,7 @@
 </h1>
 </div>
 <p>This repository contains the code for the R package {AAGIThemes}, which once installed in your R session (local or RStudio Server), provides helper functions for creating and exporting graphics created in R with a unified style that follows the AAGI brand guidelines.</p>
-<p>The goal of {AAGIThemes} is to provide easy to use theming of R graphics for AAGI team members. Following AAGI’s brand guidelines, AAGI colours are used where applicable and the font defaults to Proxima Nova. The resulting graphs, plots and charts feature a x and y axis that meet at 0 with no gridlines, but these can optionally be set to appear. The resulting maps from <code>theme_aagi_map()</code> feature a white canvas with the legend on the right.</p>
+<p>The goal of {AAGIThemes} is to provide easy to use theming of R graphics for AAGI team members. Following AAGI’s brand guidelines, AAGI colours are used where applicable and the font defaults to Proxima Nova. The resulting graphs, plots and charts feature a x and y axis that meet at 0 with no gridlines, but these can optionally be set to appear.</p>
 <div class="section level2">
 <h2 id="installation-instructions">Installation instructions<a class="anchor" aria-label="anchor" href="#installation-instructions"></a>
 </h2>
@@ -124,8 +124,8 @@
 <span>  ylab <span class="op">=</span> <span class="st">"decrease"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="reference/figures/README-boxplot_aagi-1.png" alt="plot of chunk boxplot_aagi" width="100%"><p class="caption">
-plot of chunk boxplot_aagi
+<img src="reference/figures/README-boxplot_aagi-1.png" alt="An example plot illustrating the use of AAGIThemes with R's base plot capabilities." width="100%"><p class="caption">
+An example plot illustrating the use of AAGIThemes with R’s base plot capabilities.
 </p>
 </div>
 <p>See the respective function’s help files and the {AAGIThemes} cookbook for more examples and documentation.</p>
@@ -144,10 +144,33 @@ plot of chunk boxplot_aagi
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">120</span>, by <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/theme_aagi.html">theme_aagi</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="reference/figures/README-theme_aagi_ggboxplot-1.png" alt="plot of chunk theme_aagi_ggboxplot" width="100%"><p class="caption">
-plot of chunk theme_aagi_ggboxplot
+<img src="reference/figures/README-theme_aagi_ggboxplot-1.png" alt="An example plot illustrating the use of AAGIThemes with ggplot2." width="100%"><p class="caption">
+An example plot illustrating the use of AAGIThemes with ggplot2.
 </p>
 </div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="maps">Maps<a class="anchor" aria-label="anchor" href="#maps"></a>
+</h3>
+<p>Example of a map made with {ggplot2} and {AAGIThemes}.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/AAGI-AUS/AAGIThemes" class="external-link">AAGIThemes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/AAGI-AUS/AAGIPalettes" class="external-link">AAGIPalettes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mdsumner/ozmaps" class="external-link">ozmaps</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sf_oz</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ozmaps/man/ozmap_data.html" class="external-link">ozmap_data</a></span><span class="op">(</span><span class="st">"states"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">sf_oz</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">NAME</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">coord_sf</a></span><span class="op">(</span>crs <span class="op">=</span> <span class="st">"+proj=lcc +lon_0=135 +lat_0=-30 +lat_1=-10 +lat_2=-45 +datum=WGS84"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unname.html" class="external-link">unname</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palette.html" class="external-link">palette.colors</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Okabe-Ito"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/theme_aagi.html">theme_aagi</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-theme_aagi_map-1.png" alt="An example map illustrating the use of AAGIThemes with ggplot2." width="100%"><p class="caption">
+An example map illustrating the use of AAGIThemes with ggplot2.
+</p>
 </div>
 </div>
 </div>
