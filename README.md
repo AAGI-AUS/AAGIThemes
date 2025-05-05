@@ -26,16 +26,15 @@ The resulting maps from `theme_aagi_map()` feature a white canvas with the legen
 ### Note for Linux Users
 
 If you are using Linux, you will likely need to install several system-level libraries, {pak} will do it's best to install most of them but some may not be installable this way.
-For NECTAR with a fresh Ubuntu image, you will need at least the following system libraries to install {pak} and then {AAGIThemes}:
+For NECTAR with a fresh Ubuntu image, you can use the following command to install system libraries to install {pak} and then {AAGIThemes}.
+In your Linux terminal (not your R console, the "terminal" tab in RStudio should do here in most cases) type:
 
 ```bash
 sudo apt update
 sudo apt install libxml2 libmagick++-dev libcurl4-openssl-dev libcairo2-dev gsfonts pandoc libcairo2-dev libfontconfig1-dev libfreetype6-dev pandoc libmagick++-dev gsfonts libtiff-dev librsvg2-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libsqlite3-dev libfribidi-dev libharfbuzz-dev libudunits2-dev libxml2-dev ttf-mscorefonts-installer
 ```
 
-
-
-You can install {AAGIThemes} like so:
+You can install {AAGIThemes} like so in your R session:
 
 ```r
 o <- options() # store default options
