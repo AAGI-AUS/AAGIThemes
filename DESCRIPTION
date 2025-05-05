@@ -42,10 +42,11 @@ Imports:
     systemfonts,
     withr
 Suggests:
+    RColorBrewer,
     dplyr,
     gapminder,
     knitr (>= 1.22),
-    RColorBrewer,
+    ozmaps,
     reshape2,
     rmarkdown,
     roxyglobals,
