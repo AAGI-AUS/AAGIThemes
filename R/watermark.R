@@ -20,8 +20,7 @@
 #'
 #' p + watermark("DRAFT")
 #'
-#' @returns Called for its side effect of adding a watermark to the plot that's
-#' called.
+#' @returns A [ggplot2] object with a watermark added to the plot that's called.
 watermark <- function(
   watermark,
   fontsize = 120,
@@ -42,5 +41,5 @@ watermark <- function(
       rot = angle
     )
 
-  ggplot2::annotation_custom(grob = watermark_grob)
+  return(ggplot2::annotation_custom(grob = watermark_grob))
 }

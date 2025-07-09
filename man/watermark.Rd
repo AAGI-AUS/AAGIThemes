@@ -27,8 +27,7 @@ watermark(
 \item{angle}{Angle of the watermark}
 }
 \value{
-Called for its side effect of adding a watermark to the plot that's
-called.
+A \link[ggplot2:ggplot2-package]{ggplot2::ggplot2} object with a watermark added to the plot that's called.
 }
 \description{
 Add a Watermark Annotation Layer to a ggplot2 Object

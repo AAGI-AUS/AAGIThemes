@@ -16,7 +16,7 @@
 #'   sides, *i.e.*, x-axis, y-axis, top and right sides all will have a black
 #'   border not just x-axis and y-axis.  Defaults to `FALSE` with only the
 #'   x-axis and y-axis being outlined in dark grey.
-#' @param ... Other arguments as passed along to [ggplot2::theme].
+#' @param ... Other arguments as passed along to [ggplot2::theme()].
 #'
 #' @examples
 #'

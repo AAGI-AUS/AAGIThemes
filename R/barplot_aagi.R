@@ -15,7 +15,7 @@
 #'   dark grey.  Can be supplied as a named AAGI colour; *e.g.*, "AAGI Black";
 #'   a named colour, "black"; or a hexadecimal code, "#414042".
 #' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par]).
+#'   (see [graphics::par()]).
 #'
 #' @examples
 #'

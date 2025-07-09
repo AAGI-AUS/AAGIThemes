@@ -17,7 +17,7 @@
 #' If you want to automatically apply a theme function to each
 #'   \CRANpkg{flextable} object, you can use the `theme_fun` argument of
 #'   [flextable::set_flextable_defaults]; be aware that this theme function is
-#'   applied as the last instruction when calling [flextable::flextable] -- so
+#'   applied as the last instruction when calling [flextable::flextable()] -- so
 #'   if you add headers or footers to the array, they will not be formatted with
 #'   the theme.
 #'

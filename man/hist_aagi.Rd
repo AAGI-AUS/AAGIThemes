@@ -34,7 +34,7 @@ individually with a bar.}
 \item{col}{Colour to use as fill for bars  Defaults to a very dark grey.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \link[graphics:par]{graphics::par}).}
+(see \code{\link[graphics:par]{graphics::par()}}).}
 }
 \value{
 Called for its side effect of creating a histogram with the
@@ -58,7 +58,7 @@ Hyndman, R.J., The Problem with Sturges' Rule for Constructing Histograms,
 \url{https://www.robjhyndman.com/papers/sturges.pdf}.
 }
 \seealso{
-\link[graphics:hist]{graphics::hist} for full documentation of the basic histogram
+\code{\link[graphics:hist]{graphics::hist()}} for full documentation of the basic histogram
 capabilities
 }
 \author{

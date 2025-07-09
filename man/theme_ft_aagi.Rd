@@ -29,7 +29,7 @@ have been added (mainly additional header or footer rows).
 If you want to automatically apply a theme function to each
 \CRANpkg{flextable} object, you can use the \code{theme_fun} argument of
 \link[flextable:set_flextable_defaults]{flextable::set_flextable_defaults}; be aware that this theme function is
-applied as the last instruction when calling \link[flextable:flextable]{flextable::flextable} -- so
+applied as the last instruction when calling \code{\link[flextable:flextable]{flextable::flextable()}} -- so
 if you add headers or footers to the array, they will not be formatted with
 the theme.
 
