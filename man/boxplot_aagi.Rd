@@ -41,7 +41,7 @@ examples below. (NB: \R uses circles instead of the octagons used in S.)
 Value \code{pch = "."} (equivalently \code{pch = 46}) is handled specially. It is a
 rectangle of side 0.01 inch (scaled by \code{cex}). In addition, if \code{cex = 1}
 (the default), each side is at least one pixel (1/72 inch on the
-\link[grDevices:pdf]{grDevices::pdf}, \link[grDevices:postscript]{grDevices::postscript} and \link[grDevices:xfig]{grDevices::xfig}
+\link[grDevices:pdf]{grDevices::pdf}, \link[grDevices:postscript]{grDevices::postscript} and \link[grDevices:grDevices-defunct]{grDevices::xfig}
 devices).
 For other text symbols, \code{cex = 1} corresponds to the default font size of
 the device, often specified by an argument \code{pointsize}. For \code{pch} in 0:25
