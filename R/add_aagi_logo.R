@@ -36,8 +36,8 @@
 #' print(x)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#' @returns Called for its side effect of adding the \acronym{AAGI} logo to the
-#' plot that's called.
+#' @returns An invisible `NULL`, called for its side effect of adding the
+#'   \acronym{AAGI} logo to the plot that's called.
 #'
 #' @export
 
@@ -100,4 +100,5 @@ add_aagi_logo <- function(file_in, file_out, logo_scale = 2.5) {
   )
 
   magick::image_write(plot_out, file_out)
+  return(invisible(NULL))
 }
