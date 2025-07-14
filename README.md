@@ -26,7 +26,7 @@ The resulting graphs, plots and charts feature a x and y axis that meet at 0 wit
 
 To get started:
 
-## Enable this universe
+### Enable this universe
 
 ```r
 options(repos = c(
@@ -34,16 +34,15 @@ options(repos = c(
     CRAN = 'https://cloud.r-project.org'))
 ```
 
-
-## Install
+### Install
 
 ```r
 install.packages("AAGIThemes")
 ```
 
-## The hard(er) way(s)
+### The hard(er) way
 
-### Note for Linux Users
+#### Note for Linux Users
 
 If you are using Linux, you will likely need to install several system-level libraries, {pak} will do it's best to install most of them but some may not be installable this way.
 For NECTAR with a fresh Ubuntu image, you can use the following command to install system libraries to install {pak} and then {AAGIThemes}.
@@ -141,7 +140,6 @@ Example of how `theme_aagi()` is used in a standard {ggplot2} workflow:
 ``` r
 library(AAGIThemes)
 library(ggplot2)
-#> Keep up to date with changes at https://tidyverse.org/blog/
 
 ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
   geom_boxplot() +
