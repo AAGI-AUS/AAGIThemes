@@ -22,6 +22,27 @@ The resulting graphs, plots and charts feature a x and y axis that meet at 0 wit
 
 ## Installation instructions
 
+{AAGIThemes} is available through the [R-Universe](https://r-universe.dev/search) with pre-built binaries (this is the easy way).
+
+To get started:
+
+## Enable this universe
+
+```r
+options(repos = c(
+    maelle = 'https://aagi-aus.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'))
+```
+
+
+## Install
+
+```r
+install.packages("AAGIThemes")
+```
+
+## The hard(er) way(s)
+
 ### Note for Linux Users
 
 If you are using Linux, you will likely need to install several system-level libraries, {pak} will do it's best to install most of them but some may not be installable this way.
@@ -120,6 +141,7 @@ Example of how `theme_aagi()` is used in a standard {ggplot2} workflow:
 ``` r
 library(AAGIThemes)
 library(ggplot2)
+#> Keep up to date with changes at https://tidyverse.org/blog/
 
 ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
   geom_boxplot() +
