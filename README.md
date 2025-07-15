@@ -30,7 +30,7 @@ To get started:
 
 ```r
 options(repos = c(
-    maelle = 'https://aagi-aus.r-universe.dev',
+    aagi_aus = 'https://aagi-aus.r-universe.dev',
     CRAN = 'https://cloud.r-project.org'))
 ```
 
@@ -75,7 +75,7 @@ However, you may wish to browse the vignette for a more detailed look at what th
 vignette("Cookbook", package = "AAGIThemes")
 ```
 
-### Create Tabular Outputs
+### Create tabular outputs
 
 {AAGIThemes} provides [{flextable}](https://davidgohel.github.io/flextable/) and [{gt}](https://gt.rstudio.com) themes suited for the AAGI style that works in HTML and Word document outputs.
 
