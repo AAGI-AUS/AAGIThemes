@@ -60,7 +60,7 @@
   "copyrightHolder": [
     {
       "@type": "Organization",
-      "name": "Curtin University of Technology"
+      "name": "Curtin University"
     },
     {
       "@type": "Organization",
@@ -414,7 +414,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\\",
-  "fileSize": "4476.174KB",
+  "fileSize": "4476.667KB",
   "releaseNotes": "https://github.com/AAGI-AUS/AAGIThemes/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",
