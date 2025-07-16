@@ -20,7 +20,7 @@
       "@type": "Person",
       "givenName": "Adam H.",
       "familyName": "Sparks",
-      "email": "adam.sparks@dpird.wa.gov.au",
+      "email": "adam.sparks@curtin.edu.au",
       "@id": "https://orcid.org/0000-0002-0061-8359"
     },
     {
@@ -78,7 +78,7 @@
       "@type": "Person",
       "givenName": "Adam H.",
       "familyName": "Sparks",
-      "email": "adam.sparks@dpird.wa.gov.au",
+      "email": "adam.sparks@curtin.edu.au",
       "@id": "https://orcid.org/0000-0002-0061-8359"
     }
   ],
@@ -414,7 +414,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\\",
-  "fileSize": "4476.667KB",
+  "fileSize": "4476.587KB",
   "releaseNotes": "https://github.com/AAGI-AUS/AAGIThemes/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",
