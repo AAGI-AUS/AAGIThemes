@@ -89,18 +89,6 @@
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
-      "identifier": "RColorBrewer",
-      "name": "RColorBrewer",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=RColorBrewer"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "dplyr",
       "name": "dplyr",
       "provider": {
@@ -147,6 +135,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=ozmaps"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "RColorBrewer",
+      "name": "RColorBrewer",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=RColorBrewer"
     },
     {
       "@type": "SoftwareApplication",
@@ -417,8 +417,8 @@
     "SystemRequirements": null
   },
   "applicationCategory": "Tools",
-  "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi\\",
-  "fileSize": "4476.605KB",
+  "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
+  "fileSize": "4476.603KB",
   "releaseNotes": "https://github.com/AAGI-AUS/AAGIThemes/blob/master/NEWS.md",
   "readme": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",
