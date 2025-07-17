@@ -1,4 +1,4 @@
-# Contributing to AAGIPalettes
+# Contributing to {AAGIPalettes}
 
 This outlines how to propose a change to {AAGIPalettes}.
 
@@ -27,7 +27,7 @@ See the {tidyverse} guide on [how to create a great issue](https://code-review.t
   The title of your PR should briefly describe the change.
   The body of your PR should contain `Fixes #issue-number`.
 
-- For user-facing changes, add a bullet to the top of `NEWS.md` (i.e. just below the first header). Follow the style described in <https://style.tidyverse.org/news.html>.
+- For user-facing changes, add a bullet to the top of `NEWS.md` (_i.e._, just below the first header). Follow the style described in <https://style.tidyverse.org/news.html>.
 
 ### Code style
 
@@ -40,6 +40,5 @@ See the {tidyverse} guide on [how to create a great issue](https://code-review.t
 
 ## Code of Conduct
 
-Please note that the {AAGIPalettes} project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
-project you agree to abide by its terms.
+Please note that the {AAGIPalettes} project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+By contributing to this project you agree to abide by its terms.
