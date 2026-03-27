@@ -1,0 +1,203 @@
+# {AAGIThemes} AAGI Branding for R Graphical and Tabular Outputs
+
+This repository contains the code for the R package {AAGIThemes}, which
+once installed in your R session (local or RStudio Server), provides
+helper functions for creating and exporting graphics created in R with a
+unified style that follows the AAGI brand guidelines.
+
+The goal of {AAGIThemes} is to provide easy to use theming of R graphics
+for AAGI team members. Following AAGI’s brand guidelines, AAGI colours
+are used where applicable and the font defaults to Proxima Nova. The
+resulting graphs, plots and charts feature a x and y axis that meet at 0
+with no gridlines, but these can optionally be set to appear.
+
+## Installation instructions
+
+{AAGIThemes} is available through the
+[R-Universe](https://r-universe.dev/search) with pre-built binaries
+(this is the easy way).
+
+To get started:
+
+### Enable this universe
+
+``` r
+options(
+  repos = c(
+    AAGI = 'https://aagi-aus.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'
+  )
+)
+```
+
+### Install
+
+``` r
+install.packages("AAGIThemes")
+```
+
+## Quick start
+
+Following are some quick examples of {AAGIThemes} functionality.
+However, you may wish to browse the vignette for a more detailed look at
+what the package offers using:
+
+``` r
+vignette("AAGIThemes", package = "AAGIThemes")
+```
+
+### Create tabular outputs
+
+{AAGIThemes} provides
+[{flextable}](https://davidgohel.github.io/flextable/) and
+[{gt}](https://gt.rstudio.com) themes suited for the AAGI style that
+works in HTML and Word document outputs.
+
+#### Creating Themed {flextable} Outputs
+
+You can use it like so with {flextable}.
+
+``` r
+library(AAGIThemes)
+library(dplyr)
+library(flextable)
+
+flextable(head(airquality)) |>
+  mutate(`Month Name` = "May") |>
+  theme_ft_aagi()
+```
+
+### Plots and graphs
+
+{AAGIThemes} provides several functions to assist users in creating
+plots, charts and graphs with a more unified AAGI style.
+
+For creating standalone graphs using R’s base library there are:
+
+- [`barplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/barplot_aagi.md),
+
+- [`boxplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/boxplot_aagi.md),
+
+- [`hist_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/hist_aagi.md),
+  and
+
+- [`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md).
+
+#### Using the basic plot functions
+
+Example of how the base graphics functionality with AAGI style
+pre-applied is used:
+
+``` r
+library(AAGIThemes)
+boxplot_aagi(
+  decrease ~ treatment,
+  data = OrchardSprays,
+  xlab = "treatment",
+  ylab = "decrease"
+)
+```
+
+![An example plot illustrating the use of AAGIThemes with R's base plot
+capabilities.](reference/figures/README-boxplot_aagi-1.png)
+
+An example plot illustrating the use of AAGIThemes with R’s base plot
+capabilities.
+
+See the respective function’s help files and the {AAGIThemes} cookbook
+for more examples and documentation.
+
+#### Using With {ggplot2}
+
+The function
+[`theme_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_aagi.md)
+is provided to apply a unified style for creating AAGI themed plots,
+charts and graphs using {ggplot2}. The function is very basic and
+provides only one parameter, `base_size`, which is used to set the font
+size (in points) used in the resulting figure. No adjustments are made
+by the type of graph being produced, so you may wish to add grid lines
+or change the colour palette that is used to alter point or line colours
+in your graph.
+
+Example of how
+[`theme_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_aagi.md)
+is used in a standard {ggplot2} workflow:
+
+``` r
+library(AAGIThemes)
+library(ggplot2)
+
+ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
+  geom_boxplot() +
+  scale_y_continuous(breaks = seq(0, 120, by = 20)) +
+  theme_aagi()
+```
+
+![An example plot illustrating the use of AAGIThemes with
+ggplot2.](reference/figures/README-theme_aagi_ggboxplot-1.png)
+
+An example plot illustrating the use of AAGIThemes with ggplot2.
+
+### Maps
+
+Example of a map made with {ggplot2} and {AAGIThemes}.
+
+``` r
+library(AAGIThemes)
+library(AAGIPalettes)
+library(ggplot2)
+library(ozmaps)
+
+sf_oz <- ozmap_data("states")
+
+ggplot(sf_oz, aes(fill = NAME)) +
+  geom_sf() +
+  coord_sf(
+    crs = "+proj=lcc +lon_0=135 +lat_0=-30 +lat_1=-10 +lat_2=-45 +datum=WGS84"
+  ) +
+  scale_fill_manual(values = unname(palette.colors(palette = "Okabe-Ito"))) +
+  theme_aagi()
+```
+
+![An example map illustrating the use of AAGIThemes with
+ggplot2.](reference/figures/README-theme_aagi_map-1.png)
+
+An example map illustrating the use of AAGIThemes with ggplot2.
+
+## Logo Rights
+
+The logo of this project and the AAGI strategic partners do not come
+under MIT License. The Analytics for the Australian Grains Industry
+(AAGI) project retains full rights to the AGGI logo and the Grains
+Research and Development Corporation (GRDC) and strategic partners,
+Curtin University, the University of Queensland and Adelaide University,
+retain full rights to their own logos, respectively.
+
+# Package index
+
+## All functions
+
+- [`add_aagi_logo()`](https://AAGI-AUS.github.io/AAGIThemes/reference/add_aagi_logo.md)
+  : Insert AAGI's Logo Into Any Graphic File
+- [`barplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/barplot_aagi.md)
+  : Basic Barplots Using a Unified AAGI Style and Typography
+- [`boxplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/boxplot_aagi.md)
+  : Basic Boxplots Using a Unified AAGI Style and Typography
+- [`hist_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/hist_aagi.md)
+  : Basic Histograms Using a Unified AAGI Style and Typography
+- [`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
+  : Basic X-Y Plotting Using a Unified AAGI Style and Typography
+- [`theme_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_aagi.md)
+  : A ggplot2 Theme Using a Unified AAGI Style and Typography for Plots
+- [`theme_ft_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_ft_aagi.md)
+  : Apply AAGI Theme to a flextable Object
+- [`theme_gt_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_gt_aagi.md)
+  : Apply the AAGI Theme to a gt Object
+- [`watermark()`](https://AAGI-AUS.github.io/AAGIThemes/reference/watermark.md)
+  : Add a Watermark Annotation Layer to a ggplot2 Object
+
+# Articles
+
+### All vignettes
+
+- [AAGIThemes](https://AAGI-AUS.github.io/AAGIThemes/articles/AAGIThemes.md):
