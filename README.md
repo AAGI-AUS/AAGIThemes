@@ -29,9 +29,12 @@ To get started:
 ### Enable this universe
 
 ```r
-options(repos = c(
-    aagi_aus = 'https://aagi-aus.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
+options(
+  repos = c(
+    AAGI = 'https://aagi-aus.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'
+  )
+)
 ```
 
 ### Install
@@ -88,7 +91,8 @@ Example of how the base graphics functionality with AAGI style pre-applied is us
 
 ``` r
 library(AAGIThemes)
-boxplot_aagi(decrease ~ treatment,
+boxplot_aagi(
+  decrease ~ treatment,
   data = OrchardSprays,
   xlab = "treatment",
   ylab = "decrease"
@@ -141,7 +145,9 @@ sf_oz <- ozmap_data("states")
 
 ggplot(sf_oz, aes(fill = NAME)) +
   geom_sf() +
-  coord_sf(crs = "+proj=lcc +lon_0=135 +lat_0=-30 +lat_1=-10 +lat_2=-45 +datum=WGS84") +
+  coord_sf(
+    crs = "+proj=lcc +lon_0=135 +lat_0=-30 +lat_1=-10 +lat_2=-45 +datum=WGS84"
+  ) +
   scale_fill_manual(values = unname(palette.colors(palette = "Okabe-Ito"))) +
   theme_aagi()
 ```
