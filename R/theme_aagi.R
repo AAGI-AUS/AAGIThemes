@@ -67,7 +67,7 @@
 
 theme_aagi <-
   function(
-    base_size = 9,
+    base_size = 12,
     major_grid = FALSE,
     minor_grid = FALSE,
     border = FALSE,
