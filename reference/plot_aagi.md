@@ -6,7 +6,7 @@ that uses (hopefully) sensible defaults.
 ## Usage
 
 ``` r
-plot_aagi(x, col = NULL, ...)
+plot_aagi(x, ...)
 ```
 
 ## Arguments
@@ -17,17 +17,13 @@ plot_aagi(x, col = NULL, ...)
   plotting structure, function or any R *object with a plot method* can
   be provided.
 
-- col:
-
-  Colour to use as fill for bars Defaults to a very dark grey, *i.e.*,
-  "AAGI Black".
-
 - ...:
 
   Arguments to be passed to methods, such as graphical parameters (see
   [`graphics::par()`](https://rdrr.io/r/graphics/par.html)). The most
   commonly used argument would be `y` for the factor to use for the
-  y-axis or `type` describing what type of plot should be drawn.
+  y-axis, `type` describing what type of plot should be drawn, or `col`
+  for point colour (defaults to AAGI Black).
 
 ## Value
 
