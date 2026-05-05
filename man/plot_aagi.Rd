@@ -4,20 +4,17 @@
 \alias{plot_aagi}
 \title{Basic X-Y Plotting Using a Unified AAGI Style and Typography}
 \usage{
-plot_aagi(x, col = NULL, ...)
+plot_aagi(x, ...)
 }
 \arguments{
 \item{x}{the coordinates of points in the plot. Alternatively, a single
 plotting structure, function or any \R \emph{object with a plot method} can be
 provided.}
 
-\item{col}{Colour to use as fill for bars  Defaults to a very dark grey,
-\emph{i.e.}, "AAGI Black".}
-
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
-\code{y} for the factor to use for the y-axis or \code{type} describing what type of
-plot should be drawn.}
+\code{y} for the factor to use for the y-axis, \code{type} describing what type of
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black).}
 }
 \value{
 Called for its side effect of creating a plot with the
