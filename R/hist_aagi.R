@@ -47,7 +47,7 @@ hist_aagi <- function(
   col = AAGIPalettes::aagi_colours["AAGI Black"],
   ...
 ) {
-  breaks <- tolower(breaks)
+  col <- .convert_aagi_colour(col)
 
   if (breaks == "pretty") {
     breaks <- "scott"
