@@ -45,5 +45,6 @@ theme_gt_aagi <- function(x) {
       table.background.color = aagi_grey,
       column_labels.font.weight = "bold",
       table.font.color = aagi_black
-    )
+    ) |>
+    gt::sub_missing(missing_text = "")
 }
