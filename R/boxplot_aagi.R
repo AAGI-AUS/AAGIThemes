@@ -54,6 +54,8 @@ boxplot_aagi <- function(
   withr::local_par(.new = par_aagi())
   graphics::plot.new()
   showtext::showtext_begin()
+  on.exit(showtext::showtext_end(), add = TRUE)
+
   graphics::boxplot(
     x,
     col = scales::alpha(col, 0.5),
@@ -71,5 +73,4 @@ boxplot_aagi <- function(
     pch = pch,
     ...
   )
-  showtext::showtext_end()
 }
