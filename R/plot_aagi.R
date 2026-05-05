@@ -31,7 +31,9 @@
 #' @export
 #'
 plot_aagi <- function(x, col = NULL, ...) {
-  col <- .convert_aagi_colour(col %||% "AAGI Black")
+  # Set default colour and convert
+  col <- col %||% "AAGI Black"
+  col <- .convert_aagi_colour(col)
 
   withr::local_par(par_aagi())
   showtext::showtext_begin()
