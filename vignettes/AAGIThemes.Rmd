@@ -35,16 +35,25 @@ The CCDM CBADA team has developed an R package, {AAGIThemes}, and this R cookboo
 
 ### Install the {AAGIThemes} package
 
-{AAGIThemes} is not on CRAN, so you will have to install it directly from our GitHub repository using {remotes}.
+{AAGIThemes} is available through the [R-Universe](https://r-universe.dev/search) with pre-built binaries.
 
-If you do not have the {remotes} package installed, you will have to run the first line in the code below as well. 
+To get started:
 
-``` {r eval = FALSE}
-if (!require("remotes")) {
-  remotes::install_github("AAGI-AUS/AAGIThemes",
-    build_vignettes = TRUE
+### Enable this universe
+
+```{r eval=FALSE}
+options(
+  repos = c(
+    AAGI = 'https://aagi-aus.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'
   )
-}
+)
+```
+
+### Install
+
+```{r eval = FALSE}
+install.packages("AAGIThemes")
 ```
 
 For more info on {AAGIThemes} check out the [package's GitHub repository](https://github.com/AAGI-AUS/AAGIThemes), but most of the details about how to use the package and its functions are detailed below. 

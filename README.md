@@ -28,7 +28,8 @@ To get started:
 
 ### Enable this universe
 
-```r
+
+``` r
 options(
   repos = c(
     AAGI = 'https://aagi-aus.r-universe.dev',
@@ -39,7 +40,8 @@ options(
 
 ### Install
 
-```r
+
+``` r
 install.packages("AAGIThemes")
 ```
 
@@ -48,7 +50,9 @@ install.packages("AAGIThemes")
 Following are some quick examples of {AAGIThemes} functionality.
 However, you may wish to browse the vignette for a more detailed look at what the package offers using:
 
-```r
+
+``` r
+library("AAGIThemes")
 vignette("AAGIThemes", package = "AAGIThemes")
 ```
 
@@ -60,8 +64,7 @@ vignette("AAGIThemes", package = "AAGIThemes")
 
 You can use it like so with {flextable}.
 
-```r
-library(AAGIThemes)
+```{r
 library(dplyr)
 library(flextable)
 
@@ -90,7 +93,6 @@ Example of how the base graphics functionality with AAGI style pre-applied is us
 
 
 ``` r
-library(AAGIThemes)
 boxplot_aagi(
   decrease ~ treatment,
   data = OrchardSprays,
@@ -104,9 +106,7 @@ boxplot_aagi(
 <p class="caption">An example plot illustrating the use of AAGIThemes with R's base plot capabilities.</p>
 </div>
 
-See the respective function's help files and the {AAGIThemes} cookbook for more examples and documentation.
-
-#### Using With {ggplot2}
+#### Using ggplot2 theming
 
 The function `theme_aagi()` is provided to apply a unified style for creating AAGI themed plots, charts and graphs using {ggplot2}.
 The function is very basic and provides only one parameter, `base_size`, which is used to set the font size (in points) used in the resulting figure.
@@ -116,7 +116,6 @@ Example of how `theme_aagi()` is used in a standard {ggplot2} workflow:
 
 
 ``` r
-library(AAGIThemes)
 library(ggplot2)
 
 ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +

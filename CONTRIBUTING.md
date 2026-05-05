@@ -1,6 +1,6 @@
-# Contributing to {AAGIPalettes}
+# Contributing to {AAGIThemes}
 
-This outlines how to propose a change to {AAGIPalettes}.
+This outlines how to propose a change to {AAGIThemes}.
 
 ## Fixing typos
 
@@ -17,7 +17,7 @@ See the {tidyverse} guide on [how to create a great issue](https://code-review.t
 
 ### Pull request process
 
-- Fork the package and clone onto your computer. If you haven't done this before, we recommend using `usethis::create_from_github("AAGI-Org-AU-Public/AAGIPalettes", fork = TRUE)`.
+- Fork the package and clone onto your computer. If you haven't done this before, we recommend using `usethis::create_from_github("AAGI-Org-AU-Public/AAGIThemes", fork = TRUE)`.
 
 - Install all development dependencies with `devtools::install_dev_deps()`, and then make sure the package passes R CMD check by running `devtools::check()`.
   If R CMD check doesn't pass cleanly, it's a good idea to ask for help before continuing.
@@ -35,10 +35,12 @@ See the {tidyverse} guide on [how to create a great issue](https://code-review.t
 
 - We use [roxygen2](https://cran.r-project.org/package=roxygen2), with [Markdown syntax](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd-formatting.html), for documentation.
 
+- We use [`moodymudskipper/devtag`](https://github.com/moodymudskipper/devtag) to document internal functions, you'll want to install this package using `pak::pak("moodymudskipper/devtag)` or some other method for installing from GitHub to redocument this package.
+
 - We use [testthat](https://cran.r-project.org/package=testthat) for unit tests.
   Contributions with test cases included are easier to accept.
 
 ## Code of Conduct
 
-Please note that the {AAGIPalettes} project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+Please note that the {AAGIThemes} project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 By contributing to this project you agree to abide by its terms.

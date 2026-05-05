@@ -6,6 +6,8 @@
 #' @param x the coordinates of points in the plot. Alternatively, a single
 #'  plotting structure, function or any \R _object with a plot method_ can be
 #'  provided.
+#' @param col Colour to use as fill for bars  Defaults to a very dark grey,
+#'  *i.e.*, "AAGI Black".
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).  The most commonly used argument would be
 #'   `y` for the factor to use for the y-axis or `type` describing what type of
@@ -28,16 +30,14 @@
 #' \acronym{AAGI} style.
 #' @export
 #'
-plot_aagi <- function(x, ...) {
-  if (is.null(col)) {
-    # validation/matching is done in {AAGIPalettes} so not needed here
-    col2 <- AAGIPalettes::colour_as_hex("AAGI Black")
-  } else {
-    col2 <- col
-  }
+plot_aagi <- function(x, col = NULL, ...) {
+  # Set default colour and convert
+  col <- col %||% "AAGI Black"
+  col <- .convert_aagi_colour(col)
 
-  withr::local_par(.new = par_aagi())
+  withr::local_par(par_aagi())
   showtext::showtext_begin()
-  graphics::plot(x, ...)
-  showtext::showtext_end()
+  on.exit(showtext::showtext_end(), add = TRUE)
+
+  graphics::plot(x, col = col, ...)
 }

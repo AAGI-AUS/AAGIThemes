@@ -36,6 +36,7 @@
 #' ft <- flextable(head(airquality) |> mutate(`Month Name` = "May"))
 #' ft <- theme_ft_aagi(ft)
 #' ft
+#' @author Adam H. Sparks, \email{adam.sparks@@curtin.edu.au}
 #' @family tables
 #' @export
 theme_ft_aagi <- function(x) {
@@ -83,4 +84,6 @@ theme_ft_aagi <- function(x) {
 
   x <- flextable::align_text_col(x, align = "left", header = TRUE)
   x <- flextable::align_nottext_col(x, align = "right", header = FALSE)
+
+  return(x)
 }

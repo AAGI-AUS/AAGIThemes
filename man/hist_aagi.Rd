@@ -11,7 +11,7 @@ hist_aagi(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = AAGIPalettes::aagi_colours["AAGI Black"],
+  col = "AAGI Black",
   ...
 )
 }
@@ -31,7 +31,8 @@ be blank.}
 Rule, whereas exact uses a bin-width of 1 so each value is represented
 individually with a bar.}
 
-\item{col}{Colour to use as fill for bars  Defaults to a very dark grey.}
+\item{col}{Colour to use as fill for bars  Defaults to "AAGI Black", a very
+dark grey.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).}

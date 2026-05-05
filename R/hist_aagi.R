@@ -12,7 +12,8 @@
 #' @param breaks Either `pretty`, default, or `exact`.  Pretty uses Scott's
 #'   Rule, whereas exact uses a bin-width of 1 so each value is represented
 #'   individually with a bar.
-#' @param col Colour to use as fill for bars  Defaults to a very dark grey.
+#' @param col Colour to use as fill for bars  Defaults to "AAGI Black", a very
+#'   dark grey.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).
 #'
@@ -43,48 +44,80 @@ hist_aagi <- function(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = AAGIPalettes::aagi_colours["AAGI Black"],
+  col = "AAGI Black",
   ...
 ) {
-  breaks <- tolower(breaks)
-
-  if (breaks == "pretty") {
-    breaks <- "scott"
-  } else if (breaks == "exact") {
-    # cleanup NAs in `x`
-    x <- stats::na.omit(x)
-    breaks <- seq(
-      min(x),
-      max(x),
-      by = ((max(x) - min(x)) /
-        (length(x) - 1))
-    )
-  } else {
-    breaks <- "scott"
-    message("You've selected an invalid value for `breaks`, using `pretty`.\n")
+  # Validate and convert colour
+  if (!rlang::is_scalar_character(col)) {
+    col <- "AAGI Black"
   }
+  col <- .convert_aagi_colour(col)
+
+  # Validate and normalize breaks
+  breaks <- tolower(breaks)
+  if (!breaks %in% c("exact", "pretty", "scott")) {
+    cli::cli_alert_warning(
+      "You've selected an invalid value for {.var breaks}, using
+      {.code pretty}."
+    )
+    breaks <- "pretty"
+  }
+
+  # Calculate breaks based on method
+  breaks <- switch(
+    breaks,
+    exact = {
+      x <- stats::na.omit(x)
+      seq(min(x), max(x), by = ((max(x) - min(x)) / (length(x) - 1)))
+    },
+    "scott"
+  )
+
+  # Extract panel.first from ... if present
+  dots <- list(...)
+  panel_first <- dots$panel.first
+  dots$panel.first <- NULL
 
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
-  graphics::hist.default(
-    x,
-    col = col,
-    border = col,
-    breaks = breaks,
-    panel.first = graphics::grid(
-      nx = NA,
-      ny = NULL,
-      col = NA
-    ),
-    main = main,
-    sub = sub,
-    xlab = xlab,
-    ylab = ylab,
-    xaxt = "n",
-    yaxt = "n",
-    ...
+  on.exit(showtext::showtext_end(), add = TRUE)
+
+  # Create the histogram without panel.first (to avoid warnings)
+  # Use do.call with base R list concatenation
+  h <- do.call(
+    graphics::hist.default,
+    c(
+      list(
+        x = x,
+        col = col,
+        border = col,
+        breaks = breaks,
+        main = main,
+        sub = sub,
+        xlab = xlab,
+        ylab = ylab,
+        xaxt = "n",
+        yaxt = "n"
+      ),
+      dots
+    )
   )
+
+  # Apply panel.first manually after histogram is drawn
+  if (!is.null(panel_first)) {
+    if (is.call(panel_first)) {
+      eval(panel_first)
+    } else if (is.function(panel_first)) {
+      panel_first()
+    }
+  } else {
+    # Default: draw the light grid as before
+    graphics::grid(nx = NA, ny = NULL, col = NA)
+  }
+
+  # Draw axes
   graphics::axis(side = 1, pos = 0)
   graphics::axis(side = 2, pos = 0)
-  showtext::showtext_end()
+
+  invisible(h)
 }

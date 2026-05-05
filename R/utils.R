@@ -12,6 +12,7 @@ set_aagi_font <- function() {
   } else {
     aagi_font <- "Arial"
   }
+  aagi_font
 }
 
 #' Set Graphical Parameters That Satisfy AAGI's Style Requirements
@@ -29,3 +30,50 @@ par_aagi <- function() {
     col = AAGIPalettes::colour_as_hex("AAGI Black")
   )
 }
+
+#' Check and convert AAGI colour
+#' @param x A character string name value to be checked if it's an AAGI colour
+#'  and converted to the corresponding hex value. Can be a single value or a
+#'  vector.
+#'
+#' @returns A character string or vector of hexadecimal colour codes, or the
+#'  input unchanged if it's not an AAGI colour name.
+#' @dev
+.convert_aagi_colour <- function(x) {
+  # Handle NULL or empty input
+  if (is.null(x) || length(x) == 0) {
+    return(x)
+  }
+
+  # Handle non-character input
+  if (!is.character(x)) {
+    return(x)
+  }
+
+  # Handle vector input by applying function recursively
+  if (length(x) > 1) {
+    return(vapply(x, .convert_aagi_colour, character(1), USE.NAMES = FALSE))
+  }
+
+  # Single character string - check if AAGI colour
+  if (startsWith(x, "AAGI ")) {
+    tryCatch(
+      {
+        return(AAGIPalettes::colour_as_hex(x))
+      },
+      error = function(e) {
+        cli::cli_warn(
+          "Could not convert {.var {x}} to a hex colour. Returning original
+          value."
+        )
+        return(x)
+      }
+    )
+  }
+
+  # Return unchanged if not an AAGI colour
+  x
+}
+
+#' @importFrom rlang %||%
+NULL

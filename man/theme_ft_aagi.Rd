@@ -49,7 +49,10 @@ ft <- theme_ft_aagi(ft)
 ft
 }
 \seealso{
-Other tables: 
-\code{\link{theme_gt_aagi}()}
+Other tables:
+\code{\link[=theme_gt_aagi]{theme_gt_aagi()}}
+}
+\author{
+Adam H. Sparks, \email{adam.sparks@curtin.edu.au}
 }
 \concept{tables}

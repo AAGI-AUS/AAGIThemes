@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/AAGI-AUS/AAGIThemes",
   "issueTracker": "https://github.com/AAGI-AUS/AAGIThemes/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.5.1 (2025-06-13)",
+  "runtimePlatform": "R version 4.6.0 (2026-04-24)",
   "author": [
     {
       "@type": "Person",
@@ -297,6 +297,18 @@
     },
     "5": {
       "@type": "SoftwareApplication",
+      "identifier": "fs",
+      "name": "fs",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=fs"
+    },
+    "6": {
+      "@type": "SoftwareApplication",
       "identifier": "ggplot2",
       "name": "ggplot2",
       "version": ">= 3.3.5",
@@ -307,11 +319,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=ggplot2"
-    },
-    "6": {
-      "@type": "SoftwareApplication",
-      "identifier": "grDevices",
-      "name": "grDevices"
     },
     "7": {
       "@type": "SoftwareApplication",
@@ -356,6 +363,18 @@
     },
     "11": {
       "@type": "SoftwareApplication",
+      "identifier": "rlang",
+      "name": "rlang",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rlang"
+    },
+    "12": {
+      "@type": "SoftwareApplication",
       "identifier": "scales",
       "name": "scales",
       "provider": {
@@ -366,7 +385,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=scales"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "showtext",
       "name": "showtext",
@@ -378,7 +397,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=showtext"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "sysfonts",
       "name": "sysfonts",
@@ -390,7 +409,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sysfonts"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "systemfonts",
       "name": "systemfonts",
@@ -402,7 +421,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=systemfonts"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -418,8 +437,8 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
-  "fileSize": "4475.589KB",
-  "releaseNotes": "https://github.com/AAGI-AUS/AAGIThemes/blob/master/NEWS.md",
+  "fileSize": "4512.86KB",
+  "releaseNotes": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/NEWS.md",
   "readme": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",
   "developmentStatus": "https://www.repostatus.org/#active"
