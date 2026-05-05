@@ -21,6 +21,7 @@
 #' p + watermark("DRAFT")
 #'
 #' @returns A [ggplot2] object with a watermark added to the plot that's called.
+#'
 watermark <- function(
   watermark,
   fontsize = 120,
@@ -29,22 +30,53 @@ watermark <- function(
   fontface = "bold",
   angle = 22
 ) {
-  if (!is.character(watermark) || length(watermark) != 1L) {
+  # Validate watermark: must be scalar character, non-empty (after trim), not NA
+  if (
+    !rlang::is_scalar_character(watermark) ||
+      is.na(watermark) ||
+      !nzchar(trimws(watermark))
+  ) {
     cli::cli_abort(
-      "You have provided an empty string for the watermark, nothing to be done."
+      "{.var watermark} must be a non-empty character string."
     )
   }
-  watermark_grob <-
-    grid::textGrob(
-      watermark,
-      gp = grid::gpar(
-        fontsize = fontsize,
-        colour = colour,
-        alpha = alpha,
-        fontface = fontface
-      ),
-      rot = angle
-    )
 
-  return(ggplot2::annotation_custom(grob = watermark_grob))
+  if (!rlang::is_scalar_double(fontsize) || fontsize <= 0) {
+    cli::cli_abort("{.var fontsize} must be a positive number.")
+  }
+
+  if (!rlang::is_scalar_double(alpha) || alpha < 0 || alpha > 1) {
+    cli::cli_abort("{.var alpha} must be between 0 and 1.")
+  }
+
+  if (!rlang::is_scalar_double(angle)) {
+    cli::cli_abort("{.var angle} must be a number.")
+  }
+
+  if (!rlang::is_scalar_character(colour)) {
+    cli::cli_abort("{.var colour} must be a single character string.")
+  }
+
+  # Validate fontface against allowed values BEFORE using it
+  valid_fontfaces <- c("plain", "bold", "italic", "bold.italic")
+  if (!fontface %in% valid_fontfaces) {
+    cli::cli_abort(
+      "{.var fontface} {.val {fontface}} is not valid. 
+      Valid options: {.or {valid_fontfaces}}."
+    )
+  }
+
+  # Create watermark grob and return as annotation layer
+  watermark_grob <- grid::textGrob(
+    watermark,
+    gp = grid::gpar(
+      fontsize = fontsize,
+      colour = colour,
+      alpha = alpha,
+      fontface = fontface
+    ),
+    rot = angle
+  )
+
+  ggplot2::annotation_custom(grob = watermark_grob)
 }
