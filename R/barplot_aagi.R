@@ -35,6 +35,8 @@ barplot_aagi <- function(height, col = "AAGI Black", ...) {
 
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
+  on.exit(showtext::showtext_end(), add = TRUE)
+
   graphics::barplot(
     height = height,
     col = col,
