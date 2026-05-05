@@ -84,4 +84,6 @@ theme_ft_aagi <- function(x) {
 
   x <- flextable::align_text_col(x, align = "left", header = TRUE)
   x <- flextable::align_nottext_col(x, align = "right", header = FALSE)
+
+  return(x)
 }
