@@ -29,8 +29,12 @@
 #' @export
 #'
 barplot_aagi <- function(height, col = "AAGI Black", ...) {
-  # only validate if the colour is an official AAGI colour and convert to hex
   col <- .convert_aagi_colour(col %||% "AAGI Black")
+
+  if (!rlang::is_scalar_character(col)) {
+    col <- .convert_aagi_colour("AAGI Black")
+  }
+
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
   graphics::barplot(
