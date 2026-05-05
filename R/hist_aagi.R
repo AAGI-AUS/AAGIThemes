@@ -80,6 +80,7 @@ hist_aagi <- function(
 
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
+  on.exit(showtext::showtext_end(), add = TRUE)
 
   # Create the histogram without panel.first (to avoid warnings)
   # Use do.call with base R list concatenation
@@ -117,7 +118,6 @@ hist_aagi <- function(
   # Draw axes
   graphics::axis(side = 1, pos = 0)
   graphics::axis(side = 2, pos = 0)
-  showtext::showtext_end()
 
   invisible(h)
 }
