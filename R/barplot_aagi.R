@@ -30,10 +30,7 @@
 #'
 barplot_aagi <- function(height, col = "AAGI Black", ...) {
   # only validate if the colour is an official AAGI colour and convert to hex
-  if (substr(col, 1, 5) == "AAGI ") {
-    # validation/matching is done in {AAGIPalettes} so not needed here
-    col <- AAGIPalettes::colour_as_hex(col)
-  }
+  col <- .convert_aagi_colour(col %||% "AAGI Black")
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
   graphics::barplot(
