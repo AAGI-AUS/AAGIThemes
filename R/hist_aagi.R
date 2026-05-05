@@ -62,7 +62,8 @@ hist_aagi <- function(
     )
     breaks <- "pretty"
   }
-  # if exact remove NAs and calculate, else default to "pretty" using Scott
+
+  # Calculate breaks based on method
   breaks <- switch(
     breaks,
     exact = {
