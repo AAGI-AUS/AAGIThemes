@@ -29,3 +29,20 @@ par_aagi <- function() {
     col = AAGIPalettes::colour_as_hex("AAGI Black")
   )
 }
+
+
+#' Check and convert AAGI colour
+#' @param x A character string name value to be checked if it's an AAGI colour
+#'  and converted to the corresponding hex value.
+#'
+#' @returns A character string hexadecimal colour code.
+#' @dev
+.convert_aagi_colour <- function(x) {
+  if (is.character(x) && startsWith(x, "AAGI ")) {
+    return(AAGIPalettes::colour_as_hex(x))
+  }
+  x
+}
+
+#' @importFrom rlang %||%
+NULL
