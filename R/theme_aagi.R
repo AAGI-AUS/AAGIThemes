@@ -160,7 +160,7 @@ theme_aagi <-
           panel.border = ggplot2::element_rect(
             fill = NA,
             color = aagi_black,
-            size = base_rect_size
+            linewidth = base_rect_size
           )
         )
     }
