@@ -74,3 +74,4 @@ X-schema.org-applicationCategory: Tools
 X-schema.org-isPartOf: 
     https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi
 Config/roxygen2/version: 8.0.0
+Config/testthat/parallel: true
