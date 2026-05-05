@@ -29,8 +29,6 @@
 #' @export
 #'
 barplot_aagi <- function(height, col = "AAGI Black", ...) {
-  col <- .convert_aagi_colour(col %||% "AAGI Black")
-
   if (!rlang::is_scalar_character(col)) {
     col <- .convert_aagi_colour("AAGI Black")
   }
