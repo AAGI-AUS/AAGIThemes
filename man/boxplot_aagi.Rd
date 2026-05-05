@@ -34,7 +34,7 @@ be blank.}
 supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
 "Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
 
-\item{pch}{plotting ‘character’, \emph{i.e.}, symbol to use.}
+\item{pch}{plotting 'character', \emph{i.e.}, symbol to use.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).}

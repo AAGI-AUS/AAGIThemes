@@ -4,7 +4,7 @@
 \alias{add_aagi_logo}
 \title{Insert AAGI's Logo Into Any Graphic File}
 \usage{
-add_aagi_logo(file_in, file_out, logo_width = 4.6)
+add_aagi_logo(file_in, file_out, logo_width = 4.6, overwrite = FALSE)
 }
 \arguments{
 \item{file_in}{Path to the graphical file to import and add the

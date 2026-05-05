@@ -8,10 +8,12 @@
 }
 \arguments{
 \item{x}{A character string name value to be checked if it's an AAGI colour
-and converted to the corresponding hex value.}
+and converted to the corresponding hex value. Can be a single value or a
+vector.}
 }
 \value{
-A character string hexadecimal colour code.
+A character string or vector of hexadecimal colour codes, or the
+input unchanged if it's not an AAGI colour name.
 }
 \description{
 Check and convert AAGI colour
