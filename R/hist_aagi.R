@@ -53,12 +53,14 @@ hist_aagi <- function(
   }
   col <- .convert_aagi_colour(col)
 
+  # Validate and normalize breaks
   breaks <- tolower(breaks)
   if (!breaks %in% c("exact", "pretty", "scott")) {
     cli::cli_alert_warning(
       "You've selected an invalid value for {.var breaks}, using
       {.code pretty}."
     )
+    breaks <- "pretty"
   }
   # if exact remove NAs and calculate, else default to "pretty" using Scott
   breaks <- switch(
