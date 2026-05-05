@@ -44,7 +44,11 @@ boxplot_aagi <- function(
   pch = 16,
   ...
 ) {
-  col <- .convert_aagi_colour(col %||% "white")
+  # Validate and convert colour
+  if (!rlang::is_scalar_character(col)) {
+    col <- "white"
+  }
+  col <- .convert_aagi_colour(col)
 
   # set new pars
   withr::local_par(.new = par_aagi())
