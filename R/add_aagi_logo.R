@@ -53,9 +53,9 @@ add_aagi_logo <- function(
   # see also: <https://www.danielphadley.com/ggplot-logo/>
 
   # --- Validate input ---
-  if (!rlang::is_scalar_double(logo_width_cm) || logo_width_cm < 4.6) {
+  if (!rlang::is_scalar_double(logo_width) || logo_width < 4.6) {
     cli::cli_abort(
-      "{.arg logo_width_cm} must be a single numeric value ≥ 4.6 cm."
+      "{.arg logo_width} must be a single numeric value ≥ 4.6 cm."
     )
   }
   if (fs::file_exists(file) && !overwrite) {
@@ -87,12 +87,12 @@ add_aagi_logo <- function(
   }
 
   # --- Convert cm → pixels ---
-  logo_width_px <- (logo_width_cm / 2.54) * dpi
+  logo_width_px <- (logo_width / 2.54) * dpi
 
   # Guard against absurd cases where requested logo > plot width
   if (logo_width_px > plot_width) {
     cli::cli_warn(c(
-      "Requested {.arg logo_width_cm} exceeds plot width.",
+      "Requested {.arg logo_width} exceeds plot width.",
       "i" = "Reducing logo width to fit within image."
     ))
     logo_width_px <- plot_width
