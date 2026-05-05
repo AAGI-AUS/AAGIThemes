@@ -15,6 +15,7 @@
 #'   gt()
 #' gt <- theme_gt_aagi(gt)
 #' gt
+#' @author Adam H. Sparks, \email{adam.sparks@@curtin.edu.au}
 #' @family tables
 #' @export
 theme_gt_aagi <- function(x) {

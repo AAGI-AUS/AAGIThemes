@@ -36,6 +36,7 @@
 #' ft <- flextable(head(airquality) |> mutate(`Month Name` = "May"))
 #' ft <- theme_ft_aagi(ft)
 #' ft
+#' @author Adam H. Sparks, \email{adam.sparks@@curtin.edu.au}
 #' @family tables
 #' @export
 theme_ft_aagi <- function(x) {
