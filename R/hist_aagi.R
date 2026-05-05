@@ -56,7 +56,15 @@ hist_aagi <- function(
       {.code pretty}."
     )
   }
-
+  # if exact remove NAs and calculate, else default to "pretty" using Scott
+  breaks <- switch(
+    breaks,
+    exact = {
+      x <- stats::na.omit(x)
+      seq(min(x), max(x), by = ((max(x) - min(x)) / (length(x) - 1)))
+    },
+    "scott"
+  )
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
   graphics::hist.default(
