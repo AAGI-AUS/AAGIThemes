@@ -47,6 +47,10 @@ hist_aagi <- function(
   col = "AAGI Black",
   ...
 ) {
+  # Validate and convert colour
+  if (!rlang::is_scalar_character(col)) {
+    col <- "AAGI Black"
+  }
   col <- .convert_aagi_colour(col)
 
   breaks <- tolower(breaks)
