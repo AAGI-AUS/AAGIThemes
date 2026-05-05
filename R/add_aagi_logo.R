@@ -43,7 +43,12 @@
 #'
 #' @export
 
-add_aagi_logo <- function(file_in, file_out, logo_width = 4.6) {
+add_aagi_logo <- function(
+  file_in,
+  file_out,
+  logo_width = 4.6,
+  overwrite = FALSE
+) {
   # see: <https://themockup.blog/posts/2019-01-09-add-a-logo-to-your-plot/>
   # see also: <https://www.danielphadley.com/ggplot-logo/>
 
