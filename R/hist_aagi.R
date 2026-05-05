@@ -72,17 +72,17 @@ hist_aagi <- function(
     col = col,
     border = col,
     breaks = breaks,
-    panel.first = graphics::grid(
-      nx = NA,
-      ny = NULL,
-      col = NA
-    ),
     main = main,
     sub = sub,
     xlab = xlab,
     ylab = ylab,
     xaxt = "n",
     yaxt = "n",
+    panel.first = graphics::grid(
+      nx = NA,
+      ny = NULL,
+      col = NA
+    ),
     ...
   )
   graphics::axis(side = 1, pos = 0)
