@@ -30,16 +30,12 @@
 #' \acronym{AAGI} style.
 #' @export
 #'
-plot_aagi <- function(x, ...) {
-  if (is.null(col)) {
-    # validation/matching is done in {AAGIPalettes} so not needed here
-    col2 <- AAGIPalettes::colour_as_hex("AAGI Black")
-  } else {
-    col2 <- col
-  }
+plot_aagi <- function(x, col = NULL, ...) {
+  col <- .convert_aagi_colour(col %||% "AAGI Black")
 
-  withr::local_par(.new = par_aagi())
+  withr::local_par(par_aagi())
   showtext::showtext_begin()
-  graphics::plot(x, ...)
-  showtext::showtext_end()
+  on.exit(showtext::showtext_end(), add = TRUE)
+
+  graphics::plot(x, col = col, ...)
 }
