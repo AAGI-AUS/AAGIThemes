@@ -9,7 +9,7 @@ including typography guidelines that uses (hopefully) sensible defaults."><meta 
 
     <a class="navbar-brand me-2" href="../index.html">AAGIThemes</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +49,7 @@ including typography guidelines that uses (hopefully) sensible defaults.</p>
 <span>  xlab <span class="op">=</span> <span class="st">""</span>,</span>
 <span>  ylab <span class="op">=</span> <span class="st">"Count"</span>,</span>
 <span>  breaks <span class="op">=</span> <span class="st">"pretty"</span>,</span>
-<span>  col <span class="op">=</span> <span class="fu">AAGIPalettes</span><span class="fu">::</span><span class="va"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/aagi_colours.html" class="external-link">aagi_colours</a></span><span class="op">[</span><span class="st">"AAGI Black"</span><span class="op">]</span>,</span>
+<span>  col <span class="op">=</span> <span class="st">"AAGI Black"</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -86,7 +86,8 @@ individually with a bar.</p></dd>
 
 
 <dt id="arg-col">col<a class="anchor" aria-label="anchor" href="#arg-col"></a></dt>
-<dd><p>Colour to use as fill for bars  Defaults to a very dark grey.</p></dd>
+<dd><p>Colour to use as fill for bars  Defaults to "AAGI Black", a very
+dark grey.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
@@ -121,10 +122,6 @@ capabilities</p></div>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">hist_aagi</span><span class="op">(</span><span class="va">islands</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>"panel.first" is not a graphical parameter</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>"panel.first" is not a graphical parameter</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>"panel.first" is not a graphical parameter</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>"panel.first" is not a graphical parameter</span>
 <span class="r-plt img"><img src="hist_aagi-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

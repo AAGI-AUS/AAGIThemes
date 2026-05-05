@@ -8,7 +8,7 @@ that uses (hopefully) sensible defaults for
 
 ``` r
 theme_aagi(
-  base_size = 9,
+  base_size = 12,
   major_grid = FALSE,
   minor_grid = FALSE,
   border = FALSE,
@@ -57,6 +57,7 @@ Adam Sparks, <adam.sparks@curtin.edu.au>
 ## Examples
 
 ``` r
+
 library("ggplot2")
 
 # Plotting discrete values
@@ -85,24 +86,20 @@ p1 + theme_aagi(base_size = 24)
 
 
 # Plotting using minor gridlines
-p1 + theme_aagi(minor_gridlines = TRUE)
+p1 + theme_aagi(minor_grid = TRUE)
 
 
 # Plotting using major gridlines
-p1 + theme_aagi(major_gridlines = TRUE)
+p1 + theme_aagi(major_grid = TRUE)
 
 
 p1 + theme_aagi(border = TRUE)
-#> Warning: The `size` argument of `element_rect()` is deprecated as of ggplot2 3.4.0.
-#> ℹ Please use the `linewidth` argument instead.
-#> ℹ The deprecated feature was likely used in the AAGIThemes package.
-#>   Please report the issue at <https://github.com/AAGI-AUS/AAGIThemes/issues>.
 
 
 # Plotting with both gridlines and border
 p1 + theme_aagi(
-  minor_gridlines = TRUE,
-  major_gridlines = TRUE,
+  minor_grid = TRUE,
+  major_grid = TRUE,
   border = TRUE
 )
 

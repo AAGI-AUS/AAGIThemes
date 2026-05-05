@@ -9,7 +9,7 @@ typography guidelines that uses (hopefully) sensible defaults."><meta property="
 
     <a class="navbar-brand me-2" href="../index.html">AAGIThemes</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@ typography guidelines that uses (hopefully) sensible defaults.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_aagi</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_aagi</span><span class="op">(</span><span class="va">x</span>, col <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -53,6 +53,11 @@ typography guidelines that uses (hopefully) sensible defaults.</p>
 <dd><p>the coordinates of points in the plot. Alternatively, a single
 plotting structure, function or any <span style="R">R</span> <em>object with a plot method</em> can be
 provided.</p></dd>
+
+
+<dt id="arg-col">col<a class="anchor" aria-label="anchor" href="#arg-col"></a></dt>
+<dd><p>Colour to use as fill for bars  Defaults to a very dark grey,
+<em>i.e.</em>, "AAGI Black".</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>

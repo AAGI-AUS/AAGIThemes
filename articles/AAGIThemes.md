@@ -13,18 +13,28 @@ AAGI style guidelines.
 
 ### Install the {AAGIThemes} package
 
-{AAGIThemes} is not on CRAN, so you will have to install it directly
-from our GitHub repository using {remotes}.
+{AAGIThemes} is available through the
+[R-Universe](https://r-universe.dev/search) with pre-built binaries.
 
-If you do not have the {remotes} package installed, you will have to run
-the first line in the code below as well.
+To get started:
+
+### Enable this universe
 
 ``` r
-if (!require("remotes")) {
-  remotes::install_github("AAGI-AUS/AAGIThemes",
-    build_vignettes = TRUE
+
+options(
+  repos = c(
+    AAGI = 'https://aagi-aus.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'
   )
-}
+)
+```
+
+### Install
+
+``` r
+
+install.packages("AAGIThemes")
 ```
 
 For more info on {AAGIThemes} check out the [package’s GitHub
@@ -42,6 +52,7 @@ Creating AAGI themed tables requires using {flextable}. Using the
 columns are handled, here’s how to apply an AAGI theme to a table.
 
 ``` r
+
 library("AAGIThemes")
 library("flextable")
 library("dplyr")
@@ -99,6 +110,7 @@ you do not have to load them one by one, you can use the the following
 code to load them all at once.
 
 ``` r
+
 x <-
   c(
     "dplyr",
@@ -127,6 +139,7 @@ plots, boxplots, histograms and lines and scatter plots.
 #### Using Base R to Create a bar plot
 
 ``` r
+
 barplot_aagi(islands)
 ```
 
@@ -139,6 +152,7 @@ be able to use it, so we’ll create a {tibble} first, `islands_df` and
 then plot it.
 
 ``` r
+
 islands_df <- tibble(name = names(islands), value = islands)
 
 ggplot(data = islands_df, aes(x = name, y = value)) +
@@ -153,6 +167,7 @@ Although those names are a bit difficult to read on the x-axis, so we
 can flip the coordinates so that they are easier to read.
 
 ``` r
+
 ggplot(data = islands_df, aes(x = name, y = value)) +
   geom_col() +
   theme_aagi() +
@@ -166,6 +181,7 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 #### Using Base R to Create a Boxplot
 
 ``` r
+
 boxplot_aagi(decrease ~ treatment,
   data = OrchardSprays,
   xlab = "treatment",
@@ -178,6 +194,7 @@ boxplot_aagi(decrease ~ treatment,
 #### Using {ggplot2} to Create a Boxplot
 
 ``` r
+
 library("AAGIThemes")
 library("ggplot2")
 
@@ -194,14 +211,9 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
 #### Using Base R to Create a Histogram
 
 ``` r
+
 library("ggplot2") # for diamonds data set
 hist_aagi(diamonds$carat)
-#> Warning in plot.window(xlim, ylim, log, ...): "panel.first" is not a graphical
-#> parameter
-#> Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
-#> "panel.first" is not a graphical parameter
-#> Warning in axis(1, ...): "panel.first" is not a graphical parameter
-#> Warning in axis(2, at = yt, ...): "panel.first" is not a graphical parameter
 ```
 
 ![](AAGIThemes_files/figure-html/hist-base-1.png)
@@ -209,6 +221,7 @@ hist_aagi(diamonds$carat)
 #### Using {ggplot2} to Create a Histogram
 
 ``` r
+
 ggplot(data = diamonds, aes(x = carat)) +
   geom_histogram() +
   theme_aagi()
@@ -225,6 +238,7 @@ expectancy over time in Malawi with the line in AAGI’s turquoise colour.
 #### Using Base R to Create a Line Graph
 
 ``` r
+
 # Data for chart from {gapminder} package
 line_df <- gapminder |>
   filter(country == "Malawi") |>
@@ -247,6 +261,7 @@ plot_aagi(
 #### Using {ggplot2} to Create a Line Graph
 
 ``` r
+
 ggplot(line_df, aes(x = year, y = lifeExp)) +
   geom_line(colour = AAGIPalettes::colour_as_hex("AAGI Teal")) +
   theme_aagi() +
@@ -263,6 +278,7 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
 ### Scatterplots
 
 ``` r
+
 # Create data
 data <- data.frame(
   x = seq(1:100) + 0.1 * seq(1:100) * sample(c(1:10), 100, replace = TRUE),
@@ -273,6 +289,7 @@ data <- data.frame(
 #### Using base R to Create a Scatterplot
 
 ``` r
+
 # Basic scatterplot
 plot_aagi(x = data$x, y = data$y)
 ```
@@ -282,6 +299,7 @@ plot_aagi(x = data$x, y = data$y)
 #### Using {ggplot2} to Create a Scatterplot
 
 ``` r
+
 ggplot(data = data, aes(x = x, y = y)) +
   geom_point() +
   theme_aagi()
@@ -299,6 +317,7 @@ PowerPoint templates for colour matching in the outputs from
 {AAGIPalettes}.
 
 ``` r
+
 library(AAGIPalettes)
 display_aagi_cols("aagi_colours")
 ```
@@ -316,6 +335,7 @@ chart and use AAGI’s colours in
 [`scale_fill_manual()`](https://ggplot2.tidyverse.org/reference/scale_manual.html).
 
 ``` r
+
 # prepare data
 stacked_df <- gapminder |>
   filter(year == 2007) |>
@@ -383,6 +403,7 @@ object in R called `p` and save it to R’s
 example as well.
 
 ``` r
+
 # Prepare data
 facet <- gapminder |>
   filter(continent != "Americas") |>
@@ -442,6 +463,7 @@ access it from there as well. The image is resized to be 600x1000 pixels
 before being displayed here. Feel free to adjust as necessary.
 
 ``` r
+
 library(magick)
 add_aagi_logo(
   file_in = file.path(tempdir(), "AAGI.png"),
@@ -469,6 +491,7 @@ can either save as a .png file or use the `device` option in
 is demonstrated as follows.
 
 ``` r
+
 ggsave(
   filename = "cairo_font.pdf",
   plot = p,
@@ -487,6 +510,7 @@ the [`capabilities()`](https://rdrr.io/r/base/capabilities.html)
 function; `TRUE` should show up under cairo:
 
 ``` r
+
 capabilities()
 #>        jpeg         png        tiff       tcltk         X11        aqua 
 #>        TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 

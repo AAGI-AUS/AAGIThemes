@@ -13,7 +13,7 @@ hist_aagi(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = AAGIPalettes::aagi_colours["AAGI Black"],
+  col = "AAGI Black",
   ...
 )
 ```
@@ -49,7 +49,8 @@ hist_aagi(
 
 - col:
 
-  Colour to use as fill for bars Defaults to a very dark grey.
+  Colour to use as fill for bars Defaults to "AAGI Black", a very dark
+  grey.
 
 - ...:
 
@@ -81,10 +82,7 @@ Adam Sparks, <adam.sparks@curtin.edu.au>
 ## Examples
 
 ``` r
+
 hist_aagi(islands)
-#> Warning: "panel.first" is not a graphical parameter
-#> Warning: "panel.first" is not a graphical parameter
-#> Warning: "panel.first" is not a graphical parameter
-#> Warning: "panel.first" is not a graphical parameter
 
 ```

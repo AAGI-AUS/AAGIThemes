@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">AAGIThemes</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,9 +33,113 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.0.1" id="aagithemes-001">AAGIThemes 0.0.1<a class="anchor" aria-label="anchor" href="#aagithemes-001"></a></h2>
+<h2 class="pkg-version" data-toc-text="1.0.0" id="aagithemes-100">AAGIThemes 1.0.0<a class="anchor" aria-label="anchor" href="#aagithemes-100"></a></h2>
+<p><strong>First stable release</strong> of AAGIThemes, featuring comprehensive input validation, robust error handling, and production-ready graphics theming for AAGI brand guidelines.</p>
+<div class="section level3">
+<h3 id="breaking-changes-1-0-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-0-0"></a></h3>
+<p>None. This is the first stable release.</p>
 </div>
-  </main></div>
+<div class="section level3">
+<h3 id="new-features-1-0-0">New features<a class="anchor" aria-label="anchor" href="#new-features-1-0-0"></a></h3>
+<ul><li>
+<strong>Enhanced <code><a href="../reference/watermark.html">watermark()</a></code> function</strong> with comprehensive validation and error messages:
+<ul><li>Input validation for watermark text (non-empty character strings, rejects NA and whitespace-only)</li>
+<li>Parameter validation for <code>fontsize</code> (positive numbers), <code>alpha</code> (0-1 range), <code>angle</code> (numeric), <code>colour</code> (single character string)</li>
+<li>Fontface validation with clear error messages listing valid options (<code>plain</code>, <code>bold</code>, <code>italic</code>, <code>bold.italic</code>)</li>
+<li>Improved error handling with <code>cli</code> package for user-friendly messages</li>
+</ul></li>
+<li>
+<strong>Robust base graphics functions</strong> with improved validation:
+<ul><li>
+<code><a href="../reference/plot_aagi.html">plot_aagi()</a></code>, <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code>, <code><a href="../reference/boxplot_aagi.html">boxplot_aagi()</a></code>, and <code><a href="../reference/barplot_aagi.html">barplot_aagi()</a></code> now include input validation</li>
+<li>Colour parameter validation using <code><a href="https://rlang.r-lib.org/reference/scalar-type-predicates.html" class="external-link">rlang::is_scalar_character()</a></code>
+</li>
+<li>Consistent error handling and messaging across all functions</li>
+</ul></li>
+<li>
+<strong>Hardened <code><a href="../reference/dot-convert_aagi_colour.html">.convert_aagi_colour()</a></code> utility function</strong>:
+<ul><li>Vector input support via <code><a href="https://rdrr.io/r/base/lapply.html" class="external-link">vapply()</a></code> for batch colour conversions</li>
+<li>Proper handling of NULL, empty, and non-character inputs</li>
+<li>Error recovery with user-friendly warnings for invalid AAGI colours</li>
+<li>Case-sensitive and prefix-aware colour matching</li>
+</ul></li>
+<li>
+<strong>Improved <code><a href="../reference/set_aagi_font.html">set_aagi_font()</a></code> font selection</strong>:
+<ul><li>Robust fallback from Proxima Nova to Arial when font unavailable</li>
+<li>System font detection using <code>systemfonts</code> package</li>
+</ul></li>
+</ul></div>
+<div class="section level3">
+<h3 id="improvements-1-0-0">Improvements<a class="anchor" aria-label="anchor" href="#improvements-1-0-0"></a></h3>
+<ul><li>
+<strong>Code quality and robustness</strong>:
+<ul><li>All functions now use <code>rlang::is_scalar_*()</code> for idiomatic modern R type validation</li>
+<li>Comprehensive input validation prevents invalid states downstream</li>
+<li>Early returns optimize control flow in utility functions</li>
+</ul></li>
+<li>
+<strong>Error messaging</strong>:
+<ul><li>All error messages use <code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_abort()</a></code> and <code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_warn()</a></code> for consistent, user-friendly formatting</li>
+<li>Messages include variable names and valid options using <code>{.var}</code> and <code>{.or}</code> CLI formatting</li>
+</ul></li>
+<li>
+<strong>Code consistency</strong>:
+<ul><li>Unified validation patterns across all plotting functions</li>
+<li>Proper use of <code><a href="https://rdrr.io/r/base/on.exit.html" class="external-link">on.exit()</a></code> for resource cleanup</li>
+<li>Consistent parameter handling via <code><a href="https://withr.r-lib.org/reference/with_par.html" class="external-link">withr::local_par()</a></code>
+</li>
+</ul></li>
+</ul></div>
+<div class="section level3">
+<h3 id="documentation-1-0-0">Documentation<a class="anchor" aria-label="anchor" href="#documentation-1-0-0"></a></h3>
+<ul><li>
+<strong>Comprehensive roxygen2 documentation</strong> for all exported functions</li>
+<li>
+<strong>Updated examples</strong> in function documentation</li>
+<li>
+<strong>Cross-references</strong> via <code>@seealso</code> for related functions</li>
+</ul></div>
+<div class="section level3">
+<h3 id="testing-1-0-0">Testing<a class="anchor" aria-label="anchor" href="#testing-1-0-0"></a></h3>
+<ul><li>
+<strong>Expanded test suite</strong> with 100+ test cases covering:
+<ul><li>Input validation and edge cases (empty strings, NA values, whitespace-only strings, vectors)</li>
+<li>Parameter validation (ranges, types, allowed values)</li>
+<li>Error conditions with proper error message verification</li>
+<li>Integration tests with <code>ggplot2</code> workflows</li>
+<li>Vector input handling for utility functions</li>
+</ul></li>
+<li>
+<strong>All tests pass</strong> on R 4.0+</li>
+</ul></div>
+<div class="section level3">
+<h3 id="dependencies-1-0-0">Dependencies<a class="anchor" aria-label="anchor" href="#dependencies-1-0-0"></a></h3>
+<ul><li>New dependency: <code>rlang</code> (imported for modern type validation)</li>
+<li>Updated dependencies: <code>cli</code> (enhanced error messaging), <code>scales</code> (colour handling)</li>
+</ul></div>
+<div class="section level3">
+<h3 id="internal-changes-1-0-0">Internal changes<a class="anchor" aria-label="anchor" href="#internal-changes-1-0-0"></a></h3>
+<ul><li>Internal utility functions marked with <code>@dev</code> tag: <code><a href="../reference/set_aagi_font.html">set_aagi_font()</a></code>, <code><a href="../reference/par_aagi.html">par_aagi()</a></code>, <code><a href="../reference/dot-convert_aagi_colour.html">.convert_aagi_colour()</a></code>
+</li>
+<li>Improved separation of concerns between utility and user-facing functions</li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-1-0-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-0-0"></a></h3>
+<ul><li>Fixed <code><a href="../reference/barplot_aagi.html">barplot_aagi()</a></code> to remove redundant colour validation</li>
+<li>Fixed colour conversion error handling in all plotting functions</li>
+</ul></div>
+<div class="section level3">
+<h3 id="known-issues-1-0-0">Known issues<a class="anchor" aria-label="anchor" href="#known-issues-1-0-0"></a></h3>
+<p>None.</p>
+</div>
+<div class="section level3">
+<h3 id="acknowledgments-1-0-0">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments-1-0-0"></a></h3>
+<ul><li>Matt Cowgill and Will Mackey for watermark function design</li>
+<li>GRDC and Curtin University for support</li>
+</ul></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">

@@ -8,7 +8,7 @@ brand guidelines.
 ## Usage
 
 ``` r
-add_aagi_logo(file_in, file_out, logo_scale = 2.5)
+add_aagi_logo(file_in, file_out, logo_width = 4.6, overwrite = FALSE)
 ```
 
 ## Arguments
@@ -22,12 +22,16 @@ add_aagi_logo(file_in, file_out, logo_scale = 2.5)
 
   File name to create on disk as a .png format image.
 
-- logo_scale:
+- logo_width:
 
-  Scaling for the logo. Defaults to 2.5, larger sizes may be beneficial
-  for larger graphical images than normal reporting and sharing. Care
-  should be taken that the logo follows the AAGI branding guidelines and
-  the size remains at least 4.6 cm.
+  Size for the logo in centimetres. Defaults to 4.6 cm, the smallest
+  allowed by the AAGI guidelines. Larger sizes may be beneficial for
+  larger graphical images than normal reporting and sharing.
+
+- overwrite:
+
+  A Boolean value that indicates whether to overwrite an existing file
+  or not. Defaults to `FALSE` and will not overwrite the existing file.
 
 ## Value
 
@@ -59,12 +63,12 @@ add_aagi_logo(
   file_in = file.path(tempdir(), "AAGI.png"),
   file_out = file.path(tempdir(), "AAGI_logo.png")
 )
-#> Loading required namespace: rsvg
+#> Inserted logo width: 4.6 cm (DPI = 118).
 
 x <- magick::image_read(file.path(tempdir(), "AAGI_logo.png"))
 print(x)
 #> # A tibble: 1 × 7
 #>   format width height colorspace matte filesize density
 #>   <chr>  <int>  <int> <chr>      <lgl>    <int> <chr>  
-#> 1 PNG     1999   2299 sRGB       FALSE    69848 118x118
+#> 1 PNG     1999   2299 sRGB       FALSE    51452 118x118
 ```

@@ -44,7 +44,7 @@ watermark(
 ## Value
 
 A
-[ggplot2::ggplot2](https://ggplot2.tidyverse.org/reference/ggplot2-package.html)
+[ggplot2](https://ggplot2.tidyverse.org/reference/ggplot2-package.html)
 object with a watermark added to the plot that's called.
 
 ## Author
@@ -54,6 +54,7 @@ Matt Cowgill and Will Mackey
 ## Examples
 
 ``` r
+
 library(ggplot2)
 # First, start with a plot:
 p <- ggplot(mtcars, aes(x = wt, y = mpg)) +

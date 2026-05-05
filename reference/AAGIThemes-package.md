@@ -22,6 +22,9 @@ Useful links:
 
 Authors:
 
+- Adam H. Sparks <adam.sparks@curtin.edu.au>
+  ([ORCID](https://orcid.org/0000-0002-0061-8359))
+
 - Kenyon Ng <kenyon.ng@dpird.wa.gov.au>
   ([ORCID](https://orcid.org/0000-0002-6315-9831))
 

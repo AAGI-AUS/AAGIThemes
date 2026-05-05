@@ -48,24 +48,11 @@ boxplot_aagi(
 
   Colour to use as fill for boxes Defaults to white. Can be supplied as
   a named AAGI colour, *e.g.*, "AAGI Orange"; named colour, "Orange"; or
-  or a hexadecimal code, "#ec8525".
+  or a hexadecimal code, *e.g.*, "#ec8525".
 
 - pch:
 
-  plotting ‘character’, *i.e.*, symbol to use. This can either be a
-  single character or an integer code for one of a set of graphics
-  symbols. The full set of S symbols is available with `pch = 0:18`, see
-  the examples below. (NB: R uses circles instead of the octagons used
-  in S.) Value `pch = "."` (equivalently `pch = 46`) is handled
-  specially. It is a rectangle of side 0.01 inch (scaled by `cex`). In
-  addition, if `cex = 1` (the default), each side is at least one pixel
-  (1/72 inch on the
-  [`grDevices::pdf()`](https://rdrr.io/r/grDevices/pdf.html) and
-  [`grDevices::postscript()`](https://rdrr.io/r/grDevices/postscript.html)
-  devices). For other text symbols, `cex = 1` corresponds to the default
-  font size of the device, often specified by an argument `pointsize`.
-  For `pch` in 0:25 the default size is about 75% of the character
-  height (see `par("cin")`).
+  plotting 'character', *i.e.*, symbol to use.
 
 - ...:
 
@@ -78,8 +65,11 @@ Called for its side effect of creating a boxplot with the AAGI style.
 
 ## See also
 
-[`graphics::boxplot()`](https://rdrr.io/r/graphics/boxplot.html) for
-full documentation of the basic boxplot capabilities
+- [`graphics::boxplot()`](https://rdrr.io/r/graphics/boxplot.html) for
+  full documentation of the basic boxplot capabilities, and
+
+- [`graphics::par()`](https://rdrr.io/r/graphics/par.html) for full
+  documentation of `pch`.
 
 ## Author
 

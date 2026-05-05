@@ -44,6 +44,7 @@ Adam Sparks, <adam.sparks@curtin.edu.au>
 ## Examples
 
 ``` r
+
 barplot_aagi(islands)
 
 ```

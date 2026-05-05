@@ -26,6 +26,10 @@ a formatted [gt](https://CRAN.R-project.org/package=gt) object
 Other tables:
 [`theme_ft_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_ft_aagi.md)
 
+## Author
+
+Adam H. Sparks, <adam.sparks@curtin.edu.au>
+
 ## Examples
 
 ``` r
@@ -42,99 +46,3 @@ gt
 
 Ozone
 ```
-
-Solar.R
-
-Wind
-
-Temp
-
-Month
-
-Day
-
-Month Name
-
-41
-
-190
-
-7.4
-
-67
-
-5
-
-1
-
-May
-
-36
-
-118
-
-8.0
-
-72
-
-5
-
-2
-
-May
-
-12
-
-149
-
-12.6
-
-74
-
-5
-
-3
-
-May
-
-18
-
-313
-
-11.5
-
-62
-
-5
-
-4
-
-May
-
-NA
-
-NA
-
-14.3
-
-56
-
-5
-
-5
-
-May
-
-28
-
-NA
-
-14.9
-
-66
-
-5
-
-6
-
-May

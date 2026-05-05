@@ -6,7 +6,7 @@ that uses (hopefully) sensible defaults.
 ## Usage
 
 ``` r
-plot_aagi(x, ...)
+plot_aagi(x, col = NULL, ...)
 ```
 
 ## Arguments
@@ -16,6 +16,11 @@ plot_aagi(x, ...)
   the coordinates of points in the plot. Alternatively, a single
   plotting structure, function or any R *object with a plot method* can
   be provided.
+
+- col:
+
+  Colour to use as fill for bars Defaults to a very dark grey, *i.e.*,
+  "AAGI Black".
 
 - ...:
 
