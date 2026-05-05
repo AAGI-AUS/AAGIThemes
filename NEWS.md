@@ -1,6 +1,27 @@
+# AAGIThemes 1.0.1
+
+## Bug fixes
+* Fixed `plot_aagi()` formula interface compatibility: Refactored `plot_aagi()` to properly handle formula-based plotting (e.g., `plot_aagi(y ~ x, data = df)`) by using proper argument splicing instead of `do.call()`, which was breaking formula environments.
+
+* Fixed colour default handling in `plot_aagi()`: Ensured AAGI colour names are properly converted to hex codes and AAGI Black is correctly applied as default when no colour is specified.
+
+* Removed problematic `col` parameter from `par_aagi()`: The global `col` parameter in `par_aagi()` was causing "numerical color values must be >= 0" errors in base graphics functions.
+* Colour handling is now per-function only, providing better control and avoiding graphics parameter conflicts.
+
+* Added missing `on.exit()` cleanup in `barplot_aagi()`: Ensured `showtext::showtext_end()` is properly called via `on.exit()` for consistent resource cleanup across all plotting functions.
+
+* Fixed Windows font registration error on CI: Improved `.onLoad()` font registration with comprehensive error handling for Windows environments where `grDevices::windowsFont()` may return invalid values.
+* Font registration failures are now silently handled since fonts are already registered via {sysfonts}.
+
+## Internal improvements
+
+* Simplified `plot_aagi()` implementation: Now uses `rlang::call2()` with argument splicing for cleaner, more robust handling of all plot types including formula interfaces.
+
+* Enhanced error resilience in `.register_font()`: Added `tryCatch()` wrapper around Windows-specific font registration to gracefully handle platform-specific font issues without crashing package load.
+
 # AAGIThemes 1.0.0
 
-**First stable release** of AAGIThemes, featuring comprehensive input validation, robust error handling, and production-ready graphics theming for AAGI brand guidelines.
+**First stable release** of {AAGIThemes}, featuring comprehensive input validation, robust error handling, and production-ready graphics theming for AAGI brand guidelines.
 
 ## Breaking changes
 
