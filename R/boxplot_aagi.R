@@ -44,6 +44,8 @@ boxplot_aagi <- function(
   pch = 16,
   ...
 ) {
+  col <- .convert_aagi_colour(col %||% "white")
+
   # set new pars
   withr::local_par(.new = par_aagi())
   graphics::plot.new()
