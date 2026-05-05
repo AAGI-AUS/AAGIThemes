@@ -29,6 +29,11 @@ watermark <- function(
   fontface = "bold",
   angle = 22
 ) {
+  if (!is.character(watermark) || length(watermark) != 1L) {
+    cli::cli_abort(
+      "You have provided an empty string for the watermark, nothing to be done."
+    )
+  }
   watermark_grob <-
     grid::textGrob(
       watermark,
