@@ -65,27 +65,52 @@ hist_aagi <- function(
     },
     "scott"
   )
+
+  # Extract panel.first from ... if present
+  dots <- list(...)
+  panel_first <- dots$panel.first
+  dots$panel.first <- NULL
+
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
-  graphics::hist.default(
-    x,
-    col = col,
-    border = col,
-    breaks = breaks,
-    main = main,
-    sub = sub,
-    xlab = xlab,
-    ylab = ylab,
-    xaxt = "n",
-    yaxt = "n",
-    panel.first = graphics::grid(
-      nx = NA,
-      ny = NULL,
-      col = NA
-    ),
-    ...
+
+  # Create the histogram without panel.first (to avoid warnings)
+  # Use do.call with base R list concatenation
+  h <- do.call(
+    graphics::hist.default,
+    c(
+      list(
+        x = x,
+        col = col,
+        border = col,
+        breaks = breaks,
+        main = main,
+        sub = sub,
+        xlab = xlab,
+        ylab = ylab,
+        xaxt = "n",
+        yaxt = "n"
+      ),
+      dots
+    )
   )
+
+  # Apply panel.first manually after histogram is drawn
+  if (!is.null(panel_first)) {
+    if (is.call(panel_first)) {
+      eval(panel_first)
+    } else if (is.function(panel_first)) {
+      panel_first()
+    }
+  } else {
+    # Default: draw the light grid as before
+    graphics::grid(nx = NA, ny = NULL, col = NA)
+  }
+
+  # Draw axes
   graphics::axis(side = 1, pos = 0)
   graphics::axis(side = 2, pos = 0)
   showtext::showtext_end()
+
+  invisible(h)
 }
