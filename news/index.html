@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">AAGIThemes</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,8 +33,26 @@
     </div>
 
     <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.1" id="aagithemes-101">AAGIThemes 1.0.1<a class="anchor" aria-label="anchor" href="#aagithemes-101"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-0-1">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-0-1"></a></h3>
+<ul><li><p>Fixed <code><a href="../reference/plot_aagi.html">plot_aagi()</a></code> formula interface compatibility: Refactored <code><a href="../reference/plot_aagi.html">plot_aagi()</a></code> to properly handle formula-based plotting (e.g., <code>plot_aagi(y ~ x, data = df)</code>) by using proper argument splicing instead of <code><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call()</a></code>, which was breaking formula environments.</p></li>
+<li><p>Fixed colour default handling in <code><a href="../reference/plot_aagi.html">plot_aagi()</a></code>: Ensured AAGI colour names are properly converted to hex codes and AAGI Black is correctly applied as default when no colour is specified.</p></li>
+<li><p>Removed problematic <code>col</code> parameter from <code><a href="../reference/par_aagi.html">par_aagi()</a></code>: The global <code>col</code> parameter in <code><a href="../reference/par_aagi.html">par_aagi()</a></code> was causing “numerical color values must be &gt;= 0” errors in base graphics functions.</p></li>
+<li><p>Colour handling is now per-function only, providing better control and avoiding graphics parameter conflicts.</p></li>
+<li><p>Added missing <code><a href="https://rdrr.io/r/base/on.exit.html" class="external-link">on.exit()</a></code> cleanup in <code><a href="../reference/barplot_aagi.html">barplot_aagi()</a></code>: Ensured <code><a href="https://rdrr.io/pkg/showtext/man/showtext_end.html" class="external-link">showtext::showtext_end()</a></code> is properly called via <code><a href="https://rdrr.io/r/base/on.exit.html" class="external-link">on.exit()</a></code> for consistent resource cleanup across all plotting functions.</p></li>
+<li><p>Fixed Windows font registration error on CI: Improved <code>.onLoad()</code> font registration with comprehensive error handling for Windows environments where <code><a href="https://rdrr.io/r/grDevices/windowsFonts.html" class="external-link">grDevices::windowsFont()</a></code> may return invalid values.</p></li>
+<li><p>Font registration failures are now silently handled since fonts are already registered via {sysfonts}.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="internal-improvements-1-0-1">Internal improvements<a class="anchor" aria-label="anchor" href="#internal-improvements-1-0-1"></a></h3>
+<ul><li><p>Simplified <code><a href="../reference/plot_aagi.html">plot_aagi()</a></code> implementation: Now uses <code><a href="https://rlang.r-lib.org/reference/call2.html" class="external-link">rlang::call2()</a></code> with argument splicing for cleaner, more robust handling of all plot types including formula interfaces.</p></li>
+<li><p>Enhanced error resilience in <code>.register_font()</code>: Added <code><a href="https://rdrr.io/r/base/conditions.html" class="external-link">tryCatch()</a></code> wrapper around Windows-specific font registration to gracefully handle platform-specific font issues without crashing package load.</p></li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.0.0" id="aagithemes-100">AAGIThemes 1.0.0<a class="anchor" aria-label="anchor" href="#aagithemes-100"></a></h2>
-<p><strong>First stable release</strong> of AAGIThemes, featuring comprehensive input validation, robust error handling, and production-ready graphics theming for AAGI brand guidelines.</p>
+<p><strong>First stable release</strong> of {AAGIThemes}, featuring comprehensive input validation, robust error handling, and production-ready graphics theming for AAGI brand guidelines.</p>
 <div class="section level3">
 <h3 id="breaking-changes-1-0-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-0-0"></a></h3>
 <p>None. This is the first stable release.</p>

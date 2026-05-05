@@ -1,8 +1,68 @@
 # Changelog
 
+## AAGIThemes 1.0.1
+
+### Bug fixes
+
+- Fixed
+  [`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
+  formula interface compatibility: Refactored
+  [`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
+  to properly handle formula-based plotting (e.g.,
+  `plot_aagi(y ~ x, data = df)`) by using proper argument splicing
+  instead of [`do.call()`](https://rdrr.io/r/base/do.call.html), which
+  was breaking formula environments.
+
+- Fixed colour default handling in
+  [`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md):
+  Ensured AAGI colour names are properly converted to hex codes and AAGI
+  Black is correctly applied as default when no colour is specified.
+
+- Removed problematic `col` parameter from
+  [`par_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/par_aagi.md):
+  The global `col` parameter in
+  [`par_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/par_aagi.md)
+  was causing “numerical color values must be \>= 0” errors in base
+  graphics functions.
+
+- Colour handling is now per-function only, providing better control and
+  avoiding graphics parameter conflicts.
+
+- Added missing [`on.exit()`](https://rdrr.io/r/base/on.exit.html)
+  cleanup in
+  [`barplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/barplot_aagi.md):
+  Ensured
+  [`showtext::showtext_end()`](https://rdrr.io/pkg/showtext/man/showtext_end.html)
+  is properly called via
+  [`on.exit()`](https://rdrr.io/r/base/on.exit.html) for consistent
+  resource cleanup across all plotting functions.
+
+- Fixed Windows font registration error on CI: Improved `.onLoad()` font
+  registration with comprehensive error handling for Windows
+  environments where
+  [`grDevices::windowsFont()`](https://rdrr.io/r/grDevices/windowsFonts.html)
+  may return invalid values.
+
+- Font registration failures are now silently handled since fonts are
+  already registered via {sysfonts}.
+
+### Internal improvements
+
+- Simplified
+  [`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
+  implementation: Now uses
+  [`rlang::call2()`](https://rlang.r-lib.org/reference/call2.html) with
+  argument splicing for cleaner, more robust handling of all plot types
+  including formula interfaces.
+
+- Enhanced error resilience in `.register_font()`: Added
+  [`tryCatch()`](https://rdrr.io/r/base/conditions.html) wrapper around
+  Windows-specific font registration to gracefully handle
+  platform-specific font issues without crashing package load.
+
 ## AAGIThemes 1.0.0
 
-**First stable release** of AAGIThemes, featuring comprehensive input
+**First stable release** of {AAGIThemes}, featuring comprehensive input
 validation, robust error handling, and production-ready graphics theming
 for AAGI brand guidelines.
 
