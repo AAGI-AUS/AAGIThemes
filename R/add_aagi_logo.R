@@ -55,13 +55,13 @@ add_aagi_logo <- function(
   # --- Validate input ---
   if (!rlang::is_scalar_double(logo_width) || logo_width < 4.6) {
     cli::cli_abort(
-      "{.arg logo_width} must be a single numeric value ≥ 4.6 cm."
+      "{.arg logo_width} must be a single numeric value >= 4.6 cm."
     )
   }
-  if (fs::file_exists(file) && !overwrite) {
+  if (fs::file_exists(file_out) && !overwrite) {
     cli::cli_abort(
-      "{.var file} {file} already exists. Use {.code overwrite = TRUE} or
-      choose a new name."
+      "{.var file_out} {file_out} already exists. Use {.code overwrite = TRUE}
+      or choose a new name."
     )
   }
 
@@ -102,7 +102,7 @@ add_aagi_logo <- function(
   plot_in <- magick::image_border(plot_in, geometry = "0x300", color = "white")
 
   # --- Read logo ---
-  if (requireNamespace("rsvg")) {
+  if (requireNamespace("rsvg", quietly = TRUE)) {
     logo_raw <- magick::image_read_svg(
       system.file(
         "logo",
