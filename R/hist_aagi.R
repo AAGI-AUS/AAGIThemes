@@ -44,7 +44,7 @@ hist_aagi <- function(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = AAGIPalettes::aagi_colours["AAGI Black"],
+  col = "AAGI Black",
   ...
 ) {
   col <- .convert_aagi_colour(col)
