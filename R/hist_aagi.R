@@ -12,7 +12,8 @@
 #' @param breaks Either `pretty`, default, or `exact`.  Pretty uses Scott's
 #'   Rule, whereas exact uses a bin-width of 1 so each value is represented
 #'   individually with a bar.
-#' @param col Colour to use as fill for bars  Defaults to a very dark grey.
+#' @param col Colour to use as fill for bars  Defaults to "AAGI Black", a very
+#'   dark grey.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).
 #'
