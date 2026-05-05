@@ -15,7 +15,7 @@
 #' @param col Colour to use as fill for boxes  Defaults to white.  Can be
 #'   supplied as a named AAGI colour, *e.g.*, "AAGI Orange"; named colour,
 #'   "Orange"; or or a hexadecimal code, *e.g.*, "#ec8525".
-#' @param pch plotting ‘character’, \emph{i.e.}, symbol to use.
+#' @param pch plotting 'character', \emph{i.e.}, symbol to use.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).
 #'
