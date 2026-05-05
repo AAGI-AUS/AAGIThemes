@@ -37,6 +37,7 @@ Imports:
     gt,
     magick,
     officer,
+    rlang,
     scales,
     showtext,
     sysfonts,
