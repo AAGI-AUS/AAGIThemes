@@ -49,16 +49,11 @@ hist_aagi <- function(
 ) {
   col <- .convert_aagi_colour(col)
 
-  if (breaks == "pretty") {
-    breaks <- "scott"
-  } else if (breaks == "exact") {
-    # cleanup NAs in `x`
-    x <- stats::na.omit(x)
-    breaks <- seq(
-      min(x),
-      max(x),
-      by = ((max(x) - min(x)) /
-        (length(x) - 1))
+  breaks <- tolower(breaks)
+  if (!breaks %in% c("exact", "pretty", "scott")) {
+    cli::cli_alert_warning(
+      "You've selected an invalid value for {.var breaks}, using
+      {.code pretty}."
     )
   } else {
     breaks <- "scott"
