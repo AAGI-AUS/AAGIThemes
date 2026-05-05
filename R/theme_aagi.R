@@ -45,17 +45,17 @@
 #' p1 + theme_aagi(base_size = 24)
 #'
 #' # Plotting using minor gridlines
-#' p1 + theme_aagi(minor_gridlines = TRUE)
+#' p1 + theme_aagi(minor_grid = TRUE)
 #'
 #' # Plotting using major gridlines
-#' p1 + theme_aagi(major_gridlines = TRUE)
+#' p1 + theme_aagi(major_grid = TRUE)
 #'
 #' p1 + theme_aagi(border = TRUE)
 #'
 #' # Plotting with both gridlines and border
 #' p1 + theme_aagi(
-#'   minor_gridlines = TRUE,
-#'   major_gridlines = TRUE,
+#'   minor_grid = TRUE,
+#'   major_grid = TRUE,
 #'   border = TRUE
 #' )
 #'
