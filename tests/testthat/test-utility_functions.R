@@ -22,7 +22,6 @@ test_that("par_aagi contains expected elements", {
   expect_true("mgp" %in% names(params))
   expect_true("cex" %in% names(params))
   expect_true("bty" %in% names(params))
-  expect_true("col" %in% names(params))
 })
 
 test_that("par_aagi$family is a valid font", {
@@ -49,12 +48,6 @@ test_that("par_aagi$cex is 0.9", {
 test_that("par_aagi$bty is 'L'", {
   params <- par_aagi()
   expect_identical(params$bty, "L")
-})
-
-test_that("par_aagi$col is a hex colour", {
-  params <- par_aagi()
-  expect_type(params$col, "character")
-  expect_true(startsWith(params$col, "#"))
 })
 
 # ===== .convert_aagi_colour TESTS =====
