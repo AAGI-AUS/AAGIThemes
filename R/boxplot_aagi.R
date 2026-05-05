@@ -30,7 +30,7 @@
 #'   ylab = "decrease"
 #' )
 #' @returns Called for its side effect of creating a boxplot with the
-#' \acronym{AAGI} style.
+#'  \acronym{AAGI} style.
 #' @export
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
