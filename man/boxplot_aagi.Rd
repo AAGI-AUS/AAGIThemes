@@ -32,19 +32,9 @@ be blank.}
 
 \item{col}{Colour to use as fill for boxes  Defaults to white.  Can be
 supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
-"Orange"; or or a hexadecimal code, "#ec8525".}
+"Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
 
-\item{pch}{plotting ‘character’, \emph{i.e.}, symbol to use. This can either
-be a single character or an integer code for one of a set of graphics
-symbols. The full set of S symbols is available with \code{pch = 0:18}, see the
-examples below. (NB: \R uses circles instead of the octagons used in S.)
-Value \code{pch = "."} (equivalently \code{pch = 46}) is handled specially. It is a
-rectangle of side 0.01 inch (scaled by \code{cex}). In addition, if \code{cex = 1}
-(the default), each side is at least one pixel (1/72 inch on the
-\code{\link[grDevices:pdf]{grDevices::pdf()}} and \code{\link[grDevices:postscript]{grDevices::postscript()}} devices).
-For other text symbols, \code{cex = 1} corresponds to the default font size of
-the device, often specified by an argument \code{pointsize}. For \code{pch} in 0:25
-the default size is about 75\% of the character height (see \code{par("cin")}).}
+\item{pch}{plotting ‘character’, \emph{i.e.}, symbol to use.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).}
@@ -65,8 +55,11 @@ boxplot_aagi(decrease ~ treatment,
 )
 }
 \seealso{
-\code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic boxplot
-capabilities
+\itemize{
+\item \code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic boxplot
+capabilities, and
+\item \code{\link[graphics:par]{graphics::par()}} for full documentation of \code{pch}.
+}
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}

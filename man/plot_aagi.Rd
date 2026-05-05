@@ -4,12 +4,15 @@
 \alias{plot_aagi}
 \title{Basic X-Y Plotting Using a Unified AAGI Style and Typography}
 \usage{
-plot_aagi(x, ...)
+plot_aagi(x, col = NULL, ...)
 }
 \arguments{
 \item{x}{the coordinates of points in the plot. Alternatively, a single
 plotting structure, function or any \R \emph{object with a plot method} can be
 provided.}
+
+\item{col}{Colour to use as fill for bars  Defaults to a very dark grey,
+\emph{i.e.}, "AAGI Black".}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
@@ -36,7 +39,7 @@ plot_aagi(pressure)
 
 }
 \seealso{
-\code{\link[graphics:plot.default]{graphics::plot()}} for full documentation of the basic plotting
+\code{\link[graphics:plot]{graphics::plot()}} for full documentation of the basic plotting
 capabilities.
 }
 \author{

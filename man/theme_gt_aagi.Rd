@@ -28,7 +28,10 @@ gt <- theme_gt_aagi(gt)
 gt
 }
 \seealso{
-Other tables: 
-\code{\link{theme_ft_aagi}()}
+Other tables:
+\code{\link[=theme_ft_aagi]{theme_ft_aagi()}}
+}
+\author{
+Adam H. Sparks, \email{adam.sparks@curtin.edu.au}
 }
 \concept{tables}

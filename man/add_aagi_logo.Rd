@@ -4,7 +4,7 @@
 \alias{add_aagi_logo}
 \title{Insert AAGI's Logo Into Any Graphic File}
 \usage{
-add_aagi_logo(file_in, file_out, logo_scale = 2.5)
+add_aagi_logo(file_in, file_out, logo_width = 4.6)
 }
 \arguments{
 \item{file_in}{Path to the graphical file to import and add the
@@ -12,10 +12,13 @@ add_aagi_logo(file_in, file_out, logo_scale = 2.5)
 
 \item{file_out}{File name to create on disk as a .png format image.}
 
-\item{logo_scale}{Scaling for the logo.  Defaults to 2.5, larger sizes may
-be beneficial for larger graphical images than normal reporting and
-sharing. Care should be taken that the logo follows the \acronym{AAGI}
-branding guidelines and the size remains at least 4.6 cm.}
+\item{logo_width}{Size for the logo in centimetres.  Defaults to 4.6 cm, the
+smallest allowed by the \acronym{AAGI} guidelines. Larger sizes may be
+beneficial for larger graphical images than normal reporting and sharing.}
+
+\item{overwrite}{A Boolean value that indicates whether to overwrite an
+existing file or not. Defaults to \code{FALSE} and will not overwrite the
+existing file.}
 }
 \value{
 An invisible \code{NULL}, called for its side effect of adding the
