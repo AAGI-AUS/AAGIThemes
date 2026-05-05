@@ -55,9 +55,6 @@ hist_aagi <- function(
       "You've selected an invalid value for {.var breaks}, using
       {.code pretty}."
     )
-  } else {
-    breaks <- "scott"
-    message("You've selected an invalid value for `breaks`, using `pretty`.\n")
   }
 
   withr::local_par(.new = par_aagi())
