@@ -29,9 +29,11 @@
 #' @export
 #'
 barplot_aagi <- function(height, col = "AAGI Black", ...) {
+  # Validate and convert colour
   if (!rlang::is_scalar_character(col)) {
-    col <- .convert_aagi_colour("AAGI Black")
+    col <- "AAGI Black"
   }
+  col <- .convert_aagi_colour(col)
 
   withr::local_par(.new = par_aagi())
   showtext::showtext_begin()
@@ -44,5 +46,4 @@ barplot_aagi <- function(height, col = "AAGI Black", ...) {
     xaxs = "i",
     ...
   )
-  showtext::showtext_end()
 }
