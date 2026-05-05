@@ -15,19 +15,27 @@
   sysfonts::font_add(font_name, regular = font_info$path)
 
   if (.Platform$OS.type == "windows") {
-    win_fonts <- tryCatch(
-      get("windowsFonts", envir = asNamespace("grDevices")),
-      error = function(e) NULL
+    tryCatch(
+      {
+        win_fonts <- get("windowsFonts", envir = asNamespace("grDevices"))
+        win_font <- get("windowsFont", envir = asNamespace("grDevices"))
+
+        # Create font specification
+        font_spec <- win_font(family = font_name)
+
+        # Validate font_spec is not NULL
+        if (!is.null(font_spec)) {
+          font_list <- list(font_spec)
+          names(font_list) <- font_name
+          win_fonts(font_list)
+        }
+      },
+      error = function(e) {
+        # Silently fail on Windows font registration
+        # The font is already registered with sysfonts, which is sufficient
+        invisible(NULL)
+      }
     )
-    win_font <- tryCatch(
-      get("windowsFont", envir = asNamespace("grDevices")),
-      error = function(e) NULL
-    )
-    if (!is.null(win_fonts) && !is.null(win_font)) {
-      font_list <- list(win_font(family = font_name))
-      names(font_list) <- font_name
-      win_fonts(font_list)
-    }
   }
   TRUE
 }
