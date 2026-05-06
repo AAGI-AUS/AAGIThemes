@@ -11,8 +11,9 @@
 #'   be blank.
 #' @param xlab X-axis label. Optional, if not supplied will be an empty string.
 #' @param ylab Y-axis label. Optional, if not supplied will default to "Count".
-#' @param breaks One of "pretty" (default; `pretty()`-style breaks),
-#'   "scott" (Scott's rule), or "exact" (fixed bin width of 1 for integer counts).
+#' @param breaks One of "scott" (default), "fd", "sturges" (\R's default), or
+#'  "exact" (fixed bin width of 1 for integer.
+#'   counts).
 #' @inheritParams plot_aagi
 #'
 #' @seealso
@@ -43,7 +44,7 @@ hist_aagi <- function(
   sub = "",
   xlab = "",
   ylab = "Count",
-  breaks = "pretty",
+  breaks = "scott",
   ...
 ) {
   dots <- .normalise_dots_colours(
