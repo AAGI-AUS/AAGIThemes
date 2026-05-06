@@ -58,10 +58,6 @@ hist_aagi <- function(
   method <- .normalise_hist_breaks(breaks)
   breaks <- .compute_hist_breaks_integer(x, method)
 
-  # Extract panel.first from dots if present (avoid hist.default warning)
-  panel_first <- dots$panel.first
-  dots$panel.first <- NULL
-
   withr::local_par(.par_aagi())
   showtext::showtext_begin()
   withr::defer(showtext::showtext_end())
@@ -85,20 +81,12 @@ hist_aagi <- function(
     )
   )
 
-  # Apply panel.first manually after histogram is drawn (or draw default grid)
-  if (is.null(panel_first)) {
-    graphics::grid(nx = NA, ny = NULL, col = NA)
-  } else if (is.call(panel_first)) {
-    eval(panel_first, envir = parent.frame())
-  } else if (is.function(panel_first)) {
-    panel_first()
-  }
-
-  graphics::axis(side = 1, pos = 0)
-  graphics::axis(side = 2, pos = 0)
+  graphics::axis(1)
+  graphics::axis(2)
 
   return(invisible(h))
 }
+
 
 #' Normalise the `breaks` argument for hist_aagi()
 #'
@@ -112,16 +100,16 @@ hist_aagi <- function(
       is.na(breaks) ||
       !nzchar(breaks)
   ) {
-    return("pretty")
+    return("scott")
   }
 
   breaks <- tolower(breaks)
 
-  if (!breaks %in% c("pretty", "scott", "exact")) {
+  if (!breaks %in% c("sturges", "fd", "freedman-diaconis", "scott", "exact")) {
     cli::cli_alert_warning(
-      "Invalid value for {.var breaks}; using {.code pretty}."
+      "Invalid value for {.var breaks}; using {.code scott}."
     )
-    breaks <- "pretty"
+    breaks <- "scott"
   }
 
   breaks
@@ -141,6 +129,7 @@ hist_aagi <- function(
 #' @returns Either a character scalar ("pretty"/"scott") understood by
 #'   graphics::hist(), or a numeric vector of breakpoints.
 #' @dev
+
 .compute_hist_breaks_integer <- function(x, method) {
   xx <- x[is.finite(x)]
   if (length(xx) == 0L) {
@@ -149,20 +138,18 @@ hist_aagi <- function(
 
   rng <- range(xx)
 
-  # Degenerate / constant: force a non-zero-width bin so hist() doesn't error
   if (length(xx) < 2L || rng[1L] == rng[2L]) {
     x0 <- rng[1L]
-    # For integer counts: make a single width-1 bin centered on x0
     return(c(x0 - 0.5, x0 + 0.5))
   }
 
   switch(
     method,
-    pretty = "pretty",
+    sturges = "sturges",
+    fd = "fd",
+    `freedman-diaconis` = "fd",
     scott = "scott",
     exact = {
-      # Exact: fixed bin width of 1 for integer-count data.
-      # Use half-integer boundaries so each integer value maps to its own bin.
       lo <- floor(rng[1L])
       hi <- ceiling(rng[2L])
       seq(lo - 0.5, hi + 0.5, by = 1)
