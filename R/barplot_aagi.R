@@ -41,9 +41,10 @@ barplot_aagi <- function(height, ...) {
   n_bars <- if (is.matrix(height)) ncol(height) else length(height)
   if (!(length(dots$col) == 1L || length(dots$col) == n_bars)) {
     cli::cli_warn(
-      "{.arg col} has length {length(dots$col)}, but the barplot has {n_bars} bars. ",
-      "R will recycle colours; consider supplying length 1 or {n_bars}."
-    )
+    cli::cli_warn(c(
+      "{.arg col} has length {length(dots$col)}, but the barplot has {n_bars} bars.",
+      "i" = "R will recycle colours; consider supplying length 1 or {n_bars}."
+    ))
   }
 
   withr::local_par(.par_aagi())
