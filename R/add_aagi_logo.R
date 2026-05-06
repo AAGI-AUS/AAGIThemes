@@ -53,7 +53,7 @@ add_aagi_logo <- function(
   # see also: <https://www.danielphadley.com/ggplot-logo/>
 
   # --- Validate input ---
-  if (!rlang::is_scalar_double(logo_width) || logo_width < 4.6) {
+  if (!is.numeric(logo_width) || logo_width < 4.6) {
     cli::cli_abort(
       "{.arg logo_width} must be a single numeric value >= 4.6 cm."
     )

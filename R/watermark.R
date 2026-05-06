@@ -7,7 +7,7 @@
 #' @param fontface Font face ("bold" by default)
 #' @param angle Angle of the watermark
 #' @export
-#' @author Matt Cowgill and Will Mackey
+#' @author
 #' @examples
 #'
 #' library(ggplot2)
@@ -21,7 +21,8 @@
 #' p + watermark("DRAFT")
 #'
 #' @returns A [ggplot2] object with a watermark added to the plot that's called.
-#' @author Adam H. Sparks, \email{adam.sparks@@curtin.edu.au}
+#' @author  Matt Cowgill and Will Mackey, original implementation, this version
+#'  Adam H. Sparks, \email{adam.sparks@@curtin.edu.au}
 watermark <- function(
   watermark,
   fontsize = 120,
@@ -32,7 +33,7 @@ watermark <- function(
 ) {
   # Validate watermark: must be scalar character, non-empty (after trim), not NA
   if (
-    !rlang::is_scalar_character(watermark) ||
+    !is.character(watermark) ||
       is.na(watermark) ||
       !nzchar(trimws(watermark))
   ) {
@@ -41,19 +42,19 @@ watermark <- function(
     )
   }
 
-  if (!rlang::is_scalar_double(fontsize) || fontsize <= 0) {
+  if (!is.numeric(x) && length(x) != 1 || fontsize <= 0) {
     cli::cli_abort("{.var fontsize} must be a positive number.")
   }
 
-  if (!rlang::is_scalar_double(alpha) || alpha < 0 || alpha > 1) {
+  if (!is.numeric(x) && length(x) != 1 || alpha < 0 || alpha > 1) {
     cli::cli_abort("{.var alpha} must be between 0 and 1.")
   }
 
-  if (!rlang::is_scalar_double(angle)) {
+  if (!is.numeric(angle)) {
     cli::cli_abort("{.var angle} must be a number.")
   }
 
-  if (!rlang::is_scalar_character(colour)) {
+  if (!is.character(colour)) {
     cli::cli_abort("{.var colour} must be a single character string.")
   }
 
