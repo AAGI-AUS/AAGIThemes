@@ -6,8 +6,6 @@
 #' @param alpha Alpha (transparency; lower number = more transparent)
 #' @param fontface Font face ("bold" by default)
 #' @param angle Angle of the watermark
-#' @export
-#' @author
 #' @examples
 #'
 #' library(ggplot2)
@@ -21,8 +19,10 @@
 #' p + watermark("DRAFT")
 #'
 #' @returns A [ggplot2] object with a watermark added to the plot that's called.
-#' @author  Matt Cowgill and Will Mackey, original implementation, this version
-#'  Adam H. Sparks, \email{adam.sparks@@curtin.edu.au}
+#' @author Adam H. Sparks, \email{adam.sparks@@curtin.edu.au} based on
+#' Matt Cowgill's and Will Mackey's work.
+#' @export
+
 watermark <- function(
   watermark,
   fontsize = 120,
