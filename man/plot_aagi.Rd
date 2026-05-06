@@ -4,12 +4,15 @@
 \alias{plot_aagi}
 \title{Basic X-Y Plotting Using a Unified AAGI Style and Typography}
 \usage{
-plot_aagi(x, ...)
+plot_aagi(x, y = NULL, ...)
 }
 \arguments{
 \item{x}{the coordinates of points in the plot. Alternatively, a single
 plotting structure, function or any \R \emph{object with a plot method} can be
 provided.}
+
+\item{y}{The y coordinates of points in the plot, optional. If \code{y} is \code{NULL},
+\code{x} is assumed to describe the \code{y} values, and an index is used for \code{x}.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be

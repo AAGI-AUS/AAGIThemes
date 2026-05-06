@@ -10,7 +10,7 @@ hist_aagi(
   sub = "",
   xlab = "",
   ylab = "Count",
-  breaks = "pretty",
+  breaks = "scott",
   ...
 )
 }
@@ -26,8 +26,9 @@ be blank.}
 
 \item{ylab}{Y-axis label. Optional, if not supplied will default to "Count".}
 
-\item{breaks}{One of "pretty" (default; \code{pretty()}-style breaks),
-"scott" (Scott's rule), or "exact" (fixed bin width of 1 for integer counts).}
+\item{breaks}{One of "scott" (default), "fd", "sturges" (\R's default), or
+"exact" (fixed bin width of 1 for integer.
+counts).}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
