@@ -68,7 +68,7 @@ boxplot_aagi <- function(
     graphics::boxplot,
     c(
       list(
-        x = x,
+        x,
         col = grDevices::adjustcolor(colour, 0.5),
         border = border,
         boxwex = 0.8,
