@@ -38,7 +38,7 @@ barplot_aagi <- function(height, ...) {
   )
 
   # Optional: warn about unintended recycling
-  n_bars <- if (is.matrix(height)) nrow(height) else length(height)
+  n_bars <- if (is.matrix(height)) ncol(height) else length(height)
   if (!(length(dots$col) == 1L || length(dots$col) == n_bars)) {
     cli::cli_warn(
       "{.arg col} has length {length(dots$col)}, but the barplot has {n_bars} bars. ",
