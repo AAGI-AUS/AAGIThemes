@@ -19,6 +19,11 @@
 #' @family tables
 #' @export
 theme_gt_aagi <- function(x) {
+  # check if object is a `gt_tbl` before proceeding
+  if (!inherits(x, "gt_tbl")) {
+    cli::cli_abort("{.var x} is not a {.code gt_tbl} object.")
+  }
+
   # check if Proxima Nova is installed, if not, falls back to Arial
   aagi_font <- c("Proxima Nova", "Arial")
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
