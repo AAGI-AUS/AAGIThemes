@@ -1,6 +1,6 @@
 # Changelog
 
-## AAGIThemes 1.0.2
+## AAGIThemes 2.0.0
 
 ### New features
 

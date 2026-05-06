@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">AAGIThemes</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,19 +29,19 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/AAGI-AUS/AAGIThemes/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/AAGI-AUS/AAGIThemes/blob/v2.0.0/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.0.2" id="aagithemes-102">AAGIThemes 1.0.2<a class="anchor" aria-label="anchor" href="#aagithemes-102"></a></h2>
+<h2 class="pkg-version" data-toc-text="2.0.0" id="aagithemes-200">AAGIThemes 2.0.0<a class="anchor" aria-label="anchor" href="#aagithemes-200"></a></h2>
 <div class="section level3">
-<h3 id="new-features-1-0-2">New features<a class="anchor" aria-label="anchor" href="#new-features-1-0-2"></a></h3>
+<h3 id="new-features-2-0-0">New features<a class="anchor" aria-label="anchor" href="#new-features-2-0-0"></a></h3>
 <ul><li><p><code><a href="../reference/plot_aagi.html">plot_aagi()</a></code> now accepts an explicit <code>y</code> argument, supporting both <code>plot_aagi(x)</code> and <code>plot_aagi(x, y)</code> calling conventions.</p></li>
 <li><p><code><a href="../reference/hist_aagi.html">hist_aagi()</a></code> default histogram breaks changed from Sturges’ rule to <strong>Scott’s rule</strong>, which is more robust for skewed and heavy-tailed data. The <code>breaks</code> argument now accepts <code>"scott"</code> (default), <code>"sturges"</code>, <code>"fd"</code> (Freedman-Diaconis), or <code>"exact"</code> (fixed bin width of 1 for integer counts).</p></li>
 <li><p><code><a href="../reference/theme_gt_aagi.html">theme_gt_aagi()</a></code> now validates that <code>x</code> is a <code>gt_tbl</code> object before processing, providing a clear, user-friendly error message rather than a cryptic internal <a href="https://gt.rstudio.com" class="external-link">gt</a> error.</p></li>
 </ul></div>
 <div class="section level3">
-<h3 id="bug-fixes-1-0-2">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-0-2"></a></h3>
+<h3 id="bug-fixes-2-0-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-2-0-0"></a></h3>
 <ul><li><p>Fixed a typo where the internal function <code><a href="../reference/dot-set_aagi_font.html">.set_aagi_font()</a></code> was mistakenly prefixed as <code>..set_aagi_font()</code> in one call path.</p></li>
 <li><p>Fixed <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code> break computation to gracefully handle degenerate inputs (constant vectors or single-value data) without errors.</p></li>
 <li><p>Fixed panel graphics issues in <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code> where custom axis settings were not applied correctly when <code>par(mfrow)</code> / <code>par(mfcol)</code> was active.</p></li>
@@ -51,7 +51,7 @@
 <li><p>Fixed documentation for <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code>: the x-axis label defaults to an empty string, not the variable name from data.</p></li>
 </ul></div>
 <div class="section level3">
-<h3 id="improvements-1-0-2">Improvements<a class="anchor" aria-label="anchor" href="#improvements-1-0-2"></a></h3>
+<h3 id="improvements-2-0-0">Improvements<a class="anchor" aria-label="anchor" href="#improvements-2-0-0"></a></h3>
 <ul><li><p>The <code>col</code> argument has been moved from explicit function parameters into <code>...</code> across all four base graphics wrappers (<code><a href="../reference/barplot_aagi.html">barplot_aagi()</a></code>, <code><a href="../reference/boxplot_aagi.html">boxplot_aagi()</a></code>, <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code>, <code><a href="../reference/plot_aagi.html">plot_aagi()</a></code>), providing a consistent interface and simplifying internal colour handling.</p></li>
 <li><p><code><a href="../reference/watermark.html">watermark()</a></code> input validation overhauled: uses dedicated internal assertion helpers (<code>.assert_scalar_string()</code>, <code>.assert_scalar_number()</code>, <code>.assert_one_of()</code>) with clearer <a href="https://cli.r-lib.org" class="external-link">cli</a>-formatted error messages.</p></li>
 <li><p>Font resolution in internal utilities now uses a per-session cache (<code>.aagi_font_cache</code>) to avoid repeated <code><a href="https://systemfonts.r-lib.org/reference/match_fonts.html" class="external-link">systemfonts::match_fonts()</a></code> calls, improving load performance.</p></li>
@@ -59,21 +59,21 @@
 <li><p>Reduced cyclomatic complexity in <code><a href="../reference/watermark.html">watermark()</a></code> and <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code> helper functions.</p></li>
 </ul></div>
 <div class="section level3">
-<h3 id="internal-changes-1-0-2">Internal changes<a class="anchor" aria-label="anchor" href="#internal-changes-1-0-2"></a></h3>
+<h3 id="internal-changes-2-0-0">Internal changes<a class="anchor" aria-label="anchor" href="#internal-changes-2-0-0"></a></h3>
 <ul><li><p>Removed dependency on <a href="https://rlang.r-lib.org" class="external-link">rlang</a> for type-checking; all validation now uses idiomatic base R (<code><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character()</a></code>, <code><a href="https://rdrr.io/r/base/length.html" class="external-link">length()</a></code>, <code><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na()</a></code>, etc.).</p></li>
 <li><p>Internal font helpers (<code><a href="../reference/dot-set_aagi_font.html">.set_aagi_font()</a></code>, <code><a href="../reference/dot-par_aagi.html">.par_aagi()</a></code>, <code><a href="../reference/dot-register_font.html">.register_font()</a></code>, <code>.font_available()</code>) are now documented with <code>@dev</code>/<code>@keywords internal</code> and consolidated in <code>utils.R</code>.</p></li>
 <li><p><code><a href="../reference/dot-set_aagi_font.html">.set_aagi_font()</a></code> renamed from <code>set_aagi_font()</code> (prefixed with <code>.</code> to signal its internal-only status).</p></li>
 <li><p>Removed internal PDF copy of AAGI style guidelines, these are available from GitHub, <a href="https://github.com/AAGI-AUS/AAGI-Style-Guide-and-Logos" class="external-link uri">https://github.com/AAGI-AUS/AAGI-Style-Guide-and-Logos</a>.</p></li>
 </ul></div>
 <div class="section level3">
-<h3 id="documentation-1-0-2">Documentation<a class="anchor" aria-label="anchor" href="#documentation-1-0-2"></a></h3>
+<h3 id="documentation-2-0-0">Documentation<a class="anchor" aria-label="anchor" href="#documentation-2-0-0"></a></h3>
 <ul><li><p><code>@returns</code> tags standardised across all four base graphics functions (<code><a href="../reference/barplot_aagi.html">barplot_aagi()</a></code>, <code><a href="../reference/boxplot_aagi.html">boxplot_aagi()</a></code>, <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code>, <code><a href="../reference/plot_aagi.html">plot_aagi()</a></code>): each now leads with the return value first, then notes the side-effect.</p></li>
 <li><p>Added <code>@family Baseplots</code> and <code>@seealso</code> cross-references linking all four base graphics functions to each other.</p></li>
 <li><p>Added missing <code>@author</code> tag to <code><a href="../reference/watermark.html">watermark()</a></code>.</p></li>
 <li><p>Clarified <code>breaks</code> options in <code><a href="../reference/hist_aagi.html">hist_aagi()</a></code> documentation.</p></li>
 </ul></div>
 <div class="section level3">
-<h3 id="testing-1-0-2">Testing<a class="anchor" aria-label="anchor" href="#testing-1-0-2"></a></h3>
+<h3 id="testing-2-0-0">Testing<a class="anchor" aria-label="anchor" href="#testing-2-0-0"></a></h3>
 <ul><li>Tests updated to match renamed internal functions and revised function signatures.</li>
 </ul></div>
 </div>
