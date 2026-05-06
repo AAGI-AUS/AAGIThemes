@@ -30,7 +30,7 @@ theme_gt_aagi <- function(x) {
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
 
-  x |>
+  x <-
     gt::opt_table_font(
       font = list(
         aagi_font,
@@ -52,4 +52,5 @@ theme_gt_aagi <- function(x) {
       table.font.color = aagi_black
     ) |>
     gt::sub_missing(missing_text = "")
+  return(x)
 }

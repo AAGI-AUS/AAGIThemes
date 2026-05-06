@@ -79,5 +79,5 @@ watermark <- function(
     rot = angle
   )
 
-  ggplot2::annotation_custom(grob = watermark_grob)
+  return(ggplot2::annotation_custom(grob = watermark_grob))
 }

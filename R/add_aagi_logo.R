@@ -154,5 +154,5 @@ add_aagi_logo <- function(
     "Inserted logo width: {round(actual_cm, 2)} cm (DPI = {dpi})."
   )
 
-  invisible(NULL)
+  return(invisible(NULL))
 }
