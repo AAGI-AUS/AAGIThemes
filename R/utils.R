@@ -83,5 +83,54 @@ set_aagi_font <- function() {
   x
 }
 
+#' Normalize and convert colour-related args found in dots
+#'
+#' - If an arg is missing/empty/NA, use a default.
+#' - If an arg is a character string starting with "AAGI ", convert via
+#'   `.convert_aagi_colour()`.
+#' - Otherwise leave as-is (supports numeric palette indices, "red", "#RRGGBB",
+#'   etc.).
+#'
+#' @param dots A list, typically created with `list(...)`.
+#' @param defaults Named list of defaults, e.g. `list(col = "AAGI Black")`.
+#'   Only names present here will be normalized.
+#'
+#' @returns `dots`, with normalized/converted values for any matching names.
+#' @dev
+
+.normalize_dots_colours <- function(dots, defaults = list(col = "AAGI Black")) {
+  stopifnot(is.list(dots), is.list(defaults))
+  if (
+    is.null(names(defaults)) ||
+      anyNA(names(defaults)) ||
+      any(!nzchar(defaults))
+  ) {
+    cli::cli_abort("{.var defaults} must be a {.bold named} {.code list}.")
+  }
+
+  for (nm in names(defaults)) {
+    value <- dots[[nm]]
+
+    # Missing / empty -> default
+    if (is.null(value) || length(value) == 0L) {
+      value <- defaults[[nm]]
+    }
+
+    # Scalar NA of any atomic type -> default (covers NA_integer_, NA_real_, NA, etc.)
+    if (length(value) == 1L && is.atomic(value) && is.na(value)) {
+      value <- defaults[[nm]]
+    }
+
+    # Convert only AAGI-named colours; leave everything else alone (incl numeric)
+    if (is.character(value) && length(value) >= 1L) {
+      value <- .convert_aagi_colour(value)
+    }
+
+    dots[[nm]] <- value
+  }
+
+  dots
+}
+
 #' @importFrom rlang %||%
 NULL

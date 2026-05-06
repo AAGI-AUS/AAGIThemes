@@ -16,8 +16,7 @@
 #'   supplied as a named AAGI colour, *e.g.*, "AAGI Orange"; named colour,
 #'   "Orange"; or or a hexadecimal code, *e.g.*, "#ec8525".
 #' @param pch plotting 'character', \emph{i.e.}, symbol to use.
-#' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par()]).
+#' @inheritParams plot_aagi
 #'
 #' @seealso
 #'  * [graphics::boxplot()] for full documentation of the basic boxplot
@@ -46,37 +45,43 @@ boxplot_aagi <- function(
   sub = "",
   xlab = "",
   ylab = "",
-  col = "white",
   pch = 16,
   ...
 ) {
-  # Validate and convert colour
-  if (!rlang::is_scalar_character(col)) {
-    col <- "white"
-  }
-  col <- .convert_aagi_colour(col)
+  dots <- .normalize_dots_colours(
+    list(...),
+    defaults = list(col = "white", border = "AAGI Black")
+  )
 
-  # set new pars
+  colour <- dots$col
+  border <- dots$border
+  dots$col <- NULL
+  dots$border <- NULL
+
   withr::local_par(.par_aagi())
-  graphics::plot.new()
   showtext::showtext_begin()
-  on.exit(showtext::showtext_end(), add = TRUE)
+  withr::defer(showtext::showtext_end())
 
-  graphics::boxplot(
-    x,
-    col = scales::alpha(col, 0.5),
-    border = AAGIPalettes::colour_as_hex("AAGI Black"),
-    boxwex = 0.8,
-    staplelty = 0,
-    outwex = 0.5,
-    cex = 1,
-    whisklty = "solid",
-    title = list(line = 2),
-    main = main,
-    sub = sub,
-    xlab = xlab,
-    ylab = ylab,
-    pch = pch,
-    ...
+  do.call(
+    graphics::boxplot,
+    c(
+      list(
+        x = x,
+        col = scales::alpha(colour, 0.5),
+        border = border,
+        boxwex = 0.8,
+        staplelty = 0,
+        outwex = 0.5,
+        cex = 1,
+        whisklty = "solid",
+        title = list(line = 2),
+        main = main,
+        sub = sub,
+        xlab = xlab,
+        ylab = ylab,
+        pch = pch
+      ),
+      dots
+    )
   )
 }

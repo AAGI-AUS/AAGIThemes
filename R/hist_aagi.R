@@ -2,6 +2,9 @@
 #'
 #' @description Basic histograms that follow a standard \acronym{AAGI} style
 #'   including typography guidelines that uses (hopefully) sensible defaults.
+#'   All valid `boxplot()` options are supported through `...`, for *e.g.*,
+#'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
+#'   colour.
 #'
 #' @param x a vector of values for which the histogram is desired.
 #' @param main Main title.  Optional, if not supplied it will be blank.
@@ -13,10 +16,7 @@
 #' @param breaks Either `pretty`, default, or `exact`.  Pretty uses Scott's
 #'   Rule, whereas exact uses a bin-width of 1 so each value is represented
 #'   individually with a bar.
-#' @param col Colour to use as fill for bars  Defaults to "AAGI Black", a very
-#'   dark grey.
-#' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par()]).
+#' @inheritParams plot_aagi
 #'
 #' @seealso
 #' * [graphics::hist()] for full documentation of the basic histogram
@@ -41,6 +41,7 @@
 #' \acronym{AAGI} style.
 #' @export
 #'
+
 hist_aagi <- function(
   x,
   main = "",
@@ -48,21 +49,28 @@ hist_aagi <- function(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = "AAGI Black",
   ...
 ) {
-  # Validate and convert colour
-  if (!rlang::is_scalar_character(col)) {
+  # Validate/default colour (base R)
+  if (!is.character(col) || length(col) != 1L || is.na(col) || !nzchar(col)) {
     col <- "AAGI Black"
   }
   col <- .convert_aagi_colour(col)
 
-  # Validate and normalize breaks
+  # Validate/default breaks (base R)
+  if (
+    !is.character(breaks) ||
+      length(breaks) != 1L ||
+      is.na(breaks) ||
+      !nzchar(breaks)
+  ) {
+    breaks <- "pretty"
+  }
   breaks <- tolower(breaks)
+
   if (!breaks %in% c("exact", "pretty", "scott")) {
     cli::cli_alert_warning(
-      "You've selected an invalid value for {.var breaks}, using
-      {.code pretty}."
+      "You've selected an invalid value for {.var breaks}, using {.code pretty}."
     )
     breaks <- "pretty"
   }
@@ -71,10 +79,16 @@ hist_aagi <- function(
   breaks <- switch(
     breaks,
     exact = {
-      x <- stats::na.omit(x)
-      seq(min(x), max(x), by = ((max(x) - min(x)) / (length(x) - 1)))
+      xx <- stats::na.omit(x)
+      if (length(xx) < 2L) {
+        # Fall back; exact breaks don't make sense with <2 points
+        "pretty"
+      } else {
+        seq(min(xx), max(xx), by = (max(xx) - min(xx)) / (length(xx) - 1L))
+      }
     },
-    "scott"
+    pretty = "pretty",
+    scott = "scott"
   )
 
   # Extract panel.first from ... if present
@@ -83,11 +97,11 @@ hist_aagi <- function(
   dots$panel.first <- NULL
 
   withr::local_par(.par_aagi())
+
   showtext::showtext_begin()
-  on.exit(showtext::showtext_end(), add = TRUE)
+  withr::defer(showtext::showtext_end())
 
   # Create the histogram without panel.first (to avoid warnings)
-  # Use do.call with base R list concatenation
   h <- do.call(
     graphics::hist.default,
     c(
@@ -110,16 +124,14 @@ hist_aagi <- function(
   # Apply panel.first manually after histogram is drawn
   if (!is.null(panel_first)) {
     if (is.call(panel_first)) {
-      eval(panel_first)
+      eval(panel_first, envir = parent.frame())
     } else if (is.function(panel_first)) {
       panel_first()
     }
   } else {
-    # Default: draw the light grid as before
     graphics::grid(nx = NA, ny = NULL, col = NA)
   }
 
-  # Draw axes
   graphics::axis(side = 1, pos = 0)
   graphics::axis(side = 2, pos = 0)
 
