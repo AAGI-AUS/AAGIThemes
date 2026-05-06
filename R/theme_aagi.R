@@ -59,7 +59,6 @@
 #'   border = TRUE
 #' )
 #'
-#' @seealso theme_aagi_map
 #' @rdname theme_aagi
 #' @importFrom ggplot2 `%+replace%`
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}

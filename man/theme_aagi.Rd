@@ -78,9 +78,6 @@ p1 + theme_aagi(
 )
 
 }
-\seealso{
-theme_aagi_map
-}
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
