@@ -23,7 +23,7 @@ set_aagi_font <- function() {
 #' @returns A list object of graphical parameters
 #' @dev
 
-par_aagi <- function() {
+.par_aagi <- function() {
   list(
     family = set_aagi_font(),
     las = 1,
