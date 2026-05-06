@@ -17,6 +17,9 @@ set_aagi_font <- function() {
 
 #' Set Graphical Parameters That Satisfy AAGI's Style Requirements
 #'
+#' Sets the AAGI font and style for \R base graphics, these match the
+#'  `theme_aagi()` theme settings for \CRANpkg{ggplot2}.
+#'
 #' @returns A list object of graphical parameters
 #' @dev
 
@@ -31,6 +34,12 @@ par_aagi <- function() {
 }
 
 #' Check and convert AAGI colour
+#'
+#' Checks a string value to see if it's a valid \acronym{AAGI} colour and
+#'  converts it to the corresponding hexademcimal colour code. This is done
+#'  by checking for an "AAGI" prefix in the string as all valid colours from
+#'  \pkg{AAGIPalettes} will have this.
+#'
 #' @param x A character string name value to be checked if it's an AAGI colour
 #'  and converted to the corresponding hex value. Can be a single value or a
 #'  vector.
