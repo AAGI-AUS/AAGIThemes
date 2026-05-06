@@ -58,7 +58,7 @@ add_aagi_logo <- function(
       "{.arg logo_width} must be a single numeric value >= 4.6 cm."
     )
   }
-  if (fs::file_exists(file_out) && !overwrite) {
+  if (file.exists(file_out) && !overwrite) {
     cli::cli_abort(
       "{.var file_out} {file_out} already exists. Use {.code overwrite = TRUE}
       or choose a new name."

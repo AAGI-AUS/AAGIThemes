@@ -34,8 +34,9 @@
 #'   capabilities.
 #' * barplot_aagi, hist_aagi, plot_aagi
 #' @family Baseplots
-#' @returns Called for its side effect of creating a boxplot with the
-#'  \acronym{AAGI} style.
+#' @returns `NULL`, returned invisibly, consistent with [graphics::boxplot()].
+#'   Called primarily for its side effect of creating a plot with the
+#'   \acronym{AAGI} style.
 #' @export
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
@@ -67,7 +68,7 @@ boxplot_aagi <- function(
     c(
       list(
         x = x,
-        col = scales::alpha(colour, 0.5),
+        col = grDevices::adjustcolor(colour, 0.5),
         border = border,
         boxwex = 0.8,
         staplelty = 0,

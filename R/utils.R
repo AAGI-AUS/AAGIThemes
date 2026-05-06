@@ -131,6 +131,3 @@ set_aagi_font <- function() {
 
   dots
 }
-
-#' @importFrom rlang %||%
-NULL
