@@ -2,7 +2,7 @@
 #'
 #' @description Basic histograms that follow a standard \acronym{AAGI} style
 #'   including typography guidelines that uses (hopefully) sensible defaults.
-#'   All valid `boxplot()` options are supported through `...`, for *e.g.*,
+#'   All valid `hist()` options are supported through `...`, for *e.g.*,
 #'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
 #'   colour.
 #'
@@ -52,13 +52,16 @@ hist_aagi <- function(
   breaks = "pretty",
   ...
 ) {
-  # Validate/default colour (base R)
-  if (!is.character(col) || length(col) != 1L || is.na(col) || !nzchar(col)) {
-    col <- "AAGI Black"
-  }
-  col <- .convert_aagi_colour(col)
+  dots <- .normalise_dots_colours(
+    list(...),
+    defaults = list(col = "AAGI Black")
+  )
 
-  # Validate/default breaks (base R)
+  # Pull out (normalized) col so we can reuse it for border too
+  colour <- dots$col
+  dots$col <- NULL
+
+  # Validate and normalize breaks
   if (
     !is.character(breaks) ||
       length(breaks) != 1L ||
@@ -76,40 +79,40 @@ hist_aagi <- function(
     breaks <- "pretty"
   }
 
-  # Calculate breaks based on method
-  breaks <- switch(
-    breaks,
-    exact = {
-      xx <- stats::na.omit(x)
-      if (length(xx) < 2L) {
-        # Fall back; exact breaks don't make sense with <2 points
-        "pretty"
-      } else {
-        seq(min(xx), max(xx), by = (max(xx) - min(xx)) / (length(xx) - 1L))
-      }
-    },
-    pretty = "pretty",
-    scott = "scott"
-  )
+  # Guard for constant / degenerate inputs (also handles pretty/scott failures)
+  xx <- x[is.finite(x)]
+  if (length(xx) == 0L) {
+    cli::cli_abort("{.arg x} has no finite values.")
+  }
 
-  # Extract panel.first from ... if present
-  dots <- list(...)
+  if (length(xx) == 1L || min(xx) == max(xx)) {
+    x0 <- xx[1L]
+    eps <- if (x0 == 0) 1 else abs(x0) * 0.01
+    breaks <- c(x0 - eps, x0 + eps)
+  } else {
+    breaks <- switch(
+      breaks,
+      exact = seq(min(xx), max(xx), length.out = length(xx)),
+      pretty = "pretty",
+      scott = "scott"
+    )
+  }
+
+  # Extract panel.first from dots if present (avoid hist.default warning)
   panel_first <- dots$panel.first
   dots$panel.first <- NULL
 
   withr::local_par(.par_aagi())
-
   showtext::showtext_begin()
   withr::defer(showtext::showtext_end())
 
-  # Create the histogram without panel.first (to avoid warnings)
   h <- do.call(
     graphics::hist.default,
     c(
       list(
         x = x,
-        col = col,
-        border = col,
+        col = colour,
+        border = colour,
         breaks = breaks,
         main = main,
         sub = sub,
@@ -122,7 +125,6 @@ hist_aagi <- function(
     )
   )
 
-  # Apply panel.first manually after histogram is drawn
   if (!is.null(panel_first)) {
     if (is.call(panel_first)) {
       eval(panel_first, envir = parent.frame())
@@ -136,5 +138,5 @@ hist_aagi <- function(
   graphics::axis(side = 1, pos = 0)
   graphics::axis(side = 2, pos = 0)
 
-  return(invisible(h))
+  invisible(h)
 }

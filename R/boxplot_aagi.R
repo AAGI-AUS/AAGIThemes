@@ -1,7 +1,10 @@
 #' Basic Boxplots Using a Unified AAGI Style and Typography
 #'
-#' Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
-#'   that uses (hopefully) sensible defaults.
+#' @description Basic boxplots that follow a standard \acronym{AAGI} style
+#'   including typography guidelines that uses (hopefully) sensible defaults.
+#'   All valid `boxplot()` options are supported through `...`, for *e.g.*,
+#'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
+#'   colour.
 #'
 #' @param x for specifying data from which the boxplots are to be produced.
 #'   Either a numeric vector, or a single list containing such vectors.

@@ -34,12 +34,16 @@ supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
 "Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
 }
 \value{
-Called for its side effect of creating a boxplot with the
+\code{NULL}, returned invisibly, consistent with \code{\link[graphics:boxplot]{graphics::boxplot()}}.
+Called primarily for its side effect of creating a plot with the
 \acronym{AAGI} style.
 }
 \description{
-Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
-that uses (hopefully) sensible defaults.
+Basic boxplots that follow a standard \acronym{AAGI} style
+including typography guidelines that uses (hopefully) sensible defaults.
+All valid \code{boxplot()} options are supported through \code{...}, for \emph{e.g.},
+\code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
+colour.
 }
 \examples{
 boxplot_aagi(decrease ~ treatment,

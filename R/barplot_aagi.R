@@ -2,6 +2,9 @@
 #'
 #' @description Basic barplots that follow a standard \acronym{AAGI} style
 #'   including typography guidelines that uses (hopefully) sensible defaults.
+#'   All valid `barplot()` options are supported through `...`, for *e.g.*,
+#'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
+#'   colour.
 #'
 #' @param height Either a vector or matrix of values describing the bars which
 #'   make up the plot.  If height is a vector, the plot consists of a sequence

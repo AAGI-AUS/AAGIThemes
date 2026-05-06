@@ -45,7 +45,7 @@ Called primarily for its side effect of creating a plot with the
 \description{
 Basic histograms that follow a standard \acronym{AAGI} style
 including typography guidelines that uses (hopefully) sensible defaults.
-All valid \code{boxplot()} options are supported through \code{...}, for \emph{e.g.},
+All valid \code{hist()} options are supported through \code{...}, for \emph{e.g.},
 \code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
 colour.
 }

@@ -1,7 +1,10 @@
 #' Basic X-Y Plotting Using a Unified AAGI Style and Typography
 #'
-#' @description Basic X-Y plotting that follows \acronym{AAGI} colour and
-#'   typography guidelines that uses (hopefully) sensible defaults.
+#' @description Basic plot that follow a standard \acronym{AAGI} style
+#'   including typography guidelines that uses (hopefully) sensible defaults.
+#'   All valid `plot()` options are supported through `...`, for *e.g.*,
+#'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
+#'   colour.
 #'
 #' @param x the coordinates of points in the plot. Alternatively, a single
 #'  plotting structure, function or any \R _object with a plot method_ can be

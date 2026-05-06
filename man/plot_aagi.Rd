@@ -23,8 +23,11 @@ Called primarily for its side effect of creating a plot with the
 \acronym{AAGI} style.
 }
 \description{
-Basic X-Y plotting that follows \acronym{AAGI} colour and
-typography guidelines that uses (hopefully) sensible defaults.
+Basic plot that follow a standard \acronym{AAGI} style
+including typography guidelines that uses (hopefully) sensible defaults.
+All valid \code{plot()} options are supported through \code{...}, for \emph{e.g.},
+\code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
+colour.
 }
 \examples{
 library(datasets)
