@@ -15,11 +15,9 @@
 #'   existing file or not. Defaults to `FALSE` and will not overwrite the
 #'   existing file.
 #'
-#' @section Image Sizing
-#'
-#' This function checks the image's DPI values and sets the logo size
-#' accordingly. When saving, e.g., from {ggplot}, specify the DPI value along
-#' with your height and width and units for optimal performance.
+#' @section Image Sizing: This function checks the image's DPI values and sets
+#' the logo size accordingly. When saving, e.g., from {ggplot}, specify the DPI
+#' value along with your height and width and units for optimal performance.
 #' `ggsave(
 #'    filename = "AAGI.png",
 #'    plot = p1,
@@ -94,19 +92,9 @@ add_aagi_logo <- function(
   dpi_density <- info$density
   dpi <- .parse_magick_density_dpi(dpi_density)
 
-  if (is.na(dpi)) {
-<<<<<<< HEAD
-    dpi <- 72
-    cli::cli_warn("Image DPI not available; assuming 72 DPI for logo sizing.")
-||||||| 136d3e7
   if (is.na(dpi) || dpi <= 0) {
-    dpi <- 72 # conservative fallback
-    cli::cli_warn(
-      "Image DPI not available; assuming 72 DPI for logo sizing."
-=======
     dpi <- 300
     cli::cli_warn("Image DPI not available; assuming 300 DPI for logo sizing.")
->>>>>>> audit
   } else if (
     nzchar(trimws(as.character(dpi_density))) &&
       !grepl("[xX]", as.character(dpi_density))

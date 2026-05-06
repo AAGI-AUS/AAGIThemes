@@ -30,6 +30,21 @@ suited for use with files created with \pkg{AAGIThemes}.  The logo will be
 inserted in the upper-left of the image with a size of at least 4.6 cm as
 per \acronym{AAGI} brand guidelines.
 }
+\section{Image Sizing}{
+ This function checks the image's DPI values and sets
+the logo size accordingly. When saving, e.g., from {ggplot}, specify the DPI
+value along with your height and width and units for optimal performance.
+`ggsave(
+filename = "AAGI.png",
+plot = p1,
+path = tempdir(),
+width = 18,
+height = 18,
+units = "cm",
+dpi = 300
+)
+}
+
 \examples{
 library("ggplot2")
 
