@@ -31,7 +31,7 @@
 #'   )) +
 #'   facet_wrap(~am)
 #'
-#' p1 + theme_aagi()
+#' p1 + ta()
 #'
 #' # Plotting continuous values
 #' df <- reshape2::melt(outer(1:4, 1:4), varnames = c("X1", "X2"))
@@ -59,7 +59,6 @@
 #'   border = TRUE
 #' )
 #'
-#' @rdname theme_aagi
 #' @importFrom ggplot2 `%+replace%`
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 #' @export
@@ -73,7 +72,7 @@ theme_aagi <-
     ...
   ) {
     # check if Proxima Nova is installed, if not, falls back to Arial
-    aagi_font <- set_aagi_font()
+    aagi_font <- .set_aagi_font()
     aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
     aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
     aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
@@ -85,7 +84,7 @@ theme_aagi <-
     major_grid_size <- base_size / 48
     minor_grid_size <- base_size / 96
 
-    theme_aagi <-
+    ta <-
       ggplot2::theme_classic(
         base_size = base_size,
         base_family = aagi_font
@@ -134,7 +133,7 @@ theme_aagi <-
       )
 
     if (isTRUE(minor_grid)) {
-      theme_aagi <- theme_aagi +
+      ta <- ta +
         ggplot2::theme(
           panel.grid.minor = ggplot2::element_line(
             color = aagi_grey,
@@ -144,7 +143,7 @@ theme_aagi <-
     }
 
     if (isTRUE(major_grid)) {
-      theme_aagi <- theme_aagi +
+      ta <- ta +
         ggplot2::theme(
           panel.grid.major = ggplot2::element_line(
             color = "#bdbdbd",
@@ -154,7 +153,7 @@ theme_aagi <-
     }
 
     if (isTRUE(border)) {
-      theme_aagi <- theme_aagi +
+      ta <- ta +
         ggplot2::theme(
           panel.border = ggplot2::element_rect(
             fill = NA,
@@ -164,5 +163,5 @@ theme_aagi <-
         )
     }
 
-    return(theme_aagi)
+    return(ta)
   }
