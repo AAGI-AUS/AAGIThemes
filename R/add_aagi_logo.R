@@ -87,7 +87,7 @@ add_aagi_logo <- function(
       !grepl("[xX]", as.character(dpi_density))
   ) {
     cli::cli_inform(
-      "Image density reported as a single value ({dpi}); treating as DPI."
+      "Image density reported as a single value; treating as DPI."
     )
   }
 
