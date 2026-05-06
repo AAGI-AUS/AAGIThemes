@@ -34,9 +34,7 @@ supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
 "Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
 }
 \value{
-\code{NULL}, returned invisibly, consistent with \code{\link[graphics:boxplot]{graphics::boxplot()}}.
-Called primarily for its side effect of creating a plot with the
-\acronym{AAGI} style.
+A \code{boxplot} object, returned invisibly (see \code{\link[graphics:boxplot]{graphics::boxplot()}}).
 }
 \description{
 Basic boxplots that follow a standard \acronym{AAGI} style

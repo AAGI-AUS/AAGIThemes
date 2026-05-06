@@ -18,9 +18,7 @@ plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
 a very dark grey.}
 }
 \value{
-\code{NULL}, returned invisibly, consistent with \code{\link[graphics:plot]{graphics::plot()}}.
-Called primarily for its side effect of creating a plot with the
-\acronym{AAGI} style.
+A \code{plot} object, returned invisibly (see \code{\link[graphics:plot]{graphics::plot()}}).
 }
 \description{
 Basic plot that follow a standard \acronym{AAGI} style

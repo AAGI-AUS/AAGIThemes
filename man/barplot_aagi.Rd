@@ -23,9 +23,7 @@ plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
 a very dark grey.}
 }
 \value{
-\code{NULL}, returned invisibly, consistent with \code{\link[graphics:barplot]{graphics::barplot()}}.
-Called primarily for its side effect of creating a plot with the
-\acronym{AAGI} style.'
+A \code{barplot} object, returned invisibly (see \code{\link[graphics:barplot]{graphics::barplot()}}).
 }
 \description{
 Basic barplots that follow a standard \acronym{AAGI} style

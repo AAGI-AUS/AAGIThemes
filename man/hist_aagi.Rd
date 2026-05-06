@@ -15,21 +15,19 @@ hist_aagi(
 )
 }
 \arguments{
-\item{x}{a vector of values for which the histogram is desired.}
+\item{x}{A vector of values for which the histogram is desired.}
 
-\item{main}{Main title.  Optional, if not supplied it will be blank.}
+\item{main}{Main title. Optional, if not supplied it will be blank.}
 
-\item{sub}{Sub title below x-axis label.  Optional, if not supplied it will
+\item{sub}{Sub title below x-axis label. Optional, if not supplied it will
 be blank.}
 
-\item{xlab}{X-axis label.  Optional, if not supplied will be an empty string
-with no value.}
+\item{xlab}{X-axis label. Optional, if not supplied will be an empty string.}
 
-\item{ylab}{Y-axis label.  Optional, if not supplied will default to "Count".}
+\item{ylab}{Y-axis label. Optional, if not supplied will default to "Count".}
 
-\item{breaks}{Either \code{pretty}, default, or \code{exact}.  Pretty uses Scott's
-Rule, whereas exact uses a bin-width of 1 so each value is represented
-individually with a bar.}
+\item{breaks}{One of "pretty" (default; \code{pretty()}-style breaks),
+"scott" (Scott's rule), or "exact" (fixed bin width of 1 for integer counts).}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
@@ -38,16 +36,13 @@ plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
 a very dark grey.}
 }
 \value{
-\code{NULL}, returned invisibly, consistent with \code{\link[graphics:hist]{graphics::hist()}}.
-Called primarily for its side effect of creating a plot with the
-\acronym{AAGI} style.
+A \code{histogram} object, returned invisibly (see \code{\link[graphics:hist]{graphics::hist()}}).
 }
 \description{
 Basic histograms that follow a standard \acronym{AAGI} style
 including typography guidelines that uses (hopefully) sensible defaults.
 All valid \code{hist()} options are supported through \code{...}, for \emph{e.g.},
-\code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
-colour.
+\code{col} to set the colour. Defaults to "AAGI Black", a very dark grey colour.
 }
 \examples{
 
@@ -64,8 +59,7 @@ Hyndman, R.J., The Problem with Sturges' Rule for Constructing Histograms,
 }
 \seealso{
 \itemize{
-\item \code{\link[graphics:hist]{graphics::hist()}} for full documentation of the basic histogram
-capabilities.
+\item \code{\link[graphics:hist]{graphics::hist()}} for full documentation of the basic histogram capabilities.
 \item barplot_aagi, boxplot_aagi, plot_aagi
 }
 
