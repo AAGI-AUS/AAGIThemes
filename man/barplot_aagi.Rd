@@ -36,6 +36,19 @@ including typography guidelines that uses (hopefully) sensible defaults.
 barplot_aagi(islands)
 
 }
+\seealso{
+\itemize{
+\item \code{\link[graphics:plot]{graphics::plot()}} for full documentation of the basic plotting
+capabilities.
+\item plot_aagi, boxplot_aagi, hist_aagi
+}
+
+Other Baseplots:
+\code{\link[=boxplot_aagi]{boxplot_aagi()}},
+\code{\link[=hist_aagi]{hist_aagi()}},
+\code{\link[=plot_aagi]{plot_aagi()}}
+}
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
+\concept{Baseplots}

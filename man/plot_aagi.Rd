@@ -36,9 +36,18 @@ plot_aagi(pressure)
 
 }
 \seealso{
-\code{\link[graphics:plot]{graphics::plot()}} for full documentation of the basic plotting
+\itemize{
+\item \code{\link[graphics:plot]{graphics::plot()}} for full documentation of the basic plotting
 capabilities.
+\item barplot_aagi, boxplot_aagi, hist_aagi
+}
+
+Other Baseplots:
+\code{\link[=barplot_aagi]{barplot_aagi()}},
+\code{\link[=boxplot_aagi]{boxplot_aagi()}},
+\code{\link[=hist_aagi]{hist_aagi()}}
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
+\concept{Baseplots}

@@ -11,8 +11,11 @@
 #'   `y` for the factor to use for the y-axis, `type` describing what type of
 #'   plot should be drawn, or `col` for point colour (defaults to AAGI Black).
 #'
-#' @seealso [graphics::plot()] for full documentation of the basic plotting
-#'  capabilities.
+#' @seealso
+#' * [graphics::plot()] for full documentation of the basic plotting
+#'   capabilities.
+#' * barplot_aagi, boxplot_aagi, hist_aagi
+#' @family Baseplots
 #' @examples
 #' library(datasets)
 #'

@@ -59,9 +59,18 @@ Hyndman, R.J., The Problem with Sturges' Rule for Constructing Histograms,
 \url{https://www.robjhyndman.com/papers/sturges.pdf}.
 }
 \seealso{
-\code{\link[graphics:hist]{graphics::hist()}} for full documentation of the basic histogram
-capabilities
+\itemize{
+\item \code{\link[graphics:hist]{graphics::hist()}} for full documentation of the basic histogram
+capabilities.
+\item barplot_aagi, boxplot_aagi, plot_aagi
+}
+
+Other Baseplots:
+\code{\link[=barplot_aagi]{barplot_aagi()}},
+\code{\link[=boxplot_aagi]{boxplot_aagi()}},
+\code{\link[=plot_aagi]{plot_aagi()}}
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
+\concept{Baseplots}

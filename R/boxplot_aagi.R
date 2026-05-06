@@ -29,6 +29,12 @@
 #'   xlab = "treatment",
 #'   ylab = "decrease"
 #' )
+#'
+#' @seealso
+#' * [graphics::boxplot()] for full documentation of the basic plotting
+#'   capabilities.
+#' * barplot_aagi, hist_aagi, plot_aagi
+#' @family Baseplots
 #' @returns Called for its side effect of creating a boxplot with the
 #'  \acronym{AAGI} style.
 #' @export

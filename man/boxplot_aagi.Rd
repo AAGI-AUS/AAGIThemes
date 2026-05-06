@@ -53,6 +53,7 @@ boxplot_aagi(decrease ~ treatment,
   xlab = "treatment",
   ylab = "decrease"
 )
+
 }
 \seealso{
 \itemize{
@@ -60,7 +61,19 @@ boxplot_aagi(decrease ~ treatment,
 capabilities, and
 \item \code{\link[graphics:par]{graphics::par()}} for full documentation of \code{pch}.
 }
+
+\itemize{
+\item \code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic plotting
+capabilities.
+\item barplot_aagi, hist_aagi, plot_aagi
+}
+
+Other Baseplots:
+\code{\link[=barplot_aagi]{barplot_aagi()}},
+\code{\link[=hist_aagi]{hist_aagi()}},
+\code{\link[=plot_aagi]{plot_aagi()}}
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
+\concept{Baseplots}

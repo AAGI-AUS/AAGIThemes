@@ -17,8 +17,11 @@
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).
 #'
-#' @seealso [graphics::hist()] for full documentation of the basic histogram
-#'  capabilities
+#' @seealso
+#' * [graphics::hist()] for full documentation of the basic histogram
+#'  capabilities.
+#' * barplot_aagi, boxplot_aagi, plot_aagi
+#' @family Baseplots
 #'
 #' @references
 #' Scott, D.W. (1979) On optimal and data-based histograms. _Biometrika_,
