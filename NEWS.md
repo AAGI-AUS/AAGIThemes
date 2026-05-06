@@ -7,9 +7,7 @@
 * `hist_aagi()` default histogram breaks changed from Sturges' rule to **Scott's rule**, which is more robust for skewed and heavy-tailed data.
   The `breaks` argument now accepts `"scott"` (default), `"sturges"`, `"fd"` (Freedman-Diaconis), or `"exact"` (fixed bin width of 1 for integer counts).
 
-* `theme_gt_aagi()` now validates that `x` is a `gt_tbl` object before
-  processing, providing a clear, user-friendly error message rather than
-  a cryptic internal `{gt}` error.
+* `theme_gt_aagi()` now validates that `x` is a `gt_tbl` object before processing, providing a clear, user-friendly error message rather than a cryptic internal `{gt}` error.
 
 ## Bug fixes
 
