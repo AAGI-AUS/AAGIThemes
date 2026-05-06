@@ -21,7 +21,7 @@
 #' p + watermark("DRAFT")
 #'
 #' @returns A [ggplot2] object with a watermark added to the plot that's called.
-#'
+#' @author Adam H. Sparks, \email{adam.sparks@@curtin.edu.au}
 watermark <- function(
   watermark,
   fontsize = 120,

@@ -47,4 +47,6 @@ p + watermark("DRAFT")
 }
 \author{
 Matt Cowgill and Will Mackey
+
+Adam H. Sparks, \email{adam.sparks@curtin.edu.au}
 }
