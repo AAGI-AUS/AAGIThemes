@@ -28,8 +28,9 @@
 #' plot_aagi(pressure)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#' @returns Called for its side effect of creating a plot with the
-#' \acronym{AAGI} style.
+#' @returns `NULL`, returned invisibly, consistent with [graphics::plot()].
+#'   Called primarily for its side effect of creating a plot with the
+#'   \acronym{AAGI} style.
 #' @export
 
 plot_aagi <- function(x, ...) {
@@ -42,5 +43,6 @@ plot_aagi <- function(x, ...) {
   showtext::showtext_begin()
   withr::defer(showtext::showtext_end())
 
-  do.call(graphics::plot, c(list(x = x), dots))
+  p <- do.call(graphics::plot, c(list(x = x), dots))
+  return(invisible(p))
 }

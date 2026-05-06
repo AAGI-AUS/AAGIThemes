@@ -37,8 +37,9 @@
 #' hist_aagi(islands)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#' @returns Called for its side effect of creating a histogram with the
-#' \acronym{AAGI} style.
+#' @returns `NULL`, returned invisibly, consistent with [graphics::hist()].
+#'   Called primarily for its side effect of creating a plot with the
+#'   \acronym{AAGI} style.
 #' @export
 #'
 
@@ -135,5 +136,5 @@ hist_aagi <- function(
   graphics::axis(side = 1, pos = 0)
   graphics::axis(side = 2, pos = 0)
 
-  invisible(h)
+  return(invisible(h))
 }

@@ -38,7 +38,8 @@ plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
 a very dark grey.}
 }
 \value{
-Called for its side effect of creating a histogram with the
+\code{NULL}, returned invisibly, consistent with \code{\link[graphics:hist]{graphics::hist()}}.
+Called primarily for its side effect of creating a plot with the
 \acronym{AAGI} style.
 }
 \description{

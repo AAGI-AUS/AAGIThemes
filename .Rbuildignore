@@ -21,4 +21,4 @@
 ^man/set_aagi_font\.Rd$
 ^man/dot-par_aagi\.Rd$
 ^man/dot-convert_aagi_colour\.Rd$
-^man/dot-normalize_dots_colours\.Rd$
+^man/dot-normalise_dots_colours\.Rd$

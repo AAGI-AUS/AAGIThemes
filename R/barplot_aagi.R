@@ -24,9 +24,9 @@
 #' barplot_aagi(islands, col = "AAGI Orange")
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#'
-#' @returns Called for its side effect of creating a barplot with the
-#' \acronym{AAGI} style.
+#' @returns `NULL`, returned invisibly, consistent with [graphics::barplot()].
+#'   Called primarily for its side effect of creating a plot with the
+#'   \acronym{AAGI} style.'
 #'
 #' @export
 
@@ -49,11 +49,12 @@ barplot_aagi <- function(height, ...) {
   showtext::showtext_begin()
   withr::defer(showtext::showtext_end())
 
-  do.call(
+  bp <- do.call(
     graphics::barplot,
     c(
       list(height = height, xaxs = "i"),
       dots
     )
   )
+  return(invisible(bp))
 }

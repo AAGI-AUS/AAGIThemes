@@ -62,7 +62,7 @@ boxplot_aagi <- function(
   showtext::showtext_begin()
   withr::defer(showtext::showtext_end())
 
-  do.call(
+  bx <- do.call(
     graphics::boxplot,
     c(
       list(
@@ -84,4 +84,5 @@ boxplot_aagi <- function(
       dots
     )
   )
+  return(invisibl(bx))
 }
