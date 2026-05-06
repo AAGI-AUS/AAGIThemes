@@ -150,7 +150,8 @@
 #'
 #' @returns A character string/vector of hex colour codes, or the input
 #'   unchanged if it's not an AAGI colour name.
-#' @keywords internal
+#' @dev
+
 .convert_aagi_colour <- function(x) {
   if (is.null(x) || length(x) == 0L || !is.character(x)) {
     return(x)
@@ -167,11 +168,11 @@
   tryCatch(
     AAGIPalettes::colour_as_hex(x),
     error = function(e) {
-      cli::cli_warn(c(
+      cli::cli_abort(c(
         "Could not convert colour name {.val {x}} to a hex value.",
-        "i" = "Returning original value."
+        "i" = "Is this a valid AAGI colour name from {.pkg AAGIPalettes}?",
+        "i" = "Underlying error: {conditionMessage(e)}"
       ))
-      x
     }
   )
 }
@@ -193,10 +194,16 @@
 
 .normalise_one_dot_colour <- function(value, default) {
   if (is.null(value) || length(value) == 0L) {
+    if (is.character(default)) {
+      default <- .convert_aagi_colour(default)
+    }
     return(default)
   }
 
   if (length(value) == 1L && is.atomic(value) && is.na(value)) {
+    if (is.character(default)) {
+      default <- .convert_aagi_colour(default)
+    }
     return(default)
   }
 
@@ -221,4 +228,9 @@
   }
 
   dots
+}
+
+#' @keywords internal
+.convert_if_aagi_colour <- function(x) {
+  if (is.character(x)) .convert_aagi_colour(x) else x
 }
