@@ -55,26 +55,40 @@ watermark <- function(
 }
 
 #' @keywords internal
-.assert_scalar_number <- function(x, name, min = -Inf, max = Inf) {
-  if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
-    cli::cli_abort("{.var {name}} must be a single number.")
+.assert_scalar_number <- function(
+  x,
+  arg,
+  min = -Inf,
+  max = Inf,
+  inclusive = TRUE
+) {
+  if (is.null(x) || !is.numeric(x) || length(x) != 1L || is.na(x)) {
+    cli::cli_abort("{.arg {arg}} must be a length-1 numeric value.")
   }
 
-  if (x < min || x > max) {
-    cli::cli_abort("{.var {name}} must be between {min} and {max}.")
+  if (isTRUE(inclusive)) {
+    if (x < min) {
+      cli::cli_abort("{.arg {arg}} must be >= {min}.")
+    }
+    if (x > max) cli::cli_abort("{.arg {arg}} must be <= {max}.")
+  } else {
+    if (x <= min) {
+      cli::cli_abort("{.arg {arg}} must be > {min}.")
+    }
+    if (x >= max) cli::cli_abort("{.arg {arg}} must be < {max}.")
   }
 
-  return(invisible(x))
+  invisible(TRUE)
 }
 
 #' @keywords internal
 .assert_scalar_number_gt <- function(x, name, min_exclusive = 0) {
   if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
-    cli::cli_abort("{.var {name}} must be a single number.")
+    cli::cli_abort("{.arg {name}} must be a single number.")
   }
 
   if (x <= min_exclusive) {
-    cli::cli_abort("{.var {name}} must be > {min_exclusive}.")
+    cli::cli_abort("{.arg {name}} must be > {min_exclusive}.")
   }
 
   return(invisible(x))
@@ -83,25 +97,11 @@ watermark <- function(
 #' @keywords internal
 .assert_scalar_number_gte <- function(x, name, min_inclusive = 0) {
   if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
-    cli::cli_abort("{.var {name}} must be a single number.")
+    cli::cli_abort("{.arg {name}} must be a single number.")
   }
 
   if (x < min_inclusive) {
-    cli::cli_abort("{.var {name}} must be >= {min_inclusive}.")
-  }
-
-  return(invisible(x))
-}
-
-#' @keywords internal
-.assert_scalar_string <- function(x, name, trim = TRUE, nonempty = TRUE) {
-  if (!is.character(x) || length(x) != 1L || is.na(x)) {
-    cli::cli_abort("{.var {name}} must be a single character string.")
-  }
-
-  y <- if (trim) trimws(x) else x
-  if (nonempty && !nzchar(y)) {
-    cli::cli_abort("{.var {name}} must be a non-empty character string.")
+    cli::cli_abort("{.arg {name}} must be >= {min_inclusive}.")
   }
 
   return(invisible(x))
@@ -111,37 +111,25 @@ watermark <- function(
 .assert_one_of <- function(x, name, choices) {
   if (!x %in% choices) {
     cli::cli_abort(
-      "{.var {name}} {.val {x}} is not valid. Valid options: {.or {choices}}."
+      "{.arg {name}} {.val {x}} is not valid. Valid options: {.or {choices}}."
     )
   }
   return(invisible(x))
 }
 
 #' @keywords internal
-.assert_scalar_number_gt <- function(x, name, min_exclusive = 0) {
-  if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
-    cli::cli_abort("{.var {name}} must be a single number.")
+.assert_scalar_string <- function(x, arg, trim = FALSE, nonempty = FALSE) {
+  if (is.null(x) || !is.character(x) || length(x) != 1L || is.na(x)) {
+    cli::cli_abort("{.arg {arg}} must be a length-1 character string.")
   }
-  if (x <= min_exclusive) {
-    cli::cli_abort("{.var {name}} must be > {min_exclusive}.")
-  }
-  return(invisible(x))
-}
 
-#' @keywords internal
-.assert_scalar_string <- function(x, name) {
-  if (!is.character(x) || length(x) != 1L || is.na(x) || !nzchar(trimws(x))) {
-    cli::cli_abort("{.var {name}} must be a non-empty character string.")
+  if (isTRUE(trim)) {
+    x <- trimws(x)
   }
-  return(invisible(x))
-}
 
-#' @keywords internal
-.assert_one_of <- function(x, name, choices) {
-  if (!x %in% choices) {
-    cli::cli_abort(
-      "{.var {name}} {.val {x}} is not valid. Valid options: {.or {choices}}."
-    )
+  if (isTRUE(nonempty) && !nzchar(x)) {
+    cli::cli_abort("{.arg {arg}} must be a non-empty string.")
   }
-  return(invisible(x))
+
+  invisible(TRUE)
 }
