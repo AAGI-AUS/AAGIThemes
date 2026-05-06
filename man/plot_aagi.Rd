@@ -14,7 +14,8 @@ provided.}
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
 \code{y} for the factor to use for the y-axis, \code{type} describing what type of
-plot should be drawn, or \code{col} for point colour (defaults to AAGI Black).}
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
+a very dark grey.}
 }
 \value{
 Called for its side effect of creating a plot with the

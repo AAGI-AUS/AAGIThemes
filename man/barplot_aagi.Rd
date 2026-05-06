@@ -4,7 +4,7 @@
 \alias{barplot_aagi}
 \title{Basic Barplots Using a Unified AAGI Style and Typography}
 \usage{
-barplot_aagi(height, col = "AAGI Black", ...)
+barplot_aagi(height, ...)
 }
 \arguments{
 \item{height}{Either a vector or matrix of values describing the bars which
@@ -16,12 +16,11 @@ heights of stacked sub-bars making up the bar.  If height is a matrix and
 beside is \code{TRUE}, then the values in each column are juxtaposed rather than
 stacked.}
 
-\item{col}{Colour to use as fill for bars  Defaults to "AAGI Black", a very
-dark grey.  Can be supplied as a named AAGI colour; \emph{e.g.}, "AAGI Black";
-a named colour, "black"; or a hexadecimal code, "#414042".}
-
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).}
+(see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
+\code{y} for the factor to use for the y-axis, \code{type} describing what type of
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
+a very dark grey.}
 }
 \value{
 Called for its side effect of creating a barplot with the
@@ -34,6 +33,7 @@ including typography guidelines that uses (hopefully) sensible defaults.
 \examples{
 
 barplot_aagi(islands)
+barplot_aagi(islands, col = "AAGI Orange")
 
 }
 \seealso{

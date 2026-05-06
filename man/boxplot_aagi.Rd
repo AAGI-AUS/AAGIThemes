@@ -4,16 +4,7 @@
 \alias{boxplot_aagi}
 \title{Basic Boxplots Using a Unified AAGI Style and Typography}
 \usage{
-boxplot_aagi(
-  x,
-  main = "",
-  sub = "",
-  xlab = "",
-  ylab = "",
-  col = "white",
-  pch = 16,
-  ...
-)
+boxplot_aagi(x, main = "", sub = "", xlab = "", ylab = "", pch = 16, ...)
 }
 \arguments{
 \item{x}{for specifying data from which the boxplots are to be produced.
@@ -30,14 +21,17 @@ be blank.}
 
 \item{ylab}{Y-axis label.  Optional.}
 
-\item{col}{Colour to use as fill for boxes  Defaults to white.  Can be
-supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
-"Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
-
 \item{pch}{plotting 'character', \emph{i.e.}, symbol to use.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).}
+(see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
+\code{y} for the factor to use for the y-axis, \code{type} describing what type of
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
+a very dark grey.}
+
+\item{col}{Colour to use as fill for boxes  Defaults to white.  Can be
+supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
+"Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
 }
 \value{
 Called for its side effect of creating a boxplot with the

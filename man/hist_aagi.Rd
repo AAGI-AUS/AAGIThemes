@@ -11,7 +11,6 @@ hist_aagi(
   xlab = "",
   ylab = "Count",
   breaks = "pretty",
-  col = "AAGI Black",
   ...
 )
 }
@@ -32,11 +31,11 @@ with no value.}
 Rule, whereas exact uses a bin-width of 1 so each value is represented
 individually with a bar.}
 
-\item{col}{Colour to use as fill for bars  Defaults to "AAGI Black", a very
-dark grey.}
-
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).}
+(see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
+\code{y} for the factor to use for the y-axis, \code{type} describing what type of
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
+a very dark grey.}
 }
 \value{
 Called for its side effect of creating a histogram with the
@@ -45,6 +44,9 @@ Called for its side effect of creating a histogram with the
 \description{
 Basic histograms that follow a standard \acronym{AAGI} style
 including typography guidelines that uses (hopefully) sensible defaults.
+All valid \code{boxplot()} options are supported through \code{...}, for \emph{e.g.},
+\code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
+colour.
 }
 \examples{
 
