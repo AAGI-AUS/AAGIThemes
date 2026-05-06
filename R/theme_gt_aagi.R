@@ -31,6 +31,7 @@ theme_gt_aagi <- function(x) {
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
 
   x <-
+    x |>
     gt::opt_table_font(
       font = list(
         aagi_font,
