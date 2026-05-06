@@ -12,11 +12,11 @@
 - **Tinula Kariyawasam**. Author.
 
 - **Matt Cowgill**. Author.  
-  Wrote major portions of package for saving charts for 'Grattan'
+  Wrote portions of package used in creating this one for 'Grattan'
   package, adapted to 'AAGIThemes' under 'MIT' licence.
 
 - **Will Mackey**. Author.  
-  Wrote major portions of package for saving charts for 'Grattan'
+  Wrote portions of package used in creating this one for 'Grattan'
   package, adapted to 'AAGIThemes' under 'MIT' licence.
 
 - **Curtin University**. Copyright holder, funder.
@@ -31,16 +31,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/AAGI-AUS/AAGIThemes/blob/v1.0.1/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/AAGI-AUS/AAGIThemes/blob/main/DESCRIPTION)
 
 Sparks A, Ng K, Kariyawasam T, Cowgill M, Mackey W (2026). *AAGIThemes:
 AAGI Branding for Graphical and Tabular Outputs*. R package version
-1.0.1, <https://github.com/AAGI-AUS/AAGIThemes>.
+1.0.2, <https://github.com/AAGI-AUS/AAGIThemes>.
 
     @Manual{,
       title = {AAGIThemes: AAGI Branding for Graphical and Tabular Outputs},
       author = {Adam H. Sparks and Kenyon Ng and Tinula Kariyawasam and Matt Cowgill and Will Mackey},
       year = {2026},
-      note = {R package version 1.0.1},
+      note = {R package version 1.0.2},
       url = {https://github.com/AAGI-AUS/AAGIThemes},
     }

@@ -70,5 +70,5 @@ print(x)
 #> # A tibble: 1 × 7
 #>   format width height colorspace matte filesize density
 #>   <chr>  <int>  <int> <chr>      <lgl>    <int> <chr>  
-#> 1 PNG     1999   2299 sRGB       FALSE    51452 118x118
+#> 1 PNG     1999   2299 sRGB       FALSE    51723 118x118
 ```

@@ -12,6 +12,7 @@ theme_aagi(
   major_grid = FALSE,
   minor_grid = FALSE,
   border = FALSE,
+  showtext_auto = TRUE,
   ...
 )
 ```
@@ -26,29 +27,38 @@ theme_aagi(
 
 - major_grid:
 
-  `Boolean`. Include major gridlines in the panel. Defaults to `FALSE`
-  with major gridlines, including those between facets not included.
+  `Boolean`. Include major gridlines in the panel. Defaults to `FALSE`.
 
 - minor_grid:
 
-  `Boolean`. Include minor gridlines in the panel. Defaults to `FALSE`
-  with minor gridlines not included.
+  `Boolean`. Include minor gridlines in the panel. Defaults to `FALSE`.
 
 - border:
 
-  `Boolean`. Include a border around the figure on all four sides,
-  *i.e.*, x-axis, y-axis, top and right sides all will have a black
-  border not just x-axis and y-axis. Defaults to `FALSE` with only the
-  x-axis and y-axis being outlined in dark grey.
+  `Boolean`. Include a border around the figure on all four sides.
+  Defaults to `FALSE`.
+
+- showtext_auto:
+
+  `Boolean`. If `TRUE`, enable
+  [`showtext::showtext_auto()`](https://rdrr.io/pkg/showtext/man/showtext_auto.html)
+  that provides full AAGI font support. Defaults to `TRUE`.
+
+  **Important:**
+  [`showtext::showtext_auto()`](https://rdrr.io/pkg/showtext/man/showtext_auto.html)
+  changes global rendering behaviour for the entire R session/device.
+  This can affect subsequent plots (including non-AAGIThemes plots)
+  until it is disabled. However, since it is anticipated that this theme
+  will only ever be used for official AAGI work, this seems unlikely to
+  be an issue.
+
+  To undo, call
+  [`showtext_aagi_off()`](https://AAGI-AUS.github.io/AAGIThemes/reference/showtext_aagi_off.md).
 
 - ...:
 
   Other arguments as passed along to
   [`ggplot2::theme()`](https://ggplot2.tidyverse.org/reference/theme.html).
-
-## See also
-
-theme_aagi_map
 
 ## Author
 
@@ -57,50 +67,15 @@ Adam Sparks, <adam.sparks@curtin.edu.au>
 ## Examples
 
 ``` r
-
 library("ggplot2")
 
-# Plotting discrete values
-p1 <- ggplot(mtcars) +
-  geom_point(aes(
-    x = wt,
-    y = mpg,
-    colour = factor(gear)
-  )) +
-  facet_wrap(~am)
+p <- ggplot(mtcars) +
+  geom_point(aes(wt, mpg)) +
+  theme_aagi(showtext_auto = TRUE)
 
-p1 + theme_aagi()
+p
 
 
-# Plotting continuous values
-df <- reshape2::melt(outer(1:4, 1:4), varnames = c("X1", "X2"))
-
-p2 <- ggplot(df, aes(X1, X2)) +
-  geom_tile(aes(fill = value)) +
-  geom_point(aes(size = value))
-p2 + theme_aagi()
-
-
-# Using a larger base size for presentation slides
-p1 + theme_aagi(base_size = 24)
-
-
-# Plotting using minor gridlines
-p1 + theme_aagi(minor_grid = TRUE)
-
-
-# Plotting using major gridlines
-p1 + theme_aagi(major_grid = TRUE)
-
-
-p1 + theme_aagi(border = TRUE)
-
-
-# Plotting with both gridlines and border
-p1 + theme_aagi(
-  minor_grid = TRUE,
-  major_grid = TRUE,
-  border = TRUE
-)
-
+# Disable global showtext auto afterwards (recommended)
+showtext_aagi_off()
 ```

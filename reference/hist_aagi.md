@@ -1,7 +1,10 @@
 # Basic Histograms Using a Unified AAGI Style and Typography
 
 Basic histograms that follow a standard AAGI style including typography
-guidelines that uses (hopefully) sensible defaults.
+guidelines that uses (hopefully) sensible defaults. All valid
+[`hist()`](https://rdrr.io/r/graphics/hist.html) options are supported
+through `...`, for *e.g.*, `col` to set the colour. Defaults to "AAGI
+Black", a very dark grey colour.
 
 ## Usage
 
@@ -12,8 +15,7 @@ hist_aagi(
   sub = "",
   xlab = "",
   ylab = "Count",
-  breaks = "pretty",
-  col = "AAGI Black",
+  breaks = "scott",
   ...
 )
 ```
@@ -22,7 +24,7 @@ hist_aagi(
 
 - x:
 
-  a vector of values for which the histogram is desired.
+  A vector of values for which the histogram is desired.
 
 - main:
 
@@ -35,7 +37,7 @@ hist_aagi(
 
 - xlab:
 
-  X-axis label. Optional, if not supplied will be taken from data.
+  X-axis label. Optional, if not supplied will be an empty string.
 
 - ylab:
 
@@ -43,23 +45,21 @@ hist_aagi(
 
 - breaks:
 
-  Either `pretty`, default, or `exact`. Pretty uses Scott's Rule,
-  whereas exact uses a bin-width of 1 so each value is represented
-  individually with a bar.
-
-- col:
-
-  Colour to use as fill for bars Defaults to "AAGI Black", a very dark
-  grey.
+  One of "scott" (default), "fd", "sturges" (R's default), or "exact"
+  (fixed bin width of 1 for integer. counts).
 
 - ...:
 
   Arguments to be passed to methods, such as graphical parameters (see
-  [`graphics::par()`](https://rdrr.io/r/graphics/par.html)).
+  [`graphics::par()`](https://rdrr.io/r/graphics/par.html)). The most
+  commonly used argument would be `y` for the factor to use for the
+  y-axis, `type` describing what type of plot should be drawn, or `col`
+  for point colour (defaults to AAGI Black), a very dark grey.
 
 ## Value
 
-Called for its side effect of creating a histogram with the AAGI style.
+A `histogram` object, returned invisibly (see
+[`graphics::hist()`](https://rdrr.io/r/graphics/hist.html)).
 
 ## References
 
@@ -72,8 +72,15 @@ Histograms, 1995, Monash University,
 
 ## See also
 
-[`graphics::hist()`](https://rdrr.io/r/graphics/hist.html) for full
-documentation of the basic histogram capabilities
+- [`graphics::hist()`](https://rdrr.io/r/graphics/hist.html) for full
+  documentation of the basic histogram capabilities.
+
+- barplot_aagi, boxplot_aagi, plot_aagi
+
+Other Baseplots:
+[`barplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/barplot_aagi.md),
+[`boxplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/boxplot_aagi.md),
+[`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
 
 ## Author
 

@@ -12,6 +12,8 @@
   : Basic Histograms Using a Unified AAGI Style and Typography
 - [`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
   : Basic X-Y Plotting Using a Unified AAGI Style and Typography
+- [`showtext_aagi_off()`](https://AAGI-AUS.github.io/AAGIThemes/reference/showtext_aagi_off.md)
+  : Disable global showtext auto rendering (AAGIThemes)
 - [`theme_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_aagi.md)
   : A ggplot2 Theme Using a Unified AAGI Style and Typography for Plots
 - [`theme_ft_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_ft_aagi.md)

@@ -30,13 +30,13 @@ Authors:
 
 - Tinula Kariyawasam <tinula.kariyawasam@dpird.wa.gov.au>
 
-- Matt Cowgill <matthew.cowgill@grattaninstitute.edu.au> (Wrote major
-  portions of package for saving charts for 'Grattan' package, adapted
-  to 'AAGIThemes' under 'MIT' licence.)
+- Matt Cowgill <matthew.cowgill@grattaninstitute.edu.au> (Wrote portions
+  of package used in creating this one for 'Grattan' package, adapted to
+  'AAGIThemes' under 'MIT' licence.)
 
-- Will Mackey <william.mackey@grattaninstitute.edu.au> (Wrote major
-  portions of package for saving charts for 'Grattan' package, adapted
-  to 'AAGIThemes' under 'MIT' licence.)
+- Will Mackey <william.mackey@grattaninstitute.edu.au> (Wrote portions
+  of package used in creating this one for 'Grattan' package, adapted to
+  'AAGIThemes' under 'MIT' licence.)
 
 Other contributors:
 

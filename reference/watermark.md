@@ -49,7 +49,8 @@ object with a watermark added to the plot that's called.
 
 ## Author
 
-Matt Cowgill and Will Mackey
+Adam H. Sparks, <adam.sparks@curtin.edu.au> based on Matt Cowgill's and
+Will Mackey's work.
 
 ## Examples
 
