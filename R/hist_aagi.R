@@ -7,7 +7,8 @@
 #' @param main Main title.  Optional, if not supplied it will be blank.
 #' @param sub Sub title below x-axis label.  Optional, if not supplied it will
 #'   be blank.
-#' @param xlab X-axis label.  Optional, if not supplied will be taken from data.
+#' @param xlab X-axis label.  Optional, if not supplied will be an empty string
+#'   with no value.
 #' @param ylab Y-axis label.  Optional, if not supplied will default to "Count".
 #' @param breaks Either `pretty`, default, or `exact`.  Pretty uses Scott's
 #'   Rule, whereas exact uses a bin-width of 1 so each value is represented

@@ -23,7 +23,8 @@ hist_aagi(
 \item{sub}{Sub title below x-axis label.  Optional, if not supplied it will
 be blank.}
 
-\item{xlab}{X-axis label.  Optional, if not supplied will be taken from data.}
+\item{xlab}{X-axis label.  Optional, if not supplied will be an empty string
+with no value.}
 
 \item{ylab}{Y-axis label.  Optional, if not supplied will default to "Count".}
 
