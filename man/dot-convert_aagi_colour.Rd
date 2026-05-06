@@ -16,6 +16,9 @@ A character string or vector of hexadecimal colour codes, or the
 input unchanged if it's not an AAGI colour name.
 }
 \description{
-Check and convert AAGI colour
+Checks a string value to see if it's a valid \acronym{AAGI} colour and
+converts it to the corresponding hexademcimal colour code. This is done
+by checking for an "AAGI" prefix in the string as all valid colours from
+\pkg{AAGIPalettes} will have this.
 }
 \keyword{internal}
