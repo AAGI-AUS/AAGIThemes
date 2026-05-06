@@ -19,13 +19,19 @@
 #' @family tables
 #' @export
 theme_gt_aagi <- function(x) {
+  # check if object is a `gt_tbl` before proceeding
+  if (!inherits(x, "gt_tbl")) {
+    cli::cli_abort("{.var x} is not a {.code gt_tbl} object.")
+  }
+
   # check if Proxima Nova is installed, if not, falls back to Arial
   aagi_font <- c("Proxima Nova", "Arial")
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
 
-  x |>
+  x <-
+    x |>
     gt::opt_table_font(
       font = list(
         aagi_font,
@@ -47,4 +53,5 @@ theme_gt_aagi <- function(x) {
       table.font.color = aagi_black
     ) |>
     gt::sub_missing(missing_text = "")
+  return(x)
 }

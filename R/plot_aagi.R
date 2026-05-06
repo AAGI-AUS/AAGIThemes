@@ -1,18 +1,27 @@
 #' Basic X-Y Plotting Using a Unified AAGI Style and Typography
 #'
-#' @description Basic X-Y plotting that follows \acronym{AAGI} colour and
-#'   typography guidelines that uses (hopefully) sensible defaults.
+#' @description Basic plot that follow a standard \acronym{AAGI} style
+#'   including typography guidelines that uses (hopefully) sensible defaults.
+#'   All valid `plot()` options are supported through `...`, for *e.g.*,
+#'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
+#'   colour.
 #'
 #' @param x the coordinates of points in the plot. Alternatively, a single
 #'  plotting structure, function or any \R _object with a plot method_ can be
 #'  provided.
+#' @param y The y coordinates of points in the plot, optional. If `y` is `NULL`,
+#'   `x` is assumed to describe the `y` values, and an index is used for `x`.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).  The most commonly used argument would be
 #'   `y` for the factor to use for the y-axis, `type` describing what type of
-#'   plot should be drawn, or `col` for point colour (defaults to AAGI Black).
+#'   plot should be drawn, or `col` for point colour (defaults to AAGI Black),
+#'   a very dark grey.
 #'
-#' @seealso [graphics::plot()] for full documentation of the basic plotting
-#'  capabilities.
+#' @seealso
+#' * [graphics::plot()] for full documentation of the basic plotting
+#'   capabilities.
+#' * barplot_aagi, boxplot_aagi, hist_aagi
+#' @family Baseplots
 #' @examples
 #' library(datasets)
 #'
@@ -24,37 +33,25 @@
 #' plot_aagi(pressure)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#' @returns Called for its side effect of creating a plot with the
-#' \acronym{AAGI} style.
+#' @returns A `plot` object, returned invisibly (see [graphics::plot()]).
 #' @export
-#'
-plot_aagi <- function(x, ...) {
-  # Extract ... into a list to manipulate col
-  dots <- list(...)
 
-  # Handle col parameter: default to AAGI Black and convert
-  if (is.null(dots$col)) {
-    dots$col <- "AAGI Black"
-  }
+plot_aagi <- function(x, y = NULL, ...) {
+  dots <- .normalise_dots_colours(
+    list(...),
+    defaults = list(col = "AAGI Black")
+  )
 
-  # Validate col is scalar character
-  if (!rlang::is_scalar_character(dots$col)) {
-    dots$col <- "AAGI Black"
-  }
-
-  # Convert AAGI colour names to hex
-  dots$col <- .convert_aagi_colour(dots$col)
-
-  withr::local_par(par_aagi())
+  withr::local_par(.par_aagi())
   showtext::showtext_begin()
-  on.exit(showtext::showtext_end(), add = TRUE)
+  withr::defer(showtext::showtext_end())
 
-  # Use do.call with explicit col handling for formula support
-  if (rlang::is_formula(x)) {
-    # For formula interface, construct the call carefully
-    graphics::plot(x, col = dots$col, ...)
+  args <- if (is.null(y)) {
+    c(list(x), dots)
   } else {
-    # For regular interface, use do.call
-    do.call(graphics::plot, c(list(x = x), dots))
+    c(list(x, y), dots)
   }
+
+  p <- do.call(graphics::plot, args)
+  invisible(p)
 }

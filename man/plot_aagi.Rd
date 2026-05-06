@@ -4,25 +4,31 @@
 \alias{plot_aagi}
 \title{Basic X-Y Plotting Using a Unified AAGI Style and Typography}
 \usage{
-plot_aagi(x, ...)
+plot_aagi(x, y = NULL, ...)
 }
 \arguments{
 \item{x}{the coordinates of points in the plot. Alternatively, a single
 plotting structure, function or any \R \emph{object with a plot method} can be
 provided.}
 
+\item{y}{The y coordinates of points in the plot, optional. If \code{y} is \code{NULL},
+\code{x} is assumed to describe the \code{y} values, and an index is used for \code{x}.}
+
 \item{...}{Arguments to be passed to methods, such as graphical parameters
 (see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
 \code{y} for the factor to use for the y-axis, \code{type} describing what type of
-plot should be drawn, or \code{col} for point colour (defaults to AAGI Black).}
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
+a very dark grey.}
 }
 \value{
-Called for its side effect of creating a plot with the
-\acronym{AAGI} style.
+A \code{plot} object, returned invisibly (see \code{\link[graphics:plot]{graphics::plot()}}).
 }
 \description{
-Basic X-Y plotting that follows \acronym{AAGI} colour and
-typography guidelines that uses (hopefully) sensible defaults.
+Basic plot that follow a standard \acronym{AAGI} style
+including typography guidelines that uses (hopefully) sensible defaults.
+All valid \code{plot()} options are supported through \code{...}, for \emph{e.g.},
+\code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
+colour.
 }
 \examples{
 library(datasets)
@@ -36,9 +42,18 @@ plot_aagi(pressure)
 
 }
 \seealso{
-\code{\link[graphics:plot]{graphics::plot()}} for full documentation of the basic plotting
+\itemize{
+\item \code{\link[graphics:plot]{graphics::plot()}} for full documentation of the basic plotting
 capabilities.
+\item barplot_aagi, boxplot_aagi, hist_aagi
+}
+
+Other Baseplots:
+\code{\link[=barplot_aagi]{barplot_aagi()}},
+\code{\link[=boxplot_aagi]{boxplot_aagi()}},
+\code{\link[=hist_aagi]{hist_aagi()}}
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
+\concept{Baseplots}

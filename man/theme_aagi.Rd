@@ -9,25 +9,34 @@ theme_aagi(
   major_grid = FALSE,
   minor_grid = FALSE,
   border = FALSE,
+  showtext_auto = TRUE,
   ...
 )
 }
 \arguments{
-\item{base_size}{\code{Numeric}.  The figure's base size, set to 12 by default.
+\item{base_size}{\code{Numeric}. The figure's base size, set to 12 by default.
 For presentations using a larger \code{base_size} will make the fonts larger and
 more suitable for presentation slides, \emph{e.g.}, \code{base_size = 24}.}
 
-\item{major_grid}{\code{Boolean}.  Include major gridlines in the panel.  Defaults
-to \code{FALSE} with major gridlines, including those between facets not
-included.}
+\item{major_grid}{\code{Boolean}. Include major gridlines in the panel. Defaults
+to \code{FALSE}.}
 
-\item{minor_grid}{\code{Boolean}.  Include minor gridlines in the panel.  Defaults
-to \code{FALSE} with minor gridlines not included.}
+\item{minor_grid}{\code{Boolean}. Include minor gridlines in the panel. Defaults
+to \code{FALSE}.}
 
 \item{border}{\code{Boolean}. Include a border around the figure on all four
-sides, \emph{i.e.}, x-axis, y-axis, top and right sides all will have a black
-border not just x-axis and y-axis.  Defaults to \code{FALSE} with only the
-x-axis and y-axis being outlined in dark grey.}
+sides. Defaults to \code{FALSE}.}
+
+\item{showtext_auto}{\code{Boolean}. If \code{TRUE}, enable \code{showtext::showtext_auto()}
+that provides full \acronym{AAGI} font support. Defaults to \code{TRUE}.
+
+\strong{Important:} \code{showtext::showtext_auto()} changes global rendering
+behaviour for the entire R session/device. This can affect subsequent plots
+(including non-\pkg{AAGIThemes} plots) until it is disabled. However, since
+it is anticipated that this theme will only ever be used for official
+\acronym{AAGI} work, this seems unlikely to be an issue.
+
+To undo, call \code{\link[=showtext_aagi_off]{showtext_aagi_off()}}.}
 
 \item{...}{Other arguments as passed along to \code{\link[ggplot2:theme]{ggplot2::theme()}}.}
 }
@@ -37,49 +46,17 @@ guidelines that uses (hopefully) sensible defaults for \CRANpkg{ggplot2}
 graphics.
 }
 \examples{
-
 library("ggplot2")
 
-# Plotting discrete values
-p1 <- ggplot(mtcars) +
-  geom_point(aes(
-    x = wt,
-    y = mpg,
-    colour = factor(gear)
-  )) +
-  facet_wrap(~am)
+p <- ggplot(mtcars) +
+  geom_point(aes(wt, mpg)) +
+  theme_aagi(showtext_auto = TRUE)
 
-p1 + theme_aagi()
+p
 
-# Plotting continuous values
-df <- reshape2::melt(outer(1:4, 1:4), varnames = c("X1", "X2"))
+# Disable global showtext auto afterwards (recommended)
+showtext_aagi_off()
 
-p2 <- ggplot(df, aes(X1, X2)) +
-  geom_tile(aes(fill = value)) +
-  geom_point(aes(size = value))
-p2 + theme_aagi()
-
-# Using a larger base size for presentation slides
-p1 + theme_aagi(base_size = 24)
-
-# Plotting using minor gridlines
-p1 + theme_aagi(minor_grid = TRUE)
-
-# Plotting using major gridlines
-p1 + theme_aagi(major_grid = TRUE)
-
-p1 + theme_aagi(border = TRUE)
-
-# Plotting with both gridlines and border
-p1 + theme_aagi(
-  minor_grid = TRUE,
-  major_grid = TRUE,
-  border = TRUE
-)
-
-}
-\seealso{
-theme_aagi_map
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}

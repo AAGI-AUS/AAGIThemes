@@ -2,6 +2,9 @@
 #'
 #' @description Basic barplots that follow a standard \acronym{AAGI} style
 #'   including typography guidelines that uses (hopefully) sensible defaults.
+#'   All valid `barplot()` options are supported through `...`, for *e.g.*,
+#'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
+#'   colour.
 #'
 #' @param height Either a vector or matrix of values describing the bars which
 #'   make up the plot.  If height is a vector, the plot consists of a sequence
@@ -11,39 +14,48 @@
 #'   heights of stacked sub-bars making up the bar.  If height is a matrix and
 #'   beside is `TRUE`, then the values in each column are juxtaposed rather than
 #'   stacked.
-#' @param col Colour to use as fill for bars  Defaults to "AAGI Black", a very
-#'   dark grey.  Can be supplied as a named AAGI colour; *e.g.*, "AAGI Black";
-#'   a named colour, "black"; or a hexadecimal code, "#414042".
-#' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par()]).
+#' @inheritParams plot_aagi
 #'
+#' @seealso
+#' * [graphics::plot()] for full documentation of the basic plotting
+#'   capabilities.
+#' * plot_aagi, boxplot_aagi, hist_aagi
+#' @family Baseplots
 #' @examples
 #'
 #' barplot_aagi(islands)
+#' barplot_aagi(islands, col = "AAGI Orange")
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#'
-#' @returns Called for its side effect of creating a barplot with the
-#' \acronym{AAGI} style.
+#' @returns A `barplot` object, returned invisibly (see [graphics::barplot()]).
 #'
 #' @export
-#'
-barplot_aagi <- function(height, col = "AAGI Black", ...) {
-  # Validate and convert colour
-  if (!rlang::is_scalar_character(col)) {
-    col <- "AAGI Black"
-  }
-  col <- .convert_aagi_colour(col)
 
-  withr::local_par(.new = par_aagi())
-  showtext::showtext_begin()
-  on.exit(showtext::showtext_end(), add = TRUE)
-
-  graphics::barplot(
-    height = height,
-    col = col,
-    border = col,
-    xaxs = "i",
-    ...
+barplot_aagi <- function(height, ...) {
+  dots <- .normalise_dots_colours(
+    list(...),
+    defaults = list(col = "AAGI Black", border = "AAGI Black")
   )
+
+  # Optional: warn about unintended recycling
+  n_bars <- if (is.matrix(height)) ncol(height) else length(height)
+  if (!(length(dots$col) == 1L || length(dots$col) == n_bars)) {
+    cli::cli_warn(c(
+      "{.arg col} has length {length(dots$col)}, but the barplot has {n_bars} bars.",
+      "i" = "R will recycle colours; consider supplying length 1 or {n_bars}."
+    ))
+  }
+
+  withr::local_par(.par_aagi())
+  showtext::showtext_begin()
+  withr::defer(showtext::showtext_end())
+
+  bp <- do.call(
+    graphics::barplot,
+    c(
+      list(height = height, xaxs = "i"),
+      dots
+    )
+  )
+  return(invisible(bp))
 }

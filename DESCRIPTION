@@ -1,6 +1,6 @@
 Package: AAGIThemes
 Title: AAGI Branding for Graphical and Tabular Outputs
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: c(
     person("Adam H.", "Sparks", , "adam.sparks@curtin.edu.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0061-8359")),
@@ -9,9 +9,9 @@ Authors@R: c(
     person("Jimmy", "Ng", , "jimmy.ng@dpird.wa.gov.au", role = "ctb"),
     person("Tinula", "Kariyawasam", , "tinula.kariyawasam@dpird.wa.gov.au", role = "aut"),
     person("Matt", "Cowgill", , "matthew.cowgill@grattaninstitute.edu.au", role = "aut",
-           comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
+           comment = "Wrote portions of package used in creating this one\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
     person("Will", "Mackey", , "william.mackey@grattaninstitute.edu.au", role = "aut",
-           comment = "Wrote major portions of package for saving charts\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
+           comment = "Wrote portions of package used in creating this one\n                    for 'Grattan' package, adapted to 'AAGIThemes' under 'MIT'\n                    licence."),
     person("Curtin University", role = c("cph", "fnd"),
            comment = c("Provided support through Adam Sparks's time", ROR = "02n415q13")),
     person("Grains Research and Development Corporation", role = c("fnd", "cph"),
@@ -26,19 +26,17 @@ URL: https://github.com/AAGI-AUS/AAGIThemes,
     https://AAGI-AUS.github.io/AAGIThemes/
 BugReports: https://github.com/AAGI-AUS/AAGIThemes/issues
 Depends: 
-    R (>= 4.0.0)
+    R (>= 4.1.0)
 Imports:
     AAGIPalettes,
     cli,
     flextable,
-    fs,
     ggplot2 (>= 3.3.5),
+    grDevices,
     grid,
     gt,
     magick,
     officer,
-    rlang,
-    scales,
     showtext,
     sysfonts,
     systemfonts,
@@ -53,6 +51,7 @@ Suggests:
     rmarkdown,
     roxyglobals,
     rsvg,
+    scales,
     sf,
     spelling,
     testthat (>= 3.0.0),

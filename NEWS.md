@@ -1,3 +1,69 @@
+# AAGIThemes 1.0.2
+
+## New features
+
+* `plot_aagi()` now accepts an explicit `y` argument, supporting both `plot_aagi(x)` and `plot_aagi(x, y)` calling conventions.
+
+* `hist_aagi()` default histogram breaks changed from Sturges' rule to **Scott's rule**, which is more robust for skewed and heavy-tailed data.
+  The `breaks` argument now accepts `"scott"` (default), `"sturges"`, `"fd"` (Freedman-Diaconis), or `"exact"` (fixed bin width of 1 for integer counts).
+
+* `theme_gt_aagi()` now validates that `x` is a `gt_tbl` object before
+  processing, providing a clear, user-friendly error message rather than
+  a cryptic internal `{gt}` error.
+
+## Bug fixes
+
+* Fixed a typo where the internal function `.set_aagi_font()` was mistakenly prefixed as `..set_aagi_font()` in one call path.
+
+* Fixed `hist_aagi()` break computation to gracefully handle degenerate inputs (constant vectors or single-value data) without errors.
+
+* Fixed panel graphics issues in `hist_aagi()` where custom axis settings were not applied correctly when `par(mfrow)` / `par(mfcol)` was active.
+
+* Fixed `cli::cli_warn()` call in `barplot_aagi()` to wrap the message vector in `c()`, resolving a malformed warning.
+
+* Fixed recycling warning in `barplot_aagi()` to correctly count bars for matrix inputs (now uses `ncol()` for matrices instead of `length()`).
+
+* Fixed `theme_gt_aagi()` to use the native pipe (`|>`) consistently throughout the `{gt}` pipeline.
+
+* Fixed documentation for `hist_aagi()`: the x-axis label defaults to an empty string, not the variable name from data.
+
+## Improvements
+
+* The `col` argument has been moved from explicit function parameters into `...` across all four base graphics wrappers (`barplot_aagi()`,
+  `boxplot_aagi()`, `hist_aagi()`, `plot_aagi()`), providing a consistent interface and simplifying internal colour handling.
+
+* `watermark()` input validation overhauled: uses dedicated internal assertion helpers (`.assert_scalar_string()`, `.assert_scalar_number()`, `.assert_one_of()`) with clearer `{cli}`-formatted error messages.
+
+* Font resolution in internal utilities now uses a per-session cache (`.aagi_font_cache`) to avoid repeated `systemfonts::match_fonts()` calls, improving load performance.
+
+* DPI warning in `add_aagi_logo()` softened to an informational message rather than a warning.
+
+* Reduced cyclomatic complexity in `watermark()` and `hist_aagi()` helper functions.
+
+## Internal changes
+
+* Removed dependency on `{rlang}` for type-checking; all validation now uses idiomatic base R (`is.character()`, `length()`, `is.na()`, etc.).
+
+* Internal font helpers (`.set_aagi_font()`, `.par_aagi()`, `.register_font()`, `.font_available()`) are now documented with `@dev`/`@keywords internal` and consolidated in `utils.R`.
+
+* `.set_aagi_font()` renamed from `set_aagi_font()` (prefixed with `.` to signal its internal-only status).
+
+* Removed internal PDF copy of AAGI style guidelines, these are available from GitHub, <https://github.com/AAGI-AUS/AAGI-Style-Guide-and-Logos>.
+
+## Documentation
+
+* `@returns` tags standardised across all four base graphics functions (`barplot_aagi()`, `boxplot_aagi()`, `hist_aagi()`, `plot_aagi()`): each now leads with the return value first, then notes the side-effect.
+
+* Added `@family Baseplots` and `@seealso` cross-references linking all four base graphics functions to each other.
+
+* Added missing `@author` tag to `watermark()`.
+
+* Clarified `breaks` options in `hist_aagi()` documentation.
+
+## Testing
+
+* Tests updated to match renamed internal functions and revised function signatures.
+
 # AAGIThemes 1.0.1
 
 ## Bug fixes

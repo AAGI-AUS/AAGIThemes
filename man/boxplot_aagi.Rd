@@ -4,16 +4,7 @@
 \alias{boxplot_aagi}
 \title{Basic Boxplots Using a Unified AAGI Style and Typography}
 \usage{
-boxplot_aagi(
-  x,
-  main = "",
-  sub = "",
-  xlab = "",
-  ylab = "",
-  col = "white",
-  pch = 16,
-  ...
-)
+boxplot_aagi(x, main = "", sub = "", xlab = "", ylab = "", pch = 16, ...)
 }
 \arguments{
 \item{x}{for specifying data from which the boxplots are to be produced.
@@ -30,22 +21,23 @@ be blank.}
 
 \item{ylab}{Y-axis label.  Optional.}
 
-\item{col}{Colour to use as fill for boxes  Defaults to white.  Can be
-supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
-"Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
-
 \item{pch}{plotting 'character', \emph{i.e.}, symbol to use.}
 
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).}
+(see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
+\code{y} for the factor to use for the y-axis, \code{type} describing what type of
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
+a very dark grey.}
 }
 \value{
-Called for its side effect of creating a boxplot with the
-\acronym{AAGI} style.
+A \code{boxplot} object, returned invisibly (see \code{\link[graphics:boxplot]{graphics::boxplot()}}).
 }
 \description{
-Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
-that uses (hopefully) sensible defaults.
+Basic boxplots that follow a standard \acronym{AAGI} style
+including typography guidelines that uses (hopefully) sensible defaults.
+All valid \code{boxplot()} options are supported through \code{...}, for \emph{e.g.},
+\code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
+colour.
 }
 \examples{
 boxplot_aagi(decrease ~ treatment,
@@ -53,6 +45,7 @@ boxplot_aagi(decrease ~ treatment,
   xlab = "treatment",
   ylab = "decrease"
 )
+
 }
 \seealso{
 \itemize{
@@ -60,7 +53,19 @@ boxplot_aagi(decrease ~ treatment,
 capabilities, and
 \item \code{\link[graphics:par]{graphics::par()}} for full documentation of \code{pch}.
 }
+
+\itemize{
+\item \code{\link[graphics:boxplot]{graphics::boxplot()}} for full documentation of the basic plotting
+capabilities.
+\item barplot_aagi, hist_aagi, plot_aagi
+}
+
+Other Baseplots:
+\code{\link[=barplot_aagi]{barplot_aagi()}},
+\code{\link[=hist_aagi]{hist_aagi()}},
+\code{\link[=plot_aagi]{plot_aagi()}}
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
+\concept{Baseplots}

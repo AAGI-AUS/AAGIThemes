@@ -4,7 +4,7 @@
 \alias{barplot_aagi}
 \title{Basic Barplots Using a Unified AAGI Style and Typography}
 \usage{
-barplot_aagi(height, col = "AAGI Black", ...)
+barplot_aagi(height, ...)
 }
 \arguments{
 \item{height}{Either a vector or matrix of values describing the bars which
@@ -16,26 +16,41 @@ heights of stacked sub-bars making up the bar.  If height is a matrix and
 beside is \code{TRUE}, then the values in each column are juxtaposed rather than
 stacked.}
 
-\item{col}{Colour to use as fill for bars  Defaults to "AAGI Black", a very
-dark grey.  Can be supplied as a named AAGI colour; \emph{e.g.}, "AAGI Black";
-a named colour, "black"; or a hexadecimal code, "#414042".}
-
 \item{...}{Arguments to be passed to methods, such as graphical parameters
-(see \code{\link[graphics:par]{graphics::par()}}).}
+(see \code{\link[graphics:par]{graphics::par()}}).  The most commonly used argument would be
+\code{y} for the factor to use for the y-axis, \code{type} describing what type of
+plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
+a very dark grey.}
 }
 \value{
-Called for its side effect of creating a barplot with the
-\acronym{AAGI} style.
+A \code{barplot} object, returned invisibly (see \code{\link[graphics:barplot]{graphics::barplot()}}).
 }
 \description{
 Basic barplots that follow a standard \acronym{AAGI} style
 including typography guidelines that uses (hopefully) sensible defaults.
+All valid \code{barplot()} options are supported through \code{...}, for \emph{e.g.},
+\code{col} to set the colour.  Defaults to "AAGI Black", a very dark grey
+colour.
 }
 \examples{
 
 barplot_aagi(islands)
+barplot_aagi(islands, col = "AAGI Orange")
 
+}
+\seealso{
+\itemize{
+\item \code{\link[graphics:plot]{graphics::plot()}} for full documentation of the basic plotting
+capabilities.
+\item plot_aagi, boxplot_aagi, hist_aagi
+}
+
+Other Baseplots:
+\code{\link[=boxplot_aagi]{boxplot_aagi()}},
+\code{\link[=hist_aagi]{hist_aagi()}},
+\code{\link[=plot_aagi]{plot_aagi()}}
 }
 \author{
 Adam Sparks, \email{adam.sparks@curtin.edu.au}
 }
+\concept{Baseplots}

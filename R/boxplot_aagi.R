@@ -1,7 +1,10 @@
 #' Basic Boxplots Using a Unified AAGI Style and Typography
 #'
-#' Basic boxplots that follow \acronym{AAGI} colour and typography guidelines
-#'   that uses (hopefully) sensible defaults.
+#' @description Basic boxplots that follow a standard \acronym{AAGI} style
+#'   including typography guidelines that uses (hopefully) sensible defaults.
+#'   All valid `boxplot()` options are supported through `...`, for *e.g.*,
+#'   `col` to set the colour.  Defaults to "AAGI Black", a very dark grey
+#'   colour.
 #'
 #' @param x for specifying data from which the boxplots are to be produced.
 #'   Either a numeric vector, or a single list containing such vectors.
@@ -12,12 +15,8 @@
 #'   be blank.
 #' @param xlab X-axis label.  Optional.
 #' @param ylab Y-axis label.  Optional.
-#' @param col Colour to use as fill for boxes  Defaults to white.  Can be
-#'   supplied as a named AAGI colour, *e.g.*, "AAGI Orange"; named colour,
-#'   "Orange"; or or a hexadecimal code, *e.g.*, "#ec8525".
 #' @param pch plotting 'character', \emph{i.e.}, symbol to use.
-#' @param ... Arguments to be passed to methods, such as graphical parameters
-#'   (see [graphics::par()]).
+#' @inheritParams plot_aagi
 #'
 #' @seealso
 #'  * [graphics::boxplot()] for full documentation of the basic boxplot
@@ -29,8 +28,13 @@
 #'   xlab = "treatment",
 #'   ylab = "decrease"
 #' )
-#' @returns Called for its side effect of creating a boxplot with the
-#'  \acronym{AAGI} style.
+#'
+#' @seealso
+#' * [graphics::boxplot()] for full documentation of the basic plotting
+#'   capabilities.
+#' * barplot_aagi, hist_aagi, plot_aagi
+#' @family Baseplots
+#' @returns A `boxplot` object, returned invisibly (see [graphics::boxplot()]).
 #' @export
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
@@ -40,37 +44,44 @@ boxplot_aagi <- function(
   sub = "",
   xlab = "",
   ylab = "",
-  col = "white",
   pch = 16,
   ...
 ) {
-  # Validate and convert colour
-  if (!rlang::is_scalar_character(col)) {
-    col <- "white"
-  }
-  col <- .convert_aagi_colour(col)
-
-  # set new pars
-  withr::local_par(.new = par_aagi())
-  graphics::plot.new()
-  showtext::showtext_begin()
-  on.exit(showtext::showtext_end(), add = TRUE)
-
-  graphics::boxplot(
-    x,
-    col = scales::alpha(col, 0.5),
-    border = AAGIPalettes::colour_as_hex("AAGI Black"),
-    boxwex = 0.8,
-    staplelty = 0,
-    outwex = 0.5,
-    cex = 1,
-    whisklty = "solid",
-    title = list(line = 2),
-    main = main,
-    sub = sub,
-    xlab = xlab,
-    ylab = ylab,
-    pch = pch,
-    ...
+  dots <- .normalise_dots_colours(
+    list(...),
+    defaults = list(col = "white", border = "AAGI Black")
   )
+
+  colour <- dots$col
+  border <- dots$border
+  dots$col <- NULL
+  dots$border <- NULL
+
+  withr::local_par(.par_aagi())
+  showtext::showtext_begin()
+  withr::defer(showtext::showtext_end())
+
+  bx <- do.call(
+    graphics::boxplot,
+    c(
+      list(
+        x,
+        col = grDevices::adjustcolor(colour, 0.5),
+        border = border,
+        boxwex = 0.8,
+        staplelty = 0,
+        outwex = 0.5,
+        cex = 1,
+        whisklty = "solid",
+        title = list(line = 2),
+        main = main,
+        sub = sub,
+        xlab = xlab,
+        ylab = ylab,
+        pch = pch
+      ),
+      dots
+    )
+  )
+  return(invisible(bx))
 }

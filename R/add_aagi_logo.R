@@ -53,12 +53,17 @@ add_aagi_logo <- function(
   # see also: <https://www.danielphadley.com/ggplot-logo/>
 
   # --- Validate input ---
-  if (!rlang::is_scalar_double(logo_width) || logo_width < 4.6) {
+  if (
+    !is.numeric(logo_width) ||
+      length(logo_width) != 1L ||
+      is.na(logo_width) ||
+      logo_width < 4.6
+  ) {
     cli::cli_abort(
       "{.arg logo_width} must be a single numeric value >= 4.6 cm."
     )
   }
-  if (fs::file_exists(file_out) && !overwrite) {
+  if (file.exists(file_out) && !overwrite) {
     cli::cli_abort(
       "{.var file_out} {file_out} already exists. Use {.code overwrite = TRUE}
       or choose a new name."
@@ -72,17 +77,17 @@ add_aagi_logo <- function(
   plot_height <- info$height
 
   dpi_density <- info$density
-  dpi <- tryCatch(
-    {
-      as.numeric(strsplit(dpi_density, "x")[[1]][1])
-    },
-    error = function(e) NA_real_
-  )
+  dpi <- .parse_magick_density_dpi(dpi_density)
 
-  if (is.na(dpi) || dpi <= 0) {
-    dpi <- 72 # conservative fallback
-    cli::cli_warn(
-      "Image DPI not available; assuming 72 DPI for logo sizing."
+  if (is.na(dpi)) {
+    dpi <- 72
+    cli::cli_warn("Image DPI not available; assuming 72 DPI for logo sizing.")
+  } else if (
+    nzchar(trimws(as.character(dpi_density))) &&
+      !grepl("[xX]", as.character(dpi_density))
+  ) {
+    cli::cli_inform(
+      "Image density reported as a single value; treating as DPI."
     )
   }
 
@@ -154,5 +159,29 @@ add_aagi_logo <- function(
     "Inserted logo width: {round(actual_cm, 2)} cm (DPI = {dpi})."
   )
 
-  invisible(NULL)
+  return(invisible(NULL))
+}
+
+#' @keywords internal
+.parse_magick_density_dpi <- function(density) {
+  d <- if (is.null(density) || length(density) == 0L) {
+    ""
+  } else {
+    as.character(density)
+  }
+  d <- trimws(d)
+  if (!nzchar(d)) {
+    return(NA_real_)
+  }
+
+  # Extract first number (works for "72x72", "72", "72 X 72", etc.)
+  dpi <- suppressWarnings(as.numeric(sub(
+    "^\\s*([0-9]+(?:\\.[0-9]+)?).*$",
+    "\\1",
+    d
+  )))
+  if (!is.finite(dpi) || dpi <= 0) {
+    return(NA_real_)
+  }
+  return(dpi)
 }
