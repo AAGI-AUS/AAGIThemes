@@ -28,10 +28,6 @@ be blank.}
 \code{y} for the factor to use for the y-axis, \code{type} describing what type of
 plot should be drawn, or \code{col} for point colour (defaults to AAGI Black),
 a very dark grey.}
-
-\item{col}{Colour to use as fill for boxes  Defaults to white.  Can be
-supplied as a named AAGI colour, \emph{e.g.}, "AAGI Orange"; named colour,
-"Orange"; or or a hexadecimal code, \emph{e.g.}, "#ec8525".}
 }
 \value{
 A \code{boxplot} object, returned invisibly (see \code{\link[graphics:boxplot]{graphics::boxplot()}}).
