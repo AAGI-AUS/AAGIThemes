@@ -19,5 +19,5 @@
 # flir files
 ^flir$
 ^man/dot-compute_hist_breaks_integer\.Rd$
-^man/dot-.set_aagi_font\.Rd$
+^man/dot-set_aagi_font\.Rd$
 ^man/dot-normalise_one_dot_colour\.Rd$

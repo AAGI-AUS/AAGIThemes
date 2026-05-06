@@ -116,7 +116,7 @@
 #'
 #' @returns A character string with a font family name.
 #' @dev
-..set_aagi_font <- function() {
+.set_aagi_font <- function() {
   font <- .choose_aagi_font(c("Proxima Nova", "Arial"))
   if (is.na(font)) "sans" else font
 }
