@@ -27,9 +27,7 @@
 #' barplot_aagi(islands, col = "AAGI Orange")
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#' @returns `NULL`, returned invisibly, consistent with [graphics::barplot()].
-#'   Called primarily for its side effect of creating a plot with the
-#'   \acronym{AAGI} style.'
+#' @returns A `barplot` object, returned invisibly (see [graphics::barplot()]).
 #'
 #' @export
 

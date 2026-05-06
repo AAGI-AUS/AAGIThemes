@@ -31,9 +31,7 @@
 #' plot_aagi(pressure)
 #'
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
-#' @returns `NULL`, returned invisibly, consistent with [graphics::plot()].
-#'   Called primarily for its side effect of creating a plot with the
-#'   \acronym{AAGI} style.
+#' @returns A `plot` object, returned invisibly (see [graphics::plot()]).
 #' @export
 
 plot_aagi <- function(x, ...) {

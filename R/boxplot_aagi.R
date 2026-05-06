@@ -37,9 +37,7 @@
 #'   capabilities.
 #' * barplot_aagi, hist_aagi, plot_aagi
 #' @family Baseplots
-#' @returns `NULL`, returned invisibly, consistent with [graphics::boxplot()].
-#'   Called primarily for its side effect of creating a plot with the
-#'   \acronym{AAGI} style.
+#' @returns A `boxplot` object, returned invisibly (see [graphics::boxplot()]).
 #' @export
 #' @author Adam Sparks, \email{adam.sparks@@curtin.edu.au}
 
