@@ -33,7 +33,7 @@
 #' @export
 
 plot_aagi <- function(x, ...) {
-  dots <- .normalize_dots_colours(
+  dots <- .normalise_dots_colours(
     list(...),
     defaults = list(col = "AAGI Black")
   )

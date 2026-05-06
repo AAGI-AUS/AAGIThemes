@@ -48,7 +48,7 @@ boxplot_aagi <- function(
   pch = 16,
   ...
 ) {
-  dots <- .normalize_dots_colours(
+  dots <- .normalise_dots_colours(
     list(...),
     defaults = list(col = "white", border = "AAGI Black")
   )

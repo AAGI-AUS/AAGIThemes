@@ -71,8 +71,8 @@ set_aagi_font <- function() {
       },
       error = function(e) {
         cli::cli_warn(
-          "Could not convert {.var {x}} to a hex colour. Returning original
-          value."
+          "Could not convert {.var {x}} to a hex colour. ",
+          "Returning original value."
         )
         return(x)
       }
@@ -93,12 +93,12 @@ set_aagi_font <- function() {
 #'
 #' @param dots A list, typically created with `list(...)`.
 #' @param defaults Named list of defaults, e.g. `list(col = "AAGI Black")`.
-#'   Only names present here will be normalized.
+#'   Only names present here will be normalised.
 #'
-#' @returns `dots`, with normalized/converted values for any matching names.
+#' @returns `dots`, with normalised/converted values for any matching names.
 #' @dev
 
-.normalize_dots_colours <- function(dots, defaults = list(col = "AAGI Black")) {
+.normalise_dots_colours <- function(dots, defaults = list(col = "AAGI Black")) {
   stopifnot(is.list(dots), is.list(defaults))
   if (
     is.null(names(defaults)) ||
