@@ -31,48 +31,20 @@ watermark <- function(
   fontface = "bold",
   angle = 22
 ) {
-  # Validate watermark: must be scalar character, non-empty (after trim), not NA
-  if (
-    !is.character(watermark) ||
-      is.na(watermark) ||
-      !nzchar(trimws(watermark))
-  ) {
-    cli::cli_abort(
-      "{.var watermark} must be a non-empty character string."
-    )
-  }
+  .assert_scalar_string(watermark, "watermark", trim = TRUE, nonempty = TRUE)
+  .assert_scalar_number(fontsize, "fontsize", min = 0, inclusive = FALSE)
+  .assert_scalar_number(alpha, "alpha", min = 0, max = 1, inclusive = TRUE)
+  .assert_scalar_number(angle, "angle") # any numeric value ok
+  .assert_scalar_string(colour, "colour", trim = FALSE, nonempty = TRUE)
 
-  if (!is.numeric(x) && length(x) != 1 || fontsize <= 0) {
-    cli::cli_abort("{.var fontsize} must be a positive number.")
-  }
-
-  if (!is.numeric(x) && length(x) != 1 || alpha < 0 || alpha > 1) {
-    cli::cli_abort("{.var alpha} must be between 0 and 1.")
-  }
-
-  if (!is.numeric(angle)) {
-    cli::cli_abort("{.var angle} must be a number.")
-  }
-
-  if (!is.character(colour)) {
-    cli::cli_abort("{.var colour} must be a single character string.")
-  }
-
-  # Validate fontface against allowed values BEFORE using it
   valid_fontfaces <- c("plain", "bold", "italic", "bold.italic")
-  if (!fontface %in% valid_fontfaces) {
-    cli::cli_abort(
-      "{.var fontface} {.val {fontface}} is not valid. 
-      Valid options: {.or {valid_fontfaces}}."
-    )
-  }
+  .assert_one_of(fontface, "fontface", valid_fontfaces)
 
-  # Create watermark grob and return as annotation layer
   watermark_grob <- grid::textGrob(
-    watermark,
+    label = watermark,
     gp = grid::gpar(
       fontsize = fontsize,
-      colour = colour,
+      col = colour, # grid uses 'col' (though 'colour' often works too)
       alpha = alpha,
       fontface = fontface
     ),
@@ -80,4 +52,96 @@ watermark <- function(
   )
 
   return(ggplot2::annotation_custom(grob = watermark_grob))
+}
+
+#' @keywords internal
+.assert_scalar_number <- function(x, name, min = -Inf, max = Inf) {
+  if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
+    cli::cli_abort("{.var {name}} must be a single number.")
+  }
+
+  if (x < min || x > max) {
+    cli::cli_abort("{.var {name}} must be between {min} and {max}.")
+  }
+
+  return(invisible(x))
+}
+
+#' @keywords internal
+.assert_scalar_number_gt <- function(x, name, min_exclusive = 0) {
+  if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
+    cli::cli_abort("{.var {name}} must be a single number.")
+  }
+
+  if (x <= min_exclusive) {
+    cli::cli_abort("{.var {name}} must be > {min_exclusive}.")
+  }
+
+  return(invisible(x))
+}
+
+#' @keywords internal
+.assert_scalar_number_gte <- function(x, name, min_inclusive = 0) {
+  if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
+    cli::cli_abort("{.var {name}} must be a single number.")
+  }
+
+  if (x < min_inclusive) {
+    cli::cli_abort("{.var {name}} must be >= {min_inclusive}.")
+  }
+
+  return(invisible(x))
+}
+
+#' @keywords internal
+.assert_scalar_string <- function(x, name, trim = TRUE, nonempty = TRUE) {
+  if (!is.character(x) || length(x) != 1L || is.na(x)) {
+    cli::cli_abort("{.var {name}} must be a single character string.")
+  }
+
+  y <- if (trim) trimws(x) else x
+  if (nonempty && !nzchar(y)) {
+    cli::cli_abort("{.var {name}} must be a non-empty character string.")
+  }
+
+  return(invisible(x))
+}
+
+#' @keywords internal
+.assert_one_of <- function(x, name, choices) {
+  if (!x %in% choices) {
+    cli::cli_abort(
+      "{.var {name}} {.val {x}} is not valid. Valid options: {.or {choices}}."
+    )
+  }
+  return(invisible(x))
+}
+
+#' @keywords internal
+.assert_scalar_number_gt <- function(x, name, min_exclusive = 0) {
+  if (!is.numeric(x) || length(x) != 1L || is.na(x)) {
+    cli::cli_abort("{.var {name}} must be a single number.")
+  }
+  if (x <= min_exclusive) {
+    cli::cli_abort("{.var {name}} must be > {min_exclusive}.")
+  }
+  return(invisible(x))
+}
+
+#' @keywords internal
+.assert_scalar_string <- function(x, name) {
+  if (!is.character(x) || length(x) != 1L || is.na(x) || !nzchar(trimws(x))) {
+    cli::cli_abort("{.var {name}} must be a non-empty character string.")
+  }
+  return(invisible(x))
+}
+
+#' @keywords internal
+.assert_one_of <- function(x, name, choices) {
+  if (!x %in% choices) {
+    cli::cli_abort(
+      "{.var {name}} {.val {x}} is not valid. Valid options: {.or {choices}}."
+    )
+  }
+  return(invisible(x))
 }
