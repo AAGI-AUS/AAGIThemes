@@ -48,7 +48,7 @@
 
 * `.set_aagi_font()` renamed from `set_aagi_font()` (prefixed with `.` to signal its internal-only status).
 
-* Removed internal PDF copy of AAGI style guidelines, these are available from GitHub, <https://github.com/AAGI-AUS/AAGI-Style-Guide-and-Logos>
+* Removed internal PDF copy of AAGI style guidelines, these are available from GitHub, <https://github.com/AAGI-AUS/AAGI-Style-Guide-and-Logos>.
 
 ## Documentation
 
