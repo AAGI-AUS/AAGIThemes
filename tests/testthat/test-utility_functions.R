@@ -1,10 +1,10 @@
-test_that("set_aagi_font returns a valid font", {
-  font <- set_aagi_font()
+test_that(".set_aagi_font returns a valid font", {
+  font <- .set_aagi_font()
   expect_true(font %in% c("Proxima Nova", "Arial"))
 })
 
-test_that("set_aagi_font returns a character string", {
-  font <- set_aagi_font()
+test_that(".set_aagi_font returns a character string", {
+  font <- .set_aagi_font()
   expect_type(font, "character")
   expect_length(font, 1)
 })
