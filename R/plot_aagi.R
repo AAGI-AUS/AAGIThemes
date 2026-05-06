@@ -9,6 +9,8 @@
 #' @param x the coordinates of points in the plot. Alternatively, a single
 #'  plotting structure, function or any \R _object with a plot method_ can be
 #'  provided.
+#' @param y The y coordinates of points in the plot, optional. If `y` is `NULL`,
+#'   `x` is assumed to describe the `y` values, and an index is used for `x`.
 #' @param ... Arguments to be passed to methods, such as graphical parameters
 #'   (see [graphics::par()]).  The most commonly used argument would be
 #'   `y` for the factor to use for the y-axis, `type` describing what type of
@@ -34,7 +36,7 @@
 #' @returns A `plot` object, returned invisibly (see [graphics::plot()]).
 #' @export
 
-plot_aagi <- function(x, ...) {
+plot_aagi <- function(x, y = NULL, ...) {
   dots <- .normalise_dots_colours(
     list(...),
     defaults = list(col = "AAGI Black")
@@ -44,6 +46,12 @@ plot_aagi <- function(x, ...) {
   showtext::showtext_begin()
   withr::defer(showtext::showtext_end())
 
-  p <- do.call(graphics::plot, c(list(x = x), dots))
-  return(invisible(p))
+  args <- if (is.null(y)) {
+    c(list(x), dots)
+  } else {
+    c(list(x, y), dots)
+  }
+
+  p <- do.call(graphics::plot, args)
+  invisible(p)
 }
