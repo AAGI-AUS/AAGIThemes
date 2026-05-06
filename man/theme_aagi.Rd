@@ -49,7 +49,7 @@ p1 <- ggplot(mtcars) +
   )) +
   facet_wrap(~am)
 
-p1 + theme_aagi()
+p1 + ta()
 
 # Plotting continuous values
 df <- reshape2::melt(outer(1:4, 1:4), varnames = c("X1", "X2"))

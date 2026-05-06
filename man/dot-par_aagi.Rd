@@ -7,10 +7,10 @@
 .par_aagi()
 }
 \value{
-A list object of graphical parameters
+A list object of graphical parameters.
 }
 \description{
-Sets the AAGI font and style for \R base graphics, these match the
+Sets the AAGI font and style for \R base graphics; these match the
 \code{theme_aagi()} theme settings for \CRANpkg{ggplot2}.
 }
 \keyword{internal}

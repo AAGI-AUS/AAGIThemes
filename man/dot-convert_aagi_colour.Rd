@@ -7,18 +7,17 @@
 .convert_aagi_colour(x)
 }
 \arguments{
-\item{x}{A character string name value to be checked if it's an AAGI colour
-and converted to the corresponding hex value. Can be a single value or a
+\item{x}{A character string to be checked/converted. Can be length-1 or a
 vector.}
 }
 \value{
-A character string or vector of hexadecimal colour codes, or the
-input unchanged if it's not an AAGI colour name.
+A character string/vector of hex colour codes, or the input
+unchanged if it's not an AAGI colour name.
 }
 \description{
 Checks a string value to see if it's a valid \acronym{AAGI} colour and
-converts it to the corresponding hexademcimal colour code. This is done
-by checking for an "AAGI" prefix in the string as all valid colours from
+converts it to the corresponding hexadecimal colour code. This is done by
+checking for an "AAGI " prefix in the string, as all valid colours from
 \pkg{AAGIPalettes} will have this.
 }
 \keyword{internal}
