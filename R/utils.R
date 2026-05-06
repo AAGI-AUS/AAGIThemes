@@ -1,31 +1,136 @@
+#' Font matching + caching utilities
+#'
+#' These helpers standardise font selection across macOS, Windows and Linux by
+#' using `systemfonts::match_fonts()` as the single source of truth (i.e., a
+#' font is considered "available" if it resolves to an on-disk font file).
+#'
+#' @keywords internal
+.aagi_font_cache <- new.env(parent = emptyenv())
+
+#' @keywords internal
+.is_font_path <- function(path) {
+  is.character(path) &&
+    length(path) == 1L &&
+    nzchar(path) &&
+    file.exists(path)
+}
+
+#' Resolve a font family name to a font file path (cached)
+#'
+#' @param font_name A font family name, e.g. "Proxima Nova".
+#' @returns A length-1 character path, or NA_character_ if not resolvable.
+#' @keywords internal
+.match_font_path <- function(font_name) {
+  key <- if (is.null(font_name) || length(font_name) != 1L) {
+    ""
+  } else {
+    trimws(as.character(font_name))
+  }
+
+  if (!nzchar(key)) {
+    return(NA_character_)
+  }
+
+  cached <- get0(key, envir = .aagi_font_cache, inherits = FALSE)
+  if (!is.null(cached)) {
+    return(cached)
+  }
+
+  path <- systemfonts::match_fonts(key)$path
+  if (!.is_font_path(path)) {
+    path <- NA_character_
+  }
+
+  assign(key, path, envir = .aagi_font_cache)
+  path
+}
+
+#' @keywords internal
+.font_available <- function(font_name) {
+  !is.na(.match_font_path(font_name))
+}
+
+#' Choose the first available font from a preferred list
+#'
+#' @param preferred Character vector of font family names.
+#' @returns Font family name, or NA_character_ if none are available.
+#' @keywords internal
+.choose_aagi_font <- function(preferred = c("Proxima Nova", "Arial")) {
+  for (f in preferred) {
+    if (.font_available(f)) {
+      return(f)
+    }
+  }
+  NA_character_
+}
+
+#' Register a font with sysfonts (and Windows device, if applicable)
+#'
+#' @param font_name Font family name to register.
+#' @returns TRUE if registered, FALSE otherwise.
+#' @keywords internal
+.register_font <- function(font_name) {
+  path <- .match_font_path(font_name)
+  if (is.na(path)) {
+    return(FALSE)
+  }
+
+  sysfonts::font_add(font_name, regular = path)
+
+  if (.Platform$OS.type == "windows") {
+    tryCatch(
+      {
+        win_fonts <- get("windowsFonts", envir = asNamespace("grDevices"))
+        win_font <- get("windowsFont", envir = asNamespace("grDevices"))
+
+        font_spec <- win_font(family = font_name)
+        if (!is.null(font_spec)) {
+          font_list <- list(font_spec)
+          names(font_list) <- font_name
+          win_fonts(font_list)
+        }
+      },
+      error = function(e) invisible(NULL)
+    )
+  }
+
+  TRUE
+}
+
+#' Clear cached font resolutions (useful for tests)
+#'
+#' @keywords internal
+.clear_font_cache <- function() {
+  rm(
+    list = ls(envir = .aagi_font_cache, all.names = TRUE),
+    envir = .aagi_font_cache
+  )
+  invisible(NULL)
+}
+
 #' Set AAGI Font for Figures and Tables With Fallback
 #'
-#' Sets the AAGI font to Proxima Nova first, if it's not available, falls back
-#'   to Arial as per the \acronym{AAGI} comms guide.
+#' Sets the AAGI font to Proxima Nova first; if it's not available, falls back
+#' to Arial as per the \acronym{AAGI} comms guide. If neither is available,
+#' returns "sans".
 #'
-#' @returns A character string with a font family name
+#' @returns A character string with a font family name.
 #' @dev
-
-set_aagi_font <- function() {
-  if (any(agrepl("Proxima Nova", systemfonts::system_fonts()[, "family"]))) {
-    aagi_font <- "Proxima Nova"
-  } else {
-    aagi_font <- "Arial"
-  }
-  aagi_font
+..set_aagi_font <- function() {
+  font <- .choose_aagi_font(c("Proxima Nova", "Arial"))
+  if (is.na(font)) "sans" else font
 }
 
 #' Set Graphical Parameters That Satisfy AAGI's Style Requirements
 #'
-#' Sets the AAGI font and style for \R base graphics, these match the
-#'  `theme_aagi()` theme settings for \CRANpkg{ggplot2}.
+#' Sets the AAGI font and style for \R base graphics; these match the
+#' `theme_aagi()` theme settings for \CRANpkg{ggplot2}.
 #'
-#' @returns A list object of graphical parameters
-#' @dev
-
+#' @returns A list object of graphical parameters.
+#' @keywords internal
 .par_aagi <- function() {
   list(
-    family = set_aagi_font(),
+    family = .set_aagi_font(),
     las = 1,
     mgp = c(2, 0.5, 0),
     cex = 0.9,
@@ -36,51 +141,39 @@ set_aagi_font <- function() {
 #' Check and convert AAGI colour
 #'
 #' Checks a string value to see if it's a valid \acronym{AAGI} colour and
-#'  converts it to the corresponding hexademcimal colour code. This is done
-#'  by checking for an "AAGI" prefix in the string as all valid colours from
-#'  \pkg{AAGIPalettes} will have this.
+#' converts it to the corresponding hexadecimal colour code. This is done by
+#' checking for an "AAGI " prefix in the string, as all valid colours from
+#' \pkg{AAGIPalettes} will have this.
 #'
-#' @param x A character string name value to be checked if it's an AAGI colour
-#'  and converted to the corresponding hex value. Can be a single value or a
-#'  vector.
+#' @param x A character string to be checked/converted. Can be length-1 or a
+#'   vector.
 #'
-#' @returns A character string or vector of hexadecimal colour codes, or the
-#'  input unchanged if it's not an AAGI colour name.
-#' @dev
+#' @returns A character string/vector of hex colour codes, or the input
+#'   unchanged if it's not an AAGI colour name.
+#' @keywords internal
 .convert_aagi_colour <- function(x) {
-  # Handle NULL or empty input
-  if (is.null(x) || length(x) == 0) {
+  if (is.null(x) || length(x) == 0L || !is.character(x)) {
     return(x)
   }
 
-  # Handle non-character input
-  if (!is.character(x)) {
-    return(x)
-  }
-
-  # Handle vector input by applying function recursively
-  if (length(x) > 1) {
+  if (length(x) > 1L) {
     return(vapply(x, .convert_aagi_colour, character(1), USE.NAMES = FALSE))
   }
 
-  # Single character string - check if AAGI colour
-  if (startsWith(x, "AAGI ")) {
-    tryCatch(
-      {
-        return(AAGIPalettes::colour_as_hex(x))
-      },
-      error = function(e) {
-        cli::cli_warn(
-          "Could not convert {.var {x}} to a hex colour. ",
-          "Returning original value."
-        )
-        return(x)
-      }
-    )
+  if (!startsWith(x, "AAGI ")) {
+    return(x)
   }
 
-  # Return unchanged if not an AAGI colour
-  x
+  tryCatch(
+    AAGIPalettes::colour_as_hex(x),
+    error = function(e) {
+      cli::cli_warn(c(
+        "Could not convert colour name {.val {x}} to a hex value.",
+        "i" = "Returning original value."
+      ))
+      x
+    }
+  )
 }
 
 #' Normalize and convert colour-related args found in dots
@@ -98,35 +191,33 @@ set_aagi_font <- function() {
 #' @returns `dots`, with normalised/converted values for any matching names.
 #' @dev
 
+.normalise_one_dot_colour <- function(value, default) {
+  if (is.null(value) || length(value) == 0L) {
+    return(default)
+  }
+
+  if (length(value) == 1L && is.atomic(value) && is.na(value)) {
+    return(default)
+  }
+
+  if (is.character(value)) {
+    return(.convert_aagi_colour(value))
+  }
+
+  value
+}
+
+#' @keywords internal
 .normalise_dots_colours <- function(dots, defaults = list(col = "AAGI Black")) {
   stopifnot(is.list(dots), is.list(defaults))
-  if (
-    is.null(names(defaults)) ||
-      anyNA(names(defaults)) ||
-      any(!nzchar(defaults))
-  ) {
+
+  nms <- names(defaults)
+  if (is.null(nms) || anyNA(nms) || !all(nzchar(nms))) {
     cli::cli_abort("{.var defaults} must be a {.bold named} {.code list}.")
   }
 
-  for (nm in names(defaults)) {
-    value <- dots[[nm]]
-
-    # Missing / empty -> default
-    if (is.null(value) || length(value) == 0L) {
-      value <- defaults[[nm]]
-    }
-
-    # Scalar NA of any atomic type -> default (covers NA_integer_, NA_real_, NA, etc.)
-    if (length(value) == 1L && is.atomic(value) && is.na(value)) {
-      value <- defaults[[nm]]
-    }
-
-    # Convert only AAGI-named colours; leave everything else alone (incl numeric)
-    if (is.character(value) && length(value) >= 1L) {
-      value <- .convert_aagi_colour(value)
-    }
-
-    dots[[nm]] <- value
+  for (nm in nms) {
+    dots[[nm]] <- .normalise_one_dot_colour(dots[[nm]], defaults[[nm]])
   }
 
   dots

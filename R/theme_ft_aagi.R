@@ -46,7 +46,7 @@ theme_ft_aagi <- function(x) {
     )
   }
 
-  flextable::set_flextable_defaults(font.family = set_aagi_font())
+  flextable::set_flextable_defaults(font.family = .set_aagi_font())
 
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
