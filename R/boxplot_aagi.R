@@ -15,9 +15,6 @@
 #'   be blank.
 #' @param xlab X-axis label.  Optional.
 #' @param ylab Y-axis label.  Optional.
-#' @param col Colour to use as fill for boxes  Defaults to white.  Can be
-#'   supplied as a named AAGI colour, *e.g.*, "AAGI Orange"; named colour,
-#'   "Orange"; or or a hexadecimal code, *e.g.*, "#ec8525".
 #' @param pch plotting 'character', \emph{i.e.}, symbol to use.
 #' @inheritParams plot_aagi
 #'
@@ -86,5 +83,5 @@ boxplot_aagi <- function(
       dots
     )
   )
-  return(invisibl(bx))
+  return(invisible(bx))
 }
