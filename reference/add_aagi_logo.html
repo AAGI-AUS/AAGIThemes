@@ -82,6 +82,21 @@ existing file.</p></dd>
 <acronym>AAGI</acronym> logo to the plot that's called.</p>
     </div>
     <div class="section level2">
+    <h2 id="image-sizing">Image Sizing<a class="anchor" aria-label="anchor" href="#image-sizing"></a></h2>
+    <p>This function checks the image's DPI values and sets
+the logo size accordingly. When saving, e.g., from ggplot, specify the DPI
+value along with your height and width and units for optimal performance.
+`ggsave(
+filename = "AAGI.png",
+plot = p1,
+path = tempdir(),
+width = 18,
+height = 18,
+units = "cm",
+dpi = 300
+)</p>
+    </div>
+    <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
     <p>Adam Sparks, <a href="mailto:adam.sparks@curtin.edu.au">adam.sparks@curtin.edu.au</a></p>
     </div>
