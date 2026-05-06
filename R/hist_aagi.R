@@ -78,7 +78,7 @@ hist_aagi <- function(
   panel_first <- dots$panel.first
   dots$panel.first <- NULL
 
-  withr::local_par(.new = par_aagi())
+  withr::local_par(.par_aagi())
   showtext::showtext_begin()
   on.exit(showtext::showtext_end(), add = TRUE)
 

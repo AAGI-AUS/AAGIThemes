@@ -51,7 +51,7 @@ boxplot_aagi <- function(
   col <- .convert_aagi_colour(col)
 
   # set new pars
-  withr::local_par(.new = par_aagi())
+  withr::local_par(.par_aagi())
   graphics::plot.new()
   showtext::showtext_begin()
   on.exit(showtext::showtext_end(), add = TRUE)

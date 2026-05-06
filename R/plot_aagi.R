@@ -45,7 +45,7 @@ plot_aagi <- function(x, ...) {
   # Convert AAGI colour names to hex
   dots$col <- .convert_aagi_colour(dots$col)
 
-  withr::local_par(par_aagi())
+  withr::local_par(.par_aagi())
   showtext::showtext_begin()
   on.exit(showtext::showtext_end(), add = TRUE)
 
