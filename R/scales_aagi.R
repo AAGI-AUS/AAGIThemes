@@ -1,7 +1,7 @@
 #' Scale constructors for AAGI colour palettes
 #'
-#' Helpers for applying AAGI colour palettes to `ggplot2` colour and fill
-#' aesthetics.
+#' Helpers for applying \acronym{AAGI} colour palettes to \CRANpkg{ggplot2}
+#' colour and fill aesthetics.
 #'
 #' For discrete scales, colours are taken from
 #' [AAGIPalettes::aagi_palettes()].
