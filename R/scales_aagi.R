@@ -3,35 +3,48 @@
 #' Helpers for applying \acronym{AAGI} colour palettes to \CRANpkg{ggplot2}
 #' colour and fill aesthetics.
 #'
-#' For discrete scales, colours are taken from
-#' [AAGIPalettes::aagi_palettes()].
+#' By default, discrete scales use the official colours in
+#' [AAGIPalettes::aagi_colours]. If `palette` is supplied, discrete scales use a
+#' named palette from [AAGIPalettes::aagi_palettes()].
 #'
-#' For continuous scales, colours are interpolated using
+#' Continuous scales use interpolated colours via
 #' [AAGIPalettes::interpolate_aagi_colours()].
 #'
-#' @param palette Character name of palette to use. This should be one of the
-#'   palette names supported by [AAGIPalettes::aagi_palettes()], such as
-#'   `"aagi_RdTl"`, `"aagi_TlGnYl"` or `"aagi_blues"`.
+#' @param palette Character name of a palette supported by
+#'   [AAGIPalettes::aagi_palettes()]. If `NULL` and `discrete = TRUE`, use the
+#'   official colours in [AAGIPalettes::aagi_colours].
 #' @param discrete Logical; should the scale be discrete? Defaults to `TRUE`.
 #' @param reverse Logical; should the palette order be reversed? Defaults to
 #'   `FALSE`.
-#' @param colours Character vector of official AAGI colour names to interpolate
-#'   for continuous scales. If `NULL`, defaults used by
+#' @param colours Character vector of official \acronym{AAGI} colour names to
+#'   interpolate for continuous scales. If `NULL`, defaults used by
 #'   [AAGIPalettes::interpolate_aagi_colours()] are applied.
-#' @param ... Additional arguments passed to the underlying `ggplot2` scale
-#'   functions.
+#' @param ... Additional arguments passed to the underlying \CRANpkg{ggplot2}
+#'   scale functions.
 #'
 #' @details
-#' For discrete scales, the number of colours requested is determined by the
-#' number of levels in the mapped variable.
+#' For discrete scales:
+#' - if `palette = NULL`, colours are taken from [AAGIPalettes::aagi_colours];
+#' - otherwise colours are taken from [AAGIPalettes::aagi_palettes()].
 #'
-#' For continuous scales, `palette` is ignored and interpolated colours are used.
-#' If you want to control the continuous gradient directly, supply `colours`.
+#' For continuous scales, `palette` is ignored and interpolated colours are
+#' used. If you want to control the continuous gradient directly, supply
+#' `colours`.
+#'
+#' @examples
+#' p <- ggplot2::ggplot(ggplot2::mpg, ggplot2::aes(displ, hwy, colour = class)) +
+#'   ggplot2::geom_point()
+#'
+#' # Default discrete official colours
+#' p + scale_colour_aagi()
+#'
+#' # Named palette
+#' p + scale_colour_aagi(palette = "aagi_blues")
 #'
 #' @describeIn scale_colour_aagi For colour scales
 #' @export
 scale_colour_aagi <- function(
-  palette = "aagi_RdTl",
+  palette = NULL,
   discrete = TRUE,
   reverse = FALSE,
   colours = NULL,
@@ -41,11 +54,30 @@ scale_colour_aagi <- function(
 
   if (isTRUE(discrete)) {
     pal <- function(n) {
-      AAGIPalettes::aagi_palettes(
-        name = palette,
-        n = n,
-        direction = direction
-      )
+      if (is.null(palette)) {
+        vals <- unname(AAGIPalettes::aagi_colours[.aagi_colour_order()])
+
+        if (direction == -1) {
+          vals <- rev(vals)
+        }
+
+        if (n > length(vals)) {
+          cli::cli_abort(
+            c(
+              "x" = "Not enough values in {.field AAGIPalettes::aagi_colours} for {.val {n}} levels.",
+              "i" = "Supply a named {.arg palette} or use {.code discrete = FALSE}."
+            )
+          )
+        }
+
+        vals[seq_len(n)]
+      } else {
+        AAGIPalettes::aagi_palettes(
+          name = palette,
+          n = n,
+          direction = direction
+        )
+      }
     }
 
     ggplot2::discrete_scale(
@@ -73,7 +105,7 @@ scale_colour_aagi <- function(
 #' @describeIn scale_colour_aagi For fill scales
 #' @export
 scale_fill_aagi <- function(
-  palette = "aagi_RdTl",
+  palette = NULL,
   discrete = TRUE,
   reverse = FALSE,
   colours = NULL,
@@ -83,11 +115,30 @@ scale_fill_aagi <- function(
 
   if (isTRUE(discrete)) {
     pal <- function(n) {
-      AAGIPalettes::aagi_palettes(
-        name = palette,
-        n = n,
-        direction = direction
-      )
+      if (is.null(palette)) {
+        vals <- unname(AAGIPalettes::aagi_colours[.aagi_colour_order()])
+
+        if (direction == -1) {
+          vals <- rev(vals)
+        }
+
+        if (n > length(vals)) {
+          cli::cli_abort(
+            c(
+              "x" = "Not enough values in {.field AAGIPalettes::aagi_colours} for {.val {n}} levels.",
+              "i" = "Supply a named {.arg palette} or use {.code discrete = FALSE}."
+            )
+          )
+        }
+
+        vals[seq_len(n)]
+      } else {
+        AAGIPalettes::aagi_palettes(
+          name = palette,
+          n = n,
+          direction = direction
+        )
+      }
     }
 
     ggplot2::discrete_scale(
@@ -112,113 +163,21 @@ scale_fill_aagi <- function(
   }
 }
 
-### Deprecated helpers ###
-
-#' Convenient functions to set AAGI colour palettes
+#' Set a different default order of AAGI colours for better data vis
 #'
-#' These functions are retained for compatibility. New code should prefer
-#' [scale_colour_aagi()] and [scale_fill_aagi()].
+#' Sets the colour order so that there is more contrast between the first three
+#' colours since graphs frequently only have 1-3 values displayed.
 #'
-#' @param n Numeric. The number of levels in your colour scale.
-#' @param reverse Logical; if `TRUE`, reverse the palette order.
-#' @param discrete Logical; if `TRUE`, generate a discrete scale, otherwise a
-#'   continuous scale.
-#' @param palette Character name of palette passed to
-#'   [AAGIPalettes::aagi_palettes()] for discrete scales.
-#' @param colours Character vector of official AAGI colour names used for
-#'   interpolation when `discrete = FALSE`.
-#' @param ... Arguments passed to ggplot2 scales.
-#'
-#' @examples
-#' library(ggplot2)
-#'
-#' ggplot(mtcars, aes(x = wt, y = mpg, col = factor(cyl))) +
-#'   geom_point() +
-#'   aagi_colour_manual() +
-#'   theme_aagi()
-#'
-#' @name aagi_scale
-#' @aliases NULL
-NULL
-
-#' @rdname aagi_scale
-#' @export
-# nocov start
-aagi_colour_manual <- function(
-  n = 5,
-  reverse = FALSE,
-  discrete = TRUE,
-  palette = "aagi_RdTl",
-  colours = NULL,
-  ...
-) {
-  lifecycle::deprecate_warn(
-    when = "2.0.0",
-    what = "aagi_colour_manual()",
-    with = "scale_colour_aagi()"
+#' @dev
+.aagi_colour_order <- function() {
+  c(
+    "AAGI Bright Green",
+    "AAGI Orange",
+    "AAGI Blue",
+    "AAGI Green",
+    "AAGI Yellow",
+    "AAGI Black",
+    "AAGI Teal",
+    "AAGI Grey"
   )
-
-  direction <- if (isTRUE(reverse)) -1 else 1
-
-  if (isTRUE(discrete)) {
-    vals <- AAGIPalettes::aagi_palettes(
-      name = palette,
-      n = n,
-      direction = direction
-    )
-
-    return(ggplot2::scale_colour_manual(values = vals, ...))
-  }
-
-  pal <- if (is.null(colours)) {
-    AAGIPalettes::interpolate_aagi_colours(direction = direction)
-  } else {
-    AAGIPalettes::interpolate_aagi_colours(
-      colours = colours,
-      direction = direction
-    )
-  }
-
-  ggplot2::scale_colour_gradientn(colours = pal(256L), ...)
 }
-
-#' @rdname aagi_scale
-#' @export
-aagi_fill_manual <- function(
-  n = 5,
-  reverse = FALSE,
-  discrete = TRUE,
-  palette = "aagi_RdTl",
-  colours = NULL,
-  ...
-) {
-  lifecycle::deprecate_warn(
-    when = "2.0.0",
-    what = "aagi_fill_manual()",
-    with = "scale_fill_aagi()"
-  )
-
-  direction <- if (isTRUE(reverse)) -1 else 1
-
-  if (isTRUE(discrete)) {
-    vals <- AAGIPalettes::aagi_palettes(
-      name = palette,
-      n = n,
-      direction = direction
-    )
-
-    return(ggplot2::scale_fill_manual(values = vals, ...))
-  }
-
-  pal <- if (is.null(colours)) {
-    AAGIPalettes::interpolate_aagi_colours(direction = direction)
-  } else {
-    AAGIPalettes::interpolate_aagi_colours(
-      colours = colours,
-      direction = direction
-    )
-  }
-
-  ggplot2::scale_fill_gradientn(colours = pal(256L), ...)
-}
-# nocov end
