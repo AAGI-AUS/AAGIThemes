@@ -1,4 +1,4 @@
-# Scale constructors for AAGI colour palettes to be used in ggplot2 objects
+# Scale Constructors for AAGI Colour Palettes to be Used in ggplot2 Objects
 
 Helpers for applying AAGI colour palettes to
 [ggplot2](https://CRAN.R-project.org/package=ggplot2) colour and fill

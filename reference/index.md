@@ -21,8 +21,8 @@ Create {ggplot2} plots and graphs in the AAGI style
   : A ggplot2 Theme Using a Unified AAGI Style and Typography for Plots
 - [`scale_colour_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/scale_colour_aagi.md)
   [`scale_fill_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/scale_colour_aagi.md)
-  : Scale constructors for AAGI colour palettes to be used in ggplot2
-  objects
+  : Scale Constructors for AAGI Colour Palettes to be Used in ggplot2
+  Objects
 
 ## Table theming
 
@@ -38,6 +38,6 @@ Create tables in the AAGI style
 - [`add_aagi_logo()`](https://aagi-aus.github.io/AAGIThemes/reference/add_aagi_logo.md)
   : Insert AAGI's Logo Into Any Graphic File
 - [`showtext_aagi_off()`](https://aagi-aus.github.io/AAGIThemes/reference/showtext_aagi_off.md)
-  : Disable global showtext auto rendering (AAGIThemes)
+  : Disable Global Showtext Auto Rendering (AAGIThemes)
 - [`watermark()`](https://aagi-aus.github.io/AAGIThemes/reference/watermark.md)
   : Add a Watermark Annotation Layer to a ggplot2 Object

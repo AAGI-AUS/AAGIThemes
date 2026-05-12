@@ -1,4 +1,4 @@
-# Disable global showtext auto rendering (AAGIThemes)
+# Disable Global Showtext Auto Rendering (AAGIThemes)
 
 `theme_aagi(showtext_auto = TRUE)` enables
 [`showtext::showtext_auto()`](https://rdrr.io/pkg/showtext/man/showtext_auto.html),
