@@ -1,3 +1,13 @@
+
+# AAGIThemes 2.1.0
+
+## New features
+
+* `scale_fill_aagi()` and `scale_colour_aagi()` are provided for use in {ggplot2} to easily use AAGI colours and palettes in graphs.
+
+* `use_aagi_style()` is provided as a full wrapper that allows you to create a {ggplot2} object that uses both `theme_aagi()` with either of the `scale_aggi_()` functions that autoselect based on data type.
+
+
 # AAGIThemes 2.0.0
 
 ## New features
