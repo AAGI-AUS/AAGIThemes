@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+library(AAGIThemes)
 ```
 
 <!-- badges: start -->
@@ -67,12 +68,13 @@ vignette("AAGIThemes", package = "AAGIThemes")
 
 You can use it like so with {flextable}.
 
-```{r
+```{r}
 library(dplyr)
 library(flextable)
 
-flextable(head(airquality)) |>
+head(airquality) |>
   mutate(`Month Name` = "May") |>
+  flextable() |>
   theme_ft_aagi()
 ```
 
