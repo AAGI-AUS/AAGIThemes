@@ -3,7 +3,7 @@
 - If an arg is missing/empty/NA, use a default.
 
 - If an arg is a character string starting with "AAGI ", convert via
-  [`.convert_aagi_colour()`](https://AAGI-AUS.github.io/AAGIThemes/reference/dot-convert_aagi_colour.md).
+  [`.convert_aagi_colour()`](https://aagi-aus.github.io/AAGIThemes/reference/dot-convert_aagi_colour.md).
 
 - Otherwise leave as-is (supports numeric palette indices, "red",
   "#RRGGBB", etc.).

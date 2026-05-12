@@ -1,7 +1,7 @@
 # Set Graphical Parameters That Satisfy AAGI's Style Requirements
 
 Sets the AAGI font and style for R base graphics; these match the
-[`theme_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_aagi.md)
+[`theme_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/theme_aagi.md)
 theme settings for
 [ggplot2](https://CRAN.R-project.org/package=ggplot2).
 

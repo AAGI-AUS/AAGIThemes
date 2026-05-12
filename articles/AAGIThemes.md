@@ -65,8 +65,10 @@ library("dplyr")
 #> 
 #>     intersect, setdiff, setequal, union
 
-ft <- flextable(head(airquality) |>
-  mutate(`Month Name` = "May"))
+ft <- flextable(
+  head(airquality) |>
+    mutate(`Month Name` = "May")
+)
 ft <- theme_ft_aagi(ft)
 ft
 ```
@@ -106,8 +108,8 @@ arguments as you wish.
 
 A few of the steps in this cookbook - and to create charts in R in
 general - require certain packages to be installed and loaded. So that
-you do not have to load them one by one, you can use the the following
-code to load them all at once.
+you do not have to load them one by one, you can use the following code
+to load them all at once.
 
 ``` r
 
@@ -182,7 +184,8 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 
 ``` r
 
-boxplot_aagi(decrease ~ treatment,
+boxplot_aagi(
+  decrease ~ treatment,
   data = OrchardSprays,
   xlab = "treatment",
   ylab = "decrease"
@@ -194,9 +197,6 @@ boxplot_aagi(decrease ~ treatment,
 #### Using {ggplot2} to Create a Boxplot
 
 ``` r
-
-library("AAGIThemes")
-library("ggplot2")
 
 ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
   geom_boxplot() +
@@ -262,8 +262,9 @@ plot_aagi(
 
 ``` r
 
-ggplot(line_df, aes(x = year, y = lifeExp)) +
-  geom_line(colour = AAGIPalettes::colour_as_hex("AAGI Teal")) +
+ggplot(line_df, aes(x = year, y = lifeExp, colour = "Life expectancy")) +
+  geom_line() +
+  scale_colour_aagi(values = AAGIPalettes::colour_as_hex("AAGI Teal")) +
   theme_aagi() +
   ylab("Life expectancy") +
   xlab("Year") +
@@ -339,11 +340,13 @@ chart and use AAGI’s colours in
 # prepare data
 stacked_df <- gapminder |>
   filter(year == 2007) |>
-  mutate(lifeExpGrouped = cut(
-    lifeExp,
-    breaks = c(0, 50, 65, 80, 90),
-    labels = c("Under 50", "50-65", "65-80", "80+")
-  )) |>
+  mutate(
+    lifeExpGrouped = cut(
+      lifeExp,
+      breaks = c(0, 50, 65, 80, 90),
+      labels = c("Under 50", "50-65", "65-80", "80+")
+    )
+  ) |>
   group_by(continent, lifeExpGrouped) |>
   summarise(continentPop = sum(as.numeric(pop)))
 #> `summarise()` has regrouped the output.
@@ -354,7 +357,8 @@ stacked_df <- gapminder |>
 #>   grouping (`?dplyr::dplyr_by`) instead.
 
 # set order of stacks by changing factor levels
-stacked_df$lifeExpGrouped <- factor(stacked_df$lifeExpGrouped,
+stacked_df$lifeExpGrouped <- factor(
+  stacked_df$lifeExpGrouped,
   levels = rev(levels(stacked_df$lifeExpGrouped))
 )
 
@@ -371,10 +375,7 @@ ggplot(
     stat = "identity",
     position = "fill"
   ) +
-  scale_fill_manual(
-    name = "Life expectancy",
-    values = aagi_palettes(n = 4, name = "aagi_greens")
-  ) +
+  scale_fill_aagi(palette = "aagi_greens") +
   ylab("Continental Population (%)") +
   xlab("Continent") +
   theme_aagi() +
@@ -416,17 +417,10 @@ facet <- gapminder |>
 #> ℹ Use `summarise(.by = c(continent, year))` for per-operation grouping
 #>   (`?dplyr::dplyr_by`) instead.
 
-col_values <- c(
-  AAGIPalettes::colour_as_hex("AAGI Teal"),
-  AAGIPalettes::colour_as_hex("AAGI Green"),
-  AAGIPalettes::colour_as_hex("AAGI Yellow"),
-  AAGIPalettes::colour_as_hex("AAGI Blue")
-)
-
 # Make plot
 p <- ggplot() +
   geom_area(data = facet, aes(x = year, y = pop, fill = continent)) +
-  scale_fill_manual(values = col_values) +
+  scale_fill_aagi() +
   facet_wrap(~continent, ncol = 5) +
   scale_y_continuous(
     breaks = c(0, 2000000000, 4000000000),
@@ -439,7 +433,10 @@ p <- ggplot() +
     colour = "#474747"
   ) +
   theme(legend.position = "none", axis.text.x = element_blank()) +
-  labs(title = "Asia's rapid growth", subtitle = "Population growth by continent, 1952-2007")
+  labs(
+    title = "Asia's rapid growth",
+    subtitle = "Population growth by continent, 1952-2007"
+  )
 
 ggsave(p, filename = "AAGI.png", path = tempdir())
 #> Saving 7.5 x 5 in image
@@ -453,7 +450,7 @@ print(p)
 
 Add the AAGI logo to the upper left of the previous plot as per the
 style guide. Use the
-[`add_aagi_logo()`](https://AAGI-AUS.github.io/AAGIThemes/reference/add_aagi_logo.md)
+[`add_aagi_logo()`](https://aagi-aus.github.io/AAGIThemes/reference/add_aagi_logo.md)
 function to add the logo automatically to a previously saved image file.
 In this case, the previous example used to show the faceting colours has
 been saved to R’s [`tempdir()`](https://rdrr.io/r/base/tempfile.html).
@@ -479,7 +476,7 @@ image_read(file.path(tempdir(), "AAGI_logo.png")) |>
 #> 1 PNG      600    480 sRGB       FALSE        0 118x118
 ```
 
-![](AAGIThemes_files/figure-html/add-dpird-logo-1.png)
+![](AAGIThemes_files/figure-html/add-aagi-logo-1.png)
 
 ## Saving {ggplot2} Figures
 

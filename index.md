@@ -103,7 +103,7 @@ capabilities.
 #### Using ggplot2 theming
 
 The function
-[`theme_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_aagi.md)
+[`theme_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/theme_aagi.md)
 is provided to apply a unified style for creating AAGI themed plots,
 charts and graphs using {ggplot2}. The function is very basic and
 provides only one parameter, `base_size`, which is used to set the font
@@ -113,7 +113,7 @@ or change the colour palette that is used to alter point or line colours
 in your graph.
 
 Example of how
-[`theme_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_aagi.md)
+[`theme_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/theme_aagi.md)
 is used in a standard {ggplot2} workflow:
 
 ``` r

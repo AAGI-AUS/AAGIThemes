@@ -78,9 +78,9 @@ Histograms, 1995, Monash University,
 - barplot_aagi, boxplot_aagi, plot_aagi
 
 Other Baseplots:
-[`barplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/barplot_aagi.md),
-[`boxplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/boxplot_aagi.md),
-[`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
+[`barplot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/barplot_aagi.md),
+[`boxplot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/boxplot_aagi.md),
+[`plot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/plot_aagi.md)
 
 ## Author
 

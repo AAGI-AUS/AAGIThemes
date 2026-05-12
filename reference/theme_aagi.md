@@ -53,7 +53,7 @@ theme_aagi(
   be an issue.
 
   To undo, call
-  [`showtext_aagi_off()`](https://AAGI-AUS.github.io/AAGIThemes/reference/showtext_aagi_off.md).
+  [`showtext_aagi_off()`](https://aagi-aus.github.io/AAGIThemes/reference/showtext_aagi_off.md).
 
 - ...:
 

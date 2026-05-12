@@ -2,4 +2,4 @@
 
 ### All vignettes
 
-- [AAGIThemes](https://AAGI-AUS.github.io/AAGIThemes/articles/AAGIThemes.md):
+- [AAGIThemes](https://aagi-aus.github.io/AAGIThemes/articles/AAGIThemes.md):

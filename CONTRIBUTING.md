@@ -37,7 +37,7 @@ with a minimal [reprex](https://www.tidyverse.org/help/#reprex).
 
 Please note that the {AAGIThemes} project is released with a
 [Contributor Code of
-Conduct](https://AAGI-AUS.github.io/AAGIThemes/CODE_OF_CONDUCT.md). By
+Conduct](https://aagi-aus.github.io/AAGIThemes/CODE_OF_CONDUCT.md). By
 contributing to this project you agree to abide by its terms.
 
 ### Prefer to Email?

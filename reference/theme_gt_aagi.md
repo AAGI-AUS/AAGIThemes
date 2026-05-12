@@ -24,7 +24,7 @@ a formatted [gt](https://CRAN.R-project.org/package=gt) object
 ## See also
 
 Other tables:
-[`theme_ft_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/theme_ft_aagi.md)
+[`theme_ft_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/theme_ft_aagi.md)
 
 ## Author
 

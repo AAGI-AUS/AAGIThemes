@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">AAGIThemes</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
                         <h4 data-toc-skip class="author">Adam H.
 Sparks</h4>
             
-            <h4 data-toc-skip class="date">2026-05-06</h4>
+            <h4 data-toc-skip class="date">2026-05-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/AAGI-AUS/AAGIThemes/blob/main/vignettes/AAGIThemes.Rmd" class="external-link"><code>vignettes/AAGIThemes.Rmd</code></a></small>
       <div class="d-none name"><code>AAGIThemes.Rmd</code></div>
@@ -125,76 +125,78 @@ table.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
 <span></span>
-<span><span class="va">ft</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://davidgohel.github.io/flextable/reference/flextable.html" class="external-link">flextable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">airquality</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>`Month Name` <span class="op">=</span> <span class="st">"May"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ft</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://davidgohel.github.io/flextable/reference/flextable.html" class="external-link">flextable</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">airquality</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>`Month Name` <span class="op">=</span> <span class="st">"May"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
 <span><span class="va">ft</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/theme_ft_aagi.html">theme_ft_aagi</a></span><span class="op">(</span><span class="va">ft</span><span class="op">)</span></span>
 <span><span class="va">ft</span></span></code></pre></div>
 <div class="tabwid">
-<style>.cl-cead5140{}.cl-cea3f8ca{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-cea3f8de{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(65, 64, 66, 1.00);background-color:transparent;}.cl-cea7af4c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cea7af56{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cea7e9b2{width:0.75in;background-color:rgba(0, 128, 139, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cea7e9bc{width:0.75in;background-color:rgba(0, 128, 139, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cea7e9bd{width:0.75in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cea7e9c6{width:0.75in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="table cl-cead5140">
+<style>.cl-a094c416{}.cl-a08bad18{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-a08bad2c{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(65, 64, 66, 1.00);background-color:transparent;}.cl-a08f4388{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a08f4392{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a08f7b3c{width:0.75in;background-color:rgba(0, 128, 139, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a08f7b64{width:0.75in;background-color:rgba(0, 128, 139, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a08f7b65{width:0.75in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a08f7b6e{width:0.75in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0.75pt solid rgba(255, 255, 255, 1.00);border-top: 0.75pt solid rgba(255, 255, 255, 1.00);border-left: 0.75pt solid rgba(255, 255, 255, 1.00);border-right: 0.75pt solid rgba(255, 255, 255, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="table cl-a094c416">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-cea7e9b2"><p class="cl-cea7af4c"><span class="cl-cea3f8ca">Ozone</span></p></th>
-<th class="cl-cea7e9b2"><p class="cl-cea7af4c"><span class="cl-cea3f8ca">Solar.R</span></p></th>
-<th class="cl-cea7e9b2"><p class="cl-cea7af4c"><span class="cl-cea3f8ca">Wind</span></p></th>
-<th class="cl-cea7e9b2"><p class="cl-cea7af4c"><span class="cl-cea3f8ca">Temp</span></p></th>
-<th class="cl-cea7e9b2"><p class="cl-cea7af4c"><span class="cl-cea3f8ca">Month</span></p></th>
-<th class="cl-cea7e9b2"><p class="cl-cea7af4c"><span class="cl-cea3f8ca">Day</span></p></th>
-<th class="cl-cea7e9bc"><p class="cl-cea7af56"><span class="cl-cea3f8ca">Month Name</span></p></th>
+<th class="cl-a08f7b3c"><p class="cl-a08f4388"><span class="cl-a08bad18">Ozone</span></p></th>
+<th class="cl-a08f7b3c"><p class="cl-a08f4388"><span class="cl-a08bad18">Solar.R</span></p></th>
+<th class="cl-a08f7b3c"><p class="cl-a08f4388"><span class="cl-a08bad18">Wind</span></p></th>
+<th class="cl-a08f7b3c"><p class="cl-a08f4388"><span class="cl-a08bad18">Temp</span></p></th>
+<th class="cl-a08f7b3c"><p class="cl-a08f4388"><span class="cl-a08bad18">Month</span></p></th>
+<th class="cl-a08f7b3c"><p class="cl-a08f4388"><span class="cl-a08bad18">Day</span></p></th>
+<th class="cl-a08f7b64"><p class="cl-a08f4392"><span class="cl-a08bad18">Month Name</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">41</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">190</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">7.4</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">67</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">5</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">1</span></p></td>
-<td class="cl-cea7e9c6"><p class="cl-cea7af56"><span class="cl-cea3f8de">May</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">41</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">190</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">7.4</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">67</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">5</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">1</span></p></td>
+<td class="cl-a08f7b6e"><p class="cl-a08f4392"><span class="cl-a08bad2c">May</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">36</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">118</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">8.0</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">72</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">5</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">2</span></p></td>
-<td class="cl-cea7e9c6"><p class="cl-cea7af56"><span class="cl-cea3f8de">May</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">36</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">118</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">8.0</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">72</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">5</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">2</span></p></td>
+<td class="cl-a08f7b6e"><p class="cl-a08f4392"><span class="cl-a08bad2c">May</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">12</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">149</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">12.6</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">74</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">5</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">3</span></p></td>
-<td class="cl-cea7e9c6"><p class="cl-cea7af56"><span class="cl-cea3f8de">May</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">12</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">149</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">12.6</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">74</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">5</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">3</span></p></td>
+<td class="cl-a08f7b6e"><p class="cl-a08f4392"><span class="cl-a08bad2c">May</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">18</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">313</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">11.5</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">62</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">5</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">4</span></p></td>
-<td class="cl-cea7e9c6"><p class="cl-cea7af56"><span class="cl-cea3f8de">May</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">18</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">313</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">11.5</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">62</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">5</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">4</span></p></td>
+<td class="cl-a08f7b6e"><p class="cl-a08f4392"><span class="cl-a08bad2c">May</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de"></span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de"></span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">14.3</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">56</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">5</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">5</span></p></td>
-<td class="cl-cea7e9c6"><p class="cl-cea7af56"><span class="cl-cea3f8de">May</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c"></span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c"></span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">14.3</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">56</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">5</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">5</span></p></td>
+<td class="cl-a08f7b6e"><p class="cl-a08f4392"><span class="cl-a08bad2c">May</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">28</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de"></span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">14.9</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">66</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">5</span></p></td>
-<td class="cl-cea7e9bd"><p class="cl-cea7af4c"><span class="cl-cea3f8de">6</span></p></td>
-<td class="cl-cea7e9c6"><p class="cl-cea7af56"><span class="cl-cea3f8de">May</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">28</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c"></span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">14.9</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">66</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">5</span></p></td>
+<td class="cl-a08f7b65"><p class="cl-a08f4388"><span class="cl-a08bad2c">6</span></p></td>
+<td class="cl-a08f7b6e"><p class="cl-a08f4392"><span class="cl-a08bad2c">May</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -225,8 +227,8 @@ using <code><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="
 </h3>
 <p>A few of the steps in this cookbook - and to create charts in R in
 general - require certain packages to be installed and loaded. So that
-you do not have to load them one by one, you can use the the following
-code to load them all at once.</p>
+you do not have to load them one by one, you can use the following code
+to load them all at once.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
@@ -292,7 +294,8 @@ can flip the coordinates so that they are easier to read.</p>
 <h4 id="using-base-r-to-create-a-boxplot">Using Base R to Create a Boxplot<a class="anchor" aria-label="anchor" href="#using-base-r-to-create-a-boxplot"></a>
 </h4>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/boxplot_aagi.html">boxplot_aagi</a></span><span class="op">(</span><span class="va">decrease</span> <span class="op">~</span> <span class="va">treatment</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/boxplot_aagi.html">boxplot_aagi</a></span><span class="op">(</span></span>
+<span>  <span class="va">decrease</span> <span class="op">~</span> <span class="va">treatment</span>,</span>
 <span>  data <span class="op">=</span> <span class="va">OrchardSprays</span>,</span>
 <span>  xlab <span class="op">=</span> <span class="st">"treatment"</span>,</span>
 <span>  ylab <span class="op">=</span> <span class="st">"decrease"</span></span>
@@ -303,10 +306,7 @@ can flip the coordinates so that they are easier to read.</p>
 <h4 id="using-ggplot2-to-create-a-boxplot">Using {ggplot2} to Create a Boxplot<a class="anchor" aria-label="anchor" href="#using-ggplot2-to-create-a-boxplot"></a>
 </h4>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/AAGI-AUS/AAGIThemes" class="external-link">"AAGIThemes"</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://ggplot2.tidyverse.org" class="external-link">"ggplot2"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">OrchardSprays</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">treatment</span>, y <span class="op">=</span> <span class="va">decrease</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">OrchardSprays</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">treatment</span>, y <span class="op">=</span> <span class="va">decrease</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">120</span>, by <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_aagi.html">theme_aagi</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -366,8 +366,9 @@ colour.</p>
 <h4 id="using-ggplot2-to-create-a-line-graph">Using {ggplot2} to Create a Line Graph<a class="anchor" aria-label="anchor" href="#using-ggplot2-to-create-a-line-graph"></a>
 </h4>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">line_df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="fu">AAGIPalettes</span><span class="fu">::</span><span class="fu"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/colour_as_hex.html" class="external-link">colour_as_hex</a></span><span class="op">(</span><span class="st">"AAGI Teal"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">line_df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, colour <span class="op">=</span> <span class="st">"Life expectancy"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/scale_colour_aagi.html">scale_colour_aagi</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu">AAGIPalettes</span><span class="fu">::</span><span class="fu"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/colour_as_hex.html" class="external-link">colour_as_hex</a></span><span class="op">(</span><span class="st">"AAGI Teal"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_aagi.html">theme_aagi</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Life expectancy"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span> <span class="op">+</span></span>
@@ -433,11 +434,13 @@ chart and use AAGI’s colours in <code><a href="https://ggplot2.tidyverse.org/r
 <code class="sourceCode R"><span><span class="co"># prepare data</span></span>
 <span><span class="va">stacked_df</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>lifeExpGrouped <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html" class="external-link">cut</a></span><span class="op">(</span></span>
-<span>    <span class="va">lifeExp</span>,</span>
-<span>    breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">65</span>, <span class="fl">80</span>, <span class="fl">90</span><span class="op">)</span>,</span>
-<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Under 50"</span>, <span class="st">"50-65"</span>, <span class="st">"65-80"</span>, <span class="st">"80+"</span><span class="op">)</span></span>
-<span>  <span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
+<span>    lifeExpGrouped <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html" class="external-link">cut</a></span><span class="op">(</span></span>
+<span>      <span class="va">lifeExp</span>,</span>
+<span>      breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">65</span>, <span class="fl">80</span>, <span class="fl">90</span><span class="op">)</span>,</span>
+<span>      labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Under 50"</span>, <span class="st">"50-65"</span>, <span class="st">"65-80"</span>, <span class="st">"80+"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">lifeExpGrouped</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>continentPop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; `summarise()` has regrouped the output.</span></span>
@@ -448,7 +451,8 @@ chart and use AAGI’s colours in <code><a href="https://ggplot2.tidyverse.org/r
 <span><span class="co">#&gt;   grouping (`?dplyr::dplyr_by`) instead.</span></span>
 <span></span>
 <span><span class="co"># set order of stacks by changing factor levels</span></span>
-<span><span class="va">stacked_df</span><span class="op">$</span><span class="va">lifeExpGrouped</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">stacked_df</span><span class="op">$</span><span class="va">lifeExpGrouped</span>,</span>
+<span><span class="va">stacked_df</span><span class="op">$</span><span class="va">lifeExpGrouped</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span></span>
+<span>  <span class="va">stacked_df</span><span class="op">$</span><span class="va">lifeExpGrouped</span>,</span>
 <span>  levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html" class="external-link">rev</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="va">stacked_df</span><span class="op">$</span><span class="va">lifeExpGrouped</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -465,10 +469,7 @@ chart and use AAGI’s colours in <code><a href="https://ggplot2.tidyverse.org/r
 <span>    stat <span class="op">=</span> <span class="st">"identity"</span>,</span>
 <span>    position <span class="op">=</span> <span class="st">"fill"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span></span>
-<span>    name <span class="op">=</span> <span class="st">"Life expectancy"</span>,</span>
-<span>    values <span class="op">=</span> <span class="fu"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/aagi_palettes.html" class="external-link">aagi_palettes</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span>, name <span class="op">=</span> <span class="st">"aagi_greens"</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/scale_colour_aagi.html">scale_fill_aagi</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"aagi_greens"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Continental Population (%)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Continent"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_aagi.html">theme_aagi</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -508,17 +509,10 @@ object in R called <code>p</code> and save it to R’s
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Use `summarise(.by = c(continent, year))` for per-operation grouping</span></span>
 <span><span class="co">#&gt;   (`?dplyr::dplyr_by`) instead.</span></span>
 <span></span>
-<span><span class="va">col_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>  <span class="fu">AAGIPalettes</span><span class="fu">::</span><span class="fu"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/colour_as_hex.html" class="external-link">colour_as_hex</a></span><span class="op">(</span><span class="st">"AAGI Teal"</span><span class="op">)</span>,</span>
-<span>  <span class="fu">AAGIPalettes</span><span class="fu">::</span><span class="fu"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/colour_as_hex.html" class="external-link">colour_as_hex</a></span><span class="op">(</span><span class="st">"AAGI Green"</span><span class="op">)</span>,</span>
-<span>  <span class="fu">AAGIPalettes</span><span class="fu">::</span><span class="fu"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/colour_as_hex.html" class="external-link">colour_as_hex</a></span><span class="op">(</span><span class="st">"AAGI Yellow"</span><span class="op">)</span>,</span>
-<span>  <span class="fu">AAGIPalettes</span><span class="fu">::</span><span class="fu"><a href="https://AAGI-AUS.github.io/AAGIPalettes/reference/colour_as_hex.html" class="external-link">colour_as_hex</a></span><span class="op">(</span><span class="st">"AAGI Blue"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
 <span><span class="co"># Make plot</span></span>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html" class="external-link">geom_area</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">facet</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">pop</span>, fill <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">col_values</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/scale_colour_aagi.html">scale_fill_aagi</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">continent</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span></span>
 <span>    breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2000000000</span>, <span class="fl">4000000000</span><span class="op">)</span>,</span>
@@ -531,7 +525,10 @@ object in R called <code>p</code> and save it to R’s
 <span>    colour <span class="op">=</span> <span class="st">"#474747"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>, axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Asia's rapid growth"</span>, subtitle <span class="op">=</span> <span class="st">"Population growth by continent, 1952-2007"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Asia's rapid growth"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Population growth by continent, 1952-2007"</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave</a></span><span class="op">(</span><span class="va">p</span>, filename <span class="op">=</span> <span class="st">"AAGI.png"</span>, path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Saving 7.5 x 5 in image</span></span>
@@ -564,7 +561,7 @@ before being displayed here. Feel free to adjust as necessary.</p>
 <span><span class="co">#&gt;   format width height colorspace matte filesize density</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> PNG      600    480 sRGB       FALSE        0 118x118</span></span></code></pre></div>
-<p><img src="AAGIThemes_files/figure-html/add-dpird-logo-1.png"><!-- --></p>
+<p><img src="AAGIThemes_files/figure-html/add-aagi-logo-1.png"><!-- --></p>
 </div>
 </div>
 <div class="section level2">

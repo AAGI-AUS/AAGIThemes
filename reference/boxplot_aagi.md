@@ -71,9 +71,9 @@ A `boxplot` object, returned invisibly (see
 - barplot_aagi, hist_aagi, plot_aagi
 
 Other Baseplots:
-[`barplot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/barplot_aagi.md),
-[`hist_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/hist_aagi.md),
-[`plot_aagi()`](https://AAGI-AUS.github.io/AAGIThemes/reference/plot_aagi.md)
+[`barplot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/barplot_aagi.md),
+[`hist_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/hist_aagi.md),
+[`plot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/plot_aagi.md)
 
 ## Author
 
