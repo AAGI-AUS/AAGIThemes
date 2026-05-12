@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_aagi.R
 \name{showtext_aagi_off}
 \alias{showtext_aagi_off}
-\title{Disable global showtext auto rendering (AAGIThemes)}
+\title{Disable Global Showtext Auto Rendering (AAGIThemes)}
 \usage{
 showtext_aagi_off()
 }

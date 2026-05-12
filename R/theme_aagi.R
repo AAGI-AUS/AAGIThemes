@@ -143,7 +143,7 @@ theme_aagi <- function(
   ta
 }
 
-#' Disable global showtext auto rendering (AAGIThemes)
+#' Disable Global Showtext Auto Rendering (AAGIThemes)
 #'
 #' `theme_aagi(showtext_auto = TRUE)` enables `showtext::showtext_auto()`, which
 #' affects subsequent plots globally. Call this function to turn it off.
