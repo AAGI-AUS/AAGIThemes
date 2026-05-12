@@ -68,7 +68,7 @@ vignette("AAGIThemes", package = "AAGIThemes")
 
 You can use it like so with {flextable}.
 
-```{r}
+```{r eval=FALSE}
 library(dplyr)
 library(flextable)
 
