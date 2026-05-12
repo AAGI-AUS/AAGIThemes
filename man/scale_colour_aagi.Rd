@@ -3,21 +3,21 @@
 \name{scale_colour_aagi}
 \alias{scale_colour_aagi}
 \alias{scale_fill_aagi}
-\title{Scale constructors for AAGI colour palettes}
+\title{Scale constructors for AAGI colour palettes to be used in {ggplot2} objects}
 \usage{
 scale_colour_aagi(
   palette = NULL,
   discrete = TRUE,
-  reverse = FALSE,
   colours = NULL,
+  values = NULL,
   ...
 )
 
 scale_fill_aagi(
   palette = NULL,
   discrete = TRUE,
-  reverse = FALSE,
   colours = NULL,
+  values = NULL,
   ...
 )
 }
@@ -28,12 +28,14 @@ official colours in \link[AAGIPalettes:aagi_colours]{AAGIPalettes::aagi_colours}
 
 \item{discrete}{Logical; should the scale be discrete? Defaults to \code{TRUE}.}
 
-\item{reverse}{Logical; should the palette order be reversed? Defaults to
-\code{FALSE}.}
-
 \item{colours}{Character vector of official \acronym{AAGI} colour names to
 interpolate for continuous scales. If \code{NULL}, defaults used by
 \code{\link[AAGIPalettes:interpolate_aagi_colours]{AAGIPalettes::interpolate_aagi_colours()}} are applied.}
+
+\item{values}{Optional character vector of colour values to use for discrete
+scales. This can be a vector of hex colours or values returned by
+\code{\link[AAGIPalettes:colour_as_hex]{AAGIPalettes::colour_as_hex()}}. If supplied, \code{values} takes precedence over
+\code{palette} and the default ordering of \link[AAGIPalettes:aagi_colours]{AAGIPalettes::aagi_colours}.}
 
 \item{...}{Additional arguments passed to the underlying \CRANpkg{ggplot2}
 scale functions.}
@@ -49,16 +51,6 @@ named palette from \code{\link[AAGIPalettes:aagi_palettes]{AAGIPalettes::aagi_pa
 
 Continuous scales use interpolated colours via
 \code{\link[AAGIPalettes:interpolate_aagi_colours]{AAGIPalettes::interpolate_aagi_colours()}}.
-
-For discrete scales:
-\itemize{
-\item if \code{palette = NULL}, colours are taken from \link[AAGIPalettes:aagi_colours]{AAGIPalettes::aagi_colours};
-\item otherwise colours are taken from \code{\link[AAGIPalettes:aagi_palettes]{AAGIPalettes::aagi_palettes()}}.
-}
-
-For continuous scales, \code{palette} is ignored and interpolated colours are
-used. If you want to control the continuous gradient directly, supply
-\code{colours}.
 }
 \section{Functions}{
 \itemize{
@@ -67,14 +59,3 @@ used. If you want to control the continuous gradient directly, supply
 \item \code{scale_fill_aagi()}: For fill scales
 
 }}
-\examples{
-p <- ggplot2::ggplot(ggplot2::mpg, ggplot2::aes(displ, hwy, colour = class)) +
-  ggplot2::geom_point()
-
-# Default discrete official colours
-p + scale_colour_aagi()
-
-# Named palette
-p + scale_colour_aagi(palette = "aagi_blues")
-
-}
