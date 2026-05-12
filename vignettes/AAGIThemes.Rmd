@@ -56,6 +56,7 @@ options(
 install.packages("AAGIThemes")
 ```
 
+
 For more info on {AAGIThemes} check out the [package's GitHub repository](https://github.com/AAGI-AUS/AAGIThemes), but most of the details about how to use the package and its functions are detailed below. 
 
 When you have downloaded the package and successfully installed it you are good to go and create plots and tables.
@@ -70,8 +71,10 @@ library("AAGIThemes")
 library("flextable")
 library("dplyr")
 
-ft <- flextable(head(airquality) |>
-  mutate(`Month Name` = "May"))
+ft <- flextable(
+  head(airquality) |>
+    mutate(`Month Name` = "May")
+)
 ft <- theme_ft_aagi(ft)
 ft
 ```
@@ -91,7 +94,7 @@ These choices can all be overridden by using `ggplot2::theme()` arguments as you
 ### Load the Libraries We'll Need
 
 A few of the steps in this cookbook - and to create charts in R in general - require certain packages to be installed and loaded.
-So that you do not have to load them one by one, you can use the the following code to load them all at once.
+So that you do not have to load them one by one, you can use the following code to load them all at once.
 
 ```{r libraries, eval=TRUE, message=FALSE}
 x <-
@@ -149,7 +152,8 @@ ggplot(data = islands_df, aes(x = name, y = value)) +
 #### Using Base R to Create a Boxplot
 
 ```{r boxplot-base}
-boxplot_aagi(decrease ~ treatment,
+boxplot_aagi(
+  decrease ~ treatment,
   data = OrchardSprays,
   xlab = "treatment",
   ylab = "decrease"
@@ -159,9 +163,6 @@ boxplot_aagi(decrease ~ treatment,
 #### Using {ggplot2} to Create a Boxplot
 
 ```{r boxplot-ggplot2}
-library("AAGIThemes")
-library("ggplot2")
-
 ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
   geom_boxplot() +
   scale_y_continuous(breaks = seq(0, 120, by = 20)) +
@@ -212,8 +213,9 @@ plot_aagi(
 #### Using {ggplot2} to Create a Line Graph
 
 ```{r line-ggplot2}
-ggplot(line_df, aes(x = year, y = lifeExp)) +
-  geom_line(colour = AAGIPalettes::colour_as_hex("AAGI Teal")) +
+ggplot(line_df, aes(x = year, y = lifeExp, colour = "Life expectancy")) +
+  geom_line() +
+  scale_colour_aagi(values = AAGIPalettes::colour_as_hex("AAGI Teal")) +
   theme_aagi() +
   ylab("Life expectancy") +
   xlab("Year") +
@@ -270,16 +272,19 @@ Here we'll again use the {gapminder} data to construct a stacked bar chart and u
 # prepare data
 stacked_df <- gapminder |>
   filter(year == 2007) |>
-  mutate(lifeExpGrouped = cut(
-    lifeExp,
-    breaks = c(0, 50, 65, 80, 90),
-    labels = c("Under 50", "50-65", "65-80", "80+")
-  )) |>
+  mutate(
+    lifeExpGrouped = cut(
+      lifeExp,
+      breaks = c(0, 50, 65, 80, 90),
+      labels = c("Under 50", "50-65", "65-80", "80+")
+    )
+  ) |>
   group_by(continent, lifeExpGrouped) |>
   summarise(continentPop = sum(as.numeric(pop)))
 
 # set order of stacks by changing factor levels
-stacked_df$lifeExpGrouped <- factor(stacked_df$lifeExpGrouped,
+stacked_df$lifeExpGrouped <- factor(
+  stacked_df$lifeExpGrouped,
   levels = rev(levels(stacked_df$lifeExpGrouped))
 )
 
@@ -296,10 +301,7 @@ ggplot(
     stat = "identity",
     position = "fill"
   ) +
-  scale_fill_manual(
-    name = "Life expectancy",
-    values = aagi_palettes(n = 4, name = "aagi_greens")
-  ) +
+  scale_fill_aagi(palette = "aagi_greens") +
   ylab("Continental Population (%)") +
   xlab("Continent") +
   theme_aagi() +
@@ -330,17 +332,10 @@ facet <- gapminder |>
   group_by(continent, year) |>
   summarise(pop = sum(as.numeric(pop)))
 
-col_values <- c(
-  AAGIPalettes::colour_as_hex("AAGI Teal"),
-  AAGIPalettes::colour_as_hex("AAGI Green"),
-  AAGIPalettes::colour_as_hex("AAGI Yellow"),
-  AAGIPalettes::colour_as_hex("AAGI Blue")
-)
-
 # Make plot
 p <- ggplot() +
   geom_area(data = facet, aes(x = year, y = pop, fill = continent)) +
-  scale_fill_manual(values = col_values) +
+  scale_fill_aagi() +
   facet_wrap(~continent, ncol = 5) +
   scale_y_continuous(
     breaks = c(0, 2000000000, 4000000000),
@@ -353,7 +348,10 @@ p <- ggplot() +
     colour = "#474747"
   ) +
   theme(legend.position = "none", axis.text.x = element_blank()) +
-  labs(title = "Asia's rapid growth", subtitle = "Population growth by continent, 1952-2007")
+  labs(
+    title = "Asia's rapid growth",
+    subtitle = "Population growth by continent, 1952-2007"
+  )
 
 ggsave(p, filename = "AAGI.png", path = tempdir())
 
@@ -369,7 +367,7 @@ You can save using `tempdir()` as illustrated above or save on your Documents fo
 The image is resized to be 600x1000 pixels before being displayed here.
 Feel free to adjust as necessary.
 
-```{r add-dpird-logo, eval=TRUE, message=FALSE}
+```{r add-aagi-logo, eval=TRUE, message=FALSE}
 library(magick)
 add_aagi_logo(
   file_in = file.path(tempdir(), "AAGI.png"),
