@@ -1,4 +1,32 @@
-url: https://AAGI-AUS.github.io/AAGIThemes/
+url: https://aagi-aus.github.io/AAGIThemes/
 template:
   bootstrap: 5
-
+  params:
+    bootswatch: journal
+reference:
+  - title: Base Plot Theming
+    desc: |
+      Create plots and graphs in the AAGI style using base R graphics
+    contents:
+      - barplot_aagi
+      - boxplot_aagi
+      - hist_aagi
+      - plot_aagi
+  - title: ggplot2 Theming
+    desc: |
+      Create {ggplot2} plots and graphs in the AAGI style
+    contents:
+      - theme_aagi
+      - scale_colour_aagi
+      - scale_fill_aagi
+  - title: Table theming
+    desc: |
+      Create tables in the AAGI style
+    contents:
+      - theme_ft_aagi
+      - theme_gt_aagi
+  - title: Other utilities
+    contents:
+      - add_aagi_logo
+      - showtext_aagi_off
+      - watermark
