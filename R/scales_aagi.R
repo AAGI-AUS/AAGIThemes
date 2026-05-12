@@ -1,4 +1,4 @@
-#' Scale constructors for AAGI colour palettes to be used in {ggplot2} objects
+#' Scale constructors for AAGI colour palettes to be used in ggplot2 objects
 #'
 #' Helpers for applying \acronym{AAGI} colour palettes to \CRANpkg{ggplot2}
 #' colour and fill aesthetics.

@@ -3,7 +3,7 @@
 \name{scale_colour_aagi}
 \alias{scale_colour_aagi}
 \alias{scale_fill_aagi}
-\title{Scale constructors for AAGI colour palettes to be used in {ggplot2} objects}
+\title{Scale constructors for AAGI colour palettes to be used in ggplot2 objects}
 \usage{
 scale_colour_aagi(
   palette = NULL,
