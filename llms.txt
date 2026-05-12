@@ -61,38 +61,56 @@ works in HTML and Word document outputs.
 
 You can use it like so with {flextable}.
 
-\`\`\`{r library(dplyr) library(flextable)
+``` r
 
-flextable(head(airquality)) \|\> mutate(`Month Name` = “May”) \|\>
-theme_ft_aagi()
+library(dplyr)
+library(flextable)
 
+head(airquality) |>
+  mutate(`Month Name` = "May") |>
+  flextable() |>
+  theme_ft_aagi()
+```
 
-    ### Plots and graphs
+| Ozone | Solar.R | Wind | Temp | Month | Day | Month Name |
+|-------|---------|------|------|-------|-----|------------|
+| 41    | 190     | 7.4  | 67   | 5     | 1   | May        |
+| 36    | 118     | 8.0  | 72   | 5     | 2   | May        |
+| 12    | 149     | 12.6 | 74   | 5     | 3   | May        |
+| 18    | 313     | 11.5 | 62   | 5     | 4   | May        |
+|       |         | 14.3 | 56   | 5     | 5   | May        |
+| 28    |         | 14.9 | 66   | 5     | 6   | May        |
 
-    {AAGIThemes} provides several functions to assist users in creating plots, charts and graphs with a more unified AAGI style.
+### Plots and graphs
 
-    For creating standalone graphs using R's base library there are:
+{AAGIThemes} provides several functions to assist users in creating
+plots, charts and graphs with a more unified AAGI style.
 
-      * `barplot_aagi()`,
+For creating standalone graphs using R’s base library there are:
 
-      * `boxplot_aagi()`,
+- [`barplot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/barplot_aagi.md),
 
-      * `hist_aagi()`, and
+- [`boxplot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/boxplot_aagi.md),
 
-      * `plot_aagi()`.
+- [`hist_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/hist_aagi.md),
+  and
 
-    #### Using the basic plot functions
+- [`plot_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/plot_aagi.md).
 
-    Example of how the base graphics functionality with AAGI style pre-applied is used:
+#### Using the basic plot functions
 
+Example of how the base graphics functionality with AAGI style
+pre-applied is used:
 
-    ``` r
-    boxplot_aagi(
-      decrease ~ treatment,
-      data = OrchardSprays,
-      xlab = "treatment",
-      ylab = "decrease"
-    )
+``` r
+
+boxplot_aagi(
+  decrease ~ treatment,
+  data = OrchardSprays,
+  xlab = "treatment",
+  ylab = "decrease"
+)
+```
 
 ![An example plot illustrating the use of AAGIThemes with R's base plot
 capabilities.](reference/figures/README-boxplot_aagi-1.png)
