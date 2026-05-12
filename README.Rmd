@@ -127,9 +127,7 @@ ggplot(data = OrchardSprays, aes(x = treatment, y = decrease)) +
 Example of a map made with {ggplot2} and {AAGIThemes}.
 
 ```{r theme_aagi_map, fig.cap="An example map illustrating the use of AAGIThemes with ggplot2."}
-library(AAGIThemes)
 library(AAGIPalettes)
-library(ggplot2)
 library(ozmaps)
 
 sf_oz <- ozmap_data("states")

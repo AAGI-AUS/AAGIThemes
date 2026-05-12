@@ -136,9 +136,7 @@ Example of a map made with {ggplot2} and {AAGIThemes}.
 
 
 ``` r
-library(AAGIThemes)
 library(AAGIPalettes)
-library(ggplot2)
 library(ozmaps)
 
 sf_oz <- ozmap_data("states")
