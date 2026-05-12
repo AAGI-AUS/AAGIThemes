@@ -35,6 +35,7 @@ XQuartz
 aagi
 arg
 args
+autoselect
 behaviour
 cairo
 centimetres
@@ -48,6 +49,7 @@ flextable
 funder
 gapminder
 ggplot
+ggsave
 grey
 gridlines
 licence
@@ -61,6 +63,7 @@ standardise
 standardised
 sturges
 sysfonts
+tempdir
 theming
 tibble
 visualisation

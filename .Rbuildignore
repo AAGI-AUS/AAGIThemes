@@ -1,8 +1,5 @@
-^theme\.aagi\.Rproj$
-^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
-^data-raw$
 ^codemeta\.json$
 ^_pkgdown\.yml$
 ^docs$
@@ -11,13 +8,9 @@
 ^codecov\.yml$
 
 ^COPYRIGHT$
-# flint files
-^flint$
 ^air\.toml$
 ^CONTRIBUTING\.md$
 
-# flir files
-^flir$
 ^man/dot-compute_hist_breaks_integer\.Rd$
 ^man/dot-set_aagi_font\.Rd$
 ^man/dot-convert_aagi_colour\.Rd$
