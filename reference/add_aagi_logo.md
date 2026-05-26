@@ -41,10 +41,11 @@ to the plot that's called.
 ## Image Sizing
 
 This function checks the image's DPI values and sets the logo size
-accordingly. When saving, e.g., from ggplot, specify the DPI value along
-with your height and width and units for optimal performance. \`ggsave(
-filename = "AAGI.png", plot = p1, path = tempdir(), width = 18, height =
-18, units = "cm", dpi = 300 )
+accordingly. When saving, e.g., from
+[ggplot](https://CRAN.R-project.org/package=ggplot), specify the DPI
+value along with your height and width and units for optimal
+performance. \`ggsave( filename = "AAGI.png", plot = p1, path =
+tempdir(), width = 18, height = 18, units = "cm", dpi = 300 )
 
 ## Author
 

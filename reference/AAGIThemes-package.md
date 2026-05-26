@@ -42,9 +42,6 @@ Other contributors:
 
 - Jimmy Ng <jimmy.ng@dpird.wa.gov.au> \[contributor\]
 
-- Curtin University ([ROR](https://ror.org/02n415q13)) (Provided support
-  through Adam Sparks's time) \[copyright holder, funder\]
-
 - Grains Research and Development Corporation
   ([ROR](https://ror.org/02xwr1996)) (GRDC Project CUR2210-005OPX
   (AAGI-CU)) \[funder, copyright holder\]

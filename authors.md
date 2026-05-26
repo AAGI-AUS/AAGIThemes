@@ -19,10 +19,6 @@
   Wrote portions of package used in creating this one for 'Grattan'
   package, adapted to 'AAGIThemes' under 'MIT' licence.
 
-- **Curtin University**. Copyright holder, funder.
-  [![ROR](https://raw.githubusercontent.com/ror-community/ror-logos/main/ror-icon-rgb.svg)](https://ror.org/02n415q13)  
-  Provided support through Adam Sparks's time
-
 - **Grains Research and Development Corporation**. Funder, copyright
   holder.
   [![ROR](https://raw.githubusercontent.com/ror-community/ror-logos/main/ror-icon-rgb.svg)](https://ror.org/02xwr1996)  
@@ -35,12 +31,12 @@ Source:
 
 Sparks A, Ng K, Kariyawasam T, Cowgill M, Mackey W (2026). *AAGIThemes:
 AAGI Branding for Graphical and Tabular Outputs*. R package version
-2.1.0, <https://github.com/AAGI-AUS/AAGIThemes>.
+2.1.1, <https://github.com/AAGI-AUS/AAGIThemes>.
 
     @Manual{,
       title = {AAGIThemes: AAGI Branding for Graphical and Tabular Outputs},
       author = {Adam H. Sparks and Kenyon Ng and Tinula Kariyawasam and Matt Cowgill and Will Mackey},
       year = {2026},
-      note = {R package version 2.1.0},
+      note = {R package version 2.1.1},
       url = {https://github.com/AAGI-AUS/AAGIThemes},
     }

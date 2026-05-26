@@ -1,5 +1,12 @@
 # Changelog
 
+## AAGIThemes 2.1.1
+
+### Bug fixes
+
+- Deletes unused directories that caused R Build error
+- Fix roxygen2 code so that there are no error messages about missing {}
+
 ## AAGIThemes 2.1.0
 
 ### New features
