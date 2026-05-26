@@ -32,8 +32,9 @@ per \acronym{AAGI} brand guidelines.
 }
 \section{Image Sizing}{
  This function checks the image's DPI values and sets
-the logo size accordingly. When saving, e.g., from {ggplot}, specify the DPI
-value along with your height and width and units for optimal performance.
+the logo size accordingly. When saving, e.g., from \CRANpkg{ggplot}, specify
+the DPI value along with your height and width and units for optimal
+performance.
 `ggsave(
 filename = "AAGI.png",
 plot = p1,
