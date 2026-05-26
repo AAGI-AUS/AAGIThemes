@@ -16,8 +16,9 @@
 #'   existing file.
 #'
 #' @section Image Sizing: This function checks the image's DPI values and sets
-#' the logo size accordingly. When saving, e.g., from {ggplot}, specify the DPI
-#' value along with your height and width and units for optimal performance.
+#' the logo size accordingly. When saving, e.g., from \CRANpkg{ggplot}, specify
+#' the DPI value along with your height and width and units for optimal
+#' performance.
 #' `ggsave(
 #'    filename = "AAGI.png",
 #'    plot = p1,
@@ -62,10 +63,28 @@ add_aagi_logo <- function(
   logo_width = 4.6,
   overwrite = FALSE
 ) {
-  # see: <https://themockup.blog/posts/2019-01-09-add-a-logo-to-your-plot/>
-  # see also: <https://www.danielphadley.com/ggplot-logo/>
+  .validate_logo_width(logo_width)
+  .validate_file_out(file_out, overwrite)
 
-  # --- Validate input ---
+  plot_in <- magick::image_read(file_in)
+  info <- magick::image_info(plot_in)
+  dpi <- .resolve_dpi(info$density)
+  logo_px <- .calc_logo_px(logo_width, dpi, info$width)
+
+  plot_in <- magick::image_border(plot_in, geometry = "0x300", color = "white")
+  logo <- .read_logo(logo_px)
+  plot_out <- .composite_and_crop(plot_in, logo, info, logo_px)
+
+  magick::image_write(plot_out, file_out)
+  cli::cli_inform(
+    "Inserted logo width: {round(logo_px / dpi * 2.54, 2)} cm (DPI = {dpi})."
+  )
+  invisible(NULL)
+}
+
+# --- Validators ----------------------------------------------------------
+
+.validate_logo_width <- function(logo_width) {
   if (
     !is.numeric(logo_width) ||
       length(logo_width) != 1L ||
@@ -76,26 +95,28 @@ add_aagi_logo <- function(
       "{.arg logo_width} must be a single numeric value >= 4.6 cm."
     )
   }
+}
+
+.validate_file_out <- function(file_out, overwrite) {
   if (file.exists(file_out) && !overwrite) {
     cli::cli_abort(
       "{.var file_out} {file_out} already exists. Use {.code overwrite = TRUE}
       or choose a new name."
     )
   }
+}
 
-  plot_in <- magick::image_read(file_in)
-  info <- magick::image_info(plot_in)
+# --- DPI helpers ---------------------------------------------------------
 
-  plot_width <- info$width
-  plot_height <- info$height
-
-  dpi_density <- info$density
+.resolve_dpi <- function(dpi_density) {
   dpi <- .parse_magick_density_dpi(dpi_density)
 
   if (is.na(dpi) || dpi <= 0) {
-    dpi <- 300
     cli::cli_warn("Image DPI not available; assuming 300 DPI for logo sizing.")
-  } else if (
+    return(300)
+  }
+
+  if (
     nzchar(trimws(as.character(dpi_density))) &&
       !grepl("[xX]", as.character(dpi_density))
   ) {
@@ -104,97 +125,82 @@ add_aagi_logo <- function(
     )
   }
 
-  # --- Convert cm → pixels ---
-  logo_width_px <- (logo_width / 2.54) * dpi
+  dpi
+}
 
-  # Guard against absurd cases where requested logo > plot width
-  if (logo_width_px > plot_width) {
+# --- Logo helpers --------------------------------------------------------
+
+.calc_logo_px <- function(logo_width, dpi, plot_width) {
+  logo_px <- (logo_width / 2.54) * dpi
+
+  if (logo_px > plot_width) {
     cli::cli_warn(c(
       "Requested {.arg logo_width} exceeds plot width.",
-      "i" = "Reducing logo width to fit within image."
+      i = "Reducing logo width to fit within image."
     ))
-    logo_width_px <- plot_width
+    logo_px <- plot_width
   }
 
-  # --- Prepare plot ---
-  plot_in <- magick::image_border(plot_in, geometry = "0x300", color = "white")
+  logo_px
+}
 
-  # --- Read logo ---
-  if (requireNamespace("rsvg", quietly = TRUE)) {
-    logo_raw <- magick::image_read_svg(
-      system.file(
-        "logo",
-        "AAGI_logo_colour_CMYK.svg",
-        package = "AAGIThemes",
-        mustWork = TRUE
-      )
-    )
+.read_logo <- function(logo_px) {
+  svg_path <- system.file(
+    "logo",
+    "AAGI_logo_colour_CMYK.svg",
+    package = "AAGIThemes",
+    mustWork = TRUE
+  )
+
+  logo_raw <- if (requireNamespace("rsvg", quietly = TRUE)) {
+    magick::image_read_svg(svg_path)
   } else {
     cli::cli_inform(
-      "{.pkg rsvg} is not installed, using a less optimal method.
-    You may wish to install it with {.code install.packages('rsvg')}."
-    )
-    logo_raw <- magick::image_read(
-      system.file(
-        "logo",
-        "AAGI_logo_colour_CMYK.svg",
-        package = "AAGIThemes",
-        mustWork = TRUE
+      c(
+        i = "{.pkg rsvg} is not installed, using a less optimal method.
+      You may wish to install it with {.code install.packages('rsvg')}."
       )
     )
+    magick::image_read(svg_path)
   }
 
-  # --- Scale logo to exact pixel width ---
-  logo <- magick::image_scale(logo_raw, paste0(round(logo_width_px), "x"))
+  magick::image_scale(logo_raw, paste0(round(logo_px), "x"))
+}
 
-  # --- Position ---
-  x_pos <- 0.01 * plot_width
-  y_pos <- 0.01 * plot_height
+# --- Composite -----------------------------------------------------------
 
-  plot_out <- magick::image_composite(
-    plot_in,
-    logo,
-    offset = paste0("+", round(x_pos), "+", round(y_pos))
+.composite_and_crop <- function(plot_in, logo, info, logo_px) {
+  offset <- paste0(
+    "+",
+    round(0.01 * info$width),
+    "+",
+    round(0.01 * info$height)
   )
 
-  # --- Crop extra space ---
-  plot_out <- magick::image_crop(
+  plot_out <- magick::image_composite(plot_in, logo, offset = offset)
+
+  magick::image_crop(
     plot_out,
-    geometry = paste0("0x", plot_height + 300L),
+    geometry = paste0("0x", info$height + 300L),
     gravity = "north"
   )
-
-  magick::image_write(plot_out, file_out)
-
-  # --- Informative output (useful for pipelines) ---
-  actual_cm <- logo_width_px / dpi * 2.54
-  cli::cli_inform(
-    "Inserted logo width: {round(actual_cm, 2)} cm (DPI = {dpi})."
-  )
-
-  return(invisible(NULL))
 }
+
+# --- Internal DPI parser -------------------------------------------------
 
 #' @keywords internal
 .parse_magick_density_dpi <- function(density) {
-  d <- if (is.null(density) || length(density) == 0L) {
-    ""
-  } else {
-    as.character(density)
-  }
-  d <- trimws(d)
+  d <- trimws(
+    if (is.null(density) || length(density) == 0L) "" else as.character(density)
+  )
+
   if (!nzchar(d)) {
     return(NA_real_)
   }
 
-  # Extract first number (works for "72x72", "72", "72 X 72", etc.)
-  dpi <- suppressWarnings(as.numeric(sub(
-    "^\\s*([0-9]+(?:\\.[0-9]+)?).*$",
-    "\\1",
-    d
-  )))
-  if (!is.finite(dpi) || dpi <= 0) {
-    return(NA_real_)
-  }
-  return(dpi)
+  dpi <- suppressWarnings(
+    as.numeric(sub("^\\s*([0-9]+(?:\\.[0-9]+)?).*$", "\\1", d))
+  )
+
+  if (!is.finite(dpi) || dpi <= 0) NA_real_ else dpi
 }
