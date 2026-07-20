@@ -27,7 +27,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/AAGI-AUS/AAGIThemes/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/AAGI-AUS/AAGIThemes/blob/v2.1.2/DESCRIPTION)
 
 Sparks A, Ng K, Kariyawasam T, Cowgill M, Mackey W (2026). *AAGIThemes:
 AAGI Branding for Graphical and Tabular Outputs*. R package version
