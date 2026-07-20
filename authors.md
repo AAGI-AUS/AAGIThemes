@@ -31,12 +31,12 @@ Source:
 
 Sparks A, Ng K, Kariyawasam T, Cowgill M, Mackey W (2026). *AAGIThemes:
 AAGI Branding for Graphical and Tabular Outputs*. R package version
-2.1.1, <https://github.com/AAGI-AUS/AAGIThemes>.
+2.1.2, <https://github.com/AAGI-AUS/AAGIThemes>.
 
     @Manual{,
       title = {AAGIThemes: AAGI Branding for Graphical and Tabular Outputs},
       author = {Adam H. Sparks and Kenyon Ng and Tinula Kariyawasam and Matt Cowgill and Will Mackey},
       year = {2026},
-      note = {R package version 2.1.1},
+      note = {R package version 2.1.2},
       url = {https://github.com/AAGI-AUS/AAGIThemes},
     }

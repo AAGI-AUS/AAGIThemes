@@ -2,6 +2,12 @@
 
 ## AAGIThemes 2.1.1
 
+### New features
+
+- Implement session-level font-caching
+
+## AAGIThemes 2.1.1
+
 ### Bug fixes
 
 - Deletes unused directories that caused R Build error
