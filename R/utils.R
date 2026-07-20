@@ -97,6 +97,18 @@
   TRUE
 }
 
+.aagi_cache <- new.env(parent = emptyenv())
+
+.aagi_cache$font <- NULL
+
+.get_aagi_font <- function() {
+  if (is.null(.aagi_cache$font)) {
+    .aagi_cache$font <- .set_aagi_font()
+  }
+
+  .aagi_cache$font
+}
+
 #' Clear cached font resolutions (useful for tests)
 #'
 #' @keywords internal

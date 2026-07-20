@@ -48,7 +48,7 @@ theme_aagi <- function(
   showtext_auto = TRUE,
   ...
 ) {
-  aagi_font <- .set_aagi_font()
+  aagi_font <- .get_aagi_font()
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
