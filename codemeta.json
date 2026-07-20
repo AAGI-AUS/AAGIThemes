@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/AAGI-AUS/AAGIThemes",
   "issueTracker": "https://github.com/AAGI-AUS/AAGIThemes/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.6.0 (2026-04-24)",
+  "runtimePlatform": "R version 4.6.1 (2026-06-24)",
   "author": [
     {
       "@type": "Person",
@@ -410,7 +410,7 @@
   },
   "applicationCategory": "Tools",
   "isPartOf": "https://grdc.com.au/research/partnerships-and-initiatives/strategic-partnerships/aagi",
-  "fileSize": "507.874KB",
+  "fileSize": "508.079KB",
   "releaseNotes": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/NEWS.md",
   "readme": "https://github.com/AAGI-AUS/AAGIThemes/blob/main/README.md",
   "contIntegration": "https://github.com/AAGI-Org-AU-Public/AAGIThemes/actions/workflows/R-CMD-check.yaml",
