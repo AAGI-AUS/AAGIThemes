@@ -42,8 +42,6 @@ formatting done before the print statement.
 }
 
 \section{Font}{
-
-
 The font is resolved as follows. Inside a Quarto document, the font chosen
 by the \acronym{AAGI} Quarto template is used; the template should set the
 \code{AAGI_MAINFONT} environment variable (or the \code{aagi_mainfont} option of
