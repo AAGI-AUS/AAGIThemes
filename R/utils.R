@@ -141,7 +141,7 @@
 #' The Quarto-derived value is never cached so it can change per document.
 #'
 #' @returns A character string with a font family name.
-#' @keywords internal
+#' @dev
 .resolve_aagi_font <- function() {
   env_font <- trimws(Sys.getenv("AAGI_MAINFONT", unset = ""))
   if (nzchar(env_font)) {
@@ -172,7 +172,7 @@
 #' `theme_aagi()` theme settings for \CRANpkg{ggplot2}.
 #'
 #' @returns A list object of graphical parameters.
-#' @keywords internal
+#' @dev
 .par_aagi <- function() {
   list(
     family = .set_aagi_font(),
