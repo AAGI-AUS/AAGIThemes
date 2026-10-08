@@ -1,3 +1,9 @@
+# AAGIThemes (development version)
+
+## Bug fixes
+
+- `theme_ft_aagi()` and `theme_gt_aagi()` now follow the font chosen by the AAGI Quarto template (via the `AAGI_MAINFONT` environment variable or the `aagi_mainfont` `knitr::opts_knit` option) and otherwise fall back from Proxima Nova to Arial to "sans", so PDF output no longer fails when Proxima Nova is unavailable.
+
 # AAGIThemes 2.1.1
 
 ## New features

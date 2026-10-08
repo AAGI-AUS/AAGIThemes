@@ -220,3 +220,14 @@ test_that("theme_ft_aagi with whitespace in column names", {
 
   expect_s3_class(themed_tbl, "flextable")
 })
+
+test_that("theme_ft_aagi uses the resolved font in all parts", {
+  withr::local_envvar(AAGI_MAINFONT = "Courier New")
+  tbl <- flextable::flextable(head(mtcars))
+  tbl <- flextable::add_footer_lines(tbl, "note")
+  result <- theme_ft_aagi(tbl)
+
+  for (part in c("header", "body", "footer")) {
+    expect_true(all(result[[part]]$styles$text$font.family$data == "Courier New"))
+  }
+})

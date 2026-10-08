@@ -56,3 +56,13 @@ test_that("theme_gt_aagi is idempotent", {
 
   expect_s3_class(themed_twice, "gt_tbl")
 })
+
+test_that("theme_gt_aagi includes the resolved font", {
+  withr::local_envvar(AAGI_MAINFONT = "Courier New")
+  result <- theme_gt_aagi(gt::gt(head(mtcars)))
+  fonts <- unlist(result[["_options"]][["value"]][
+    result[["_options"]][["parameter"]] == "table_font_names"
+  ])
+  expect_identical(fonts[[1]], "Courier New")
+  expect_true("Arial" %in% fonts)
+})

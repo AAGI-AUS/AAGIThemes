@@ -28,6 +28,15 @@
 #'   case, don't forget to take care that the theme doesn't override any
 #'   formatting done before the print statement.
 #'
+#' # Font
+#'
+#' The font is resolved as follows. Inside a Quarto document, the font chosen
+#'   by the \acronym{AAGI} Quarto template is used; the template should set the
+#'   `AAGI_MAINFONT` environment variable (or the `aagi_mainfont` option of
+#'   `knitr::opts_knit`) to the font it selected. Otherwise (e.g., standalone
+#'   use) Proxima Nova is used if available, then Arial, then "sans". This
+#'   ensures the generated PDF output never references an unavailable font.
+#'
 #' @param x a \CRANpkg{flextable} object
 #' @returns a formatted \CRANpkg{flextable} object
 #' @examples
@@ -46,11 +55,14 @@ theme_ft_aagi <- function(x) {
     )
   }
 
-  flextable::set_flextable_defaults(font.family = .set_aagi_font())
+  aagi_font <- .resolve_aagi_font()
+  flextable::set_flextable_defaults(font.family = aagi_font)
 
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
+
+  x <- flextable::font(x = x, fontname = aagi_font, part = "all")
 
   # header
   x <- flextable::bold(x = x, bold = TRUE, part = "header")

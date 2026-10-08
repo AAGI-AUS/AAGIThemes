@@ -5,6 +5,15 @@
 #'   Header text is bold, text columns are left aligned, other columns are right
 #'   aligned.
 #'
+#' # Font
+#'
+#' The font is resolved as follows. Inside a Quarto document, the font chosen
+#'   by the \acronym{AAGI} Quarto template is used; the template should set the
+#'   `AAGI_MAINFONT` environment variable (or the `aagi_mainfont` option of
+#'   `knitr::opts_knit`) to the font it selected. Otherwise (e.g., standalone
+#'   use) Proxima Nova is used if available, then Arial, then "sans". The
+#'   resolved font is followed by "Arial" and [gt::default_fonts()].
+#'
 #' @param x a \CRANpkg{gt} object
 #' @returns a formatted \CRANpkg{gt} object
 #' @examples
@@ -24,8 +33,7 @@ theme_gt_aagi <- function(x) {
     cli::cli_abort("{.var x} is not a {.code gt_tbl} object.")
   }
 
-  # check if Proxima Nova is installed, if not, falls back to Arial
-  aagi_font <- c("Proxima Nova", "Arial")
+  aagi_font <- .resolve_aagi_font()
   aagi_black <- AAGIPalettes::colour_as_hex("AAGI Black")
   aagi_grey <- AAGIPalettes::colour_as_hex("AAGI Grey")
   aagi_teal <- AAGIPalettes::colour_as_hex("AAGI Teal")
@@ -35,6 +43,7 @@ theme_gt_aagi <- function(x) {
     gt::opt_table_font(
       font = list(
         aagi_font,
+        "Arial",
         gt::default_fonts()
       )
     ) |>
