@@ -1,6 +1,19 @@
 # Changelog
 
-## AAGIThemes 2.1.1
+## AAGIThemes 2.1.3
+
+### Bug fixes
+
+- [`theme_ft_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/theme_ft_aagi.md)
+  and
+  [`theme_gt_aagi()`](https://aagi-aus.github.io/AAGIThemes/reference/theme_gt_aagi.md)
+  now follow the font chosen by the AAGI Quarto template (via the
+  `AAGI_MAINFONT` environment variable or the `aagi_mainfont`
+  [`knitr::opts_knit`](https://rdrr.io/pkg/knitr/man/opts_knit.html)
+  option) and otherwise fall back from Proxima Nova to Arial to “sans”,
+  so PDF output no longer fails when Proxima Nova is unavailable.
+
+## AAGIThemes 2.1.2
 
 ### New features
 
