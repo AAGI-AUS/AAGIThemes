@@ -79,6 +79,10 @@ ft <- theme_ft_aagi(ft)
 ft
 ```
 
+### Fonts in Quarto PDF documents
+
+When rendering inside Quarto, `theme_ft_aagi()` and `theme_gt_aagi()` use the font chosen by the AAGI Quarto template so that PDF output never references an unavailable font. The template should expose its choice by setting the `AAGI_MAINFONT` environment variable (or the `aagi_mainfont` option of `knitr::opts_knit`). To override it in your own document, set `Sys.setenv(AAGI_MAINFONT = "Arial")` before creating tables. Outside Quarto, Proxima Nova is used if available, then Arial, then "sans".
+
 ### On {ggplot2} Plots and Graphs
 
 Most of the focus of {AAGIThemes} is given to supporting {[ggplot2](https://ggplot2.tidyverse.org/R)} visualisations, but {base} and {graphics} plotting functionality are also supported.

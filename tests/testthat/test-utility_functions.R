@@ -135,3 +135,22 @@ test_that(".convert_aagi_colour aborts on invalid AAGI colour", {
     class = "rlang_error"
   )
 })
+
+test_that(".resolve_aagi_font prefers AAGI_MAINFONT env var", {
+  withr::local_envvar(AAGI_MAINFONT = "Courier New")
+  expect_identical(.resolve_aagi_font(), "Courier New")
+})
+
+test_that(".resolve_aagi_font falls back to Arial", {
+  withr::local_envvar(AAGI_MAINFONT = NA)
+  local_mocked_bindings(
+    .font_available = function(font_name) font_name == "Arial"
+  )
+  expect_identical(.resolve_aagi_font(), "Arial")
+})
+
+test_that(".resolve_aagi_font falls back to sans", {
+  withr::local_envvar(AAGI_MAINFONT = NA)
+  local_mocked_bindings(.font_available = function(font_name) FALSE)
+  expect_identical(.resolve_aagi_font(), "sans")
+})

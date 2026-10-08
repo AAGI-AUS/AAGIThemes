@@ -133,13 +133,46 @@
   if (is.na(font)) "sans" else font
 }
 
+#' Resolve the AAGI Font, Following the Quarto Template When Available
+#'
+#' Precedence: (1) the `AAGI_MAINFONT` environment variable, (2) the
+#' `aagi_mainfont` option of `knitr::opts_knit` (when \pkg{knitr} is
+#' installed), (3) [.set_aagi_font()] (Proxima Nova, then Arial, then "sans").
+#' The Quarto-derived value is never cached so it can change per document.
+#'
+#' @returns A character string with a font family name.
+#' @dev
+.resolve_aagi_font <- function() {
+  env_font <- trimws(Sys.getenv("AAGI_MAINFONT", unset = ""))
+  if (nzchar(env_font)) {
+    return(env_font)
+  }
+
+  if (requireNamespace("knitr", quietly = TRUE)) {
+    knit_font <- tryCatch(
+      knitr::opts_knit$get("aagi_mainfont"),
+      error = function(e) NULL
+    )
+    if (
+      is.character(knit_font) &&
+        length(knit_font) == 1L &&
+        !is.na(knit_font) &&
+        nzchar(trimws(knit_font))
+    ) {
+      return(trimws(knit_font))
+    }
+  }
+
+  .set_aagi_font()
+}
+
 #' Set Graphical Parameters That Satisfy AAGI's Style Requirements
 #'
 #' Sets the AAGI font and style for \R base graphics; these match the
 #' `theme_aagi()` theme settings for \CRANpkg{ggplot2}.
 #'
 #' @returns A list object of graphical parameters.
-#' @keywords internal
+#' @dev
 .par_aagi <- function() {
   list(
     family = .set_aagi_font(),

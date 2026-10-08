@@ -18,6 +18,15 @@ formatted table body is grey with a teal header and white header font.
 Header text is bold, text columns are left aligned, other columns are right
 aligned.
 }
+\section{Font}{
+The font is resolved as follows. Inside a Quarto document, the font chosen
+by the \acronym{AAGI} Quarto template is used; the template should set the
+\code{AAGI_MAINFONT} environment variable (or the \code{aagi_mainfont} option of
+\code{knitr::opts_knit}) to the font it selected. Otherwise (e.g., standalone
+use) Proxima Nova is used if available, then Arial, then "sans". The
+resolved font is followed by "Arial" and \code{\link[gt:default_fonts]{gt::default_fonts()}}.
+}
+
 \examples{
 library(gt)
 library(dplyr)
